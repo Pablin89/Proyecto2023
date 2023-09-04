@@ -24,54 +24,51 @@ Partial Class Encargado_Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Encargado_Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.CajerosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
+        Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
+        Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.MenuStrip1.SuspendLayout()
+        Me.MenuEncargado.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.MenuEncargado)
         Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(179, 450)
         Me.Panel1.TabIndex = 0
         '
-        'PictureBox1
+        'MenuEncargado
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(179, 167)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.MenuEncargado.AutoSize = False
+        Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
+        Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes})
+        Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
+        Me.MenuEncargado.Location = New System.Drawing.Point(0, 167)
+        Me.MenuEncargado.Name = "MenuEncargado"
+        Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
+        Me.MenuEncargado.Size = New System.Drawing.Size(179, 283)
+        Me.MenuEncargado.TabIndex = 1
         '
-        'MenuStrip1
+        'Cajeros
         '
-        Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CajerosToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(179, 450)
-        Me.MenuStrip1.TabIndex = 1
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'CajerosToolStripMenuItem
-        '
-        Me.CajerosToolStripMenuItem.AutoSize = False
-        Me.CajerosToolStripMenuItem.Name = "CajerosToolStripMenuItem"
-        Me.CajerosToolStripMenuItem.Size = New System.Drawing.Size(122, 446)
-        Me.CajerosToolStripMenuItem.Text = "Cajeros"
+        Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.cashier_machine_cash_register_pos_icon_225168
+        Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
+        Me.Cajeros.Name = "Cajeros"
+        Me.Cajeros.Size = New System.Drawing.Size(156, 30)
+        Me.Cajeros.Text = "Cajeros"
         '
         'Panel2
         '
@@ -92,30 +89,66 @@ Partial Class Encargado_Principal
         Me.BCerrarSesion.Text = "Cerrar Sesión"
         Me.BCerrarSesion.UseVisualStyleBackColor = True
         '
+        'Informes
+        '
+        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.statistic_icon_129319
+        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
+        Me.Informes.Name = "Informes"
+        Me.Informes.Size = New System.Drawing.Size(156, 30)
+        Me.Informes.Text = "Informes"
+        '
+        'Productos
+        '
+        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.product_document_file_1512
+        Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
+        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
+        Me.Productos.Name = "Productos"
+        Me.Productos.Size = New System.Drawing.Size(156, 30)
+        Me.Productos.Text = "Productos"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(179, 167)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
         'Encargado_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
-        Me.MainMenuStrip = Me.MenuStrip1
+        Me.MainMenuStrip = Me.MenuEncargado
         Me.Name = "Encargado_Principal"
-        Me.Text = "Encargado_Principal"
+        Me.Opacity = 0.95R
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Encargado"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
+        Me.MenuEncargado.ResumeLayout(False)
+        Me.MenuEncargado.PerformLayout()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents CajerosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents MenuEncargado As MenuStrip
+    Friend WithEvents Cajeros As ToolStripMenuItem
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BCerrarSesion As Button
+    Friend WithEvents Productos As ToolStripMenuItem
+    Friend WithEvents Informes As ToolStripMenuItem
 End Class

@@ -63,6 +63,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property cashier_machine_cash_register_pos_icon_225168() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("cashier_machine_cash_register_pos_icon_225168", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property login_90841() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("login_90841", resourceCulture)
@@ -76,6 +86,26 @@ Namespace My.Resources
         Friend ReadOnly Property login_90841__1_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("login_90841 (1)", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property product_document_file_1512() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("product_document_file_1512", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property statistic_icon_129319() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("statistic_icon_129319", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
