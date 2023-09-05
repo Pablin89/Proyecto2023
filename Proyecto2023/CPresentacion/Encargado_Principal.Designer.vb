@@ -25,16 +25,16 @@ Partial Class Encargado_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Encargado_Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
+        Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
-        Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -61,6 +61,17 @@ Partial Class Encargado_Principal
         Me.MenuEncargado.Size = New System.Drawing.Size(179, 283)
         Me.MenuEncargado.TabIndex = 1
         '
+        'Productos
+        '
+        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.product_document_file_1512
+        Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
+        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
+        Me.Productos.Name = "Productos"
+        Me.Productos.Size = New System.Drawing.Size(156, 30)
+        Me.Productos.Text = "Productos"
+        '
         'Cajeros
         '
         Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
@@ -69,6 +80,26 @@ Partial Class Encargado_Principal
         Me.Cajeros.Name = "Cajeros"
         Me.Cajeros.Size = New System.Drawing.Size(156, 30)
         Me.Cajeros.Text = "Cajeros"
+        '
+        'Informes
+        '
+        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.statistic_icon_129319
+        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
+        Me.Informes.Name = "Informes"
+        Me.Informes.Size = New System.Drawing.Size(156, 30)
+        Me.Informes.Text = "Informes"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(179, 167)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Panel2
         '
@@ -89,37 +120,6 @@ Partial Class Encargado_Principal
         Me.BCerrarSesion.Text = "Cerrar Sesión"
         Me.BCerrarSesion.UseVisualStyleBackColor = True
         '
-        'Informes
-        '
-        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.statistic_icon_129319
-        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
-        Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(156, 30)
-        Me.Informes.Text = "Informes"
-        '
-        'Productos
-        '
-        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.product_document_file_1512
-        Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
-        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
-        Me.Productos.Name = "Productos"
-        Me.Productos.Size = New System.Drawing.Size(156, 30)
-        Me.Productos.Text = "Productos"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(179, 167)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Encargado_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -128,6 +128,7 @@ Partial Class Encargado_Principal
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuEncargado
         Me.Name = "Encargado_Principal"
         Me.Opacity = 0.95R
@@ -137,8 +138,8 @@ Partial Class Encargado_Principal
         Me.Panel1.ResumeLayout(False)
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

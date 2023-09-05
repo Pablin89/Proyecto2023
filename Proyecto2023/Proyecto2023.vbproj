@@ -79,6 +79,12 @@
     <Compile Include="CPresentacion\Encargado_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Cajeros.Designer.vb">
+      <DependentUpon>Cajeros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajeros.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
