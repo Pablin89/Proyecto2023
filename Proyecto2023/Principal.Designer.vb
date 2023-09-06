@@ -113,7 +113,7 @@ Partial Class Principal
         Me.TUsuario.Location = New System.Drawing.Point(376, 91)
         Me.TUsuario.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(401, 53)
+        Me.TUsuario.Size = New System.Drawing.Size(423, 53)
         Me.TUsuario.TabIndex = 6
         '
         'PictureBox1
