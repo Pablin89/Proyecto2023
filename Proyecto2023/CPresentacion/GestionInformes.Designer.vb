@@ -42,23 +42,23 @@ Partial Class GestionInformes
         '
         'TabPage1
         '
+        Me.TabPage1.BackColor = System.Drawing.Color.SteelBlue
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(806, 592)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Informes de Ventas"
-        Me.TabPage1.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(792, 421)
+        Me.TabPage2.Size = New System.Drawing.Size(806, 592)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Informes de Cajeros"
-        Me.TabPage2.UseVisualStyleBackColor = True
         '
         'GestionInformes
         '
