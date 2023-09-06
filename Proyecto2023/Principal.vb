@@ -11,7 +11,4 @@
         TUsuario.Focus()
     End Sub
 
-    Private Sub TUsuario_TextChanged(sender As Object, e As EventArgs) Handles TUsuario.TextChanged
-
-    End Sub
 End Class
