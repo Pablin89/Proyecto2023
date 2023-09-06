@@ -134,14 +134,5 @@
   <ItemGroup>
     <None Include="Resources\login_90841 %281%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\cashier_machine_cash_register_pos_icon_225168.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\statistic_icon_129319.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\product_document_file_1512.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
