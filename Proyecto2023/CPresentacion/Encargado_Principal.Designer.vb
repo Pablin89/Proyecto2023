@@ -115,7 +115,7 @@ Partial Class Encargado_Principal
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.logout256_24927__1_
+        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
         Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
         Me.BCerrarSesion.Name = "BCerrarSesion"
@@ -129,7 +129,7 @@ Partial Class Encargado_Principal
         'Productos
         '
         Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.business_inventory_maintenance_product_box_boxes_2326
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.Productos
         Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Productos.ImageTransparentColor = System.Drawing.Color.White
@@ -141,7 +141,7 @@ Partial Class Encargado_Principal
         'Cajeros
         '
         Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.cashier_machine_cash_register_pos_icon_2251681
+        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.Cajeros
         Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
         Me.Cajeros.Name = "Cajeros"
@@ -151,7 +151,7 @@ Partial Class Encargado_Principal
         'Informes
         '
         Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.mobile_financial_report_graphs_icon_205088
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.Reportes
         Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Informes.Margin = New System.Windows.Forms.Padding(8)
         Me.Informes.Name = "Informes"

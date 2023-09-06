@@ -99,7 +99,7 @@ Partial Class Principal
         Me.Button1.BackColor = System.Drawing.Color.Azure
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.arrow_entrance_in_internet_log_login_security_icon_127060__1_
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.Login
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(105, 136)
         Me.Button1.Name = "Button1"
@@ -113,7 +113,7 @@ Partial Class Principal
         'PictureBox1
         '
         Me.PictureBox1.BackColor = System.Drawing.Color.Black
-        Me.PictureBox1.BackgroundImage = Global.Proyecto2023.My.Resources.Resources.Fradel___Spies
+        Me.PictureBox1.BackgroundImage = Global.Proyecto2023.My.Resources.Resources.Logo
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
