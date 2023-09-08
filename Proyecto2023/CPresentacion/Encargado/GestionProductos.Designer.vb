@@ -24,22 +24,21 @@ Partial Class GestionProductos
     Private Sub InitializeComponent()
         Me.GestionarProductos = New System.Windows.Forms.TabControl()
         Me.ConsultarProductos = New System.Windows.Forms.TabPage()
+        Me.LTitulo = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.ChCategoria = New System.Windows.Forms.CheckBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.ChNombreProducto = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LEstado = New System.Windows.Forms.Label()
+        Me.LCategoria = New System.Windows.Forms.Label()
         Me.LStock = New System.Windows.Forms.Label()
         Me.LPrecio = New System.Windows.Forms.Label()
         Me.LDescripcion = New System.Windows.Forms.Label()
         Me.LNombrepro = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.EditarProductos = New System.Windows.Forms.TabPage()
-        Me.AgregarProductos = New System.Windows.Forms.TabPage()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.ChCategoria = New System.Windows.Forms.CheckBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.LTitulo = New System.Windows.Forms.Label()
-        Me.LCategoria = New System.Windows.Forms.Label()
-        Me.LEstado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -62,37 +61,35 @@ Partial Class GestionProductos
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ChBCategoria = New System.Windows.Forms.CheckBox()
         Me.ChProducto = New System.Windows.Forms.CheckBox()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.AgregarProductos = New System.Windows.Forms.TabPage()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.LBuscarProducto = New System.Windows.Forms.Label()
-        Me.TDescripcion2 = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TDescripcion2 = New System.Windows.Forms.TextBox()
         Me.LEstadoInicial = New System.Windows.Forms.Label()
         Me.LDescripcion2 = New System.Windows.Forms.Label()
         Me.LStockInicial = New System.Windows.Forms.Label()
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.EditarProductos.SuspendLayout()
-        Me.AgregarProductos.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
+        Me.AgregarProductos.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -128,6 +125,39 @@ Partial Class GestionProductos
         Me.ConsultarProductos.TabIndex = 0
         Me.ConsultarProductos.Text = "Consultar Productos"
         '
+        'LTitulo
+        '
+        Me.LTitulo.AutoSize = True
+        Me.LTitulo.Location = New System.Drawing.Point(261, 31)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
+        Me.LTitulo.TabIndex = 8
+        Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(359, 147)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(225, 22)
+        Me.TextBox2.TabIndex = 4
+        '
+        'ChCategoria
+        '
+        Me.ChCategoria.AutoSize = True
+        Me.ChCategoria.Location = New System.Drawing.Point(179, 149)
+        Me.ChCategoria.Name = "ChCategoria"
+        Me.ChCategoria.Size = New System.Drawing.Size(99, 20)
+        Me.ChCategoria.TabIndex = 3
+        Me.ChCategoria.Text = "Categoría "
+        Me.ChCategoria.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(359, 89)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(225, 22)
+        Me.TextBox1.TabIndex = 2
+        '
         'ChNombreProducto
         '
         Me.ChNombreProducto.AutoSize = True
@@ -151,6 +181,7 @@ Partial Class GestionProductos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel2.Controls.Add(Me.LEstado)
         Me.Panel2.Controls.Add(Me.LCategoria)
         Me.Panel2.Controls.Add(Me.LStock)
@@ -162,6 +193,24 @@ Partial Class GestionProductos
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(434, 351)
         Me.Panel2.TabIndex = 1
+        '
+        'LEstado
+        '
+        Me.LEstado.AutoSize = True
+        Me.LEstado.Location = New System.Drawing.Point(18, 312)
+        Me.LEstado.Name = "LEstado"
+        Me.LEstado.Size = New System.Drawing.Size(57, 16)
+        Me.LEstado.TabIndex = 5
+        Me.LEstado.Text = "Estado"
+        '
+        'LCategoria
+        '
+        Me.LCategoria.AutoSize = True
+        Me.LCategoria.Location = New System.Drawing.Point(18, 141)
+        Me.LCategoria.Name = "LCategoria"
+        Me.LCategoria.Size = New System.Drawing.Size(76, 16)
+        Me.LCategoria.TabIndex = 4
+        Me.LCategoria.Text = "Categoria"
         '
         'LStock
         '
@@ -227,74 +276,6 @@ Partial Class GestionProductos
         Me.EditarProductos.Size = New System.Drawing.Size(806, 589)
         Me.EditarProductos.TabIndex = 1
         Me.EditarProductos.Text = "Editar Productos"
-        '
-        'AgregarProductos
-        '
-        Me.AgregarProductos.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.AgregarProductos.Controls.Add(Me.Panel5)
-        Me.AgregarProductos.Controls.Add(Me.Button3)
-        Me.AgregarProductos.Controls.Add(Me.Button2)
-        Me.AgregarProductos.Controls.Add(Me.TextBox11)
-        Me.AgregarProductos.Controls.Add(Me.LBuscarProducto)
-        Me.AgregarProductos.Controls.Add(Me.Panel6)
-        Me.AgregarProductos.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.AgregarProductos.Location = New System.Drawing.Point(4, 28)
-        Me.AgregarProductos.Name = "AgregarProductos"
-        Me.AgregarProductos.Padding = New System.Windows.Forms.Padding(3)
-        Me.AgregarProductos.Size = New System.Drawing.Size(806, 589)
-        Me.AgregarProductos.TabIndex = 2
-        Me.AgregarProductos.Text = "Agregar nuevos productos"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(359, 89)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox1.TabIndex = 2
-        '
-        'ChCategoria
-        '
-        Me.ChCategoria.AutoSize = True
-        Me.ChCategoria.Location = New System.Drawing.Point(179, 149)
-        Me.ChCategoria.Name = "ChCategoria"
-        Me.ChCategoria.Size = New System.Drawing.Size(99, 20)
-        Me.ChCategoria.TabIndex = 3
-        Me.ChCategoria.Text = "Categoría "
-        Me.ChCategoria.UseVisualStyleBackColor = True
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(359, 147)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox2.TabIndex = 4
-        '
-        'LTitulo
-        '
-        Me.LTitulo.AutoSize = True
-        Me.LTitulo.Location = New System.Drawing.Point(261, 31)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
-        Me.LTitulo.TabIndex = 8
-        Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
-        '
-        'LCategoria
-        '
-        Me.LCategoria.AutoSize = True
-        Me.LCategoria.Location = New System.Drawing.Point(18, 141)
-        Me.LCategoria.Name = "LCategoria"
-        Me.LCategoria.Size = New System.Drawing.Size(76, 16)
-        Me.LCategoria.TabIndex = 4
-        Me.LCategoria.Text = "Categoria"
-        '
-        'LEstado
-        '
-        Me.LEstado.AutoSize = True
-        Me.LEstado.Location = New System.Drawing.Point(18, 312)
-        Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(57, 16)
-        Me.LEstado.TabIndex = 5
-        Me.LEstado.Text = "Estado"
         '
         'Label1
         '
@@ -495,38 +476,26 @@ Partial Class GestionProductos
         Me.ChProducto.Text = "Nombre del Producto"
         Me.ChProducto.UseVisualStyleBackColor = True
         '
-        'Panel5
+        'AgregarProductos
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel5.Controls.Add(Me.TextBox12)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel5.Location = New System.Drawing.Point(3, 554)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(800, 32)
-        Me.Panel5.TabIndex = 30
-        '
-        'TextBox12
-        '
-        Me.TextBox12.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox12.Enabled = False
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Uighur", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.Red
-        Me.TextBox12.Location = New System.Drawing.Point(0, 0)
-        Me.TextBox12.Multiline = True
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(800, 200)
-        Me.TextBox12.TabIndex = 20
-        Me.TextBox12.Text = "Una vez confirmados los datos, el Gerente General se encargará de asignar usuario" &
-    " y contraseña al nuevo cajero."
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.AgregarProductos.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.AgregarProductos.Controls.Add(Me.Button3)
+        Me.AgregarProductos.Controls.Add(Me.Button2)
+        Me.AgregarProductos.Controls.Add(Me.TextBox11)
+        Me.AgregarProductos.Controls.Add(Me.LBuscarProducto)
+        Me.AgregarProductos.Controls.Add(Me.Panel6)
+        Me.AgregarProductos.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.AgregarProductos.Location = New System.Drawing.Point(4, 28)
+        Me.AgregarProductos.Name = "AgregarProductos"
+        Me.AgregarProductos.Padding = New System.Windows.Forms.Padding(3)
+        Me.AgregarProductos.Size = New System.Drawing.Size(806, 589)
+        Me.AgregarProductos.TabIndex = 2
+        Me.AgregarProductos.Text = "Agregar nuevos productos"
         '
         'Button3
         '
         Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Location = New System.Drawing.Point(310, 427)
+        Me.Button3.Location = New System.Drawing.Point(309, 474)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(188, 34)
         Me.Button3.TabIndex = 29
@@ -561,15 +530,6 @@ Partial Class GestionProductos
         Me.LBuscarProducto.TabIndex = 26
         Me.LBuscarProducto.Text = "Ingresar nombre del nuevo  producto para comprobar que  no existe en el sistema"
         '
-        'TDescripcion2
-        '
-        Me.TDescripcion2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.TDescripcion2.Location = New System.Drawing.Point(534, 78)
-        Me.TDescripcion2.Multiline = True
-        Me.TDescripcion2.Name = "TDescripcion2"
-        Me.TDescripcion2.Size = New System.Drawing.Size(237, 112)
-        Me.TDescripcion2.TabIndex = 23
-        '
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -589,8 +549,26 @@ Partial Class GestionProductos
         Me.Panel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel6.Location = New System.Drawing.Point(8, 82)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(790, 289)
+        Me.Panel6.Size = New System.Drawing.Size(790, 329)
         Me.Panel6.TabIndex = 31
+        '
+        'ComboBox2
+        '
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Items.AddRange(New Object() {"Activo", "Inactivo"})
+        Me.ComboBox2.Location = New System.Drawing.Point(534, 207)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(237, 24)
+        Me.ComboBox2.TabIndex = 26
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
+        Me.ComboBox1.Location = New System.Drawing.Point(194, 202)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(198, 24)
+        Me.ComboBox1.TabIndex = 14
         '
         'Label9
         '
@@ -604,14 +582,14 @@ Partial Class GestionProductos
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(194, 210)
+        Me.TextBox7.Location = New System.Drawing.Point(194, 268)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(198, 22)
         Me.TextBox7.TabIndex = 12
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(194, 122)
+        Me.TextBox6.Location = New System.Drawing.Point(194, 140)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(198, 22)
         Me.TextBox6.TabIndex = 11
@@ -622,6 +600,15 @@ Partial Class GestionProductos
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(198, 22)
         Me.TextBox5.TabIndex = 10
+        '
+        'TDescripcion2
+        '
+        Me.TDescripcion2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.TDescripcion2.Location = New System.Drawing.Point(534, 78)
+        Me.TDescripcion2.Multiline = True
+        Me.TDescripcion2.Name = "TDescripcion2"
+        Me.TDescripcion2.Size = New System.Drawing.Size(237, 112)
+        Me.TDescripcion2.TabIndex = 23
         '
         'LEstadoInicial
         '
@@ -644,7 +631,7 @@ Partial Class GestionProductos
         'LStockInicial
         '
         Me.LStockInicial.AutoSize = True
-        Me.LStockInicial.Location = New System.Drawing.Point(79, 210)
+        Me.LStockInicial.Location = New System.Drawing.Point(79, 271)
         Me.LStockInicial.Name = "LStockInicial"
         Me.LStockInicial.Size = New System.Drawing.Size(92, 16)
         Me.LStockInicial.TabIndex = 3
@@ -653,7 +640,7 @@ Partial Class GestionProductos
         'LCategoria2
         '
         Me.LCategoria2.AutoSize = True
-        Me.LCategoria2.Location = New System.Drawing.Point(95, 169)
+        Me.LCategoria2.Location = New System.Drawing.Point(95, 205)
         Me.LCategoria2.Name = "LCategoria2"
         Me.LCategoria2.Size = New System.Drawing.Size(76, 16)
         Me.LCategoria2.TabIndex = 2
@@ -662,7 +649,7 @@ Partial Class GestionProductos
         'LPrecio2
         '
         Me.LPrecio2.AutoSize = True
-        Me.LPrecio2.Location = New System.Drawing.Point(118, 125)
+        Me.LPrecio2.Location = New System.Drawing.Point(117, 143)
         Me.LPrecio2.Name = "LPrecio2"
         Me.LPrecio2.Size = New System.Drawing.Size(53, 16)
         Me.LPrecio2.TabIndex = 1
@@ -676,24 +663,6 @@ Partial Class GestionProductos
         Me.LNombre2.Size = New System.Drawing.Size(154, 16)
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
-        Me.ComboBox1.Location = New System.Drawing.Point(194, 166)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(198, 24)
-        Me.ComboBox1.TabIndex = 14
-        '
-        'ComboBox2
-        '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.ComboBox2.Location = New System.Drawing.Point(534, 207)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(237, 24)
-        Me.ComboBox2.TabIndex = 26
         '
         'GestionProductos
         '
@@ -714,14 +683,12 @@ Partial Class GestionProductos
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.EditarProductos.ResumeLayout(False)
         Me.EditarProductos.PerformLayout()
-        Me.AgregarProductos.ResumeLayout(False)
-        Me.AgregarProductos.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
+        Me.AgregarProductos.ResumeLayout(False)
+        Me.AgregarProductos.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
@@ -768,8 +735,6 @@ Partial Class GestionProductos
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents ChBCategoria As CheckBox
     Friend WithEvents ChProducto As CheckBox
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents TextBox11 As TextBox

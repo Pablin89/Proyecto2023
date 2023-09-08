@@ -43,6 +43,7 @@ Partial Class Misdatos
         '
         'Panel1
         '
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.BModificarP)
         Me.Panel1.Controls.Add(Me.LFechaNac)
         Me.Panel1.Controls.Add(Me.LDireccion)
@@ -60,6 +61,7 @@ Partial Class Misdatos
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.LTipo)
         Me.Panel2.Controls.Add(Me.LContrasena)

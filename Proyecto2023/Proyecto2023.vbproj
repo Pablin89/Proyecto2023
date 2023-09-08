@@ -74,28 +74,34 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPresentacion\Encargado_Principal.Designer.vb">
+    <Compile Include="CPresentacion\Encargado\Encargado_Principal.Designer.vb">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\Encargado_Principal.vb">
+    <Compile Include="CPresentacion\Encargado\Encargado_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\GestionCajeros.Designer.vb">
+    <Compile Include="CPresentacion\Encargado\GestionCajeros.Designer.vb">
       <DependentUpon>GestionCajeros.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\GestionCajeros.vb">
+    <Compile Include="CPresentacion\Encargado\GestionCajeros.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\GestionProductos.Designer.vb">
+    <Compile Include="CPresentacion\Encargado\GestionProductos.Designer.vb">
       <DependentUpon>GestionProductos.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\GestionProductos.vb">
+    <Compile Include="CPresentacion\Encargado\GestionProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\GestionInformes.Designer.vb">
+    <Compile Include="CPresentacion\Encargado\GestionInformes.Designer.vb">
       <DependentUpon>GestionInformes.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\GestionInformes.vb">
+    <Compile Include="CPresentacion\Encargado\GestionInformes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.Designer.vb">
+      <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Misdatos.Designer.vb">
@@ -128,17 +134,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CPresentacion\Encargado_Principal.resx">
+    <EmbeddedResource Include="CPresentacion\Encargado\Encargado_Principal.resx">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\GestionCajeros.resx">
+    <EmbeddedResource Include="CPresentacion\Encargado\GestionCajeros.resx">
       <DependentUpon>GestionCajeros.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\GestionProductos.resx">
+    <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\GestionInformes.resx">
+    <EmbeddedResource Include="CPresentacion\Encargado\GestionInformes.resx">
       <DependentUpon>GestionInformes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
+      <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Misdatos.resx">
       <DependentUpon>Misdatos.vb</DependentUpon>
@@ -203,6 +212,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout256_24927 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin_person_user_man_2839.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Drive_Backup_23188.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup_and_restore_15493.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

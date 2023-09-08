@@ -274,6 +274,7 @@ Partial Class GestionCajeros
         'EditarCajeros
         '
         Me.EditarCajeros.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EditarCajeros.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.EditarCajeros.Controls.Add(Me.LTitulo)
         Me.EditarCajeros.Controls.Add(Me.TextBox2)
         Me.EditarCajeros.Controls.Add(Me.TextBox1)
@@ -325,9 +326,9 @@ Partial Class GestionCajeros
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 264)
+        Me.Panel1.Location = New System.Drawing.Point(3, 262)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 325)
+        Me.Panel1.Size = New System.Drawing.Size(798, 325)
         Me.Panel1.TabIndex = 3
         '
         'Panel2
@@ -347,7 +348,7 @@ Partial Class GestionCajeros
         Me.Panel2.Controls.Add(Me.LDni)
         Me.Panel2.Controls.Add(Me.LApellidoyNombre)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(394, 0)
+        Me.Panel2.Location = New System.Drawing.Point(392, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(406, 325)
         Me.Panel2.TabIndex = 1
@@ -588,6 +589,7 @@ Partial Class GestionCajeros
         '
         'Panel6
         '
+        Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.TextBox7)
         Me.Panel6.Controls.Add(Me.TextBox6)
