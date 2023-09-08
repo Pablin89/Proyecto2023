@@ -181,9 +181,6 @@
     <None Include="Resources\product_document_file_1512.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\2.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Fradel &amp; Spies.png" />
   </ItemGroup>
   <ItemGroup>

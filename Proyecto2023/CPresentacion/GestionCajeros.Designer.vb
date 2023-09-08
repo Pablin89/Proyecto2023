@@ -24,23 +24,6 @@ Partial Class GestionCajeros
     Private Sub InitializeComponent()
         Me.GestionarCajeros = New System.Windows.Forms.TabControl()
         Me.ConsultarCajeros = New System.Windows.Forms.TabPage()
-        Me.EditarCajeros = New System.Windows.Forms.TabPage()
-        Me.AgregarCajeros = New System.Windows.Forms.TabPage()
-        Me.ChBDni = New System.Windows.Forms.CheckBox()
-        Me.ChBApellido = New System.Windows.Forms.CheckBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.BBuscar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.LTitulo = New System.Windows.Forms.Label()
-        Me.LApellidoyNombre = New System.Windows.Forms.Label()
-        Me.LDni = New System.Windows.Forms.Label()
-        Me.LFechaNac = New System.Windows.Forms.Label()
-        Me.LDirección = New System.Windows.Forms.Label()
-        Me.LTelefono = New System.Windows.Forms.Label()
-        Me.LCorreo = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -56,47 +39,64 @@ Partial Class GestionCajeros
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TApellidoYNombre = New System.Windows.Forms.TextBox()
-        Me.TDni = New System.Windows.Forms.TextBox()
-        Me.TFechaNac = New System.Windows.Forms.TextBox()
-        Me.TDireccion = New System.Windows.Forms.TextBox()
-        Me.TTelefono = New System.Windows.Forms.TextBox()
-        Me.TCorreo = New System.Windows.Forms.TextBox()
+        Me.EditarCajeros = New System.Windows.Forms.TabPage()
+        Me.LTitulo = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BCambios = New System.Windows.Forms.Button()
-        Me.LApellido = New System.Windows.Forms.Label()
-        Me.LNombre = New System.Windows.Forms.Label()
-        Me.LFechaNacimiento = New System.Windows.Forms.Label()
-        Me.LDNI1 = New System.Windows.Forms.Label()
-        Me.LDireccion1 = New System.Windows.Forms.Label()
-        Me.LTelefono1 = New System.Windows.Forms.Label()
-        Me.LCorreo1 = New System.Windows.Forms.Label()
-        Me.LSexo = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.TCorreo = New System.Windows.Forms.TextBox()
+        Me.TTelefono = New System.Windows.Forms.TextBox()
+        Me.TDireccion = New System.Windows.Forms.TextBox()
+        Me.TFechaNac = New System.Windows.Forms.TextBox()
+        Me.TDni = New System.Windows.Forms.TextBox()
+        Me.TApellidoYNombre = New System.Windows.Forms.TextBox()
+        Me.LCorreo = New System.Windows.Forms.Label()
+        Me.LTelefono = New System.Windows.Forms.Label()
+        Me.LDirección = New System.Windows.Forms.Label()
+        Me.LFechaNac = New System.Windows.Forms.Label()
+        Me.LDni = New System.Windows.Forms.Label()
+        Me.LApellidoyNombre = New System.Windows.Forms.Label()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.ChBApellido = New System.Windows.Forms.CheckBox()
+        Me.ChBDni = New System.Windows.Forms.CheckBox()
+        Me.AgregarCajeros = New System.Windows.Forms.TabPage()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.LSexo = New System.Windows.Forms.Label()
+        Me.LCorreo1 = New System.Windows.Forms.Label()
+        Me.LTelefono1 = New System.Windows.Forms.Label()
+        Me.LDireccion1 = New System.Windows.Forms.Label()
+        Me.LDNI1 = New System.Windows.Forms.Label()
+        Me.LFechaNacimiento = New System.Windows.Forms.Label()
+        Me.LNombre = New System.Windows.Forms.Label()
+        Me.LApellido = New System.Windows.Forms.Label()
         Me.GestionarCajeros.SuspendLayout()
         Me.ConsultarCajeros.SuspendLayout()
-        Me.EditarCajeros.SuspendLayout()
-        Me.AgregarCajeros.SuspendLayout()
-        Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.EditarCajeros.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.AgregarCajeros.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
@@ -130,188 +130,6 @@ Partial Class GestionCajeros
         Me.ConsultarCajeros.Size = New System.Drawing.Size(806, 592)
         Me.ConsultarCajeros.TabIndex = 0
         Me.ConsultarCajeros.Text = "Consultar Cajeros"
-        '
-        'EditarCajeros
-        '
-        Me.EditarCajeros.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.EditarCajeros.Controls.Add(Me.LTitulo)
-        Me.EditarCajeros.Controls.Add(Me.TextBox2)
-        Me.EditarCajeros.Controls.Add(Me.TextBox1)
-        Me.EditarCajeros.Controls.Add(Me.BBuscar)
-        Me.EditarCajeros.Controls.Add(Me.Panel1)
-        Me.EditarCajeros.Controls.Add(Me.ChBApellido)
-        Me.EditarCajeros.Controls.Add(Me.ChBDni)
-        Me.EditarCajeros.Location = New System.Drawing.Point(4, 25)
-        Me.EditarCajeros.Name = "EditarCajeros"
-        Me.EditarCajeros.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditarCajeros.Size = New System.Drawing.Size(806, 592)
-        Me.EditarCajeros.TabIndex = 1
-        Me.EditarCajeros.Text = "Editar Cajeros"
-        '
-        'AgregarCajeros
-        '
-        Me.AgregarCajeros.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.AgregarCajeros.Controls.Add(Me.Panel5)
-        Me.AgregarCajeros.Controls.Add(Me.Button3)
-        Me.AgregarCajeros.Controls.Add(Me.Button2)
-        Me.AgregarCajeros.Controls.Add(Me.TextBox11)
-        Me.AgregarCajeros.Controls.Add(Me.Label8)
-        Me.AgregarCajeros.Controls.Add(Me.TextBox10)
-        Me.AgregarCajeros.Controls.Add(Me.TextBox9)
-        Me.AgregarCajeros.Controls.Add(Me.TextBox8)
-        Me.AgregarCajeros.Controls.Add(Me.Panel6)
-        Me.AgregarCajeros.Location = New System.Drawing.Point(4, 25)
-        Me.AgregarCajeros.Name = "AgregarCajeros"
-        Me.AgregarCajeros.Size = New System.Drawing.Size(806, 592)
-        Me.AgregarCajeros.TabIndex = 2
-        Me.AgregarCajeros.Text = "Agregar Cajeros"
-        '
-        'ChBDni
-        '
-        Me.ChBDni.AutoSize = True
-        Me.ChBDni.Location = New System.Drawing.Point(231, 88)
-        Me.ChBDni.Name = "ChBDni"
-        Me.ChBDni.Size = New System.Drawing.Size(50, 20)
-        Me.ChBDni.TabIndex = 1
-        Me.ChBDni.Text = "Dni"
-        Me.ChBDni.UseVisualStyleBackColor = True
-        '
-        'ChBApellido
-        '
-        Me.ChBApellido.AutoSize = True
-        Me.ChBApellido.Location = New System.Drawing.Point(231, 149)
-        Me.ChBApellido.Name = "ChBApellido"
-        Me.ChBApellido.Size = New System.Drawing.Size(85, 20)
-        Me.ChBApellido.TabIndex = 2
-        Me.ChBApellido.Text = "Apellido"
-        Me.ChBApellido.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Controls.Add(Me.DataGridView1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 264)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 325)
-        Me.Panel1.TabIndex = 3
-        '
-        'BBuscar
-        '
-        Me.BBuscar.Location = New System.Drawing.Point(321, 230)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(177, 28)
-        Me.BBuscar.TabIndex = 4
-        Me.BBuscar.Text = "Buscar Cajero"
-        Me.BBuscar.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(332, 86)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(214, 22)
-        Me.TextBox1.TabIndex = 5
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(332, 147)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(214, 22)
-        Me.TextBox2.TabIndex = 6
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(388, 325)
-        Me.DataGridView1.TabIndex = 0
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel2.Controls.Add(Me.BCambios)
-        Me.Panel2.Controls.Add(Me.TCorreo)
-        Me.Panel2.Controls.Add(Me.TTelefono)
-        Me.Panel2.Controls.Add(Me.TDireccion)
-        Me.Panel2.Controls.Add(Me.TFechaNac)
-        Me.Panel2.Controls.Add(Me.TDni)
-        Me.Panel2.Controls.Add(Me.TApellidoYNombre)
-        Me.Panel2.Controls.Add(Me.LCorreo)
-        Me.Panel2.Controls.Add(Me.LTelefono)
-        Me.Panel2.Controls.Add(Me.LDirección)
-        Me.Panel2.Controls.Add(Me.LFechaNac)
-        Me.Panel2.Controls.Add(Me.LDni)
-        Me.Panel2.Controls.Add(Me.LApellidoyNombre)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(394, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(406, 325)
-        Me.Panel2.TabIndex = 1
-        '
-        'LTitulo
-        '
-        Me.LTitulo.AutoSize = True
-        Me.LTitulo.Location = New System.Drawing.Point(270, 37)
-        Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
-        Me.LTitulo.TabIndex = 7
-        Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
-        '
-        'LApellidoyNombre
-        '
-        Me.LApellidoyNombre.AutoSize = True
-        Me.LApellidoyNombre.Location = New System.Drawing.Point(44, 27)
-        Me.LApellidoyNombre.Name = "LApellidoyNombre"
-        Me.LApellidoyNombre.Size = New System.Drawing.Size(138, 16)
-        Me.LApellidoyNombre.TabIndex = 0
-        Me.LApellidoyNombre.Text = "Apellido y nombre:"
-        '
-        'LDni
-        '
-        Me.LDni.AutoSize = True
-        Me.LDni.Location = New System.Drawing.Point(144, 70)
-        Me.LDni.Name = "LDni"
-        Me.LDni.Size = New System.Drawing.Size(38, 16)
-        Me.LDni.TabIndex = 1
-        Me.LDni.Text = "DNI:"
-        '
-        'LFechaNac
-        '
-        Me.LFechaNac.AutoSize = True
-        Me.LFechaNac.Location = New System.Drawing.Point(23, 109)
-        Me.LFechaNac.Name = "LFechaNac"
-        Me.LFechaNac.Size = New System.Drawing.Size(159, 16)
-        Me.LFechaNac.TabIndex = 2
-        Me.LFechaNac.Text = "Fecha de Nacimiento:"
-        '
-        'LDirección
-        '
-        Me.LDirección.AutoSize = True
-        Me.LDirección.Location = New System.Drawing.Point(104, 152)
-        Me.LDirección.Name = "LDirección"
-        Me.LDirección.Size = New System.Drawing.Size(78, 16)
-        Me.LDirección.TabIndex = 3
-        Me.LDirección.Text = "Dirección:"
-        '
-        'LTelefono
-        '
-        Me.LTelefono.AutoSize = True
-        Me.LTelefono.Location = New System.Drawing.Point(108, 196)
-        Me.LTelefono.Name = "LTelefono"
-        Me.LTelefono.Size = New System.Drawing.Size(74, 16)
-        Me.LTelefono.TabIndex = 4
-        Me.LTelefono.Text = "Teléfono:"
-        '
-        'LCorreo
-        '
-        Me.LCorreo.AutoSize = True
-        Me.LCorreo.Location = New System.Drawing.Point(123, 235)
-        Me.LCorreo.Name = "LCorreo"
-        Me.LCorreo.Size = New System.Drawing.Size(59, 16)
-        Me.LCorreo.TabIndex = 5
-        Me.LCorreo.Text = "Correo:"
         '
         'Label1
         '
@@ -453,47 +271,86 @@ Partial Class GestionCajeros
         Me.CheckBox2.Text = "Dni"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'TApellidoYNombre
+        'EditarCajeros
         '
-        Me.TApellidoYNombre.Location = New System.Drawing.Point(192, 24)
-        Me.TApellidoYNombre.Name = "TApellidoYNombre"
-        Me.TApellidoYNombre.Size = New System.Drawing.Size(199, 22)
-        Me.TApellidoYNombre.TabIndex = 6
+        Me.EditarCajeros.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EditarCajeros.Controls.Add(Me.LTitulo)
+        Me.EditarCajeros.Controls.Add(Me.TextBox2)
+        Me.EditarCajeros.Controls.Add(Me.TextBox1)
+        Me.EditarCajeros.Controls.Add(Me.BBuscar)
+        Me.EditarCajeros.Controls.Add(Me.Panel1)
+        Me.EditarCajeros.Controls.Add(Me.ChBApellido)
+        Me.EditarCajeros.Controls.Add(Me.ChBDni)
+        Me.EditarCajeros.Location = New System.Drawing.Point(4, 25)
+        Me.EditarCajeros.Name = "EditarCajeros"
+        Me.EditarCajeros.Padding = New System.Windows.Forms.Padding(3)
+        Me.EditarCajeros.Size = New System.Drawing.Size(806, 592)
+        Me.EditarCajeros.TabIndex = 1
+        Me.EditarCajeros.Text = "Editar Cajeros"
         '
-        'TDni
+        'LTitulo
         '
-        Me.TDni.Location = New System.Drawing.Point(192, 67)
-        Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(199, 22)
-        Me.TDni.TabIndex = 7
+        Me.LTitulo.AutoSize = True
+        Me.LTitulo.Location = New System.Drawing.Point(270, 37)
+        Me.LTitulo.Name = "LTitulo"
+        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
+        Me.LTitulo.TabIndex = 7
+        Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
-        'TFechaNac
+        'TextBox2
         '
-        Me.TFechaNac.Location = New System.Drawing.Point(192, 106)
-        Me.TFechaNac.Name = "TFechaNac"
-        Me.TFechaNac.Size = New System.Drawing.Size(199, 22)
-        Me.TFechaNac.TabIndex = 8
+        Me.TextBox2.Location = New System.Drawing.Point(332, 147)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(214, 22)
+        Me.TextBox2.TabIndex = 6
         '
-        'TDireccion
+        'TextBox1
         '
-        Me.TDireccion.Location = New System.Drawing.Point(192, 149)
-        Me.TDireccion.Name = "TDireccion"
-        Me.TDireccion.Size = New System.Drawing.Size(199, 22)
-        Me.TDireccion.TabIndex = 9
+        Me.TextBox1.Location = New System.Drawing.Point(332, 86)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(214, 22)
+        Me.TextBox1.TabIndex = 5
         '
-        'TTelefono
+        'BBuscar
         '
-        Me.TTelefono.Location = New System.Drawing.Point(192, 193)
-        Me.TTelefono.Name = "TTelefono"
-        Me.TTelefono.Size = New System.Drawing.Size(199, 22)
-        Me.TTelefono.TabIndex = 10
+        Me.BBuscar.Location = New System.Drawing.Point(321, 230)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(177, 28)
+        Me.BBuscar.TabIndex = 4
+        Me.BBuscar.Text = "Buscar Cajero"
+        Me.BBuscar.UseVisualStyleBackColor = True
         '
-        'TCorreo
+        'Panel1
         '
-        Me.TCorreo.Location = New System.Drawing.Point(192, 232)
-        Me.TCorreo.Name = "TCorreo"
-        Me.TCorreo.Size = New System.Drawing.Size(199, 22)
-        Me.TCorreo.TabIndex = 11
+        Me.Panel1.Controls.Add(Me.Panel2)
+        Me.Panel1.Controls.Add(Me.DataGridView1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel1.Location = New System.Drawing.Point(3, 264)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(800, 325)
+        Me.Panel1.TabIndex = 3
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel2.Controls.Add(Me.BCambios)
+        Me.Panel2.Controls.Add(Me.TCorreo)
+        Me.Panel2.Controls.Add(Me.TTelefono)
+        Me.Panel2.Controls.Add(Me.TDireccion)
+        Me.Panel2.Controls.Add(Me.TFechaNac)
+        Me.Panel2.Controls.Add(Me.TDni)
+        Me.Panel2.Controls.Add(Me.TApellidoYNombre)
+        Me.Panel2.Controls.Add(Me.LCorreo)
+        Me.Panel2.Controls.Add(Me.LTelefono)
+        Me.Panel2.Controls.Add(Me.LDirección)
+        Me.Panel2.Controls.Add(Me.LFechaNac)
+        Me.Panel2.Controls.Add(Me.LDni)
+        Me.Panel2.Controls.Add(Me.LApellidoyNombre)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel2.Location = New System.Drawing.Point(394, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(406, 325)
+        Me.Panel2.TabIndex = 1
         '
         'BCambios
         '
@@ -504,170 +361,158 @@ Partial Class GestionCajeros
         Me.BCambios.Text = "Confirmar Cambios"
         Me.BCambios.UseVisualStyleBackColor = True
         '
-        'LApellido
+        'TCorreo
         '
-        Me.LApellido.AutoSize = True
-        Me.LApellido.Location = New System.Drawing.Point(105, 81)
-        Me.LApellido.Name = "LApellido"
-        Me.LApellido.Size = New System.Drawing.Size(66, 16)
-        Me.LApellido.TabIndex = 0
-        Me.LApellido.Text = "Apellido"
+        Me.TCorreo.Location = New System.Drawing.Point(192, 232)
+        Me.TCorreo.Name = "TCorreo"
+        Me.TCorreo.Size = New System.Drawing.Size(199, 22)
+        Me.TCorreo.TabIndex = 11
         '
-        'LNombre
+        'TTelefono
         '
-        Me.LNombre.AutoSize = True
-        Me.LNombre.Location = New System.Drawing.Point(95, 125)
-        Me.LNombre.Name = "LNombre"
-        Me.LNombre.Size = New System.Drawing.Size(76, 16)
-        Me.LNombre.TabIndex = 1
-        Me.LNombre.Text = "Nombre/s"
+        Me.TTelefono.Location = New System.Drawing.Point(192, 193)
+        Me.TTelefono.Name = "TTelefono"
+        Me.TTelefono.Size = New System.Drawing.Size(199, 22)
+        Me.TTelefono.TabIndex = 10
         '
-        'LFechaNacimiento
+        'TDireccion
         '
-        Me.LFechaNacimiento.AutoSize = True
-        Me.LFechaNacimiento.Location = New System.Drawing.Point(16, 169)
-        Me.LFechaNacimiento.Name = "LFechaNacimiento"
-        Me.LFechaNacimiento.Size = New System.Drawing.Size(155, 16)
-        Me.LFechaNacimiento.TabIndex = 2
-        Me.LFechaNacimiento.Text = "Fecha de Nacimiento"
+        Me.TDireccion.Location = New System.Drawing.Point(192, 149)
+        Me.TDireccion.Name = "TDireccion"
+        Me.TDireccion.Size = New System.Drawing.Size(199, 22)
+        Me.TDireccion.TabIndex = 9
         '
-        'LDNI1
+        'TFechaNac
         '
-        Me.LDNI1.AutoSize = True
-        Me.LDNI1.Location = New System.Drawing.Point(137, 213)
-        Me.LDNI1.Name = "LDNI1"
-        Me.LDNI1.Size = New System.Drawing.Size(34, 16)
-        Me.LDNI1.TabIndex = 3
-        Me.LDNI1.Text = "DNI"
+        Me.TFechaNac.Location = New System.Drawing.Point(192, 106)
+        Me.TFechaNac.Name = "TFechaNac"
+        Me.TFechaNac.Size = New System.Drawing.Size(199, 22)
+        Me.TFechaNac.TabIndex = 8
         '
-        'LDireccion1
+        'TDni
         '
-        Me.LDireccion1.AutoSize = True
-        Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
-        Me.LDireccion1.Name = "LDireccion1"
-        Me.LDireccion1.Size = New System.Drawing.Size(74, 16)
-        Me.LDireccion1.TabIndex = 4
-        Me.LDireccion1.Text = "Direccion"
+        Me.TDni.Location = New System.Drawing.Point(192, 67)
+        Me.TDni.Name = "TDni"
+        Me.TDni.Size = New System.Drawing.Size(199, 22)
+        Me.TDni.TabIndex = 7
         '
-        'LTelefono1
+        'TApellidoYNombre
         '
-        Me.LTelefono1.AutoSize = True
-        Me.LTelefono1.Location = New System.Drawing.Point(469, 125)
-        Me.LTelefono1.Name = "LTelefono1"
-        Me.LTelefono1.Size = New System.Drawing.Size(70, 16)
-        Me.LTelefono1.TabIndex = 5
-        Me.LTelefono1.Text = "Telefono"
+        Me.TApellidoYNombre.Location = New System.Drawing.Point(192, 24)
+        Me.TApellidoYNombre.Name = "TApellidoYNombre"
+        Me.TApellidoYNombre.Size = New System.Drawing.Size(199, 22)
+        Me.TApellidoYNombre.TabIndex = 6
         '
-        'LCorreo1
+        'LCorreo
         '
-        Me.LCorreo1.AutoSize = True
-        Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
-        Me.LCorreo1.Name = "LCorreo1"
-        Me.LCorreo1.Size = New System.Drawing.Size(55, 16)
-        Me.LCorreo1.TabIndex = 6
-        Me.LCorreo1.Text = "Correo"
+        Me.LCorreo.AutoSize = True
+        Me.LCorreo.Location = New System.Drawing.Point(123, 235)
+        Me.LCorreo.Name = "LCorreo"
+        Me.LCorreo.Size = New System.Drawing.Size(59, 16)
+        Me.LCorreo.TabIndex = 5
+        Me.LCorreo.Text = "Correo:"
         '
-        'LSexo
+        'LTelefono
         '
-        Me.LSexo.AutoSize = True
-        Me.LSexo.Location = New System.Drawing.Point(496, 213)
-        Me.LSexo.Name = "LSexo"
-        Me.LSexo.Size = New System.Drawing.Size(43, 16)
-        Me.LSexo.TabIndex = 7
-        Me.LSexo.Text = "Sexo"
+        Me.LTelefono.AutoSize = True
+        Me.LTelefono.Location = New System.Drawing.Point(108, 196)
+        Me.LTelefono.Name = "LTelefono"
+        Me.LTelefono.Size = New System.Drawing.Size(74, 16)
+        Me.LTelefono.TabIndex = 4
+        Me.LTelefono.Text = "Teléfono:"
         '
-        'ListBox1
+        'LDirección
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 16
-        Me.ListBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ListBox1.Location = New System.Drawing.Point(545, 212)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(158, 20)
-        Me.ListBox1.TabIndex = 8
+        Me.LDirección.AutoSize = True
+        Me.LDirección.Location = New System.Drawing.Point(104, 152)
+        Me.LDirección.Name = "LDirección"
+        Me.LDirección.Size = New System.Drawing.Size(78, 16)
+        Me.LDirección.TabIndex = 3
+        Me.LDirección.Text = "Dirección:"
         '
-        'DateTimePicker1
+        'LFechaNac
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 164)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(198, 22)
-        Me.DateTimePicker1.TabIndex = 9
+        Me.LFechaNac.AutoSize = True
+        Me.LFechaNac.Location = New System.Drawing.Point(23, 109)
+        Me.LFechaNac.Name = "LFechaNac"
+        Me.LFechaNac.Size = New System.Drawing.Size(159, 16)
+        Me.LFechaNac.TabIndex = 2
+        Me.LFechaNac.Text = "Fecha de Nacimiento:"
         '
-        'TextBox5
+        'LDni
         '
-        Me.TextBox5.Location = New System.Drawing.Point(194, 78)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox5.TabIndex = 10
+        Me.LDni.AutoSize = True
+        Me.LDni.Location = New System.Drawing.Point(144, 70)
+        Me.LDni.Name = "LDni"
+        Me.LDni.Size = New System.Drawing.Size(38, 16)
+        Me.LDni.TabIndex = 1
+        Me.LDni.Text = "DNI:"
         '
-        'TextBox6
+        'LApellidoyNombre
         '
-        Me.TextBox6.Location = New System.Drawing.Point(194, 122)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox6.TabIndex = 11
+        Me.LApellidoyNombre.AutoSize = True
+        Me.LApellidoyNombre.Location = New System.Drawing.Point(44, 27)
+        Me.LApellidoyNombre.Name = "LApellidoyNombre"
+        Me.LApellidoyNombre.Size = New System.Drawing.Size(138, 16)
+        Me.LApellidoyNombre.TabIndex = 0
+        Me.LApellidoyNombre.Text = "Apellido y nombre:"
         '
-        'TextBox7
+        'DataGridView1
         '
-        Me.TextBox7.Location = New System.Drawing.Point(194, 210)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox7.TabIndex = 12
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(388, 325)
+        Me.DataGridView1.TabIndex = 0
         '
-        'TextBox8
+        'ChBApellido
         '
-        Me.TextBox8.Location = New System.Drawing.Point(548, 173)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(227, 22)
-        Me.TextBox8.TabIndex = 13
+        Me.ChBApellido.AutoSize = True
+        Me.ChBApellido.Location = New System.Drawing.Point(231, 149)
+        Me.ChBApellido.Name = "ChBApellido"
+        Me.ChBApellido.Size = New System.Drawing.Size(85, 20)
+        Me.ChBApellido.TabIndex = 2
+        Me.ChBApellido.Text = "Apellido"
+        Me.ChBApellido.UseVisualStyleBackColor = True
         '
-        'TextBox9
+        'ChBDni
         '
-        Me.TextBox9.Location = New System.Drawing.Point(548, 211)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(227, 22)
-        Me.TextBox9.TabIndex = 14
+        Me.ChBDni.AutoSize = True
+        Me.ChBDni.Location = New System.Drawing.Point(231, 88)
+        Me.ChBDni.Name = "ChBDni"
+        Me.ChBDni.Size = New System.Drawing.Size(50, 20)
+        Me.ChBDni.TabIndex = 1
+        Me.ChBDni.Text = "Dni"
+        Me.ChBDni.UseVisualStyleBackColor = True
         '
-        'TextBox10
+        'AgregarCajeros
         '
-        Me.TextBox10.Location = New System.Drawing.Point(548, 258)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(227, 22)
-        Me.TextBox10.TabIndex = 15
+        Me.AgregarCajeros.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.AgregarCajeros.Controls.Add(Me.Panel5)
+        Me.AgregarCajeros.Controls.Add(Me.Button3)
+        Me.AgregarCajeros.Controls.Add(Me.Button2)
+        Me.AgregarCajeros.Controls.Add(Me.TextBox11)
+        Me.AgregarCajeros.Controls.Add(Me.Label8)
+        Me.AgregarCajeros.Controls.Add(Me.TextBox10)
+        Me.AgregarCajeros.Controls.Add(Me.TextBox9)
+        Me.AgregarCajeros.Controls.Add(Me.TextBox8)
+        Me.AgregarCajeros.Controls.Add(Me.Panel6)
+        Me.AgregarCajeros.Location = New System.Drawing.Point(4, 25)
+        Me.AgregarCajeros.Name = "AgregarCajeros"
+        Me.AgregarCajeros.Size = New System.Drawing.Size(806, 592)
+        Me.AgregarCajeros.TabIndex = 2
+        Me.AgregarCajeros.Text = "Agregar Cajeros"
         '
-        'Label8
+        'Panel5
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(36, 25)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(526, 16)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Ingresar DNI del nuevo cajero para comprobar que  no existe en el sistema"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Location = New System.Drawing.Point(568, 22)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox11.TabIndex = 17
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(568, 50)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 28)
-        Me.Button2.TabIndex = 18
-        Me.Button2.Text = "Buscar"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(307, 442)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(188, 34)
-        Me.Button3.TabIndex = 19
-        Me.Button3.Text = "Confirmar Datos"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel5.Controls.Add(Me.TextBox12)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel5.Location = New System.Drawing.Point(0, 560)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(806, 32)
+        Me.Panel5.TabIndex = 21
         '
         'TextBox12
         '
@@ -686,15 +531,60 @@ Partial Class GestionCajeros
     " y contraseña al nuevo cajero."
         Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Panel5
+        'Button3
         '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel5.Controls.Add(Me.TextBox12)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 560)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(806, 32)
-        Me.Panel5.TabIndex = 21
+        Me.Button3.Location = New System.Drawing.Point(307, 442)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(188, 34)
+        Me.Button3.TabIndex = 19
+        Me.Button3.Text = "Confirmar Datos"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(568, 50)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(80, 28)
+        Me.Button2.TabIndex = 18
+        Me.Button2.Text = "Buscar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(568, 22)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox11.TabIndex = 17
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(36, 25)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(526, 16)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Ingresar DNI del nuevo cajero para comprobar que  no existe en el sistema"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(548, 258)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(227, 22)
+        Me.TextBox10.TabIndex = 15
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(548, 211)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(227, 22)
+        Me.TextBox9.TabIndex = 14
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(548, 173)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(227, 22)
+        Me.TextBox8.TabIndex = 13
         '
         'Panel6
         '
@@ -727,6 +617,116 @@ Partial Class GestionCajeros
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Completar los campos para el registro del nuevo cajero"
         '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(194, 210)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox7.TabIndex = 12
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(194, 122)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox6.TabIndex = 11
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(194, 78)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox5.TabIndex = 10
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 164)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(198, 22)
+        Me.DateTimePicker1.TabIndex = 9
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 16
+        Me.ListBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
+        Me.ListBox1.Location = New System.Drawing.Point(545, 212)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(158, 20)
+        Me.ListBox1.TabIndex = 8
+        '
+        'LSexo
+        '
+        Me.LSexo.AutoSize = True
+        Me.LSexo.Location = New System.Drawing.Point(496, 213)
+        Me.LSexo.Name = "LSexo"
+        Me.LSexo.Size = New System.Drawing.Size(43, 16)
+        Me.LSexo.TabIndex = 7
+        Me.LSexo.Text = "Sexo"
+        '
+        'LCorreo1
+        '
+        Me.LCorreo1.AutoSize = True
+        Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
+        Me.LCorreo1.Name = "LCorreo1"
+        Me.LCorreo1.Size = New System.Drawing.Size(55, 16)
+        Me.LCorreo1.TabIndex = 6
+        Me.LCorreo1.Text = "Correo"
+        '
+        'LTelefono1
+        '
+        Me.LTelefono1.AutoSize = True
+        Me.LTelefono1.Location = New System.Drawing.Point(469, 125)
+        Me.LTelefono1.Name = "LTelefono1"
+        Me.LTelefono1.Size = New System.Drawing.Size(70, 16)
+        Me.LTelefono1.TabIndex = 5
+        Me.LTelefono1.Text = "Telefono"
+        '
+        'LDireccion1
+        '
+        Me.LDireccion1.AutoSize = True
+        Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
+        Me.LDireccion1.Name = "LDireccion1"
+        Me.LDireccion1.Size = New System.Drawing.Size(74, 16)
+        Me.LDireccion1.TabIndex = 4
+        Me.LDireccion1.Text = "Direccion"
+        '
+        'LDNI1
+        '
+        Me.LDNI1.AutoSize = True
+        Me.LDNI1.Location = New System.Drawing.Point(137, 213)
+        Me.LDNI1.Name = "LDNI1"
+        Me.LDNI1.Size = New System.Drawing.Size(34, 16)
+        Me.LDNI1.TabIndex = 3
+        Me.LDNI1.Text = "DNI"
+        '
+        'LFechaNacimiento
+        '
+        Me.LFechaNacimiento.AutoSize = True
+        Me.LFechaNacimiento.Location = New System.Drawing.Point(16, 169)
+        Me.LFechaNacimiento.Name = "LFechaNacimiento"
+        Me.LFechaNacimiento.Size = New System.Drawing.Size(155, 16)
+        Me.LFechaNacimiento.TabIndex = 2
+        Me.LFechaNacimiento.Text = "Fecha de Nacimiento"
+        '
+        'LNombre
+        '
+        Me.LNombre.AutoSize = True
+        Me.LNombre.Location = New System.Drawing.Point(95, 125)
+        Me.LNombre.Name = "LNombre"
+        Me.LNombre.Size = New System.Drawing.Size(76, 16)
+        Me.LNombre.TabIndex = 1
+        Me.LNombre.Text = "Nombre/s"
+        '
+        'LApellido
+        '
+        Me.LApellido.AutoSize = True
+        Me.LApellido.Location = New System.Drawing.Point(105, 81)
+        Me.LApellido.Name = "LApellido"
+        Me.LApellido.Size = New System.Drawing.Size(66, 16)
+        Me.LApellido.TabIndex = 0
+        Me.LApellido.Text = "Apellido"
+        '
         'GestionCajeros
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -740,18 +740,18 @@ Partial Class GestionCajeros
         Me.GestionarCajeros.ResumeLayout(False)
         Me.ConsultarCajeros.ResumeLayout(False)
         Me.ConsultarCajeros.PerformLayout()
-        Me.EditarCajeros.ResumeLayout(False)
-        Me.EditarCajeros.PerformLayout()
-        Me.AgregarCajeros.ResumeLayout(False)
-        Me.AgregarCajeros.PerformLayout()
-        Me.Panel1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.EditarCajeros.ResumeLayout(False)
+        Me.EditarCajeros.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.AgregarCajeros.ResumeLayout(False)
+        Me.AgregarCajeros.PerformLayout()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
