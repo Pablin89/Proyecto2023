@@ -24,6 +24,8 @@ Partial Class GestionProductos
     Private Sub InitializeComponent()
         Me.GestionarProductos = New System.Windows.Forms.TabControl()
         Me.ConsultarProductos = New System.Windows.Forms.TabPage()
+        Me.TCodigo = New System.Windows.Forms.TextBox()
+        Me.ChCodigo = New System.Windows.Forms.CheckBox()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.ChCategoria = New System.Windows.Forms.CheckBox()
@@ -80,6 +82,19 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LCodigo = New System.Windows.Forms.Label()
+        Me.LStockMinimo = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.LCódigo1 = New System.Windows.Forms.Label()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.LStockMinimo1 = New System.Windows.Forms.Label()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.LCódigo2 = New System.Windows.Forms.Label()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.LStockMinimo2 = New System.Windows.Forms.Label()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -112,6 +127,9 @@ Partial Class GestionProductos
         'ConsultarProductos
         '
         Me.ConsultarProductos.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.ConsultarProductos.Controls.Add(Me.Button1)
+        Me.ConsultarProductos.Controls.Add(Me.TCodigo)
+        Me.ConsultarProductos.Controls.Add(Me.ChCodigo)
         Me.ConsultarProductos.Controls.Add(Me.LTitulo)
         Me.ConsultarProductos.Controls.Add(Me.TextBox2)
         Me.ConsultarProductos.Controls.Add(Me.ChCategoria)
@@ -125,10 +143,27 @@ Partial Class GestionProductos
         Me.ConsultarProductos.TabIndex = 0
         Me.ConsultarProductos.Text = "Consultar Productos"
         '
+        'TCodigo
+        '
+        Me.TCodigo.Location = New System.Drawing.Point(374, 55)
+        Me.TCodigo.Name = "TCodigo"
+        Me.TCodigo.Size = New System.Drawing.Size(225, 22)
+        Me.TCodigo.TabIndex = 10
+        '
+        'ChCodigo
+        '
+        Me.ChCodigo.AutoSize = True
+        Me.ChCodigo.Location = New System.Drawing.Point(194, 57)
+        Me.ChCodigo.Name = "ChCodigo"
+        Me.ChCodigo.Size = New System.Drawing.Size(169, 20)
+        Me.ChCodigo.TabIndex = 9
+        Me.ChCodigo.Text = "Código del Producto"
+        Me.ChCodigo.UseVisualStyleBackColor = True
+        '
         'LTitulo
         '
         Me.LTitulo.AutoSize = True
-        Me.LTitulo.Location = New System.Drawing.Point(261, 31)
+        Me.LTitulo.Location = New System.Drawing.Point(263, 17)
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(240, 16)
         Me.LTitulo.TabIndex = 8
@@ -136,7 +171,7 @@ Partial Class GestionProductos
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(359, 147)
+        Me.TextBox2.Location = New System.Drawing.Point(374, 143)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(225, 22)
         Me.TextBox2.TabIndex = 4
@@ -144,7 +179,7 @@ Partial Class GestionProductos
         'ChCategoria
         '
         Me.ChCategoria.AutoSize = True
-        Me.ChCategoria.Location = New System.Drawing.Point(179, 149)
+        Me.ChCategoria.Location = New System.Drawing.Point(194, 143)
         Me.ChCategoria.Name = "ChCategoria"
         Me.ChCategoria.Size = New System.Drawing.Size(99, 20)
         Me.ChCategoria.TabIndex = 3
@@ -153,7 +188,7 @@ Partial Class GestionProductos
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(359, 89)
+        Me.TextBox1.Location = New System.Drawing.Point(374, 99)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(225, 22)
         Me.TextBox1.TabIndex = 2
@@ -161,7 +196,7 @@ Partial Class GestionProductos
         'ChNombreProducto
         '
         Me.ChNombreProducto.AutoSize = True
-        Me.ChNombreProducto.Location = New System.Drawing.Point(179, 91)
+        Me.ChNombreProducto.Location = New System.Drawing.Point(194, 101)
         Me.ChNombreProducto.Name = "ChNombreProducto"
         Me.ChNombreProducto.Size = New System.Drawing.Size(174, 20)
         Me.ChNombreProducto.TabIndex = 1
@@ -182,6 +217,8 @@ Partial Class GestionProductos
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.LStockMinimo)
+        Me.Panel2.Controls.Add(Me.LCodigo)
         Me.Panel2.Controls.Add(Me.LEstado)
         Me.Panel2.Controls.Add(Me.LCategoria)
         Me.Panel2.Controls.Add(Me.LStock)
@@ -197,7 +234,7 @@ Partial Class GestionProductos
         'LEstado
         '
         Me.LEstado.AutoSize = True
-        Me.LEstado.Location = New System.Drawing.Point(18, 312)
+        Me.LEstado.Location = New System.Drawing.Point(18, 323)
         Me.LEstado.Name = "LEstado"
         Me.LEstado.Size = New System.Drawing.Size(57, 16)
         Me.LEstado.TabIndex = 5
@@ -206,7 +243,7 @@ Partial Class GestionProductos
         'LCategoria
         '
         Me.LCategoria.AutoSize = True
-        Me.LCategoria.Location = New System.Drawing.Point(18, 141)
+        Me.LCategoria.Location = New System.Drawing.Point(18, 179)
         Me.LCategoria.Name = "LCategoria"
         Me.LCategoria.Size = New System.Drawing.Size(76, 16)
         Me.LCategoria.TabIndex = 4
@@ -215,7 +252,7 @@ Partial Class GestionProductos
         'LStock
         '
         Me.LStock.AutoSize = True
-        Me.LStock.Location = New System.Drawing.Point(18, 259)
+        Me.LStock.Location = New System.Drawing.Point(18, 251)
         Me.LStock.Name = "LStock"
         Me.LStock.Size = New System.Drawing.Size(47, 16)
         Me.LStock.TabIndex = 3
@@ -224,7 +261,7 @@ Partial Class GestionProductos
         'LPrecio
         '
         Me.LPrecio.AutoSize = True
-        Me.LPrecio.Location = New System.Drawing.Point(18, 203)
+        Me.LPrecio.Location = New System.Drawing.Point(18, 215)
         Me.LPrecio.Name = "LPrecio"
         Me.LPrecio.Size = New System.Drawing.Size(53, 16)
         Me.LPrecio.TabIndex = 2
@@ -233,7 +270,7 @@ Partial Class GestionProductos
         'LDescripcion
         '
         Me.LDescripcion.AutoSize = True
-        Me.LDescripcion.Location = New System.Drawing.Point(18, 73)
+        Me.LDescripcion.Location = New System.Drawing.Point(18, 94)
         Me.LDescripcion.Name = "LDescripcion"
         Me.LDescripcion.Size = New System.Drawing.Size(91, 16)
         Me.LDescripcion.TabIndex = 1
@@ -263,6 +300,8 @@ Partial Class GestionProductos
         'EditarProductos
         '
         Me.EditarProductos.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EditarProductos.Controls.Add(Me.TextBox8)
+        Me.EditarProductos.Controls.Add(Me.CheckBox1)
         Me.EditarProductos.Controls.Add(Me.Label1)
         Me.EditarProductos.Controls.Add(Me.TextBox3)
         Me.EditarProductos.Controls.Add(Me.TextBox4)
@@ -288,21 +327,21 @@ Partial Class GestionProductos
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(367, 137)
+        Me.TextBox3.Location = New System.Drawing.Point(377, 150)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(214, 22)
         Me.TextBox3.TabIndex = 13
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(367, 85)
+        Me.TextBox4.Location = New System.Drawing.Point(376, 109)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(214, 22)
         Me.TextBox4.TabIndex = 12
         '
         'BBuscar
         '
-        Me.BBuscar.Location = New System.Drawing.Point(321, 213)
+        Me.BBuscar.Location = New System.Drawing.Point(317, 194)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(177, 28)
         Me.BBuscar.TabIndex = 11
@@ -314,15 +353,19 @@ Partial Class GestionProductos
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 261)
+        Me.Panel3.Location = New System.Drawing.Point(3, 228)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(800, 325)
+        Me.Panel3.Size = New System.Drawing.Size(800, 358)
         Me.Panel3.TabIndex = 10
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.TextBox10)
+        Me.Panel4.Controls.Add(Me.LStockMinimo1)
+        Me.Panel4.Controls.Add(Me.TextBox9)
+        Me.Panel4.Controls.Add(Me.LCódigo1)
         Me.Panel4.Controls.Add(Me.BCambios)
         Me.Panel4.Controls.Add(Me.TCorreo)
         Me.Panel4.Controls.Add(Me.TTelefono)
@@ -339,12 +382,12 @@ Partial Class GestionProductos
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(394, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(406, 325)
+        Me.Panel4.Size = New System.Drawing.Size(406, 358)
         Me.Panel4.TabIndex = 1
         '
         'BCambios
         '
-        Me.BCambios.Location = New System.Drawing.Point(147, 281)
+        Me.BCambios.Location = New System.Drawing.Point(128, 329)
         Me.BCambios.Name = "BCambios"
         Me.BCambios.Size = New System.Drawing.Size(172, 23)
         Me.BCambios.TabIndex = 12
@@ -353,42 +396,43 @@ Partial Class GestionProductos
         '
         'TCorreo
         '
-        Me.TCorreo.Location = New System.Drawing.Point(192, 232)
+        Me.TCorreo.Location = New System.Drawing.Point(192, 282)
         Me.TCorreo.Name = "TCorreo"
         Me.TCorreo.Size = New System.Drawing.Size(199, 22)
         Me.TCorreo.TabIndex = 11
         '
         'TTelefono
         '
-        Me.TTelefono.Location = New System.Drawing.Point(192, 193)
+        Me.TTelefono.Location = New System.Drawing.Point(192, 249)
         Me.TTelefono.Name = "TTelefono"
         Me.TTelefono.Size = New System.Drawing.Size(199, 22)
         Me.TTelefono.TabIndex = 10
         '
         'TDireccion
         '
-        Me.TDireccion.Location = New System.Drawing.Point(192, 149)
+        Me.TDireccion.Location = New System.Drawing.Point(192, 183)
         Me.TDireccion.Name = "TDireccion"
         Me.TDireccion.Size = New System.Drawing.Size(199, 22)
         Me.TDireccion.TabIndex = 9
         '
         'TFechaNac
         '
-        Me.TFechaNac.Location = New System.Drawing.Point(192, 106)
+        Me.TFechaNac.Location = New System.Drawing.Point(192, 150)
         Me.TFechaNac.Name = "TFechaNac"
         Me.TFechaNac.Size = New System.Drawing.Size(199, 22)
         Me.TFechaNac.TabIndex = 8
         '
         'TDni
         '
-        Me.TDni.Location = New System.Drawing.Point(192, 67)
+        Me.TDni.Location = New System.Drawing.Point(192, 79)
+        Me.TDni.Multiline = True
         Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(199, 22)
+        Me.TDni.Size = New System.Drawing.Size(199, 60)
         Me.TDni.TabIndex = 7
         '
         'TApellidoYNombre
         '
-        Me.TApellidoYNombre.Location = New System.Drawing.Point(192, 24)
+        Me.TApellidoYNombre.Location = New System.Drawing.Point(192, 13)
         Me.TApellidoYNombre.Name = "TApellidoYNombre"
         Me.TApellidoYNombre.Size = New System.Drawing.Size(199, 22)
         Me.TApellidoYNombre.TabIndex = 6
@@ -396,7 +440,7 @@ Partial Class GestionProductos
         'LEstado1
         '
         Me.LEstado1.AutoSize = True
-        Me.LEstado1.Location = New System.Drawing.Point(121, 235)
+        Me.LEstado1.Location = New System.Drawing.Point(121, 285)
         Me.LEstado1.Name = "LEstado1"
         Me.LEstado1.Size = New System.Drawing.Size(61, 16)
         Me.LEstado1.TabIndex = 5
@@ -405,7 +449,7 @@ Partial Class GestionProductos
         'LPrecio1
         '
         Me.LPrecio1.AutoSize = True
-        Me.LPrecio1.Location = New System.Drawing.Point(125, 193)
+        Me.LPrecio1.Location = New System.Drawing.Point(125, 252)
         Me.LPrecio1.Name = "LPrecio1"
         Me.LPrecio1.Size = New System.Drawing.Size(57, 16)
         Me.LPrecio1.TabIndex = 4
@@ -414,7 +458,7 @@ Partial Class GestionProductos
         'LStock1
         '
         Me.LStock1.AutoSize = True
-        Me.LStock1.Location = New System.Drawing.Point(131, 152)
+        Me.LStock1.Location = New System.Drawing.Point(131, 186)
         Me.LStock1.Name = "LStock1"
         Me.LStock1.Size = New System.Drawing.Size(51, 16)
         Me.LStock1.TabIndex = 3
@@ -423,7 +467,7 @@ Partial Class GestionProductos
         'LCtaegoria1
         '
         Me.LCtaegoria1.AutoSize = True
-        Me.LCtaegoria1.Location = New System.Drawing.Point(102, 112)
+        Me.LCtaegoria1.Location = New System.Drawing.Point(102, 153)
         Me.LCtaegoria1.Name = "LCtaegoria1"
         Me.LCtaegoria1.Size = New System.Drawing.Size(80, 16)
         Me.LCtaegoria1.TabIndex = 2
@@ -432,16 +476,16 @@ Partial Class GestionProductos
         'LDescripcion1
         '
         Me.LDescripcion1.AutoSize = True
-        Me.LDescripcion1.Location = New System.Drawing.Point(87, 67)
+        Me.LDescripcion1.Location = New System.Drawing.Point(87, 82)
         Me.LDescripcion1.Name = "LDescripcion1"
         Me.LDescripcion1.Size = New System.Drawing.Size(95, 16)
         Me.LDescripcion1.TabIndex = 1
-        Me.LDescripcion1.Text = "Descripcion:"
+        Me.LDescripcion1.Text = "Descripción:"
         '
         'LNombreProducto
         '
         Me.LNombreProducto.AutoSize = True
-        Me.LNombreProducto.Location = New System.Drawing.Point(24, 27)
+        Me.LNombreProducto.Location = New System.Drawing.Point(24, 16)
         Me.LNombreProducto.Name = "LNombreProducto"
         Me.LNombreProducto.Size = New System.Drawing.Size(158, 16)
         Me.LNombreProducto.TabIndex = 0
@@ -453,13 +497,13 @@ Partial Class GestionProductos
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(388, 325)
+        Me.DataGridView2.Size = New System.Drawing.Size(388, 358)
         Me.DataGridView2.TabIndex = 0
         '
         'ChBCategoria
         '
         Me.ChBCategoria.AutoSize = True
-        Me.ChBCategoria.Location = New System.Drawing.Point(238, 137)
+        Me.ChBCategoria.Location = New System.Drawing.Point(258, 150)
         Me.ChBCategoria.Name = "ChBCategoria"
         Me.ChBCategoria.Size = New System.Drawing.Size(95, 20)
         Me.ChBCategoria.TabIndex = 9
@@ -469,7 +513,7 @@ Partial Class GestionProductos
         'ChProducto
         '
         Me.ChProducto.AutoSize = True
-        Me.ChProducto.Location = New System.Drawing.Point(174, 85)
+        Me.ChProducto.Location = New System.Drawing.Point(179, 109)
         Me.ChProducto.Name = "ChProducto"
         Me.ChProducto.Size = New System.Drawing.Size(174, 20)
         Me.ChProducto.TabIndex = 8
@@ -533,6 +577,10 @@ Partial Class GestionProductos
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.TextBox13)
+        Me.Panel6.Controls.Add(Me.LStockMinimo2)
+        Me.Panel6.Controls.Add(Me.TextBox12)
+        Me.Panel6.Controls.Add(Me.LCódigo2)
         Me.Panel6.Controls.Add(Me.ComboBox2)
         Me.Panel6.Controls.Add(Me.ComboBox1)
         Me.Panel6.Controls.Add(Me.Label9)
@@ -549,23 +597,23 @@ Partial Class GestionProductos
         Me.Panel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Panel6.Location = New System.Drawing.Point(8, 82)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(790, 329)
+        Me.Panel6.Size = New System.Drawing.Size(790, 364)
         Me.Panel6.TabIndex = 31
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
         Me.ComboBox2.Items.AddRange(New Object() {"Activo", "Inactivo"})
-        Me.ComboBox2.Location = New System.Drawing.Point(534, 207)
+        Me.ComboBox2.Location = New System.Drawing.Point(552, 315)
         Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(237, 24)
+        Me.ComboBox2.Size = New System.Drawing.Size(211, 24)
         Me.ComboBox2.TabIndex = 26
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
-        Me.ComboBox1.Location = New System.Drawing.Point(194, 202)
+        Me.ComboBox1.Location = New System.Drawing.Point(177, 195)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(198, 24)
         Me.ComboBox1.TabIndex = 14
@@ -582,21 +630,21 @@ Partial Class GestionProductos
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(194, 268)
+        Me.TextBox7.Location = New System.Drawing.Point(177, 257)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(198, 22)
         Me.TextBox7.TabIndex = 12
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(194, 140)
+        Me.TextBox6.Location = New System.Drawing.Point(177, 135)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(198, 22)
         Me.TextBox6.TabIndex = 11
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(194, 78)
+        Me.TextBox5.Location = New System.Drawing.Point(177, 75)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(198, 22)
         Me.TextBox5.TabIndex = 10
@@ -604,16 +652,16 @@ Partial Class GestionProductos
         'TDescripcion2
         '
         Me.TDescripcion2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.TDescripcion2.Location = New System.Drawing.Point(534, 78)
+        Me.TDescripcion2.Location = New System.Drawing.Point(552, 135)
         Me.TDescripcion2.Multiline = True
         Me.TDescripcion2.Name = "TDescripcion2"
-        Me.TDescripcion2.Size = New System.Drawing.Size(237, 112)
+        Me.TDescripcion2.Size = New System.Drawing.Size(211, 144)
         Me.TDescripcion2.TabIndex = 23
         '
         'LEstadoInicial
         '
         Me.LEstadoInicial.AutoSize = True
-        Me.LEstadoInicial.Location = New System.Drawing.Point(426, 210)
+        Me.LEstadoInicial.Location = New System.Drawing.Point(444, 320)
         Me.LEstadoInicial.Name = "LEstadoInicial"
         Me.LEstadoInicial.Size = New System.Drawing.Size(102, 16)
         Me.LEstadoInicial.TabIndex = 7
@@ -622,16 +670,16 @@ Partial Class GestionProductos
         'LDescripcion2
         '
         Me.LDescripcion2.AutoSize = True
-        Me.LDescripcion2.Location = New System.Drawing.Point(437, 81)
+        Me.LDescripcion2.Location = New System.Drawing.Point(455, 138)
         Me.LDescripcion2.Name = "LDescripcion2"
         Me.LDescripcion2.Size = New System.Drawing.Size(91, 16)
         Me.LDescripcion2.TabIndex = 4
-        Me.LDescripcion2.Text = "Descripcion"
+        Me.LDescripcion2.Text = "Descripción"
         '
         'LStockInicial
         '
         Me.LStockInicial.AutoSize = True
-        Me.LStockInicial.Location = New System.Drawing.Point(79, 271)
+        Me.LStockInicial.Location = New System.Drawing.Point(79, 260)
         Me.LStockInicial.Name = "LStockInicial"
         Me.LStockInicial.Size = New System.Drawing.Size(92, 16)
         Me.LStockInicial.TabIndex = 3
@@ -640,7 +688,7 @@ Partial Class GestionProductos
         'LCategoria2
         '
         Me.LCategoria2.AutoSize = True
-        Me.LCategoria2.Location = New System.Drawing.Point(95, 205)
+        Me.LCategoria2.Location = New System.Drawing.Point(95, 198)
         Me.LCategoria2.Name = "LCategoria2"
         Me.LCategoria2.Size = New System.Drawing.Size(76, 16)
         Me.LCategoria2.TabIndex = 2
@@ -649,7 +697,7 @@ Partial Class GestionProductos
         'LPrecio2
         '
         Me.LPrecio2.AutoSize = True
-        Me.LPrecio2.Location = New System.Drawing.Point(117, 143)
+        Me.LPrecio2.Location = New System.Drawing.Point(117, 138)
         Me.LPrecio2.Name = "LPrecio2"
         Me.LPrecio2.Size = New System.Drawing.Size(53, 16)
         Me.LPrecio2.TabIndex = 1
@@ -663,6 +711,114 @@ Partial Class GestionProductos
         Me.LNombre2.Size = New System.Drawing.Size(154, 16)
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(302, 201)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(177, 28)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Buscar Producto"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'LCodigo
+        '
+        Me.LCodigo.AutoSize = True
+        Me.LCodigo.Location = New System.Drawing.Point(18, 53)
+        Me.LCodigo.Name = "LCodigo"
+        Me.LCodigo.Size = New System.Drawing.Size(58, 16)
+        Me.LCodigo.TabIndex = 6
+        Me.LCodigo.Text = "Codigo"
+        '
+        'LStockMinimo
+        '
+        Me.LStockMinimo.AutoSize = True
+        Me.LStockMinimo.Location = New System.Drawing.Point(18, 287)
+        Me.LStockMinimo.Name = "LStockMinimo"
+        Me.LStockMinimo.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo.TabIndex = 7
+        Me.LStockMinimo.Text = "Stock mínimo"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(376, 68)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(225, 22)
+        Me.TextBox8.TabIndex = 16
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(184, 68)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(169, 20)
+        Me.CheckBox1.TabIndex = 15
+        Me.CheckBox1.Text = "Código del Producto"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(192, 46)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(199, 22)
+        Me.TextBox9.TabIndex = 14
+        '
+        'LCódigo1
+        '
+        Me.LCódigo1.AutoSize = True
+        Me.LCódigo1.Location = New System.Drawing.Point(24, 51)
+        Me.LCódigo1.Name = "LCódigo1"
+        Me.LCódigo1.Size = New System.Drawing.Size(153, 16)
+        Me.LCódigo1.TabIndex = 13
+        Me.LCódigo1.Text = "Código del producto:"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(192, 216)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(199, 22)
+        Me.TextBox10.TabIndex = 16
+        '
+        'LStockMinimo1
+        '
+        Me.LStockMinimo1.AutoSize = True
+        Me.LStockMinimo1.Location = New System.Drawing.Point(78, 219)
+        Me.LStockMinimo1.Name = "LStockMinimo1"
+        Me.LStockMinimo1.Size = New System.Drawing.Size(104, 16)
+        Me.LStockMinimo1.TabIndex = 15
+        Me.LStockMinimo1.Text = "Stock minimo:"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(556, 75)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(207, 22)
+        Me.TextBox12.TabIndex = 28
+        '
+        'LCódigo2
+        '
+        Me.LCódigo2.AutoSize = True
+        Me.LCódigo2.Location = New System.Drawing.Point(401, 78)
+        Me.LCódigo2.Name = "LCódigo2"
+        Me.LCódigo2.Size = New System.Drawing.Size(149, 16)
+        Me.LCódigo2.TabIndex = 27
+        Me.LCódigo2.Text = "Código del producto"
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Location = New System.Drawing.Point(176, 317)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox13.TabIndex = 30
+        '
+        'LStockMinimo2
+        '
+        Me.LStockMinimo2.AutoSize = True
+        Me.LStockMinimo2.Location = New System.Drawing.Point(71, 320)
+        Me.LStockMinimo2.Name = "LStockMinimo2"
+        Me.LStockMinimo2.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo2.TabIndex = 29
+        Me.LStockMinimo2.Text = "Stock Mínimo"
         '
         'GestionProductos
         '
@@ -753,4 +909,19 @@ Partial Class GestionProductos
     Friend WithEvents LNombre2 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents TCodigo As TextBox
+    Friend WithEvents ChCodigo As CheckBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents LCodigo As Label
+    Friend WithEvents LStockMinimo As Label
+    Friend WithEvents TextBox8 As TextBox
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents TextBox10 As TextBox
+    Friend WithEvents LStockMinimo1 As Label
+    Friend WithEvents TextBox9 As TextBox
+    Friend WithEvents LCódigo1 As Label
+    Friend WithEvents TextBox13 As TextBox
+    Friend WithEvents LStockMinimo2 As Label
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents LCódigo2 As Label
 End Class

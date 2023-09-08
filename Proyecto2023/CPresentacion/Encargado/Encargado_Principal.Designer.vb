@@ -26,18 +26,18 @@ Partial Class Encargado_Principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -64,7 +64,7 @@ Partial Class Encargado_Principal
         Me.MenuEncargado.AutoSize = False
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
@@ -72,6 +72,60 @@ Partial Class Encargado_Principal
         Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
         Me.MenuEncargado.Size = New System.Drawing.Size(212, 331)
         Me.MenuEncargado.TabIndex = 1
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.BCerrarSesion)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel2.Location = New System.Drawing.Point(653, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(147, 515)
+        Me.Panel2.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(0, 47)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
+        Me.Button1.Name = "Button1"
+        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Button1.Size = New System.Drawing.Size(147, 29)
+        Me.Button1.TabIndex = 1
+        Me.Button1.Text = "Datos de usuario"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(212, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(441, 515)
+        Me.Panel3.TabIndex = 3
+        '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
+        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.Size = New System.Drawing.Size(147, 47)
+        Me.BCerrarSesion.TabIndex = 0
+        Me.BCerrarSesion.Text = "Cerrar Sesión"
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
         '
         'Productos
         '
@@ -117,60 +171,6 @@ Partial Class Encargado_Principal
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Silver
-        Me.Panel2.Controls.Add(Me.Button1)
-        Me.Panel2.Controls.Add(Me.BCerrarSesion)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(653, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(147, 515)
-        Me.Panel2.TabIndex = 1
-        '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
-        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.Size = New System.Drawing.Size(147, 47)
-        Me.BCerrarSesion.TabIndex = 0
-        Me.BCerrarSesion.Text = "Cerrar Sesión"
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(0, 47)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Button1.Size = New System.Drawing.Size(147, 29)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Datos de usuario"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(212, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(441, 515)
-        Me.Panel3.TabIndex = 3
-        '
         'Encargado_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -192,8 +192,8 @@ Partial Class Encargado_Principal
         Me.Panel1.ResumeLayout(False)
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
