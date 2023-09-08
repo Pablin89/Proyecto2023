@@ -23,7 +23,7 @@ Partial Class Principal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TContraseña = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LContraseña = New System.Windows.Forms.Label()
         Me.LUsuario = New System.Windows.Forms.Label()
@@ -35,27 +35,25 @@ Partial Class Principal
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.TContraseña)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.LContraseña)
         Me.Panel1.Controls.Add(Me.LUsuario)
         Me.Panel1.Controls.Add(Me.TUsuario)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 639)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.Panel1.Location = New System.Drawing.Point(0, 117)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(851, 503)
+        Me.Panel1.Size = New System.Drawing.Size(319, 211)
         Me.Panel1.TabIndex = 5
         '
-        'TextBox1
+        'TContraseña
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(376, 196)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(401, 53)
-        Me.TextBox1.TabIndex = 10
-        Me.TextBox1.UseSystemPasswordChar = True
+        Me.TContraseña.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TContraseña.Location = New System.Drawing.Point(141, 82)
+        Me.TContraseña.Name = "TContraseña"
+        Me.TContraseña.Size = New System.Drawing.Size(153, 26)
+        Me.TContraseña.TabIndex = 10
+        Me.TContraseña.UseSystemPasswordChar = True
         '
         'Button1
         '
@@ -64,10 +62,9 @@ Partial Class Principal
         Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.arrow_entrance_in_internet_log_login_security_icon_127060__1_
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(280, 324)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.Button1.Location = New System.Drawing.Point(105, 136)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(309, 119)
+        Me.Button1.Size = New System.Drawing.Size(116, 50)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Ingresar"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -82,10 +79,9 @@ Partial Class Principal
         Me.LContraseña.AutoSize = True
         Me.LContraseña.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LContraseña.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LContraseña.Location = New System.Drawing.Point(59, 198)
-        Me.LContraseña.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.LContraseña.Location = New System.Drawing.Point(22, 83)
         Me.LContraseña.Name = "LContraseña"
-        Me.LContraseña.Size = New System.Drawing.Size(262, 61)
+        Me.LContraseña.Size = New System.Drawing.Size(102, 24)
         Me.LContraseña.TabIndex = 8
         Me.LContraseña.Text = "Contraseña"
         '
@@ -97,10 +93,9 @@ Partial Class Principal
         Me.LUsuario.AutoSize = True
         Me.LUsuario.Font = New System.Drawing.Font("Franklin Gothic Medium", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LUsuario.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.LUsuario.Location = New System.Drawing.Point(141, 91)
-        Me.LUsuario.Margin = New System.Windows.Forms.Padding(8, 0, 8, 0)
+        Me.LUsuario.Location = New System.Drawing.Point(53, 38)
         Me.LUsuario.Name = "LUsuario"
-        Me.LUsuario.Size = New System.Drawing.Size(183, 61)
+        Me.LUsuario.Size = New System.Drawing.Size(71, 24)
         Me.LUsuario.TabIndex = 7
         Me.LUsuario.Text = "Usuario"
         '
@@ -110,10 +105,9 @@ Partial Class Principal
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TUsuario.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TUsuario.Location = New System.Drawing.Point(376, 91)
-        Me.TUsuario.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
+        Me.TUsuario.Location = New System.Drawing.Point(141, 38)
         Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(423, 53)
+        Me.TUsuario.Size = New System.Drawing.Size(161, 26)
         Me.TUsuario.TabIndex = 6
         '
         'PictureBox1
@@ -124,10 +118,9 @@ Partial Class Principal
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Padding = New System.Windows.Forms.Padding(267, 72, 267, 72)
-        Me.PictureBox1.Size = New System.Drawing.Size(851, 624)
+        Me.PictureBox1.Padding = New System.Windows.Forms.Padding(100, 30, 100, 30)
+        Me.PictureBox1.Size = New System.Drawing.Size(319, 263)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
@@ -135,13 +128,12 @@ Partial Class Principal
         '
         'Principal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 31.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(851, 1142)
+        Me.ClientSize = New System.Drawing.Size(319, 328)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Margin = New System.Windows.Forms.Padding(8, 7, 8, 7)
         Me.Name = "Principal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Principal"
@@ -156,6 +148,6 @@ Partial Class Principal
     Friend WithEvents LUsuario As Label
     Friend WithEvents TUsuario As TextBox
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TContraseña As TextBox
     Friend WithEvents PictureBox1 As PictureBox
 End Class

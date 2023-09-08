@@ -11,4 +11,7 @@
         TUsuario.Focus()
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TContraseña.TextChanged
+
+    End Sub
 End Class
