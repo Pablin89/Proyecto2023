@@ -3,7 +3,9 @@
         If TUsuario.Text = "Encargado" Then
             Me.Hide()
             Encargado_Principal.Show()
-
+        ElseIf TUsuario.Text = "GerenteGral" Then
+            GerenteGral_Principal.Show()
+            Me.Hide()
         End If
     End Sub
 

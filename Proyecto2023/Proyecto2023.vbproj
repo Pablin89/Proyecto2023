@@ -98,6 +98,12 @@
     <Compile Include="CPresentacion\Encargado\GestionInformes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Gerente General\Backup.Designer.vb">
+      <DependentUpon>Backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\Backup.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.Designer.vb">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\GestionInformes.resx">
       <DependentUpon>GestionInformes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\Backup.resx">
+      <DependentUpon>Backup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
