@@ -41,7 +41,7 @@ Partial Class Principal
         Me.Panel1.Controls.Add(Me.LUsuario)
         Me.Panel1.Controls.Add(Me.TUsuario)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 268)
+        Me.Panel1.Location = New System.Drawing.Point(0, 117)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(319, 211)
         Me.Panel1.TabIndex = 5
@@ -107,7 +107,7 @@ Partial Class Principal
         Me.TUsuario.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TUsuario.Location = New System.Drawing.Point(141, 38)
         Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(153, 26)
+        Me.TUsuario.Size = New System.Drawing.Size(161, 26)
         Me.TUsuario.TabIndex = 6
         '
         'PictureBox1
@@ -131,7 +131,7 @@ Partial Class Principal
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.InactiveCaption
-        Me.ClientSize = New System.Drawing.Size(319, 479)
+        Me.ClientSize = New System.Drawing.Size(319, 328)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Name = "Principal"
