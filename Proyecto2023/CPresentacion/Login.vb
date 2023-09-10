@@ -11,7 +11,7 @@
                 Me.Hide()
                 Encargado_Principal.Show()
             Else
-                MessageBox.Show("usuario o contraseña incorrectos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("usuario o contraseña incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Show()
             End If
 
@@ -20,6 +20,7 @@
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         TUsuario.Focus()
     End Sub
 
