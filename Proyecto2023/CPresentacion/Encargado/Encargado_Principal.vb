@@ -1,7 +1,7 @@
 ﻿Public Class Encargado_Principal
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         Me.Hide()
-        Principal.Show()
+        Login.Show()
     End Sub
 
     Private Sub Productos_Click(sender As Object, e As EventArgs) Handles Productos.Click
