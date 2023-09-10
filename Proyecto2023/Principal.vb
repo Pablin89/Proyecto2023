@@ -1,5 +1,6 @@
 ﻿Public Class Principal
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
         If ((TUsuario.Text = "") Or (TContraseña.Text = "")) Then
             MessageBox.Show("Completa los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.Show()
@@ -11,6 +12,7 @@
                 MessageBox.Show("usuario o contraseña incorrectos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Me.Show()
             End If
+
 
         End If
     End Sub

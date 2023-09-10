@@ -24,11 +24,11 @@ Partial Class Encargado_Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Encargado_Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
@@ -37,7 +37,6 @@ Partial Class Encargado_Principal
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -52,12 +51,20 @@ Partial Class Encargado_Principal
         Me.Panel1.Size = New System.Drawing.Size(212, 515)
         Me.Panel1.TabIndex = 0
         '
+        'Panel4
+        '
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(212, 492)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(0, 23)
+        Me.Panel4.TabIndex = 2
+        '
         'MenuEncargado
         '
         Me.MenuEncargado.AutoSize = False
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
-        Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
@@ -69,6 +76,7 @@ Partial Class Encargado_Principal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Silver
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BCerrarSesion)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(653, 0)
@@ -79,11 +87,13 @@ Partial Class Encargado_Principal
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(0, 474)
+        Me.Button1.Location = New System.Drawing.Point(0, 47)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(441, 41)
+        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Button1.Size = New System.Drawing.Size(147, 29)
         Me.Button1.TabIndex = 1
         Me.Button1.Text = "Datos de usuario"
         Me.Button1.UseVisualStyleBackColor = False
@@ -92,20 +102,11 @@ Partial Class Encargado_Principal
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(212, 0)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(441, 515)
         Me.Panel3.TabIndex = 3
-        '
-        'Panel4
-        '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(212, 492)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(0, 23)
-        Me.Panel4.TabIndex = 2
         '
         'BCerrarSesion
         '
@@ -115,7 +116,7 @@ Partial Class Encargado_Principal
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.logout256_24927__1_
+        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
         Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
         Me.BCerrarSesion.Name = "BCerrarSesion"
@@ -129,7 +130,7 @@ Partial Class Encargado_Principal
         'Productos
         '
         Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.business_inventory_maintenance_product_box_boxes_2326
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.Productos
         Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Productos.ImageTransparentColor = System.Drawing.Color.White
@@ -141,7 +142,7 @@ Partial Class Encargado_Principal
         'Cajeros
         '
         Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.cashier_machine_cash_register_pos_icon_2251681
+        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.Cajeros
         Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
         Me.Cajeros.Name = "Cajeros"
@@ -151,7 +152,7 @@ Partial Class Encargado_Principal
         'Informes
         '
         Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.mobile_financial_report_graphs_icon_205088
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.Reportes
         Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Informes.Margin = New System.Windows.Forms.Padding(8)
         Me.Informes.Name = "Informes"
@@ -192,7 +193,6 @@ Partial Class Encargado_Principal
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
         Me.Panel2.ResumeLayout(False)
-        Me.Panel3.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
