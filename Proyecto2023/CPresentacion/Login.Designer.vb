@@ -24,11 +24,11 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.BLogin = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LUsuario = New System.Windows.Forms.Label()
-        Me.LContraseña = New System.Windows.Forms.Label()
-        Me.TUsuario = New System.Windows.Forms.TextBox()
         Me.TContraseña = New System.Windows.Forms.TextBox()
+        Me.TUsuario = New System.Windows.Forms.TextBox()
+        Me.LContraseña = New System.Windows.Forms.Label()
+        Me.LUsuario = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -62,26 +62,20 @@ Partial Class Login
         Me.Panel2.Size = New System.Drawing.Size(281, 179)
         Me.Panel2.TabIndex = 3
         '
-        'Panel1
+        'TContraseña
         '
-        Me.Panel1.BackgroundImage = Global.Proyecto2023.My.Resources.Resources.Logo
-        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(281, 265)
-        Me.Panel1.TabIndex = 2
+        Me.TContraseña.Location = New System.Drawing.Point(100, 76)
+        Me.TContraseña.Name = "TContraseña"
+        Me.TContraseña.Size = New System.Drawing.Size(151, 20)
+        Me.TContraseña.TabIndex = 5
+        Me.TContraseña.UseSystemPasswordChar = True
         '
-        'LUsuario
+        'TUsuario
         '
-        Me.LUsuario.AutoSize = True
-        Me.LUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LUsuario.Location = New System.Drawing.Point(39, 29)
-        Me.LUsuario.Name = "LUsuario"
-        Me.LUsuario.Size = New System.Drawing.Size(55, 16)
-        Me.LUsuario.TabIndex = 2
-        Me.LUsuario.Text = "Usuario"
+        Me.TUsuario.Location = New System.Drawing.Point(100, 28)
+        Me.TUsuario.Name = "TUsuario"
+        Me.TUsuario.Size = New System.Drawing.Size(151, 20)
+        Me.TUsuario.TabIndex = 4
         '
         'LContraseña
         '
@@ -93,20 +87,26 @@ Partial Class Login
         Me.LContraseña.TabIndex = 3
         Me.LContraseña.Text = "Contraseña"
         '
-        'TUsuario
+        'LUsuario
         '
-        Me.TUsuario.Location = New System.Drawing.Point(100, 28)
-        Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(151, 20)
-        Me.TUsuario.TabIndex = 4
+        Me.LUsuario.AutoSize = True
+        Me.LUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LUsuario.Location = New System.Drawing.Point(39, 29)
+        Me.LUsuario.Name = "LUsuario"
+        Me.LUsuario.Size = New System.Drawing.Size(55, 16)
+        Me.LUsuario.TabIndex = 2
+        Me.LUsuario.Text = "Usuario"
         '
-        'TContraseña
+        'Panel1
         '
-        Me.TContraseña.Location = New System.Drawing.Point(100, 76)
-        Me.TContraseña.Name = "TContraseña"
-        Me.TContraseña.Size = New System.Drawing.Size(151, 20)
-        Me.TContraseña.TabIndex = 5
-        Me.TContraseña.UseSystemPasswordChar = True
+        Me.Panel1.BackgroundImage = Global.Proyecto2023.My.Resources.Resources.Logo
+        Me.Panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(281, 265)
+        Me.Panel1.TabIndex = 2
         '
         'Login
         '
@@ -116,6 +116,7 @@ Partial Class Login
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Name = "Login"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login"
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
