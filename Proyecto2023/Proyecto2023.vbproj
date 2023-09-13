@@ -98,16 +98,28 @@
     <Compile Include="CPresentacion\Encargado\GestionInformes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Gerente General\Backup.Designer.vb">
-      <DependentUpon>Backup.vb</DependentUpon>
+    <Compile Include="CPresentacion\Gerente General\Permisos.Designer.vb">
+      <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\Gerente General\Backup.vb">
+    <Compile Include="CPresentacion\Gerente General\Permisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\Realizar_Backup.Designer.vb">
+      <DependentUpon>Realizar_Backup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\Realizar_Backup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.Designer.vb">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\Restauracion.Designer.vb">
+      <DependentUpon>Restauracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\Restauracion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Login.Designer.vb">
@@ -152,11 +164,17 @@
     <EmbeddedResource Include="CPresentacion\Encargado\GestionInformes.resx">
       <DependentUpon>GestionInformes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente General\Backup.resx">
-      <DependentUpon>Backup.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Gerente General\Permisos.resx">
+      <DependentUpon>Permisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\Realizar_Backup.resx">
+      <DependentUpon>Realizar_Backup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\Restauracion.resx">
+      <DependentUpon>Restauracion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

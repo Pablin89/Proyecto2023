@@ -737,7 +737,7 @@ Partial Class GestionCajeros
         Me.Controls.Add(Me.GestionarCajeros)
         Me.Name = "GestionCajeros"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Gestion de Cajeros"
         Me.GestionarCajeros.ResumeLayout(False)
         Me.ConsultarCajeros.ResumeLayout(False)
