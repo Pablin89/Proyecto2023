@@ -6,9 +6,11 @@
         If ((TUsuario.Text = "") And (TContraseña.Text = "")) Then
             MessageBox.Show("Completa los campos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Me.Show()
+
         ElseIf TUsuario.Text = "Encargado" Then
             Me.Hide()
             Encargado_Principal.Show()
+
 
         ElseIf TUsuario.Text = "GerenteGral" Then
             Me.Hide()
@@ -19,6 +21,7 @@
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         TUsuario.Focus()
     End Sub
 
