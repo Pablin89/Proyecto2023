@@ -279,5 +279,17 @@
   <ItemGroup>
     <None Include="Resources\new_add_user_16734.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_find_client_user_16693 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-good_icon-icons.com_51027 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sign-check-icon_34365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchcircularbutton_79274.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

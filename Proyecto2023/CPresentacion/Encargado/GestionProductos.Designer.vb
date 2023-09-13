@@ -33,6 +33,8 @@ Partial Class GestionProductos
         Me.ChNombreProducto = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.LStockMinimo = New System.Windows.Forms.Label()
+        Me.LCodigo = New System.Windows.Forms.Label()
         Me.LEstado = New System.Windows.Forms.Label()
         Me.LCategoria = New System.Windows.Forms.Label()
         Me.LStock = New System.Windows.Forms.Label()
@@ -41,13 +43,17 @@ Partial Class GestionProductos
         Me.LNombrepro = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.EditarProductos = New System.Windows.Forms.TabPage()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.BCambios = New System.Windows.Forms.Button()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.LStockMinimo1 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.LCódigo1 = New System.Windows.Forms.Label()
         Me.TCorreo = New System.Windows.Forms.TextBox()
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TDireccion = New System.Windows.Forms.TextBox()
@@ -65,10 +71,13 @@ Partial Class GestionProductos
         Me.ChProducto = New System.Windows.Forms.CheckBox()
         Me.AgregarProductos = New System.Windows.Forms.TabPage()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.LBuscarProducto = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.LStockMinimo2 = New System.Windows.Forms.Label()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.LCódigo2 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -83,18 +92,9 @@ Partial Class GestionProductos
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.LCodigo = New System.Windows.Forms.Label()
-        Me.LStockMinimo = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.LCódigo1 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.LStockMinimo1 = New System.Windows.Forms.Label()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.LCódigo2 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.LStockMinimo2 = New System.Windows.Forms.Label()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.BCambios = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -231,6 +231,24 @@ Partial Class GestionProductos
         Me.Panel2.Size = New System.Drawing.Size(434, 351)
         Me.Panel2.TabIndex = 1
         '
+        'LStockMinimo
+        '
+        Me.LStockMinimo.AutoSize = True
+        Me.LStockMinimo.Location = New System.Drawing.Point(18, 287)
+        Me.LStockMinimo.Name = "LStockMinimo"
+        Me.LStockMinimo.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo.TabIndex = 7
+        Me.LStockMinimo.Text = "Stock mínimo"
+        '
+        'LCodigo
+        '
+        Me.LCodigo.AutoSize = True
+        Me.LCodigo.Location = New System.Drawing.Point(18, 53)
+        Me.LCodigo.Name = "LCodigo"
+        Me.LCodigo.Size = New System.Drawing.Size(58, 16)
+        Me.LCodigo.TabIndex = 6
+        Me.LCodigo.Text = "Codigo"
+        '
         'LEstado
         '
         Me.LEstado.AutoSize = True
@@ -305,10 +323,10 @@ Partial Class GestionProductos
         Me.EditarProductos.Controls.Add(Me.Label1)
         Me.EditarProductos.Controls.Add(Me.TextBox3)
         Me.EditarProductos.Controls.Add(Me.TextBox4)
-        Me.EditarProductos.Controls.Add(Me.BBuscar)
         Me.EditarProductos.Controls.Add(Me.Panel3)
         Me.EditarProductos.Controls.Add(Me.ChBCategoria)
         Me.EditarProductos.Controls.Add(Me.ChProducto)
+        Me.EditarProductos.Controls.Add(Me.BBuscar)
         Me.EditarProductos.Location = New System.Drawing.Point(4, 28)
         Me.EditarProductos.Name = "EditarProductos"
         Me.EditarProductos.Padding = New System.Windows.Forms.Padding(3)
@@ -316,10 +334,27 @@ Partial Class GestionProductos
         Me.EditarProductos.TabIndex = 1
         Me.EditarProductos.Text = "Editar Productos"
         '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(376, 52)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(225, 22)
+        Me.TextBox8.TabIndex = 16
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(184, 52)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(169, 20)
+        Me.CheckBox1.TabIndex = 15
+        Me.CheckBox1.Text = "Código del Producto"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(270, 20)
+        Me.Label1.Location = New System.Drawing.Point(272, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(240, 16)
         Me.Label1.TabIndex = 14
@@ -327,35 +362,26 @@ Partial Class GestionProductos
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(377, 150)
+        Me.TextBox3.Location = New System.Drawing.Point(377, 134)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(214, 22)
         Me.TextBox3.TabIndex = 13
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(376, 109)
+        Me.TextBox4.Location = New System.Drawing.Point(376, 93)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(214, 22)
         Me.TextBox4.TabIndex = 12
-        '
-        'BBuscar
-        '
-        Me.BBuscar.Location = New System.Drawing.Point(317, 194)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(177, 28)
-        Me.BBuscar.TabIndex = 11
-        Me.BBuscar.Text = "Buscar Producto"
-        Me.BBuscar.UseVisualStyleBackColor = True
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 228)
+        Me.Panel3.Location = New System.Drawing.Point(3, 218)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(800, 358)
+        Me.Panel3.Size = New System.Drawing.Size(800, 368)
         Me.Panel3.TabIndex = 10
         '
         'Panel4
@@ -382,17 +408,40 @@ Partial Class GestionProductos
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(394, 0)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(406, 358)
+        Me.Panel4.Size = New System.Drawing.Size(406, 368)
         Me.Panel4.TabIndex = 1
         '
-        'BCambios
+        'TextBox10
         '
-        Me.BCambios.Location = New System.Drawing.Point(128, 329)
-        Me.BCambios.Name = "BCambios"
-        Me.BCambios.Size = New System.Drawing.Size(172, 23)
-        Me.BCambios.TabIndex = 12
-        Me.BCambios.Text = "Confirmar Cambios"
-        Me.BCambios.UseVisualStyleBackColor = True
+        Me.TextBox10.Location = New System.Drawing.Point(192, 216)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(199, 22)
+        Me.TextBox10.TabIndex = 16
+        '
+        'LStockMinimo1
+        '
+        Me.LStockMinimo1.AutoSize = True
+        Me.LStockMinimo1.Location = New System.Drawing.Point(78, 219)
+        Me.LStockMinimo1.Name = "LStockMinimo1"
+        Me.LStockMinimo1.Size = New System.Drawing.Size(104, 16)
+        Me.LStockMinimo1.TabIndex = 15
+        Me.LStockMinimo1.Text = "Stock minimo:"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(192, 46)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(199, 22)
+        Me.TextBox9.TabIndex = 14
+        '
+        'LCódigo1
+        '
+        Me.LCódigo1.AutoSize = True
+        Me.LCódigo1.Location = New System.Drawing.Point(24, 51)
+        Me.LCódigo1.Name = "LCódigo1"
+        Me.LCódigo1.Size = New System.Drawing.Size(153, 16)
+        Me.LCódigo1.TabIndex = 13
+        Me.LCódigo1.Text = "Código del producto:"
         '
         'TCorreo
         '
@@ -497,13 +546,13 @@ Partial Class GestionProductos
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(388, 358)
+        Me.DataGridView2.Size = New System.Drawing.Size(388, 368)
         Me.DataGridView2.TabIndex = 0
         '
         'ChBCategoria
         '
         Me.ChBCategoria.AutoSize = True
-        Me.ChBCategoria.Location = New System.Drawing.Point(258, 150)
+        Me.ChBCategoria.Location = New System.Drawing.Point(258, 134)
         Me.ChBCategoria.Name = "ChBCategoria"
         Me.ChBCategoria.Size = New System.Drawing.Size(95, 20)
         Me.ChBCategoria.TabIndex = 9
@@ -513,7 +562,7 @@ Partial Class GestionProductos
         'ChProducto
         '
         Me.ChProducto.AutoSize = True
-        Me.ChProducto.Location = New System.Drawing.Point(179, 109)
+        Me.ChProducto.Location = New System.Drawing.Point(179, 93)
         Me.ChProducto.Name = "ChProducto"
         Me.ChProducto.Size = New System.Drawing.Size(174, 20)
         Me.ChProducto.TabIndex = 8
@@ -539,27 +588,21 @@ Partial Class GestionProductos
         'Button3
         '
         Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Location = New System.Drawing.Point(309, 474)
+        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(310, 507)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(188, 34)
+        Me.Button3.Size = New System.Drawing.Size(188, 43)
         Me.Button3.TabIndex = 29
         Me.Button3.Text = "Confirmar Datos"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Location = New System.Drawing.Point(609, 37)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 28)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Buscar"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox11
         '
         Me.TextBox11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.TextBox11.Location = New System.Drawing.Point(129, 40)
+        Me.TextBox11.Location = New System.Drawing.Point(129, 49)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(433, 22)
         Me.TextBox11.TabIndex = 27
@@ -595,10 +638,42 @@ Partial Class GestionProductos
         Me.Panel6.Controls.Add(Me.LPrecio2)
         Me.Panel6.Controls.Add(Me.LNombre2)
         Me.Panel6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Panel6.Location = New System.Drawing.Point(8, 82)
+        Me.Panel6.Location = New System.Drawing.Point(9, 115)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(790, 364)
         Me.Panel6.TabIndex = 31
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Location = New System.Drawing.Point(176, 317)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(198, 22)
+        Me.TextBox13.TabIndex = 30
+        '
+        'LStockMinimo2
+        '
+        Me.LStockMinimo2.AutoSize = True
+        Me.LStockMinimo2.Location = New System.Drawing.Point(71, 320)
+        Me.LStockMinimo2.Name = "LStockMinimo2"
+        Me.LStockMinimo2.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo2.TabIndex = 29
+        Me.LStockMinimo2.Text = "Stock Mínimo"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(556, 75)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(207, 22)
+        Me.TextBox12.TabIndex = 28
+        '
+        'LCódigo2
+        '
+        Me.LCódigo2.AutoSize = True
+        Me.LCódigo2.Location = New System.Drawing.Point(401, 78)
+        Me.LCódigo2.Name = "LCódigo2"
+        Me.LCódigo2.Size = New System.Drawing.Size(149, 16)
+        Me.LCódigo2.TabIndex = 27
+        Me.LCódigo2.Text = "Código del producto"
         '
         'ComboBox2
         '
@@ -714,111 +789,56 @@ Partial Class GestionProductos
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(302, 201)
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(302, 184)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(177, 28)
+        Me.Button1.Size = New System.Drawing.Size(177, 37)
         Me.Button1.TabIndex = 12
         Me.Button1.Text = "Buscar Producto"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'LCodigo
+        'BBuscar
         '
-        Me.LCodigo.AutoSize = True
-        Me.LCodigo.Location = New System.Drawing.Point(18, 53)
-        Me.LCodigo.Name = "LCodigo"
-        Me.LCodigo.Size = New System.Drawing.Size(58, 16)
-        Me.LCodigo.TabIndex = 6
-        Me.LCodigo.Text = "Codigo"
+        Me.BBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscar.Location = New System.Drawing.Point(317, 162)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(177, 37)
+        Me.BBuscar.TabIndex = 11
+        Me.BBuscar.Text = "Buscar Producto"
+        Me.BBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BBuscar.UseVisualStyleBackColor = True
         '
-        'LStockMinimo
+        'BCambios
         '
-        Me.LStockMinimo.AutoSize = True
-        Me.LStockMinimo.Location = New System.Drawing.Point(18, 287)
-        Me.LStockMinimo.Name = "LStockMinimo"
-        Me.LStockMinimo.Size = New System.Drawing.Size(100, 16)
-        Me.LStockMinimo.TabIndex = 7
-        Me.LStockMinimo.Text = "Stock mínimo"
+        Me.BCambios.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.BCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCambios.Location = New System.Drawing.Point(105, 321)
+        Me.BCambios.Name = "BCambios"
+        Me.BCambios.Size = New System.Drawing.Size(202, 41)
+        Me.BCambios.TabIndex = 12
+        Me.BCambios.Text = "Confirmar Cambios"
+        Me.BCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BCambios.UseVisualStyleBackColor = True
         '
-        'TextBox8
+        'Button2
         '
-        Me.TextBox8.Location = New System.Drawing.Point(376, 68)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox8.TabIndex = 16
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(184, 68)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(169, 20)
-        Me.CheckBox1.TabIndex = 15
-        Me.CheckBox1.Text = "Código del Producto"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'TextBox9
-        '
-        Me.TextBox9.Location = New System.Drawing.Point(192, 46)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(199, 22)
-        Me.TextBox9.TabIndex = 14
-        '
-        'LCódigo1
-        '
-        Me.LCódigo1.AutoSize = True
-        Me.LCódigo1.Location = New System.Drawing.Point(24, 51)
-        Me.LCódigo1.Name = "LCódigo1"
-        Me.LCódigo1.Size = New System.Drawing.Size(153, 16)
-        Me.LCódigo1.TabIndex = 13
-        Me.LCódigo1.Text = "Código del producto:"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Location = New System.Drawing.Point(192, 216)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(199, 22)
-        Me.TextBox10.TabIndex = 16
-        '
-        'LStockMinimo1
-        '
-        Me.LStockMinimo1.AutoSize = True
-        Me.LStockMinimo1.Location = New System.Drawing.Point(78, 219)
-        Me.LStockMinimo1.Name = "LStockMinimo1"
-        Me.LStockMinimo1.Size = New System.Drawing.Size(104, 16)
-        Me.LStockMinimo1.TabIndex = 15
-        Me.LStockMinimo1.Text = "Stock minimo:"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(556, 75)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(207, 22)
-        Me.TextBox12.TabIndex = 28
-        '
-        'LCódigo2
-        '
-        Me.LCódigo2.AutoSize = True
-        Me.LCódigo2.Location = New System.Drawing.Point(401, 78)
-        Me.LCódigo2.Name = "LCódigo2"
-        Me.LCódigo2.Size = New System.Drawing.Size(149, 16)
-        Me.LCódigo2.TabIndex = 27
-        Me.LCódigo2.Text = "Código del producto"
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(176, 317)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(198, 22)
-        Me.TextBox13.TabIndex = 30
-        '
-        'LStockMinimo2
-        '
-        Me.LStockMinimo2.AutoSize = True
-        Me.LStockMinimo2.Location = New System.Drawing.Point(71, 320)
-        Me.LStockMinimo2.Name = "LStockMinimo2"
-        Me.LStockMinimo2.Size = New System.Drawing.Size(100, 16)
-        Me.LStockMinimo2.TabIndex = 29
-        Me.LStockMinimo2.Text = "Stock Mínimo"
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Image = Global.Proyecto2023.My.Resources.Resources.searchcircularbutton_79274
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(579, 37)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(120, 46)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Buscar"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'GestionProductos
         '

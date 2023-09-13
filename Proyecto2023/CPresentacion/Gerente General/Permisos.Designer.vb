@@ -25,7 +25,6 @@ Partial Class Permisos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -44,6 +43,7 @@ Partial Class Permisos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ChSeleccionar2 = New System.Windows.Forms.CheckBox()
         Me.ChSeleccionar1 = New System.Windows.Forms.CheckBox()
+        Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,15 +74,6 @@ Partial Class Permisos
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(172, 20)
         Me.TextBox4.TabIndex = 19
-        '
-        'BBuscar
-        '
-        Me.BBuscar.Location = New System.Drawing.Point(118, 123)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(177, 28)
-        Me.BBuscar.TabIndex = 18
-        Me.BBuscar.Text = "Buscar Empleado"
-        Me.BBuscar.UseVisualStyleBackColor = True
         '
         'Panel3
         '
@@ -268,6 +259,15 @@ Partial Class Permisos
         Me.ChSeleccionar1.TabIndex = 15
         Me.ChSeleccionar1.Text = "Seleccionar un empleado sin perfil asignado."
         Me.ChSeleccionar1.UseVisualStyleBackColor = True
+        '
+        'BBuscar
+        '
+        Me.BBuscar.Location = New System.Drawing.Point(118, 114)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(177, 43)
+        Me.BBuscar.TabIndex = 18
+        Me.BBuscar.Text = "Buscar Empleado"
+        Me.BBuscar.UseVisualStyleBackColor = True
         '
         'Permisos
         '
