@@ -83,9 +83,30 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property buy_13374() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("buy_13374", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property Cajeros() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Cajeros", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_231909() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_"& _ 
+                        "231909", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -126,6 +147,16 @@ Namespace My.Resources
         Friend ReadOnly Property Logout() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Logout", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property new_add_user_16734() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("new_add_user_16734", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
