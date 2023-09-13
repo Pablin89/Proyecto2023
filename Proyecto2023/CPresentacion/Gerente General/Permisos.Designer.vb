@@ -28,6 +28,9 @@ Partial Class Permisos
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -37,40 +40,44 @@ Partial Class Permisos
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.ChSeleccionar2 = New System.Windows.Forms.CheckBox()
+        Me.ChSeleccionar1 = New System.Windows.Forms.CheckBox()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(316, 9)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(280, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(165, 13)
+        Me.Label1.Size = New System.Drawing.Size(278, 20)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(196, 91)
+        Me.TextBox3.Location = New System.Drawing.Point(166, 67)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(214, 20)
+        Me.TextBox3.Size = New System.Drawing.Size(172, 20)
         Me.TextBox3.TabIndex = 20
         '
         'TextBox4
         '
-        Me.TextBox4.Location = New System.Drawing.Point(196, 49)
+        Me.TextBox4.Location = New System.Drawing.Point(166, 25)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(214, 20)
+        Me.TextBox4.Size = New System.Drawing.Size(172, 20)
         Me.TextBox4.TabIndex = 19
         '
         'BBuscar
         '
-        Me.BBuscar.Location = New System.Drawing.Point(494, 60)
+        Me.BBuscar.Location = New System.Drawing.Point(118, 123)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(177, 28)
         Me.BBuscar.TabIndex = 18
@@ -82,7 +89,7 @@ Partial Class Permisos
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 165)
+        Me.Panel3.Location = New System.Drawing.Point(0, 249)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(800, 349)
         Me.Panel3.TabIndex = 17
@@ -104,6 +111,33 @@ Partial Class Permisos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(384, 349)
         Me.Panel4.TabIndex = 1
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(120, 306)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(135, 31)
+        Me.Button1.TabIndex = 8
+        Me.Button1.Text = "Asignar Perfil"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(31, 267)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(87, 13)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Perfil de Usuario "
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Cajero", "Encargado", "Gerente", "Gerente General"})
+        Me.ComboBox1.Location = New System.Drawing.Point(139, 264)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(174, 21)
+        Me.ComboBox1.TabIndex = 6
         '
         'Label2
         '
@@ -171,7 +205,7 @@ Partial Class Permisos
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(95, 93)
+        Me.CheckBox1.Location = New System.Drawing.Point(65, 69)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(63, 17)
         Me.CheckBox1.TabIndex = 16
@@ -181,53 +215,70 @@ Partial Class Permisos
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(95, 49)
+        Me.CheckBox2.Location = New System.Drawing.Point(65, 25)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(42, 17)
         Me.CheckBox2.TabIndex = 15
         Me.CheckBox2.Text = "Dni"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'Panel1
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Cajero", "Encargado", "Gerente", "Gerente General"})
-        Me.ComboBox1.Location = New System.Drawing.Point(139, 264)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(174, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.Panel1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel1.Controls.Add(Me.TextBox3)
+        Me.Panel1.Controls.Add(Me.TextBox4)
+        Me.Panel1.Controls.Add(Me.BBuscar)
+        Me.Panel1.Controls.Add(Me.CheckBox1)
+        Me.Panel1.Controls.Add(Me.CheckBox2)
+        Me.Panel1.Location = New System.Drawing.Point(416, 70)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(384, 173)
+        Me.Panel1.TabIndex = 22
         '
-        'Label8
+        'Panel2
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(31, 267)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Perfil de Usuario "
+        Me.Panel2.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.ChSeleccionar2)
+        Me.Panel2.Controls.Add(Me.ChSeleccionar1)
+        Me.Panel2.Location = New System.Drawing.Point(0, 70)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(410, 173)
+        Me.Panel2.TabIndex = 23
         '
-        'Button1
+        'ChSeleccionar2
         '
-        Me.Button1.Location = New System.Drawing.Point(120, 306)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(135, 31)
-        Me.Button1.TabIndex = 8
-        Me.Button1.Text = "Asignar Perfil"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ChSeleccionar2.AutoSize = True
+        Me.ChSeleccionar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChSeleccionar2.Location = New System.Drawing.Point(57, 85)
+        Me.ChSeleccionar2.Name = "ChSeleccionar2"
+        Me.ChSeleccionar2.Size = New System.Drawing.Size(232, 20)
+        Me.ChSeleccionar2.TabIndex = 16
+        Me.ChSeleccionar2.Text = "Modificar el perfil de un empleado."
+        Me.ChSeleccionar2.UseVisualStyleBackColor = True
+        '
+        'ChSeleccionar1
+        '
+        Me.ChSeleccionar1.AutoSize = True
+        Me.ChSeleccionar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ChSeleccionar1.Location = New System.Drawing.Point(57, 41)
+        Me.ChSeleccionar1.Name = "ChSeleccionar1"
+        Me.ChSeleccionar1.Size = New System.Drawing.Size(296, 20)
+        Me.ChSeleccionar1.TabIndex = 15
+        Me.ChSeleccionar1.Text = "Seleccionar un empleado sin perfil asignado."
+        Me.ChSeleccionar1.UseVisualStyleBackColor = True
         '
         'Permisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(800, 514)
+        Me.ClientSize = New System.Drawing.Size(800, 598)
+        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.BBuscar)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.CheckBox2)
         Me.Name = "Permisos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Permisos"
@@ -235,6 +286,10 @@ Partial Class Permisos
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -258,4 +313,8 @@ Partial Class Permisos
     Friend WithEvents DataGridView2 As DataGridView
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents ChSeleccionar2 As CheckBox
+    Friend WithEvents ChSeleccionar1 As CheckBox
 End Class
