@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPresentacion\Cajero\CajeroPrincipal.Designer.vb">
+      <DependentUpon>CajeroPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Cajero\Seleccion_Clientes.Designer.vb">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
     </Compile>
@@ -158,6 +164,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
+      <DependentUpon>CajeroPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Seleccion_Clientes.resx">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +269,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CPresentacion\Gerente\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buy_13374.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_231909.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new_add_user_16734.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -61,7 +61,7 @@ Partial Class GerenteGral_Principal
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
         Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
-        Me.MenuEncargado.Size = New System.Drawing.Size(206, 436)
+        Me.MenuEncargado.Size = New System.Drawing.Size(209, 436)
         Me.MenuEncargado.TabIndex = 2
         '
         'Panel2
@@ -125,7 +125,7 @@ Partial Class GerenteGral_Principal
         Me.Productos.ImageTransparentColor = System.Drawing.Color.White
         Me.Productos.Margin = New System.Windows.Forms.Padding(8)
         Me.Productos.Name = "Productos"
-        Me.Productos.Size = New System.Drawing.Size(183, 73)
+        Me.Productos.Size = New System.Drawing.Size(143, 73)
         Me.Productos.Text = "Permisos de Usuarios"
         Me.Productos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -136,7 +136,7 @@ Partial Class GerenteGral_Principal
         Me.Backup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Backup.Margin = New System.Windows.Forms.Padding(8)
         Me.Backup.Name = "Backup"
-        Me.Backup.Size = New System.Drawing.Size(183, 73)
+        Me.Backup.Size = New System.Drawing.Size(143, 73)
         Me.Backup.Text = "Backup de Base de Datos"
         Me.Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -147,7 +147,7 @@ Partial Class GerenteGral_Principal
         Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Informes.Margin = New System.Windows.Forms.Padding(8)
         Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(183, 73)
+        Me.Informes.Size = New System.Drawing.Size(143, 73)
         Me.Informes.Text = "Restaurar Base de Datos"
         Me.Informes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '

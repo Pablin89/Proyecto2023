@@ -8,11 +8,14 @@
             Me.Show()
         ElseIf TUsuario.Text = "Encargado" Then
             Me.Hide()
-            Encargado_Principal.Show()
+            Cajero_Principal.Show()
 
         ElseIf TUsuario.Text = "GerenteGral" Then
             Me.Hide()
             GerenteGral_Principal.Show()
+        ElseIf TUsuario.Text = "Cajero" Then
+            Me.Hide()
+            CajeroPrincipal.Show()
         End If
 
 

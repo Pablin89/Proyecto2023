@@ -1,4 +1,4 @@
-﻿Public Class Encargado_Principal
+﻿Public Class Cajero_Principal
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         Me.Hide()
         Login.Show()
