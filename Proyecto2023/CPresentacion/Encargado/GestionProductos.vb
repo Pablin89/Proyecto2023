@@ -1,4 +1,6 @@
 ﻿Public Class GestionProductos
+
+    'Metodos para agregar producto
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
         Call entradaDecimal(TextBox6, e)
@@ -127,7 +129,7 @@
             ask = MsgBox("Seguro desea agregar producto?", MsgBoxStyle.YesNo, "Confirmar inserción")
 
             If ask = MsgBoxResult.Yes Then
-                MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Cliente insertado")
+                MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
                 TextBox5.Text = ""
                 TextBox6.Text = ""
                 ComboBox1.Text = ""
@@ -137,7 +139,7 @@
                 TDescripcion2.Text = ""
                 ComboBox1.Text = ""
             Else
-                MsgBox("No se agregó el producto", MsgBoxStyle.OkOnly, "Cliente insertado")
+                MsgBox("No se agregó el producto", MsgBoxStyle.OkOnly, "Producto no insertado")
 
             End If
 
@@ -150,6 +152,7 @@
 
     End Sub
 
+    'Busqueda de agregar producto
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         If (TextBox11.Text = "") Then
             MsgBox("Debe introducir un nombre para buscar", MsgBoxStyle.Exclamation, "Advertencia")
@@ -158,6 +161,9 @@
         End If
     End Sub
 
+    'Metodos Formulario Editar producto
+
+    'Configurar busqueda en editar
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         If (CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
             MsgBox("Seleccionaste buscar Producto por 'código', 'nombre' y 'categoria'", MsgBoxStyle.Information, "Buscar")
@@ -178,5 +184,135 @@
         End If
     End Sub
 
+    'Elementos del Formulario editar
+
+    Private Sub TextBox9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox9.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    Private Sub TDireccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDireccion.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    Private Sub TextBox10_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox10.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    Private Sub TTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TTelefono.KeyPress
+
+        Call entradaDecimal(TTelefono, e)
+
+
+    End Sub
+
+    Private Sub BCambios_Click(sender As Object, e As EventArgs) Handles BCambios.Click
+        Dim ask As MsgBoxResult
+
+        If ((TApellidoYNombre.Text <> "") And
+            (TextBox9.Text <> "") And
+            (TDni.Text <> "") And
+            (TFechaNac.Text <> "") And
+            (TDireccion.Text <> "") And
+            (TextBox10.Text <> "") And
+            (TTelefono.Text <> "") And
+            (TCorreo.Text <> "")
+            ) Then
+
+
+
+            ask = MsgBox("Seguro desea editar el producto?", MsgBoxStyle.YesNo, "Confirmar Edición")
+
+            If ask = MsgBoxResult.Yes Then
+                MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                TApellidoYNombre.Text = ""
+                TextBox9.Text = ""
+                TDni.Text = ""
+                TFechaNac.Text = ""
+                TDireccion.Text = ""
+                TextBox10.Text = ""
+                TTelefono.Text = ""
+                TCorreo.Text = ""
+            Else
+                MsgBox("No se Editó el producto", MsgBoxStyle.OkOnly, "Producto No Editado")
+
+            End If
+
+
+        Else
+
+            MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
+
+        End If
+    End Sub
+
+    'Metodos de Consultar productos
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If (ChCodigo.Checked And ChNombreProducto.Checked And ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código', 'nombre' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (ChCodigo.Checked And ChNombreProducto.Checked And Not ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código' y 'nombre'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (ChCodigo.Checked And Not ChNombreProducto.Checked And ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not ChCodigo.Checked And ChNombreProducto.Checked And ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'nombre' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not ChCodigo.Checked And Not ChNombreProducto.Checked And ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not ChCodigo.Checked And ChNombreProducto.Checked And Not ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'nombre'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (ChCodigo.Checked And Not ChNombreProducto.Checked And Not ChCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'codigo'", MsgBoxStyle.Information, "Buscar")
+        Else
+            MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+        End If
+    End Sub
 
 End Class
