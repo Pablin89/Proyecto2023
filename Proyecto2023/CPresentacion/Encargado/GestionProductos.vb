@@ -149,4 +149,34 @@
         End If
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If (TextBox11.Text = "") Then
+            MsgBox("Debe introducir un nombre para buscar", MsgBoxStyle.Exclamation, "Advertencia")
+        Else
+            MsgBox("Cuando existan productos en el sitema aparecerán en un datagridView", MsgBoxStyle.Exclamation, "Advertencia")
+        End If
+    End Sub
+
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        If (CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código', 'nombre' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código' y 'nombre'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'código' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'nombre' y 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'categoria'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (Not CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'nombre'", MsgBoxStyle.Information, "Buscar")
+        ElseIf (CheckBox1.Checked And Not ChProducto.Checked And Not ChBCategoria.Checked) Then
+            MsgBox("Seleccionaste buscar Producto por 'codigo'", MsgBoxStyle.Information, "Buscar")
+        Else
+            MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+        End If
+    End Sub
+
+
 End Class
