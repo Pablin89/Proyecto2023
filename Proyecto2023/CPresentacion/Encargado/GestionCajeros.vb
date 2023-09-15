@@ -1,3 +1,4 @@
+
 ﻿Imports System.Net.Mime.MediaTypeNames
 Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
@@ -253,6 +254,7 @@ Public Class GestionCajeros
 
         End If
     End Sub
+
 
 
 
