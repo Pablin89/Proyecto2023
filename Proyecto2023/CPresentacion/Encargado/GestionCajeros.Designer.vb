@@ -136,7 +136,7 @@ Partial Class GestionCajeros
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(270, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(240, 16)
+        Me.Label1.Size = New System.Drawing.Size(239, 16)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -193,7 +193,7 @@ Partial Class GestionCajeros
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(36, 235)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 16)
+        Me.Label2.Size = New System.Drawing.Size(58, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Correo:"
         '
@@ -202,7 +202,7 @@ Partial Class GestionCajeros
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(36, 192)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 16)
+        Me.Label3.Size = New System.Drawing.Size(73, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Teléfono:"
         '
@@ -211,7 +211,7 @@ Partial Class GestionCajeros
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(36, 150)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 16)
+        Me.Label4.Size = New System.Drawing.Size(77, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Dirección:"
         '
@@ -220,7 +220,7 @@ Partial Class GestionCajeros
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(36, 106)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 16)
+        Me.Label5.Size = New System.Drawing.Size(158, 16)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Fecha de Nacimiento:"
         '
@@ -229,7 +229,7 @@ Partial Class GestionCajeros
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(36, 70)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 16)
+        Me.Label6.Size = New System.Drawing.Size(37, 16)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "DNI:"
         '
@@ -238,7 +238,7 @@ Partial Class GestionCajeros
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(36, 30)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(138, 16)
+        Me.Label7.Size = New System.Drawing.Size(137, 16)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Apellido y nombre:"
         '
@@ -256,7 +256,7 @@ Partial Class GestionCajeros
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(231, 132)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(85, 20)
+        Me.CheckBox1.Size = New System.Drawing.Size(84, 20)
         Me.CheckBox1.TabIndex = 9
         Me.CheckBox1.Text = "Apellido"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -266,7 +266,7 @@ Partial Class GestionCajeros
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(231, 71)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(50, 20)
+        Me.CheckBox2.Size = New System.Drawing.Size(49, 20)
         Me.CheckBox2.TabIndex = 8
         Me.CheckBox2.Text = "Dni"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -294,7 +294,7 @@ Partial Class GestionCajeros
         Me.LTitulo.AutoSize = True
         Me.LTitulo.Location = New System.Drawing.Point(270, 37)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
+        Me.LTitulo.Size = New System.Drawing.Size(239, 16)
         Me.LTitulo.TabIndex = 7
         Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -409,7 +409,7 @@ Partial Class GestionCajeros
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Location = New System.Drawing.Point(123, 235)
         Me.LCorreo.Name = "LCorreo"
-        Me.LCorreo.Size = New System.Drawing.Size(59, 16)
+        Me.LCorreo.Size = New System.Drawing.Size(58, 16)
         Me.LCorreo.TabIndex = 5
         Me.LCorreo.Text = "Correo:"
         '
@@ -418,7 +418,7 @@ Partial Class GestionCajeros
         Me.LTelefono.AutoSize = True
         Me.LTelefono.Location = New System.Drawing.Point(108, 196)
         Me.LTelefono.Name = "LTelefono"
-        Me.LTelefono.Size = New System.Drawing.Size(74, 16)
+        Me.LTelefono.Size = New System.Drawing.Size(73, 16)
         Me.LTelefono.TabIndex = 4
         Me.LTelefono.Text = "Teléfono:"
         '
@@ -427,7 +427,7 @@ Partial Class GestionCajeros
         Me.LDirección.AutoSize = True
         Me.LDirección.Location = New System.Drawing.Point(104, 152)
         Me.LDirección.Name = "LDirección"
-        Me.LDirección.Size = New System.Drawing.Size(78, 16)
+        Me.LDirección.Size = New System.Drawing.Size(77, 16)
         Me.LDirección.TabIndex = 3
         Me.LDirección.Text = "Dirección:"
         '
@@ -436,7 +436,7 @@ Partial Class GestionCajeros
         Me.LFechaNac.AutoSize = True
         Me.LFechaNac.Location = New System.Drawing.Point(23, 109)
         Me.LFechaNac.Name = "LFechaNac"
-        Me.LFechaNac.Size = New System.Drawing.Size(159, 16)
+        Me.LFechaNac.Size = New System.Drawing.Size(158, 16)
         Me.LFechaNac.TabIndex = 2
         Me.LFechaNac.Text = "Fecha de Nacimiento:"
         '
@@ -445,7 +445,7 @@ Partial Class GestionCajeros
         Me.LDni.AutoSize = True
         Me.LDni.Location = New System.Drawing.Point(144, 70)
         Me.LDni.Name = "LDni"
-        Me.LDni.Size = New System.Drawing.Size(38, 16)
+        Me.LDni.Size = New System.Drawing.Size(37, 16)
         Me.LDni.TabIndex = 1
         Me.LDni.Text = "DNI:"
         '
@@ -454,7 +454,7 @@ Partial Class GestionCajeros
         Me.LApellidoyNombre.AutoSize = True
         Me.LApellidoyNombre.Location = New System.Drawing.Point(44, 27)
         Me.LApellidoyNombre.Name = "LApellidoyNombre"
-        Me.LApellidoyNombre.Size = New System.Drawing.Size(138, 16)
+        Me.LApellidoyNombre.Size = New System.Drawing.Size(137, 16)
         Me.LApellidoyNombre.TabIndex = 0
         Me.LApellidoyNombre.Text = "Apellido y nombre:"
         '
@@ -472,7 +472,7 @@ Partial Class GestionCajeros
         Me.ChBApellido.AutoSize = True
         Me.ChBApellido.Location = New System.Drawing.Point(231, 149)
         Me.ChBApellido.Name = "ChBApellido"
-        Me.ChBApellido.Size = New System.Drawing.Size(85, 20)
+        Me.ChBApellido.Size = New System.Drawing.Size(84, 20)
         Me.ChBApellido.TabIndex = 2
         Me.ChBApellido.Text = "Apellido"
         Me.ChBApellido.UseVisualStyleBackColor = True
@@ -482,7 +482,7 @@ Partial Class GestionCajeros
         Me.ChBDni.AutoSize = True
         Me.ChBDni.Location = New System.Drawing.Point(231, 88)
         Me.ChBDni.Name = "ChBDni"
-        Me.ChBDni.Size = New System.Drawing.Size(50, 20)
+        Me.ChBDni.Size = New System.Drawing.Size(49, 20)
         Me.ChBDni.TabIndex = 1
         Me.ChBDni.Text = "Dni"
         Me.ChBDni.UseVisualStyleBackColor = True
@@ -521,7 +521,7 @@ Partial Class GestionCajeros
         Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox12.Enabled = False
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Uighur", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox12.ForeColor = System.Drawing.Color.Red
         Me.TextBox12.Location = New System.Drawing.Point(0, 0)
         Me.TextBox12.Multiline = True
@@ -562,7 +562,7 @@ Partial Class GestionCajeros
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(36, 25)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(526, 16)
+        Me.Label8.Size = New System.Drawing.Size(525, 16)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Ingresar DNI del nuevo cajero para comprobar que  no existe en el sistema"
         '
@@ -662,7 +662,7 @@ Partial Class GestionCajeros
         Me.LSexo.AutoSize = True
         Me.LSexo.Location = New System.Drawing.Point(496, 213)
         Me.LSexo.Name = "LSexo"
-        Me.LSexo.Size = New System.Drawing.Size(43, 16)
+        Me.LSexo.Size = New System.Drawing.Size(42, 16)
         Me.LSexo.TabIndex = 7
         Me.LSexo.Text = "Sexo"
         '
@@ -671,7 +671,7 @@ Partial Class GestionCajeros
         Me.LCorreo1.AutoSize = True
         Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
         Me.LCorreo1.Name = "LCorreo1"
-        Me.LCorreo1.Size = New System.Drawing.Size(55, 16)
+        Me.LCorreo1.Size = New System.Drawing.Size(54, 16)
         Me.LCorreo1.TabIndex = 6
         Me.LCorreo1.Text = "Correo"
         '
@@ -680,7 +680,7 @@ Partial Class GestionCajeros
         Me.LTelefono1.AutoSize = True
         Me.LTelefono1.Location = New System.Drawing.Point(469, 125)
         Me.LTelefono1.Name = "LTelefono1"
-        Me.LTelefono1.Size = New System.Drawing.Size(70, 16)
+        Me.LTelefono1.Size = New System.Drawing.Size(69, 16)
         Me.LTelefono1.TabIndex = 5
         Me.LTelefono1.Text = "Telefono"
         '
@@ -689,7 +689,7 @@ Partial Class GestionCajeros
         Me.LDireccion1.AutoSize = True
         Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
         Me.LDireccion1.Name = "LDireccion1"
-        Me.LDireccion1.Size = New System.Drawing.Size(74, 16)
+        Me.LDireccion1.Size = New System.Drawing.Size(73, 16)
         Me.LDireccion1.TabIndex = 4
         Me.LDireccion1.Text = "Direccion"
         '
@@ -698,7 +698,7 @@ Partial Class GestionCajeros
         Me.LDNI1.AutoSize = True
         Me.LDNI1.Location = New System.Drawing.Point(137, 213)
         Me.LDNI1.Name = "LDNI1"
-        Me.LDNI1.Size = New System.Drawing.Size(34, 16)
+        Me.LDNI1.Size = New System.Drawing.Size(33, 16)
         Me.LDNI1.TabIndex = 3
         Me.LDNI1.Text = "DNI"
         '
@@ -707,7 +707,7 @@ Partial Class GestionCajeros
         Me.LFechaNacimiento.AutoSize = True
         Me.LFechaNacimiento.Location = New System.Drawing.Point(16, 169)
         Me.LFechaNacimiento.Name = "LFechaNacimiento"
-        Me.LFechaNacimiento.Size = New System.Drawing.Size(155, 16)
+        Me.LFechaNacimiento.Size = New System.Drawing.Size(154, 16)
         Me.LFechaNacimiento.TabIndex = 2
         Me.LFechaNacimiento.Text = "Fecha de Nacimiento"
         '
@@ -716,7 +716,7 @@ Partial Class GestionCajeros
         Me.LNombre.AutoSize = True
         Me.LNombre.Location = New System.Drawing.Point(95, 125)
         Me.LNombre.Name = "LNombre"
-        Me.LNombre.Size = New System.Drawing.Size(76, 16)
+        Me.LNombre.Size = New System.Drawing.Size(75, 16)
         Me.LNombre.TabIndex = 1
         Me.LNombre.Text = "Nombre/s"
         '
@@ -725,7 +725,7 @@ Partial Class GestionCajeros
         Me.LApellido.AutoSize = True
         Me.LApellido.Location = New System.Drawing.Point(105, 81)
         Me.LApellido.Name = "LApellido"
-        Me.LApellido.Size = New System.Drawing.Size(66, 16)
+        Me.LApellido.Size = New System.Drawing.Size(65, 16)
         Me.LApellido.TabIndex = 0
         Me.LApellido.Text = "Apellido"
         '
