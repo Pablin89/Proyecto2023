@@ -1,7 +1,4 @@
-
-﻿Imports System.Net.Mime.MediaTypeNames
 Imports System.Text.RegularExpressions
-Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class GestionCajeros
     'METODOS DE CONSULTA CAJEROS
@@ -39,6 +36,28 @@ Public Class GestionCajeros
             MessageBox.Show("solo se permiten letras", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
 
+    End Sub
+
+    'Con estos métodos solamente puedo seleccionar un filtro de bús1queda a la vez
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+
+        If (CheckBox2.Checked) Then
+            CheckBox1.Enabled = False
+            TextBox3.Enabled = False
+        Else
+            CheckBox1.Enabled = True
+            TextBox3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If (CheckBox1.Checked) Then
+            CheckBox2.Enabled = False
+            TextBox4.Enabled = False
+        Else
+            CheckBox2.Enabled = True
+            TextBox4.Enabled = True
+        End If
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim dni As String
@@ -116,6 +135,27 @@ Public Class GestionCajeros
             MessageBox.Show("solo se permiten letras", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End If
 
+    End Sub
+
+    'Con estos métodos solamente puedo seleccionar un filtro de bús1queda a la vez
+    Private Sub ChBDni_CheckedChanged(sender As Object, e As EventArgs) Handles ChBDni.CheckedChanged
+        If (ChBDni.Checked) Then
+            ChBApellido.Enabled = False
+            TextBox2.Enabled = False
+        Else
+            ChBApellido.Enabled = True
+            TextBox2.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ChBApellido_CheckedChanged(sender As Object, e As EventArgs) Handles ChBApellido.CheckedChanged
+        If (ChBApellido.Checked) Then
+            ChBDni.Enabled = False
+            TextBox1.Enabled = False
+        Else
+            ChBDni.Enabled = True
+            TextBox1.Enabled = True
+        End If
     End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
