@@ -1,3 +1,4 @@
+Imports System.Net
 Imports System.Text.RegularExpressions
 
 Public Class GestionCajeros
@@ -295,7 +296,40 @@ Public Class GestionCajeros
         End If
     End Sub
 
+    'AGREGAR CAJERO
+    '(buscar cajero)
+    Private Sub TextBox11_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox11.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+            TextBox11.MaxLength = 8
+
+            If (TextBox11.Text.Length > 7) Then
+                MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
 
 
+    End Sub
 
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim dni As String
+        If (TextBox11.Text = "") Then
+            MsgBox("Completa el campo de busqueda", MsgBoxStyle.Information, "Atencion")
+        Else
+            dni = TextBox11.Text
+            MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+        End If
+    End Sub
 End Class

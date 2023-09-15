@@ -652,7 +652,7 @@ Partial Class GestionCajeros
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
         Me.ListBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ListBox1.Location = New System.Drawing.Point(545, 212)
+        Me.ListBox1.Location = New System.Drawing.Point(539, 212)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(158, 20)
         Me.ListBox1.TabIndex = 8
@@ -705,11 +705,11 @@ Partial Class GestionCajeros
         'LFechaNacimiento
         '
         Me.LFechaNacimiento.AutoSize = True
-        Me.LFechaNacimiento.Location = New System.Drawing.Point(16, 169)
+        Me.LFechaNacimiento.Location = New System.Drawing.Point(42, 165)
         Me.LFechaNacimiento.Name = "LFechaNacimiento"
-        Me.LFechaNacimiento.Size = New System.Drawing.Size(154, 16)
+        Me.LFechaNacimiento.Size = New System.Drawing.Size(128, 16)
         Me.LFechaNacimiento.TabIndex = 2
-        Me.LFechaNacimiento.Text = "Fecha de Nacimiento"
+        Me.LFechaNacimiento.Text = "Fecha de Ingreso"
         '
         'LNombre
         '
