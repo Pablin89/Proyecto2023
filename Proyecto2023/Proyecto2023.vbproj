@@ -80,12 +80,6 @@
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Cajero\Mis ventas.Designer.vb">
-      <DependentUpon>Mis ventas.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Cajero\Mis ventas.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CPresentacion\Cajero\Seleccion_Clientes.Designer.vb">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
     </Compile>
@@ -172,9 +166,6 @@
   <ItemGroup>
     <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Cajero\Mis ventas.resx">
-      <DependentUpon>Mis ventas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Seleccion_Clientes.resx">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
