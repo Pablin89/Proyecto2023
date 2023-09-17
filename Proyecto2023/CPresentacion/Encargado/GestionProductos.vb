@@ -164,47 +164,6 @@
     'Metodos Formulario Editar producto
 
     'Configurar busqueda en editar
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If (CheckBox1.Checked) Then
-            ChProducto.Enabled = False
-            TextBox4.Enabled = False
-            ChBCategoria.Enabled = False
-            ComboBox3.Enabled = False
-        Else
-            ChProducto.Enabled = True
-            TextBox4.Enabled = True
-            ChBCategoria.Enabled = True
-            ComboBox3.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ChProducto_CheckedChanged(sender As Object, e As EventArgs) Handles ChProducto.CheckedChanged
-        If (ChProducto.Checked) Then
-            CheckBox1.Enabled = False
-            TextBox8.Enabled = False
-            ChBCategoria.Enabled = False
-            ComboBox3.Enabled = False
-        Else
-            CheckBox1.Enabled = True
-            TextBox8.Enabled = True
-            ChBCategoria.Enabled = True
-            ComboBox3.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ChBCategoria_CheckedChanged(sender As Object, e As EventArgs) Handles ChBCategoria.CheckedChanged
-        If (ChBCategoria.Checked) Then
-            CheckBox1.Enabled = False
-            TextBox8.Enabled = False
-            ChProducto.Enabled = False
-            TextBox4.Enabled = False
-        Else
-            CheckBox1.Enabled = True
-            TextBox8.Enabled = True
-            ChProducto.Enabled = True
-            TextBox4.Enabled = True
-        End If
-    End Sub
 
     Private Sub TextBox8_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox8.KeyPress
 
@@ -231,7 +190,35 @@
         codigo = TextBox8.Text
         nombre = TextBox4.Text
         categoria = ComboBox3.Text
-        If (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+        If (CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+            If (categoria = "" Or nombre = "" Or codigo = "") Then
+                MsgBox("Completa los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " 'nombre': " + nombre + " y 'categoria:' " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (Not CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+            If (categoria = "" Or nombre = "") Then
+                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'nombre': " + nombre + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+            If (categoria = "" Or codigo = "") Then
+                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
+            If (nombre = "" Or codigo = "") Then
+                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " y 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
             If (categoria = "") Then
                 MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
             Else
@@ -367,47 +354,6 @@
     End Sub
 
     'Metodos de Consultar productos
-    Private Sub ChCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles ChCodigo.CheckedChanged
-        If (ChCodigo.Checked) Then
-            ChNombreProducto.Enabled = False
-            TNombreProd.Enabled = False
-            ChCategoria.Enabled = False
-            CBCateg.Enabled = False
-        Else
-            ChNombreProducto.Enabled = True
-            TNombreProd.Enabled = True
-            ChCategoria.Enabled = True
-            CBCateg.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ChNombreProducto_CheckedChanged(sender As Object, e As EventArgs) Handles ChNombreProducto.CheckedChanged
-        If (ChNombreProducto.Checked) Then
-            ChCodigo.Enabled = False
-            TCodigo.Enabled = False
-            ChCategoria.Enabled = False
-            CBCateg.Enabled = False
-        Else
-            ChCodigo.Enabled = True
-            TCodigo.Enabled = True
-            ChCategoria.Enabled = True
-            CBCateg.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ChCategoria_CheckedChanged(sender As Object, e As EventArgs) Handles ChCategoria.CheckedChanged
-        If (ChCategoria.Checked) Then
-            ChCodigo.Enabled = False
-            TCodigo.Enabled = False
-            ChNombreProducto.Enabled = False
-            TNombreProd.Enabled = False
-        Else
-            ChCodigo.Enabled = True
-            TCodigo.Enabled = True
-            ChNombreProducto.Enabled = True
-            TNombreProd.Enabled = True
-        End If
-    End Sub
 
     Private Sub TCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TCodigo.KeyPress
 
@@ -434,7 +380,35 @@
         codigo = TCodigo.Text
         nombre = TNombreProd.Text
         categoria = CBCateg.Text
-        If (Not ChCodigo.Checked And Not ChNombreProducto.Checked And ChCategoria.Checked) Then
+        If (ChCodigo.Checked And ChNombreProducto.Checked And ChCategoria.Checked) Then
+            If (categoria = "" Or nombre = "" Or codigo = "") Then
+                MsgBox("complete los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " 'nombre': " + nombre + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (Not ChCodigo.Checked And ChNombreProducto.Checked And ChCategoria.Checked) Then
+            If (categoria = "" Or nombre = "") Then
+                MsgBox("complete los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'nombre': " + nombre + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (ChCodigo.Checked And Not ChNombreProducto.Checked And ChCategoria.Checked) Then
+            If (categoria = "" Or codigo = "") Then
+                MsgBox("complete los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (ChCodigo.Checked And ChNombreProducto.Checked And Not ChCategoria.Checked) Then
+            If (codigo = "" Or nombre = "") Then
+                MsgBox("Complete los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'codigo': " + codigo + " y 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+            End If
+
+        ElseIf (Not ChCodigo.Checked And Not ChNombreProducto.Checked And ChCategoria.Checked) Then
             If (categoria = "") Then
                 MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
             Else

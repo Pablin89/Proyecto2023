@@ -39,43 +39,17 @@ Public Class GestionCajeros
 
     End Sub
 
-    'Con estos métodos solamente puedo seleccionar un filtro de bús1queda a la vez
-    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
-
-        If (CheckBox2.Checked) Then
-            CheckBox1.Enabled = False
-            TextBox3.Enabled = False
-        Else
-            CheckBox1.Enabled = True
-            TextBox3.Enabled = True
-        End If
-    End Sub
-
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        If (CheckBox1.Checked) Then
-            CheckBox2.Enabled = False
-            TextBox4.Enabled = False
-        Else
-            CheckBox2.Enabled = True
-            TextBox4.Enabled = True
-        End If
-    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim dni As String
         Dim apellido As String
-
+        dni = TextBox4.Text
+        apellido = TextBox3.Text
         If (CheckBox2.Checked And CheckBox1.Checked) Then
             'MsgBox("Seleccionaste buscar Cajero por 'DNI' y 'apellido'", MsgBoxStyle.Information, "Buscar")
 
-            If (TextBox4.Text = "" And TextBox3.Text = "") Then
-                MsgBox("Completa los campos 'DNI' y 'apellido'", MsgBoxStyle.Information, "Atencion")
-            ElseIf (TextBox4.Text <> "" And TextBox3.Text = "") Then
-                MsgBox("Completa el campo 'apellido'", MsgBoxStyle.Information, "Atencion")
-            ElseIf (TextBox4.Text = "" And TextBox3.Text <> "") Then
-                MsgBox("Completa el campo 'DNI'", MsgBoxStyle.Information, "Atencion")
+            If (TextBox4.Text = "" Or TextBox3.Text = "") Then
+                MsgBox("Completa los campos seleccionados'", MsgBoxStyle.Information, "Atencion")
             Else
-                dni = TextBox4.Text
-                apellido = TextBox3.Text
                 MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni + " y 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
             End If
 
@@ -84,7 +58,6 @@ Public Class GestionCajeros
             If (TextBox4.Text = "") Then
                 MsgBox("Completa el campo 'DNI'", MsgBoxStyle.Information, "Atencion")
             Else
-                dni = TextBox4.Text
                 MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
             End If
         ElseIf (Not CheckBox2.Checked And CheckBox1.Checked) Then
@@ -92,7 +65,6 @@ Public Class GestionCajeros
             If (TextBox3.Text = "") Then
                 MsgBox("Completa el campo 'apellido'", MsgBoxStyle.Information, "Atencion")
             Else
-                apellido = TextBox3.Text
                 MsgBox("Seleccionaste buscar Cajero por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
             End If
         Else
@@ -138,43 +110,18 @@ Public Class GestionCajeros
 
     End Sub
 
-    'Con estos métodos solamente puedo seleccionar un filtro de bús1queda a la vez
-    Private Sub ChBDni_CheckedChanged(sender As Object, e As EventArgs) Handles ChBDni.CheckedChanged
-        If (ChBDni.Checked) Then
-            ChBApellido.Enabled = False
-            TextBox2.Enabled = False
-        Else
-            ChBApellido.Enabled = True
-            TextBox2.Enabled = True
-        End If
-    End Sub
-
-    Private Sub ChBApellido_CheckedChanged(sender As Object, e As EventArgs) Handles ChBApellido.CheckedChanged
-        If (ChBApellido.Checked) Then
-            ChBDni.Enabled = False
-            TextBox1.Enabled = False
-        Else
-            ChBDni.Enabled = True
-            TextBox1.Enabled = True
-        End If
-    End Sub
 
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim dni As String
         Dim apellido As String
-
+        dni = TextBox1.Text
+        apellido = TextBox2.Text
         If (ChBDni.Checked And ChBApellido.Checked) Then
             'MsgBox("Seleccionaste buscar Cajero por 'DNI' y 'apellido'", MsgBoxStyle.Information, "Buscar")
 
-            If (TextBox1.Text = "" And TextBox2.Text = "") Then
-                MsgBox("Completa los campos 'DNI' y 'apellido'", MsgBoxStyle.Information, "Atencion")
-            ElseIf (TextBox1.Text <> "" And TextBox2.Text = "") Then
-                MsgBox("Completa el campo 'apellido'", MsgBoxStyle.Information, "Atencion")
-            ElseIf (TextBox1.Text = "" And TextBox2.Text <> "") Then
-                MsgBox("Completa el campo 'DNI'", MsgBoxStyle.Information, "Atencion")
+            If (TextBox1.Text = "" Or TextBox2.Text = "") Then
+                MsgBox("Completa los campos seleccionados", MsgBoxStyle.Information, "Atencion")
             Else
-                dni = TextBox1.Text
-                apellido = TextBox2.Text
                 MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni + " y 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
             End If
 
@@ -183,7 +130,6 @@ Public Class GestionCajeros
             If (TextBox1.Text = "") Then
                 MsgBox("Completa el campo 'DNI'", MsgBoxStyle.Information, "Atencion")
             Else
-                dni = TextBox1.Text
                 MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
             End If
         ElseIf (Not ChBDni.Checked And ChBApellido.Checked) Then
@@ -191,7 +137,6 @@ Public Class GestionCajeros
             If (TextBox2.Text = "") Then
                 MsgBox("Completa el campo 'apellido'", MsgBoxStyle.Information, "Atencion")
             Else
-                apellido = TextBox2.Text
                 MsgBox("Seleccionaste buscar Cajero por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
             End If
         Else
