@@ -28,9 +28,8 @@ Partial Class GestionProductos
         Me.TCodigo = New System.Windows.Forms.TextBox()
         Me.ChCodigo = New System.Windows.Forms.CheckBox()
         Me.LTitulo = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.ChCategoria = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TNombreProd = New System.Windows.Forms.TextBox()
         Me.ChNombreProducto = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -44,10 +43,10 @@ Partial Class GestionProductos
         Me.LNombrepro = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.EditarProductos = New System.Windows.Forms.TabPage()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -95,6 +94,7 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
+        Me.CBCateg = New System.Windows.Forms.ComboBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -127,13 +127,13 @@ Partial Class GestionProductos
         'ConsultarProductos
         '
         Me.ConsultarProductos.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.ConsultarProductos.Controls.Add(Me.CBCateg)
         Me.ConsultarProductos.Controls.Add(Me.Button1)
         Me.ConsultarProductos.Controls.Add(Me.TCodigo)
         Me.ConsultarProductos.Controls.Add(Me.ChCodigo)
         Me.ConsultarProductos.Controls.Add(Me.LTitulo)
-        Me.ConsultarProductos.Controls.Add(Me.TextBox2)
         Me.ConsultarProductos.Controls.Add(Me.ChCategoria)
-        Me.ConsultarProductos.Controls.Add(Me.TextBox1)
+        Me.ConsultarProductos.Controls.Add(Me.TNombreProd)
         Me.ConsultarProductos.Controls.Add(Me.ChNombreProducto)
         Me.ConsultarProductos.Controls.Add(Me.Panel1)
         Me.ConsultarProductos.Location = New System.Drawing.Point(4, 28)
@@ -182,13 +182,6 @@ Partial Class GestionProductos
         Me.LTitulo.TabIndex = 8
         Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(374, 143)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox2.TabIndex = 4
-        '
         'ChCategoria
         '
         Me.ChCategoria.AutoSize = True
@@ -199,12 +192,12 @@ Partial Class GestionProductos
         Me.ChCategoria.Text = "Categoría "
         Me.ChCategoria.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TNombreProd
         '
-        Me.TextBox1.Location = New System.Drawing.Point(374, 99)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox1.TabIndex = 2
+        Me.TNombreProd.Location = New System.Drawing.Point(374, 99)
+        Me.TNombreProd.Name = "TNombreProd"
+        Me.TNombreProd.Size = New System.Drawing.Size(225, 22)
+        Me.TNombreProd.TabIndex = 2
         '
         'ChNombreProducto
         '
@@ -331,10 +324,10 @@ Partial Class GestionProductos
         'EditarProductos
         '
         Me.EditarProductos.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.EditarProductos.Controls.Add(Me.ComboBox3)
         Me.EditarProductos.Controls.Add(Me.TextBox8)
         Me.EditarProductos.Controls.Add(Me.CheckBox1)
         Me.EditarProductos.Controls.Add(Me.Label1)
-        Me.EditarProductos.Controls.Add(Me.TextBox3)
         Me.EditarProductos.Controls.Add(Me.TextBox4)
         Me.EditarProductos.Controls.Add(Me.Panel3)
         Me.EditarProductos.Controls.Add(Me.ChBCategoria)
@@ -346,6 +339,15 @@ Partial Class GestionProductos
         Me.EditarProductos.Size = New System.Drawing.Size(806, 589)
         Me.EditarProductos.TabIndex = 1
         Me.EditarProductos.Text = "Editar Productos"
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
+        Me.ComboBox3.Location = New System.Drawing.Point(376, 132)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(225, 24)
+        Me.ComboBox3.TabIndex = 17
         '
         'TextBox8
         '
@@ -372,13 +374,6 @@ Partial Class GestionProductos
         Me.Label1.Size = New System.Drawing.Size(239, 16)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(376, 134)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(225, 22)
-        Me.TextBox3.TabIndex = 13
         '
         'TextBox4
         '
@@ -840,6 +835,15 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
+        'CBCateg
+        '
+        Me.CBCateg.FormattingEnabled = True
+        Me.CBCateg.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
+        Me.CBCateg.Location = New System.Drawing.Point(374, 143)
+        Me.CBCateg.Name = "CBCateg"
+        Me.CBCateg.Size = New System.Drawing.Size(225, 24)
+        Me.CBCateg.TabIndex = 13
+        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -884,13 +888,11 @@ Partial Class GestionProductos
     Friend WithEvents LNombrepro As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents ChCategoria As CheckBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TNombreProd As TextBox
     Friend WithEvents LTitulo As Label
     Friend WithEvents LEstado As Label
     Friend WithEvents LCategoria As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents BBuscar As Button
     Friend WithEvents Panel3 As Panel
@@ -944,4 +946,6 @@ Partial Class GestionProductos
     Friend WithEvents LStockMinimo2 As Label
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents LCódigo2 As Label
+    Friend WithEvents ComboBox3 As ComboBox
+    Friend WithEvents CBCateg As ComboBox
 End Class
