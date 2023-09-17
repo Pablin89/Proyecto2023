@@ -332,4 +332,112 @@ Public Class GestionCajeros
             MsgBox("Seleccionaste buscar Cajero por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
         End If
     End Sub
+
+    '(agregar cajero)
+
+    Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox5.KeyPress
+
+        If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("solo se permiten letras", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
+    End Sub
+    Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
+
+        If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("solo se permiten letras", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+
+    End Sub
+
+    Private Sub TextBox7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox7.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+            TextBox7.MaxLength = 8
+
+            If (TextBox7.Text.Length > 7) Then
+                MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    Private Sub TextBox9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox9.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+
+            e.Handled = False
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    'configurar el botón como en editar
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim ask As MsgBoxResult
+
+        If ((TextBox5.Text <> "") And
+            (TextBox6.Text <> "") And
+            (DateTimePicker1.Text <> "") And
+            (TextBox7.Text <> "") And
+            (TextBox8.Text <> "") And
+            (TextBox9.Text <> "") And
+            (TextBox10.Text <> "")
+            ) Then
+
+            If (EmailAddressCheck(TextBox10.Text)) Then
+                ask = MsgBox("Seguro desea Agregar Cajero?", MsgBoxStyle.YesNo, "Confirmar Edición")
+
+                If ask = MsgBoxResult.Yes Then
+                    MsgBox("Cajero Agregado correctamente", MsgBoxStyle.OkOnly, "Agregado")
+                    TApellidoYNombre.Text = ""
+                    TDni.Text = ""
+                    TFechaNac.Text = ""
+                    TDireccion.Text = ""
+                    TTelefono.Text = ""
+                    TCorreo.Text = ""
+                Else
+                    MsgBox("No se Agregó el cajero", MsgBoxStyle.OkOnly, "No Agregado")
+
+                End If
+
+            Else
+                MessageBox.Show("Formato de correo no válido. Formato permitido ej: 'usuario@gmail.com'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+
+        Else
+
+            MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
+
+        End If
+    End Sub
 End Class
