@@ -24,16 +24,18 @@ Partial Class Seleccion_Clientes
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.ChDni = New System.Windows.Forms.CheckBox()
-        Me.ChApellido = New System.Windows.Forms.CheckBox()
-        Me.ChCorreo = New System.Windows.Forms.CheckBox()
-        Me.TBusqueda = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TBuscarDni = New System.Windows.Forms.TextBox()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.RBCorreo = New System.Windows.Forms.RadioButton()
+        Me.RBApellido = New System.Windows.Forms.RadioButton()
+        Me.RBDni = New System.Windows.Forms.RadioButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
+        Me.TBuscarapellido = New System.Windows.Forms.TextBox()
+        Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -56,64 +58,31 @@ Partial Class Seleccion_Clientes
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(118, 85)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 16)
+        Me.Label2.Size = New System.Drawing.Size(75, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Buscar por:"
         '
-        'ChDni
+        'TBuscarDni
         '
-        Me.ChDni.AutoSize = True
-        Me.ChDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChDni.Location = New System.Drawing.Point(121, 120)
-        Me.ChDni.Name = "ChDni"
-        Me.ChDni.Size = New System.Drawing.Size(47, 20)
-        Me.ChDni.TabIndex = 2
-        Me.ChDni.Text = "Dni"
-        Me.ChDni.UseVisualStyleBackColor = True
+        Me.TBuscarDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarDni.Location = New System.Drawing.Point(227, 118)
+        Me.TBuscarDni.Name = "TBuscarDni"
+        Me.TBuscarDni.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarDni.TabIndex = 5
         '
-        'ChApellido
+        'ButtonBuscar
         '
-        Me.ChApellido.AutoSize = True
-        Me.ChApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChApellido.Location = New System.Drawing.Point(121, 158)
-        Me.ChApellido.Name = "ChApellido"
-        Me.ChApellido.Size = New System.Drawing.Size(77, 20)
-        Me.ChApellido.TabIndex = 3
-        Me.ChApellido.Text = "Apellido"
-        Me.ChApellido.UseVisualStyleBackColor = True
-        '
-        'ChCorreo
-        '
-        Me.ChCorreo.AutoSize = True
-        Me.ChCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ChCorreo.Location = New System.Drawing.Point(121, 193)
-        Me.ChCorreo.Name = "ChCorreo"
-        Me.ChCorreo.Size = New System.Drawing.Size(68, 20)
-        Me.ChCorreo.TabIndex = 4
-        Me.ChCorreo.Text = "Correo"
-        Me.ChCorreo.UseVisualStyleBackColor = True
-        '
-        'TBusqueda
-        '
-        Me.TBusqueda.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBusqueda.Location = New System.Drawing.Point(298, 120)
-        Me.TBusqueda.Name = "TBusqueda"
-        Me.TBusqueda.Size = New System.Drawing.Size(213, 21)
-        Me.TBusqueda.TabIndex = 5
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(539, 106)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 46)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Buscar Cliente"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonBuscar.Location = New System.Drawing.Point(566, 118)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
+        Me.ButtonBuscar.TabIndex = 6
+        Me.ButtonBuscar.Text = "Buscar Cliente"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
@@ -128,11 +97,13 @@ Partial Class Seleccion_Clientes
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Button1)
-        Me.Panel1.Controls.Add(Me.TBusqueda)
-        Me.Panel1.Controls.Add(Me.ChCorreo)
-        Me.Panel1.Controls.Add(Me.ChApellido)
-        Me.Panel1.Controls.Add(Me.ChDni)
+        Me.Panel1.Controls.Add(Me.TBuscarCorreo)
+        Me.Panel1.Controls.Add(Me.TBuscarapellido)
+        Me.Panel1.Controls.Add(Me.RBCorreo)
+        Me.Panel1.Controls.Add(Me.RBApellido)
+        Me.Panel1.Controls.Add(Me.RBDni)
+        Me.Panel1.Controls.Add(Me.ButtonBuscar)
+        Me.Panel1.Controls.Add(Me.TBuscarDni)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -140,6 +111,42 @@ Partial Class Seleccion_Clientes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 235)
         Me.Panel1.TabIndex = 8
+        '
+        'RBCorreo
+        '
+        Me.RBCorreo.AutoSize = True
+        Me.RBCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBCorreo.Location = New System.Drawing.Point(121, 194)
+        Me.RBCorreo.Name = "RBCorreo"
+        Me.RBCorreo.Size = New System.Drawing.Size(62, 19)
+        Me.RBCorreo.TabIndex = 9
+        Me.RBCorreo.TabStop = True
+        Me.RBCorreo.Text = "Correo"
+        Me.RBCorreo.UseVisualStyleBackColor = True
+        '
+        'RBApellido
+        '
+        Me.RBApellido.AutoSize = True
+        Me.RBApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBApellido.Location = New System.Drawing.Point(121, 156)
+        Me.RBApellido.Name = "RBApellido"
+        Me.RBApellido.Size = New System.Drawing.Size(69, 19)
+        Me.RBApellido.TabIndex = 8
+        Me.RBApellido.TabStop = True
+        Me.RBApellido.Text = "Apellido"
+        Me.RBApellido.UseVisualStyleBackColor = True
+        '
+        'RBDni
+        '
+        Me.RBDni.AutoSize = True
+        Me.RBDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBDni.Location = New System.Drawing.Point(121, 120)
+        Me.RBDni.Name = "RBDni"
+        Me.RBDni.Size = New System.Drawing.Size(46, 19)
+        Me.RBDni.TabIndex = 7
+        Me.RBDni.TabStop = True
+        Me.RBDni.Text = "DNI"
+        Me.RBDni.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -173,6 +180,22 @@ Partial Class Seleccion_Clientes
         Me.BSeleccionar.Text = "Seleccionar Cliente"
         Me.BSeleccionar.UseVisualStyleBackColor = False
         '
+        'TBuscarapellido
+        '
+        Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarapellido.Location = New System.Drawing.Point(227, 156)
+        Me.TBuscarapellido.Name = "TBuscarapellido"
+        Me.TBuscarapellido.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarapellido.TabIndex = 10
+        '
+        'TBuscarCorreo
+        '
+        Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarCorreo.Location = New System.Drawing.Point(227, 192)
+        Me.TBuscarCorreo.Name = "TBuscarCorreo"
+        Me.TBuscarCorreo.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarCorreo.TabIndex = 11
+        '
         'Seleccion_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -195,14 +218,16 @@ Partial Class Seleccion_Clientes
 
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents ChDni As CheckBox
-    Friend WithEvents ChApellido As CheckBox
-    Friend WithEvents ChCorreo As CheckBox
-    Friend WithEvents TBusqueda As TextBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents TBuscarDni As TextBox
+    Friend WithEvents ButtonBuscar As Button
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents BSeleccionar As Button
+    Friend WithEvents RBCorreo As RadioButton
+    Friend WithEvents RBApellido As RadioButton
+    Friend WithEvents RBDni As RadioButton
+    Friend WithEvents TBuscarCorreo As TextBox
+    Friend WithEvents TBuscarapellido As TextBox
 End Class
