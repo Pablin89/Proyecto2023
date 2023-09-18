@@ -28,14 +28,14 @@ Partial Class Seleccion_Clientes
         Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
+        Me.TBuscarapellido = New System.Windows.Forms.TextBox()
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
         Me.RBApellido = New System.Windows.Forms.RadioButton()
         Me.RBDni = New System.Windows.Forms.RadioButton()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
-        Me.TBuscarapellido = New System.Windows.Forms.TextBox()
-        Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -112,6 +112,22 @@ Partial Class Seleccion_Clientes
         Me.Panel1.Size = New System.Drawing.Size(800, 235)
         Me.Panel1.TabIndex = 8
         '
+        'TBuscarCorreo
+        '
+        Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarCorreo.Location = New System.Drawing.Point(227, 192)
+        Me.TBuscarCorreo.Name = "TBuscarCorreo"
+        Me.TBuscarCorreo.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarCorreo.TabIndex = 11
+        '
+        'TBuscarapellido
+        '
+        Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarapellido.Location = New System.Drawing.Point(227, 156)
+        Me.TBuscarapellido.Name = "TBuscarapellido"
+        Me.TBuscarapellido.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarapellido.TabIndex = 10
+        '
         'RBCorreo
         '
         Me.RBCorreo.AutoSize = True
@@ -179,22 +195,6 @@ Partial Class Seleccion_Clientes
         Me.BSeleccionar.TabIndex = 0
         Me.BSeleccionar.Text = "Seleccionar Cliente"
         Me.BSeleccionar.UseVisualStyleBackColor = False
-        '
-        'TBuscarapellido
-        '
-        Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBuscarapellido.Location = New System.Drawing.Point(227, 156)
-        Me.TBuscarapellido.Name = "TBuscarapellido"
-        Me.TBuscarapellido.Size = New System.Drawing.Size(285, 21)
-        Me.TBuscarapellido.TabIndex = 10
-        '
-        'TBuscarCorreo
-        '
-        Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBuscarCorreo.Location = New System.Drawing.Point(227, 192)
-        Me.TBuscarCorreo.Name = "TBuscarCorreo"
-        Me.TBuscarCorreo.Size = New System.Drawing.Size(285, 21)
-        Me.TBuscarCorreo.TabIndex = 11
         '
         'Seleccion_Clientes
         '
