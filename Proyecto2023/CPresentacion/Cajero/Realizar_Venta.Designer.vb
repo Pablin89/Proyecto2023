@@ -39,6 +39,8 @@ Partial Class Realizar_Venta
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -203,12 +205,32 @@ Partial Class Realizar_Venta
         Me.Label9.TabIndex = 18
         Me.Label9.Text = "Correo:"
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(233, 602)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(122, 23)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Generar Factura"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(412, 453)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(122, 23)
+        Me.Button3.TabIndex = 20
+        Me.Button3.Text = "Agregar Cliente"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Realizar_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(800, 707)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TextBox4)
@@ -252,4 +274,6 @@ Partial Class Realizar_Venta
     Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

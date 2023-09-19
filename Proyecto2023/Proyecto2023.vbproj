@@ -300,5 +300,8 @@
   <ItemGroup>
     <None Include="Resources\searchcircularbutton_79274.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

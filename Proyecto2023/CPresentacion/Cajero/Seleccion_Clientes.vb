@@ -74,4 +74,8 @@ Public Class Seleccion_Clientes
             MsgBox("No Seleccionaste ninguna busqueda", MsgBoxStyle.Critical, "Error")
         End If
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+        Button1.Enabled = False
+    End Sub
 End Class

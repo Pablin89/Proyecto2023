@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Seleccion_Clientes
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,19 +20,20 @@ Partial Class Seleccion_Clientes
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBuscarDni = New System.Windows.Forms.TextBox()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         Me.TBuscarapellido = New System.Windows.Forms.TextBox()
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
         Me.RBApellido = New System.Windows.Forms.RadioButton()
         Me.RBDni = New System.Windows.Forms.RadioButton()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
@@ -70,20 +71,6 @@ Partial Class Seleccion_Clientes
         Me.TBuscarDni.Size = New System.Drawing.Size(285, 21)
         Me.TBuscarDni.TabIndex = 5
         '
-        'ButtonBuscar
-        '
-        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBuscar.Location = New System.Drawing.Point(566, 118)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
-        Me.ButtonBuscar.TabIndex = 6
-        Me.ButtonBuscar.Text = "Buscar Cliente"
-        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonBuscar.UseVisualStyleBackColor = True
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
@@ -97,6 +84,7 @@ Partial Class Seleccion_Clientes
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TBuscarCorreo)
         Me.Panel1.Controls.Add(Me.TBuscarapellido)
         Me.Panel1.Controls.Add(Me.RBCorreo)
@@ -111,6 +99,18 @@ Partial Class Seleccion_Clientes
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 235)
         Me.Panel1.TabIndex = 8
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(566, 180)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 46)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Editar Cliente"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'TBuscarCorreo
         '
@@ -163,6 +163,20 @@ Partial Class Seleccion_Clientes
         Me.RBDni.TabStop = True
         Me.RBDni.Text = "DNI"
         Me.RBDni.UseVisualStyleBackColor = True
+        '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonBuscar.Location = New System.Drawing.Point(566, 118)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
+        Me.ButtonBuscar.TabIndex = 6
+        Me.ButtonBuscar.Text = "Buscar Cliente"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
         'Panel2
         '
@@ -230,4 +244,5 @@ Partial Class Seleccion_Clientes
     Friend WithEvents RBDni As RadioButton
     Friend WithEvents TBuscarCorreo As TextBox
     Friend WithEvents TBuscarapellido As TextBox
+    Friend WithEvents Button1 As Button
 End Class
