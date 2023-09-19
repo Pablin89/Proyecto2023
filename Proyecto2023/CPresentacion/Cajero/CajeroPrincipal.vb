@@ -8,4 +8,7 @@
         Misdatos.ShowDialog()
     End Sub
 
+    Private Sub RealizarVenta_Click(sender As Object, e As EventArgs) Handles RealizarVenta.Click
+        Realizar_Venta.ShowDialog()
+    End Sub
 End Class
