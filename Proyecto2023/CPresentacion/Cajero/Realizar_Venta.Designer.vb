@@ -59,7 +59,7 @@ Partial Class Realizar_Venta
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 23)
         Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Agregar Al Carrito"
+        Me.Button1.Text = "Agregar Producto"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'TextBox1

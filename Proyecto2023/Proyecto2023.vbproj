@@ -80,6 +80,18 @@
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Cajero\Gestion_Clientes.Designer.vb">
+      <DependentUpon>Gestion_Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Gestion_Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Mis_Ventas.Designer.vb">
+      <DependentUpon>Mis_Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Mis_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Cajero\Realizar_Venta.Designer.vb">
       <DependentUpon>Realizar_Venta.vb</DependentUpon>
     </Compile>
@@ -172,6 +184,12 @@
   <ItemGroup>
     <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\Gestion_Clientes.resx">
+      <DependentUpon>Gestion_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\Mis_Ventas.resx">
+      <DependentUpon>Mis_Ventas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Realizar_Venta.resx">
       <DependentUpon>Realizar_Venta.vb</DependentUpon>
@@ -302,6 +320,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\businessapplication_edit_male_user_thepencil_theclient_negocio_2321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\businessapplication_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_icon_129108.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\date_10131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agregar cliente.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
