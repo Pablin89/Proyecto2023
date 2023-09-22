@@ -31,6 +31,7 @@ Partial Class CajeroPrincipal
         Me.RealizarVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.MisVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
@@ -92,7 +93,7 @@ Partial Class CajeroPrincipal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.ConsultarCliente})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -131,8 +132,17 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario.Margin = New System.Windows.Forms.Padding(8)
         Me.AgregarUsuario.Name = "AgregarUsuario"
         Me.AgregarUsuario.Size = New System.Drawing.Size(186, 73)
-        Me.AgregarUsuario.Text = "Agregar Usuario"
+        Me.AgregarUsuario.Text = "Agregar Cliente"
         Me.AgregarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ConsultarCliente
+        '
+        Me.ConsultarCliente.Image = Global.Proyecto2023.My.Resources.Resources.business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_
+        Me.ConsultarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ConsultarCliente.Name = "ConsultarCliente"
+        Me.ConsultarCliente.Size = New System.Drawing.Size(202, 89)
+        Me.ConsultarCliente.Text = "Consultar Clientes"
+        Me.ConsultarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'PictureBox1
         '
@@ -197,4 +207,5 @@ Partial Class CajeroPrincipal
     Friend WithEvents MisVentas As ToolStripMenuItem
     Friend WithEvents AgregarUsuario As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents ConsultarCliente As ToolStripMenuItem
 End Class

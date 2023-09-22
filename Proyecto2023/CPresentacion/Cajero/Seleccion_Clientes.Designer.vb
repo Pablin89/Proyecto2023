@@ -28,12 +28,12 @@ Partial Class Seleccion_Clientes
         Me.ChApellido = New System.Windows.Forms.CheckBox()
         Me.ChCorreo = New System.Windows.Forms.CheckBox()
         Me.TBusqueda = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -101,20 +101,6 @@ Partial Class Seleccion_Clientes
         Me.TBusqueda.Size = New System.Drawing.Size(213, 21)
         Me.TBusqueda.TabIndex = 5
         '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(539, 106)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 46)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Buscar Cliente"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
@@ -173,6 +159,20 @@ Partial Class Seleccion_Clientes
         Me.BSeleccionar.Text = "Seleccionar Cliente"
         Me.BSeleccionar.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(539, 106)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 46)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Buscar Cliente"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Seleccion_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -183,6 +183,7 @@ Partial Class Seleccion_Clientes
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Name = "Seleccion_Clientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Seleccion de Clientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)

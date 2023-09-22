@@ -74,6 +74,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\AgregarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.Designer.vb">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
     </Compile>
@@ -164,6 +170,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CPresentacion\Cajero\AgregarCliente.resx">
+      <DependentUpon>AgregarCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
     </EmbeddedResource>
@@ -290,6 +299,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\searchcircularbutton_79274.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26_122663.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26_122663 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\26_122663 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\team_people_man_woman_group_icon_193939.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_man_user_support_supportfortheuser_aquestion_theclient_2330 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_man_user_support_supportfortheuser_aquestion_theclient_2330 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business_man_user_support_supportfortheuser_aquestion_theclient_2330.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
