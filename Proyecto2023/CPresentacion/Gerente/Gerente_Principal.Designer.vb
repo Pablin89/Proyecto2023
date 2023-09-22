@@ -25,7 +25,6 @@ Partial Class Gerente_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gerente_Principal))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
@@ -36,6 +35,7 @@ Partial Class Gerente_Principal
         Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -49,9 +49,9 @@ Partial Class Gerente_Principal
         Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.BCerrarSesion)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(675, 0)
+        Me.Panel2.Location = New System.Drawing.Point(653, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(147, 554)
+        Me.Panel2.Size = New System.Drawing.Size(147, 620)
         Me.Panel2.TabIndex = 2
         '
         'Button1
@@ -68,25 +68,6 @@ Partial Class Gerente_Principal
         Me.Button1.Text = "Datos de usuario"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
-        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.Size = New System.Drawing.Size(147, 47)
-        Me.BCerrarSesion.TabIndex = 0
-        Me.BCerrarSesion.Text = "Cerrar Sesión"
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -95,7 +76,7 @@ Partial Class Gerente_Principal
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(675, 554)
+        Me.Panel3.Size = New System.Drawing.Size(653, 620)
         Me.Panel3.TabIndex = 4
         '
         'Panel1
@@ -106,13 +87,13 @@ Partial Class Gerente_Principal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(215, 554)
+        Me.Panel1.Size = New System.Drawing.Size(215, 620)
         Me.Panel1.TabIndex = 1
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(214, 531)
+        Me.Panel4.Location = New System.Drawing.Point(214, 597)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(1, 23)
         Me.Panel4.TabIndex = 2
@@ -128,7 +109,7 @@ Partial Class Gerente_Principal
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
         Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
-        Me.MenuEncargado.Size = New System.Drawing.Size(214, 370)
+        Me.MenuEncargado.Size = New System.Drawing.Size(214, 436)
         Me.MenuEncargado.TabIndex = 1
         '
         'Productos
@@ -193,15 +174,35 @@ Partial Class Gerente_Principal
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
+        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.Size = New System.Drawing.Size(147, 47)
+        Me.BCerrarSesion.TabIndex = 0
+        Me.BCerrarSesion.Text = "Cerrar Sesión"
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
+        '
         'Gerente_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(822, 554)
+        Me.ClientSize = New System.Drawing.Size(800, 620)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Name = "Gerente_Principal"
         Me.Text = "Gerente_Principal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel2.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)

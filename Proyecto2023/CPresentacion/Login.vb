@@ -16,8 +16,11 @@
         ElseIf TUsuario.Text = "Cajero" Then
             Me.Hide()
             CajeroPrincipal.Show()
-        End If
 
+        ElseIf TUsuario.Text = "Gerente" Then
+        Me.Hide()
+        Gerente_Principal.Show()
+        End If
 
     End Sub
 

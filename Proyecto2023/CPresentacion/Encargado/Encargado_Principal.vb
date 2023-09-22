@@ -16,7 +16,7 @@
         Misdatos.ShowDialog()
     End Sub
 
-    Private Sub Informes_Click(sender As Object, e As EventArgs) Handles Informes.Click
+    Private Sub Informes_Click(sender As Object, e As EventArgs)
         GestionInformes.ShowDialog()
     End Sub
 
