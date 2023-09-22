@@ -22,6 +22,7 @@ Partial Class Realizar_Backup
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Realizar_Backup))
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.LRuta = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -43,7 +44,7 @@ Partial Class Realizar_Backup
         '
         Me.LRuta.AutoSize = True
         Me.LRuta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LRuta.Location = New System.Drawing.Point(104, 165)
+        Me.LRuta.Location = New System.Drawing.Point(74, 165)
         Me.LRuta.Name = "LRuta"
         Me.LRuta.Size = New System.Drawing.Size(171, 16)
         Me.LRuta.TabIndex = 1
@@ -51,7 +52,7 @@ Partial Class Realizar_Backup
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(292, 164)
+        Me.TextBox1.Location = New System.Drawing.Point(251, 164)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(342, 20)
         Me.TextBox1.TabIndex = 2
@@ -67,11 +68,15 @@ Partial Class Realizar_Backup
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(640, 157)
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(599, 153)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(90, 32)
+        Me.Button2.Size = New System.Drawing.Size(119, 40)
         Me.Button2.TabIndex = 4
         Me.Button2.Text = "Buscar ruta"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Realizar_Backup

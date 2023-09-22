@@ -22,21 +22,13 @@ Partial Class Restauracion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Restauracion))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.LRuta = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(634, 174)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(90, 32)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Buscar ruta"
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -49,7 +41,7 @@ Partial Class Restauracion
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(286, 181)
+        Me.TextBox1.Location = New System.Drawing.Point(261, 181)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(342, 20)
         Me.TextBox1.TabIndex = 7
@@ -58,7 +50,7 @@ Partial Class Restauracion
         '
         Me.LRuta.AutoSize = True
         Me.LRuta.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LRuta.Location = New System.Drawing.Point(90, 182)
+        Me.LRuta.Location = New System.Drawing.Point(65, 182)
         Me.LRuta.Name = "LRuta"
         Me.LRuta.Size = New System.Drawing.Size(190, 16)
         Me.LRuta.TabIndex = 6
@@ -73,6 +65,19 @@ Partial Class Restauracion
         Me.LTitulo.Size = New System.Drawing.Size(154, 20)
         Me.LTitulo.TabIndex = 5
         Me.LTitulo.Text = "Restaurar Backup"
+        '
+        'Button2
+        '
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(609, 170)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(119, 40)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Buscar ruta"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'Restauracion
         '
@@ -92,10 +97,9 @@ Partial Class Restauracion
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents LRuta As Label
     Friend WithEvents LTitulo As Label
+    Friend WithEvents Button2 As Button
 End Class

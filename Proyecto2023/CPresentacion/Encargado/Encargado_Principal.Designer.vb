@@ -26,19 +26,20 @@ Partial Class Cajero_Principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
-        Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -66,7 +67,7 @@ Partial Class Cajero_Principal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes, Me.BajaClientes})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes, Me.BajaClientes, Me.ToolStripMenuItem1})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -74,14 +75,67 @@ Partial Class Cajero_Principal
         Me.MenuEncargado.Size = New System.Drawing.Size(212, 427)
         Me.MenuEncargado.TabIndex = 1
         '
+        'Productos
+        '
+        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.Productos
+        Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
+        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
+        Me.Productos.Name = "Productos"
+        Me.Productos.Size = New System.Drawing.Size(189, 76)
+        Me.Productos.Text = "Productos"
+        '
         'Cajeros
         '
         Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Cajeros.Image = CType(resources.GetObject("Cajeros.Image"), System.Drawing.Image)
         Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
         Me.Cajeros.Name = "Cajeros"
-        Me.Cajeros.Size = New System.Drawing.Size(189, 25)
-        Me.Cajeros.Text = "Cajeros"
+        Me.Cajeros.Size = New System.Drawing.Size(189, 68)
+        Me.Cajeros.Text = "Empleados"
+        '
+        'Informes
+        '
+        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.Reportes
+        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
+        Me.Informes.Name = "Informes"
+        Me.Informes.Size = New System.Drawing.Size(189, 76)
+        Me.Informes.Text = "Informes"
+        '
+        'BajaClientes
+        '
+        Me.BajaClientes.Image = Global.Proyecto2023.My.Resources.Resources.team_people_man_woman_group_icon_193939
+        Me.BajaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BajaClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.BajaClientes.Name = "BajaClientes"
+        Me.BajaClientes.Size = New System.Drawing.Size(205, 76)
+        Me.BajaClientes.Text = "Clientes"
+        Me.BajaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
+        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(205, 68)
+        Me.ToolStripMenuItem1.Text = "Cancelar Venta"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(212, 184)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'Panel2
         '
@@ -108,16 +162,6 @@ Partial Class Cajero_Principal
         Me.Button1.Text = "Datos de usuario"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(212, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(441, 611)
-        Me.Panel3.TabIndex = 3
-        '
         'BCerrarSesion
         '
         Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
@@ -137,49 +181,15 @@ Partial Class Cajero_Principal
         Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BCerrarSesion.UseVisualStyleBackColor = False
         '
-        'Productos
+        'Panel3
         '
-        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.Productos
-        Me.Productos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
-        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
-        Me.Productos.Name = "Productos"
-        Me.Productos.Size = New System.Drawing.Size(189, 76)
-        Me.Productos.Text = "Productos"
-        '
-        'Informes
-        '
-        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.Reportes
-        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
-        Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(189, 76)
-        Me.Informes.Text = "Informes"
-        '
-        'BajaClientes
-        '
-        Me.BajaClientes.Image = Global.Proyecto2023.My.Resources.Resources.team_people_man_woman_group_icon_193939
-        Me.BajaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BajaClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BajaClientes.Name = "BajaClientes"
-        Me.BajaClientes.Size = New System.Drawing.Size(205, 76)
-        Me.BajaClientes.Text = "Clientes"
-        Me.BajaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(212, 184)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(212, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(441, 611)
+        Me.Panel3.TabIndex = 3
         '
         'Cajero_Principal
         '
@@ -202,8 +212,8 @@ Partial Class Cajero_Principal
         Me.Panel1.ResumeLayout(False)
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -220,4 +230,5 @@ Partial Class Cajero_Principal
     Friend WithEvents Button1 As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BajaClientes As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
 End Class
