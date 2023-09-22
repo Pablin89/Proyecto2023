@@ -25,6 +25,7 @@ Partial Class CajeroPrincipal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CajeroPrincipal))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
@@ -33,7 +34,6 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -55,6 +55,7 @@ Partial Class CajeroPrincipal
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(0, 47)
@@ -65,6 +66,25 @@ Partial Class CajeroPrincipal
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Datos de usuario"
         Me.Button1.UseVisualStyleBackColor = False
+        '
+        'BCerrarSesion
+        '
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
+        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
+        Me.BCerrarSesion.Name = "BCerrarSesion"
+        Me.BCerrarSesion.Size = New System.Drawing.Size(200, 47)
+        Me.BCerrarSesion.TabIndex = 2
+        Me.BCerrarSesion.Text = "Cerrar Sesión"
+        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BCerrarSesion.UseVisualStyleBackColor = False
         '
         'Panel3
         '
@@ -132,17 +152,15 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario.Margin = New System.Windows.Forms.Padding(8)
         Me.AgregarUsuario.Name = "AgregarUsuario"
         Me.AgregarUsuario.Size = New System.Drawing.Size(186, 73)
-
         Me.AgregarUsuario.Text = "Agregar Cliente"
-
         Me.AgregarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ConsultarCliente
         '
-        Me.ConsultarCliente.Image = Global.Proyecto2023.My.Resources.Resources.business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_
+        Me.ConsultarCliente.Image = CType(resources.GetObject("ConsultarCliente.Image"), System.Drawing.Image)
         Me.ConsultarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConsultarCliente.Name = "ConsultarCliente"
-        Me.ConsultarCliente.Size = New System.Drawing.Size(202, 89)
+        Me.ConsultarCliente.Size = New System.Drawing.Size(202, 73)
         Me.ConsultarCliente.Text = "Consultar Clientes"
         Me.ConsultarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -157,25 +175,6 @@ Partial Class CajeroPrincipal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'BCerrarSesion
-        '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
-        Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCerrarSesion.Location = New System.Drawing.Point(0, 0)
-        Me.BCerrarSesion.Name = "BCerrarSesion"
-        Me.BCerrarSesion.Size = New System.Drawing.Size(200, 47)
-        Me.BCerrarSesion.TabIndex = 2
-        Me.BCerrarSesion.Text = "Cerrar Sesión"
-        Me.BCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BCerrarSesion.UseVisualStyleBackColor = False
         '
         'CajeroPrincipal
         '

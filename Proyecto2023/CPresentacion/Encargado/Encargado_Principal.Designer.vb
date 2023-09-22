@@ -143,7 +143,7 @@ Partial Class Cajero_Principal
         'Cajeros
         '
         Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Cajeros.Image = Global.Proyecto2023.My.Resources.Resources.Cajeros
+
         Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
         Me.Cajeros.Name = "Cajeros"

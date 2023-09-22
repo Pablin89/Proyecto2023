@@ -25,18 +25,18 @@ Partial Class GerenteGral_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GerenteGral_Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Backup = New System.Windows.Forms.ToolStripMenuItem()
         Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BCerrarSesion = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
-        Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -64,6 +64,52 @@ Partial Class GerenteGral_Principal
         Me.MenuEncargado.Size = New System.Drawing.Size(209, 436)
         Me.MenuEncargado.TabIndex = 2
         '
+        'Productos
+        '
+        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_
+        Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
+        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
+        Me.Productos.Name = "Productos"
+        Me.Productos.Size = New System.Drawing.Size(186, 89)
+        Me.Productos.Text = "Permisos de Usuarios"
+        Me.Productos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'Backup
+        '
+        Me.Backup.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Backup.Image = Global.Proyecto2023.My.Resources.Resources.Drive_Backup_23188
+        Me.Backup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Backup.Margin = New System.Windows.Forms.Padding(8)
+        Me.Backup.Name = "Backup"
+        Me.Backup.Size = New System.Drawing.Size(186, 73)
+        Me.Backup.Text = "Backup de Base de Datos"
+        Me.Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'Informes
+        '
+        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.backup_and_restore_15493
+        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
+        Me.Informes.Name = "Informes"
+        Me.Informes.Size = New System.Drawing.Size(186, 73)
+        Me.Informes.Text = "Restaurar Base de Datos"
+        Me.Informes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(209, 184)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -89,15 +135,6 @@ Partial Class GerenteGral_Principal
         Me.Button1.Text = "Datos de usuario"
         Me.Button1.UseVisualStyleBackColor = False
         '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel3.Location = New System.Drawing.Point(209, 0)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(391, 620)
-        Me.Panel3.TabIndex = 1
-        '
         'BCerrarSesion
         '
         Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
@@ -117,51 +154,14 @@ Partial Class GerenteGral_Principal
         Me.BCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BCerrarSesion.UseVisualStyleBackColor = False
         '
-        'Productos
+        'Panel3
         '
-        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.admin_person_user_man_2839
-        Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
-        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
-        Me.Productos.Name = "Productos"
-        Me.Productos.Size = New System.Drawing.Size(143, 73)
-        Me.Productos.Text = "Permisos de Usuarios"
-        Me.Productos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'Backup
-        '
-        Me.Backup.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Backup.Image = Global.Proyecto2023.My.Resources.Resources.Drive_Backup_23188
-        Me.Backup.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Backup.Margin = New System.Windows.Forms.Padding(8)
-        Me.Backup.Name = "Backup"
-        Me.Backup.Size = New System.Drawing.Size(143, 73)
-        Me.Backup.Text = "Backup de Base de Datos"
-        Me.Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'Informes
-        '
-        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.backup_and_restore_15493
-        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
-        Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(143, 73)
-        Me.Informes.Text = "Restaurar Base de Datos"
-        Me.Informes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(209, 184)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel3.Location = New System.Drawing.Point(209, 0)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(391, 620)
+        Me.Panel3.TabIndex = 1
         '
         'GerenteGral_Principal
         '
@@ -180,8 +180,8 @@ Partial Class GerenteGral_Principal
         Me.Panel1.ResumeLayout(False)
         Me.MenuEncargado.ResumeLayout(False)
         Me.MenuEncargado.PerformLayout()
-        Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
