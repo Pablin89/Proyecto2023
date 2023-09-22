@@ -27,4 +27,6 @@
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Baja_Ventas.ShowDialog()
     End Sub
+
+
 End Class
