@@ -31,7 +31,6 @@ Partial Class Gerente_Principal
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -104,7 +103,7 @@ Partial Class Gerente_Principal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes, Me.BajaClientes, Me.ToolStripMenuItem1})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.BajaClientes, Me.ToolStripMenuItem1})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -133,16 +132,6 @@ Partial Class Gerente_Principal
         Me.Cajeros.Name = "Cajeros"
         Me.Cajeros.Size = New System.Drawing.Size(191, 52)
         Me.Cajeros.Text = "Informes de Empleados"
-        '
-        'Informes
-        '
-        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = CType(resources.GetObject("Informes.Image"), System.Drawing.Image)
-        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
-        Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(191, 52)
-        Me.Informes.Text = "Informes de ventas"
         '
         'BajaClientes
         '
@@ -222,7 +211,6 @@ Partial Class Gerente_Principal
     Friend WithEvents MenuEncargado As MenuStrip
     Friend WithEvents Productos As ToolStripMenuItem
     Friend WithEvents Cajeros As ToolStripMenuItem
-    Friend WithEvents Informes As ToolStripMenuItem
     Friend WithEvents BajaClientes As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
