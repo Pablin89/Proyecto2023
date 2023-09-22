@@ -23,8 +23,11 @@ Partial Class Realizar_Venta
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -33,40 +36,51 @@ Partial Class Realizar_Venta
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BRealizarVenta = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.BBuscarProducto = New System.Windows.Forms.Button()
+        Me.BVaciarCarrito = New System.Windows.Forms.Button()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Button5 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Precio, Me.Cantidad, Me.Subtotal, Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(3, 256)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(794, 221)
+        Me.DataGridView1.Size = New System.Drawing.Size(812, 221)
         Me.DataGridView1.TabIndex = 0
         '
-        'Button1
+        'BAgregarAlCarrito
         '
-        Me.Button1.Location = New System.Drawing.Point(337, 218)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 32)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "Agregar al carrito"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(337, 218)
+        Me.BAgregarAlCarrito.Name = "BAgregarAlCarrito"
+        Me.BAgregarAlCarrito.Size = New System.Drawing.Size(141, 32)
+        Me.BAgregarAlCarrito.TabIndex = 1
+        Me.BAgregarAlCarrito.Text = "Agregar al carrito"
+        Me.BAgregarAlCarrito.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -146,14 +160,14 @@ Partial Class Realizar_Venta
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Seleccionar tipo de pago"
         '
-        'Button2
+        'BRealizarVenta
         '
-        Me.Button2.Location = New System.Drawing.Point(338, 567)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(122, 23)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Realizar Venta"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.BRealizarVenta.Location = New System.Drawing.Point(338, 567)
+        Me.BRealizarVenta.Name = "BRealizarVenta"
+        Me.BRealizarVenta.Size = New System.Drawing.Size(122, 23)
+        Me.BRealizarVenta.TabIndex = 19
+        Me.BRealizarVenta.Text = "Realizar Venta"
+        Me.BRealizarVenta.UseVisualStyleBackColor = True
         '
         'Button3
         '
@@ -213,8 +227,34 @@ Partial Class Realizar_Venta
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "DNI:"
         '
+        'BBuscarProducto
+        '
+        Me.BBuscarProducto.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.BBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscarProducto.Location = New System.Drawing.Point(554, 119)
+        Me.BBuscarProducto.Name = "BBuscarProducto"
+        Me.BBuscarProducto.Size = New System.Drawing.Size(173, 47)
+        Me.BBuscarProducto.TabIndex = 22
+        Me.BBuscarProducto.Text = "Buscar Producto"
+        Me.BBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BBuscarProducto.UseVisualStyleBackColor = True
+        '
+        'BVaciarCarrito
+        '
+        Me.BVaciarCarrito.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BVaciarCarrito.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.BVaciarCarrito.Location = New System.Drawing.Point(673, 218)
+        Me.BVaciarCarrito.Name = "BVaciarCarrito"
+        Me.BVaciarCarrito.Size = New System.Drawing.Size(124, 32)
+        Me.BVaciarCarrito.TabIndex = 30
+        Me.BVaciarCarrito.Text = "Vaciar Carrito"
+        Me.BVaciarCarrito.UseVisualStyleBackColor = False
+        '
         'Nombre
         '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle3
         Me.Nombre.HeaderText = "Nombre del Producto"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
@@ -231,6 +271,7 @@ Partial Class Realizar_Venta
         Me.Cantidad.HeaderText = "Cantidad"
         Me.Cantidad.Name = "Cantidad"
         Me.Cantidad.ReadOnly = True
+        Me.Cantidad.Width = 80
         '
         'Subtotal
         '
@@ -241,42 +282,31 @@ Partial Class Realizar_Venta
         '
         'Eliminar
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.Eliminar.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.Eliminar.DefaultCellStyle = DataGridViewCellStyle4
         Me.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.Eliminar.HeaderText = "Elminar Producto"
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.ReadOnly = True
-        '
-        'Button5
-        '
-        Me.Button5.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(554, 119)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(173, 47)
-        Me.Button5.TabIndex = 22
-        Me.Button5.Text = "Buscar Producto"
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.Eliminar.Width = 180
         '
         'Realizar_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(800, 602)
+        Me.ClientSize = New System.Drawing.Size(827, 602)
+        Me.Controls.Add(Me.BVaciarCarrito)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox5)
         Me.Controls.Add(Me.TextBox6)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.BBuscarProducto)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.BRealizarVenta)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.ComboBox1)
         Me.Controls.Add(Me.Label5)
@@ -285,8 +315,10 @@ Partial Class Realizar_Venta
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.NumericUpDown1)
         Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BAgregarAlCarrito)
         Me.Controls.Add(Me.DataGridView1)
+        Me.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Realizar_Venta"
@@ -300,7 +332,7 @@ Partial Class Realizar_Venta
     End Sub
 
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BAgregarAlCarrito As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label2 As Label
@@ -309,14 +341,15 @@ Partial Class Realizar_Venta
     Friend WithEvents Label5 As Label
     Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BRealizarVenta As Button
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button5 As Button
+    Friend WithEvents BBuscarProducto As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents BVaciarCarrito As Button
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
