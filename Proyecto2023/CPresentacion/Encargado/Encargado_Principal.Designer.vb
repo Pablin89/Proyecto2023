@@ -26,12 +26,12 @@ Partial Class Cajero_Principal
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
+        Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
         Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -73,6 +73,15 @@ Partial Class Cajero_Principal
         Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
         Me.MenuEncargado.Size = New System.Drawing.Size(212, 427)
         Me.MenuEncargado.TabIndex = 1
+        '
+        'Cajeros
+        '
+        Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
+        Me.Cajeros.Name = "Cajeros"
+        Me.Cajeros.Size = New System.Drawing.Size(189, 25)
+        Me.Cajeros.Text = "Cajeros"
         '
         'Panel2
         '
@@ -139,16 +148,6 @@ Partial Class Cajero_Principal
         Me.Productos.Name = "Productos"
         Me.Productos.Size = New System.Drawing.Size(189, 76)
         Me.Productos.Text = "Productos"
-        '
-        'Cajeros
-        '
-        Me.Cajeros.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-
-        Me.Cajeros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Cajeros.Margin = New System.Windows.Forms.Padding(8)
-        Me.Cajeros.Name = "Cajeros"
-        Me.Cajeros.Size = New System.Drawing.Size(189, 76)
-        Me.Cajeros.Text = "Cajeros"
         '
         'Informes
         '

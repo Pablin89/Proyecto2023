@@ -122,6 +122,12 @@
     <Compile Include="CPresentacion\Cajero\Seleccion_Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Encargado\Baja_Cliente.Designer.vb">
+      <DependentUpon>Baja_Cliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Encargado\Baja_Cliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Encargado\Encargado_Principal.Designer.vb">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </Compile>
@@ -223,6 +229,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Seleccion_Clientes.resx">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Encargado\Baja_Cliente.resx">
+      <DependentUpon>Baja_Cliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\Encargado_Principal.resx">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
