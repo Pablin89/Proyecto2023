@@ -56,7 +56,7 @@ Partial Class CajeroPrincipal
         '
         Me.Button1.BackColor = System.Drawing.Color.CadetBlue
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(0, 47)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
         Me.Button1.Name = "Button1"
@@ -132,7 +132,9 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario.Margin = New System.Windows.Forms.Padding(8)
         Me.AgregarUsuario.Name = "AgregarUsuario"
         Me.AgregarUsuario.Size = New System.Drawing.Size(186, 73)
+
         Me.AgregarUsuario.Text = "Agregar Cliente"
+
         Me.AgregarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ConsultarCliente
@@ -162,7 +164,7 @@ Partial Class CajeroPrincipal
         Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BCerrarSesion.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCerrarSesion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BCerrarSesion.ForeColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.BCerrarSesion.Image = Global.Proyecto2023.My.Resources.Resources.Logout
         Me.BCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft

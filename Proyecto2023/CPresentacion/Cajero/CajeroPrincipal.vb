@@ -1,4 +1,5 @@
 ﻿Public Class CajeroPrincipal
+
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
         Me.Hide()
         Login.Show()
@@ -16,4 +17,6 @@
     Private Sub AgregarUsuario_Click(sender As Object, e As EventArgs) Handles AgregarUsuario.Click
         AgregarCliente.ShowDialog()
     End Sub
+
 End Class
+

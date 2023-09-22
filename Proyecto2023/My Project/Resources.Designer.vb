@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -103,6 +103,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property agregar_cliente() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("agregar cliente", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property backup_and_restore_15493() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("backup_and_restore_15493", resourceCulture)
@@ -113,9 +123,11 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+
         Friend ReadOnly Property business_man_user_support_supportfortheuser_aquestion_theclient_2330() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("business_man_user_support_supportfortheuser_aquestion_theclient_2330", resourceCulture)
+
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -123,6 +135,7 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+
         Friend ReadOnly Property business_man_user_support_supportfortheuser_aquestion_theclient_2330__1_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("business_man_user_support_supportfortheuser_aquestion_theclient_2330 (1)", resourceCulture)
@@ -136,6 +149,7 @@ Namespace My.Resources
         Friend ReadOnly Property business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("business_man_user_support_supportfortheuser_aquestion_theclient_2330 (2)", resourceCulture)
+
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -167,6 +181,26 @@ Namespace My.Resources
             Get
                 Dim obj As Object = ResourceManager.GetObject("chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_"& _ 
                         "231909", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property date_10131() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("date_10131", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property date_icon_129108() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("date_icon_129108", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

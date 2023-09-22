@@ -86,6 +86,24 @@
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Cajero\Gestion_Clientes.Designer.vb">
+      <DependentUpon>Gestion_Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Gestion_Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Mis_Ventas.Designer.vb">
+      <DependentUpon>Mis_Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Mis_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Realizar_Venta.Designer.vb">
+      <DependentUpon>Realizar_Venta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\Realizar_Venta.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Cajero\Seleccion_Clientes.Designer.vb">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
     </Compile>
@@ -175,6 +193,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\Gestion_Clientes.resx">
+      <DependentUpon>Gestion_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\Mis_Ventas.resx">
+      <DependentUpon>Mis_Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\Realizar_Venta.resx">
+      <DependentUpon>Realizar_Venta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Seleccion_Clientes.resx">
       <DependentUpon>Seleccion_Clientes.vb</DependentUpon>
@@ -301,6 +328,7 @@
     <None Include="Resources\searchcircularbutton_79274.png" />
   </ItemGroup>
   <ItemGroup>
+
     <None Include="Resources\26_122663.png" />
   </ItemGroup>
   <ItemGroup>
@@ -320,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\business_man_user_support_supportfortheuser_aquestion_theclient_2330.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
