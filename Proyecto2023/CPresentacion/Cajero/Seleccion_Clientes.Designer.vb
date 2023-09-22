@@ -24,14 +24,10 @@ Partial Class Seleccion_Clientes
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-
-        Me.ChDni = New System.Windows.Forms.CheckBox()
-        Me.ChApellido = New System.Windows.Forms.CheckBox()
-        Me.ChCorreo = New System.Windows.Forms.CheckBox()
-        Me.TBusqueda = New System.Windows.Forms.TextBox()
-
+        Me.TBuscarDni = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         Me.TBuscarapellido = New System.Windows.Forms.TextBox()
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
@@ -40,9 +36,7 @@ Partial Class Seleccion_Clientes
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-
-
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -63,16 +57,20 @@ Partial Class Seleccion_Clientes
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(118, 85)
+        Me.Label2.Location = New System.Drawing.Point(117, 73)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 16)
+        Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Buscar por:"
         '
         'TBuscarDni
         '
-
-
+        Me.TBuscarDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarDni.Location = New System.Drawing.Point(226, 106)
+        Me.TBuscarDni.Name = "TBuscarDni"
+        Me.TBuscarDni.Size = New System.Drawing.Size(285, 21)
+        Me.TBuscarDni.TabIndex = 5
+        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
@@ -102,10 +100,22 @@ Partial Class Seleccion_Clientes
         Me.Panel1.Size = New System.Drawing.Size(800, 235)
         Me.Panel1.TabIndex = 8
         '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(554, 155)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 46)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Editar Cliente"
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'TBuscarCorreo
         '
         Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBuscarCorreo.Location = New System.Drawing.Point(227, 192)
+        Me.TBuscarCorreo.Location = New System.Drawing.Point(226, 180)
         Me.TBuscarCorreo.Name = "TBuscarCorreo"
         Me.TBuscarCorreo.Size = New System.Drawing.Size(285, 21)
         Me.TBuscarCorreo.TabIndex = 11
@@ -113,7 +123,7 @@ Partial Class Seleccion_Clientes
         'TBuscarapellido
         '
         Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBuscarapellido.Location = New System.Drawing.Point(227, 156)
+        Me.TBuscarapellido.Location = New System.Drawing.Point(226, 144)
         Me.TBuscarapellido.Name = "TBuscarapellido"
         Me.TBuscarapellido.Size = New System.Drawing.Size(285, 21)
         Me.TBuscarapellido.TabIndex = 10
@@ -122,7 +132,7 @@ Partial Class Seleccion_Clientes
         '
         Me.RBCorreo.AutoSize = True
         Me.RBCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RBCorreo.Location = New System.Drawing.Point(121, 194)
+        Me.RBCorreo.Location = New System.Drawing.Point(120, 182)
         Me.RBCorreo.Name = "RBCorreo"
         Me.RBCorreo.Size = New System.Drawing.Size(62, 19)
         Me.RBCorreo.TabIndex = 9
@@ -134,7 +144,7 @@ Partial Class Seleccion_Clientes
         '
         Me.RBApellido.AutoSize = True
         Me.RBApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RBApellido.Location = New System.Drawing.Point(121, 156)
+        Me.RBApellido.Location = New System.Drawing.Point(120, 144)
         Me.RBApellido.Name = "RBApellido"
         Me.RBApellido.Size = New System.Drawing.Size(69, 19)
         Me.RBApellido.TabIndex = 8
@@ -146,7 +156,7 @@ Partial Class Seleccion_Clientes
         '
         Me.RBDni.AutoSize = True
         Me.RBDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RBDni.Location = New System.Drawing.Point(121, 120)
+        Me.RBDni.Location = New System.Drawing.Point(120, 108)
         Me.RBDni.Name = "RBDni"
         Me.RBDni.Size = New System.Drawing.Size(46, 19)
         Me.RBDni.TabIndex = 7
@@ -186,23 +196,20 @@ Partial Class Seleccion_Clientes
         Me.BSeleccionar.Text = "Seleccionar Cliente"
         Me.BSeleccionar.UseVisualStyleBackColor = False
         '
-        'Button1
+        'ButtonBuscar
         '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(539, 106)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 46)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Buscar Cliente"
-
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonBuscar.Location = New System.Drawing.Point(554, 94)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
+        Me.ButtonBuscar.TabIndex = 6
+        Me.ButtonBuscar.Text = "Buscar Cliente"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
-
         'Seleccion_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -212,6 +219,8 @@ Partial Class Seleccion_Clientes
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Seleccion_Clientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Seleccion de Clientes"

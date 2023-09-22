@@ -78,4 +78,8 @@ Public Class Seleccion_Clientes
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
         Button1.Enabled = False
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Editar_Cliente.ShowDialog()
+    End Sub
 End Class

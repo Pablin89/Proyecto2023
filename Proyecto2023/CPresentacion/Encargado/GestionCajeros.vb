@@ -1,5 +1,4 @@
 
-﻿Imports System.Net.Mime.MediaTypeNames
 
 Imports System.Text.RegularExpressions
 
@@ -380,6 +379,7 @@ Public Class GestionCajeros
             Else
                 MessageBox.Show("Formato de correo no válido. Formato permitido ej: 'usuario@gmail.com'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
-
+        End If
+    End Sub
 
 End Class
