@@ -17,4 +17,6 @@
     Private Sub AgregarUsuario_Click(sender As Object, e As EventArgs) Handles AgregarUsuario.Click
         AgregarCliente.ShowDialog()
     End Sub
+
 End Class
+

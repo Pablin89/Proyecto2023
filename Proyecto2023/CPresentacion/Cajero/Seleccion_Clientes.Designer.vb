@@ -24,7 +24,12 @@ Partial Class Seleccion_Clientes
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TBuscarDni = New System.Windows.Forms.TextBox()
+
+        Me.ChDni = New System.Windows.Forms.CheckBox()
+        Me.ChApellido = New System.Windows.Forms.CheckBox()
+        Me.ChCorreo = New System.Windows.Forms.CheckBox()
+        Me.TBusqueda = New System.Windows.Forms.TextBox()
+
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
@@ -36,7 +41,8 @@ Partial Class Seleccion_Clientes
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
+
+
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -65,12 +71,8 @@ Partial Class Seleccion_Clientes
         '
         'TBuscarDni
         '
-        Me.TBuscarDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBuscarDni.Location = New System.Drawing.Point(227, 118)
-        Me.TBuscarDni.Name = "TBuscarDni"
-        Me.TBuscarDni.Size = New System.Drawing.Size(285, 21)
-        Me.TBuscarDni.TabIndex = 5
-        '
+
+
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
@@ -187,31 +189,20 @@ Partial Class Seleccion_Clientes
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.businessapplication_edit
+
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(566, 180)
+        Me.Button1.Location = New System.Drawing.Point(539, 106)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(132, 46)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Editar Cliente"
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Buscar Cliente"
+
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'ButtonBuscar
-        '
-        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBuscar.Location = New System.Drawing.Point(566, 118)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
-        Me.ButtonBuscar.TabIndex = 6
-        Me.ButtonBuscar.Text = "Buscar Cliente"
-        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonBuscar.UseVisualStyleBackColor = True
-        '
+
         'Seleccion_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,6 +213,7 @@ Partial Class Seleccion_Clientes
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Name = "Seleccion_Clientes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Seleccion de Clientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
