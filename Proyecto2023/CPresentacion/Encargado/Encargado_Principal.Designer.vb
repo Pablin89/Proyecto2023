@@ -36,6 +36,7 @@ Partial Class Cajero_Principal
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.MenuEncargado.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +68,7 @@ Partial Class Cajero_Principal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes, Me.BajaClientes, Me.ToolStripMenuItem1})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.Informes, Me.BajaClientes, Me.ToolStripMenuItem1, Me.ToolStripMenuItem2})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -123,7 +124,7 @@ Partial Class Cajero_Principal
         Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(205, 68)
-        Me.ToolStripMenuItem1.Text = "Cancelar Venta"
+        Me.ToolStripMenuItem1.Text = "Ventas"
         '
         'PictureBox1
         '
@@ -191,6 +192,11 @@ Partial Class Cajero_Principal
         Me.Panel3.Size = New System.Drawing.Size(441, 611)
         Me.Panel3.TabIndex = 3
         '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(205, 4)
+        '
         'Cajero_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -231,4 +237,5 @@ Partial Class Cajero_Principal
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BajaClientes As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem2 As ToolStripMenuItem
 End Class

@@ -188,6 +188,12 @@
     <Compile Include="CPresentacion\Gerente\Gerente_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Gerente\Informes_Productos.Designer.vb">
+      <DependentUpon>Informes_Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\Informes_Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -274,6 +280,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente\Gerente_Principal.resx">
       <DependentUpon>Gerente_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente\Informes_Productos.resx">
+      <DependentUpon>Informes_Productos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
