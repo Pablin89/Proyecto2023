@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub ConsultarCliente_Click(sender As Object, e As EventArgs) Handles ConsultarCliente.Click
-        Seleccion_Clientes.ShowDialog()
+        Baja_Clientes.ShowDialog()
 
     End Sub
 
