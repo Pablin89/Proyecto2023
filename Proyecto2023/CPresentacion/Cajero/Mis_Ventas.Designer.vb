@@ -58,7 +58,7 @@ Partial Class Mis_ventas
         Me.Label2.Location = New System.Drawing.Point(52, 205)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 16)
+        Me.Label2.Size = New System.Drawing.Size(182, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Ingrese el DNI del cliente"
         '
@@ -70,7 +70,7 @@ Partial Class Mis_ventas
         Me.Label4.Location = New System.Drawing.Point(408, 88)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 16)
+        Me.Label4.Size = New System.Drawing.Size(100, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Fecha Desde"
         '
@@ -82,7 +82,7 @@ Partial Class Mis_ventas
         Me.Label5.Location = New System.Drawing.Point(413, 136)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 16)
+        Me.Label5.Size = New System.Drawing.Size(95, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Fecha Hasta"
         '
@@ -143,14 +143,14 @@ Partial Class Mis_ventas
         Me.Label3.Location = New System.Drawing.Point(52, 88)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(220, 16)
+        Me.Label3.Size = New System.Drawing.Size(219, 16)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Seleccionar filtro de búsqueda"
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Por Fecha", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
         Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
