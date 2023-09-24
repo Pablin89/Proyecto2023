@@ -22,14 +22,17 @@ Partial Class Informes_Cajeros
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.LFiltro = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalVendido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimeHasta = New System.Windows.Forms.DateTimePicker()
         Me.DateTimeDesde = New System.Windows.Forms.DateTimePicker()
         Me.LFechaHasta = New System.Windows.Forms.Label()
@@ -37,9 +40,6 @@ Partial Class Informes_Cajeros
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalVendido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -58,16 +58,16 @@ Partial Class Informes_Cajeros
         '
         'Chart1
         '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(510, 21)
         Me.Chart1.Name = "Chart1"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart1.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(300, 300)
         Me.Chart1.TabIndex = 18
         Me.Chart1.Text = "Chart1"
@@ -79,7 +79,7 @@ Partial Class Informes_Cajeros
         Me.LFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFiltro.Location = New System.Drawing.Point(48, 53)
         Me.LFiltro.Name = "LFiltro"
-        Me.LFiltro.Size = New System.Drawing.Size(124, 16)
+        Me.LFiltro.Size = New System.Drawing.Size(123, 16)
         Me.LFiltro.TabIndex = 17
         Me.LFiltro.Text = "Seleccionar un filtro"
         '
@@ -100,6 +100,23 @@ Partial Class Informes_Cajeros
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(492, 300)
         Me.DataGridView1.TabIndex = 15
+        '
+        'Usuario
+        '
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.Name = "Usuario"
+        Me.Usuario.Width = 200
+        '
+        'TotalVendido
+        '
+        Me.TotalVendido.HeaderText = "Total vendido"
+        Me.TotalVendido.Name = "TotalVendido"
+        Me.TotalVendido.Width = 150
+        '
+        'NroVentas
+        '
+        Me.NroVentas.HeaderText = "Cantidad de Ventas"
+        Me.NroVentas.Name = "NroVentas"
         '
         'DateTimeHasta
         '
@@ -122,7 +139,7 @@ Partial Class Informes_Cajeros
         Me.LFechaHasta.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaHasta.Location = New System.Drawing.Point(438, 53)
         Me.LFechaHasta.Name = "LFechaHasta"
-        Me.LFechaHasta.Size = New System.Drawing.Size(82, 16)
+        Me.LFechaHasta.Size = New System.Drawing.Size(81, 16)
         Me.LFechaHasta.TabIndex = 12
         Me.LFechaHasta.Text = "Fecha hasta"
         '
@@ -133,7 +150,7 @@ Partial Class Informes_Cajeros
         Me.LFechaDesde.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaDesde.Location = New System.Drawing.Point(432, 111)
         Me.LFechaDesde.Name = "LFechaDesde"
-        Me.LFechaDesde.Size = New System.Drawing.Size(88, 16)
+        Me.LFechaDesde.Size = New System.Drawing.Size(87, 16)
         Me.LFechaDesde.TabIndex = 11
         Me.LFechaDesde.Text = "Fecha desde"
         '
@@ -172,23 +189,6 @@ Partial Class Informes_Cajeros
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(822, 144)
         Me.Panel2.TabIndex = 21
-        '
-        'Usuario
-        '
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        Me.Usuario.Width = 200
-        '
-        'TotalVendido
-        '
-        Me.TotalVendido.HeaderText = "Total vendido"
-        Me.TotalVendido.Name = "TotalVendido"
-        Me.TotalVendido.Width = 150
-        '
-        'NroVentas
-        '
-        Me.NroVentas.HeaderText = "Cantidad de Ventas"
-        Me.NroVentas.Name = "NroVentas"
         '
         'Informes_Cajeros
         '

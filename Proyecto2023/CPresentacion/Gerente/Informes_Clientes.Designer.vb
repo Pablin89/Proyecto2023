@@ -22,10 +22,11 @@ Partial Class Informes_Clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.DateTimeDesde = New System.Windows.Forms.DateTimePicker()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
@@ -36,7 +37,6 @@ Partial Class Informes_Clientes
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DateTimeDesde = New System.Windows.Forms.DateTimePicker()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,6 +61,13 @@ Partial Class Informes_Clientes
         Me.Panel3.Size = New System.Drawing.Size(826, 159)
         Me.Panel3.TabIndex = 22
         '
+        'DateTimeDesde
+        '
+        Me.DateTimeDesde.Location = New System.Drawing.Point(537, 103)
+        Me.DateTimeDesde.Name = "DateTimeDesde"
+        Me.DateTimeDesde.Size = New System.Drawing.Size(209, 20)
+        Me.DateTimeDesde.TabIndex = 18
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -68,7 +75,7 @@ Partial Class Informes_Clientes
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.Location = New System.Drawing.Point(48, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(124, 16)
+        Me.Label1.Size = New System.Drawing.Size(123, 16)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Seleccionar un filtro"
         '
@@ -95,7 +102,7 @@ Partial Class Informes_Clientes
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(432, 107)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 16)
+        Me.Label2.Size = New System.Drawing.Size(87, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Fecha desde"
         '
@@ -106,7 +113,7 @@ Partial Class Informes_Clientes
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(438, 53)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(82, 16)
+        Me.Label3.Size = New System.Drawing.Size(81, 16)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Fecha hasta"
         '
@@ -134,16 +141,16 @@ Partial Class Informes_Clientes
         '
         'Chart1
         '
-        ChartArea3.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend3)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(510, 21)
         Me.Chart1.Name = "Chart1"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.Name = "Series1"
-        Me.Chart1.Series.Add(Series3)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(300, 300)
         Me.Chart1.TabIndex = 18
         Me.Chart1.Text = "Chart1"
@@ -166,13 +173,6 @@ Partial Class Informes_Clientes
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(492, 300)
         Me.DataGridView1.TabIndex = 15
-        '
-        'DateTimeDesde
-        '
-        Me.DateTimeDesde.Location = New System.Drawing.Point(537, 103)
-        Me.DateTimeDesde.Name = "DateTimeDesde"
-        Me.DateTimeDesde.Size = New System.Drawing.Size(209, 20)
-        Me.DateTimeDesde.TabIndex = 18
         '
         'Nombre
         '
