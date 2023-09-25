@@ -223,7 +223,7 @@ Partial Class Gestion_Clientes
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.agregar_cliente
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.new_add_user_16734
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(232, 271)
         Me.Button1.Name = "Button1"

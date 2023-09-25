@@ -437,4 +437,8 @@
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         AgregarStock.ShowDialog()
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        Categoría.ShowDialog()
+    End Sub
 End Class
