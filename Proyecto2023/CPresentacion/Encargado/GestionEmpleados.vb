@@ -2,8 +2,7 @@
 
 Imports System.Text.RegularExpressions
 
-Public Class GestionEmpleados
-
+Public Class GestionCajeros
     'METODOS DE CONSULTA CAJEROS
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
 
@@ -354,9 +353,6 @@ Public Class GestionEmpleados
 
         If ((TextBox5.Text <> "") And
             (TextBox6.Text <> "") And
-
-            (DateTimePicker1.Text <> "") And
-
             (TextBox7.Text <> "") And
             (TextBox8.Text <> "") And
             (TextBox9.Text <> "") And
@@ -364,18 +360,16 @@ Public Class GestionEmpleados
             ) Then
 
             If (EmailAddressCheck(TextBox10.Text)) Then
-
-                ask = MsgBox("Seguro desea Agregar Cajero?", MsgBoxStyle.YesNo, "Confirmar Edición")
+                ask = MsgBox("Seguro desea Agregar Cajero?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
-                    MsgBox("Cajero Agregado correctamente", MsgBoxStyle.OkOnly, "Agregado")
-                    TApellidoYNombre.Text = ""
-                    TDni.Text = ""
-                    TFechaNac.Text = ""
-                    TDireccion.Text = ""
-                    TTelefono.Text = ""
-                    TCorreo.Text = ""
-
+                    MsgBox("Cajero Agregado", MsgBoxStyle.OkOnly, "Agregado")
+                    TextBox5.Text = ""
+                    TextBox6.Text = ""
+                    TextBox7.Text = ""
+                    TextBox8.Text = ""
+                    TextBox9.Text = ""
+                    TextBox10.Text = ""
                 Else
                     MsgBox("No se Agregó el cajero", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -385,9 +379,14 @@ Public Class GestionEmpleados
                 MessageBox.Show("Formato de correo no válido. Formato permitido ej: 'usuario@gmail.com'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
 
+
+
+
+        Else
+
+            MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
+
         End If
     End Sub
 
-
 End Class
-

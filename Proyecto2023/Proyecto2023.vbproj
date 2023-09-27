@@ -153,10 +153,10 @@
     <Compile Include="CPresentacion\Encargado\Encargado_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionEmpleados.Designer.vb">
-      <DependentUpon>GestionEmpleados.vb</DependentUpon>
+    <Compile Include="CPresentacion\Encargado\GestionCajeros.Designer.vb">
+      <DependentUpon>GestionCajeros.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionEmpleados.vb">
+    <Compile Include="CPresentacion\Encargado\GestionCajeros.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Encargado\GestionProductos.Designer.vb">
@@ -294,8 +294,8 @@
     <EmbeddedResource Include="CPresentacion\Encargado\Encargado_Principal.resx">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Encargado\GestionEmpleados.resx">
-      <DependentUpon>GestionEmpleados.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Encargado\GestionCajeros.resx">
+      <DependentUpon>GestionCajeros.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
