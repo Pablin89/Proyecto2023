@@ -115,7 +115,7 @@ Partial Class Empleados
         Me.GestionarEmpleados.Location = New System.Drawing.Point(0, 0)
         Me.GestionarEmpleados.Name = "GestionarEmpleados"
         Me.GestionarEmpleados.SelectedIndex = 0
-        Me.GestionarEmpleados.Size = New System.Drawing.Size(867, 575)
+        Me.GestionarEmpleados.Size = New System.Drawing.Size(834, 580)
         Me.GestionarEmpleados.TabIndex = 1
         '
         'ConsultarEmpleados
@@ -131,7 +131,7 @@ Partial Class Empleados
         Me.ConsultarEmpleados.Location = New System.Drawing.Point(4, 25)
         Me.ConsultarEmpleados.Name = "ConsultarEmpleados"
         Me.ConsultarEmpleados.Padding = New System.Windows.Forms.Padding(3)
-        Me.ConsultarEmpleados.Size = New System.Drawing.Size(859, 546)
+        Me.ConsultarEmpleados.Size = New System.Drawing.Size(826, 551)
         Me.ConsultarEmpleados.TabIndex = 0
         Me.ConsultarEmpleados.Text = "Consultar Empelados"
         '
@@ -172,9 +172,9 @@ Partial Class Empleados
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 258)
+        Me.Panel3.Location = New System.Drawing.Point(3, 263)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(853, 285)
+        Me.Panel3.Size = New System.Drawing.Size(820, 285)
         Me.Panel3.TabIndex = 10
         '
         'Panel4
@@ -187,7 +187,7 @@ Partial Class Empleados
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(479, 0)
+        Me.Panel4.Location = New System.Drawing.Point(446, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(374, 285)
         Me.Panel4.TabIndex = 1
@@ -763,9 +763,12 @@ Partial Class Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(867, 575)
+        Me.ClientSize = New System.Drawing.Size(834, 580)
         Me.Controls.Add(Me.GestionarEmpleados)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Empleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Empleados"
         Me.GestionarEmpleados.ResumeLayout(False)
         Me.ConsultarEmpleados.ResumeLayout(False)
