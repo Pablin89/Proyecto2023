@@ -1,7 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-
-Partial Class GestionEmpleados
-
+Partial Class Empleados
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,10 +22,8 @@ Partial Class GestionEmpleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-
         Me.GestionarEmpleados = New System.Windows.Forms.TabControl()
         Me.ConsultarEmpleados = New System.Windows.Forms.TabPage()
-
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
@@ -41,21 +37,19 @@ Partial Class GestionEmpleados
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-
         Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoyNombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.EditarEmpleados = New System.Windows.Forms.TabPage()
-
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.BBuscar = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BCambios = New System.Windows.Forms.Button()
         Me.TCorreo = New System.Windows.Forms.TextBox()
@@ -70,31 +64,26 @@ Partial Class GestionEmpleados
         Me.LFechaNac = New System.Windows.Forms.Label()
         Me.LDni = New System.Windows.Forms.Label()
         Me.LApellidoyNombre = New System.Windows.Forms.Label()
-
         Me.ChBApellido = New System.Windows.Forms.CheckBox()
         Me.ChBDni = New System.Windows.Forms.CheckBox()
         Me.AgregarEmpleados = New System.Windows.Forms.TabPage()
-
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.LSexo = New System.Windows.Forms.Label()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-
         Me.LCorreo1 = New System.Windows.Forms.Label()
         Me.LTelefono1 = New System.Windows.Forms.Label()
         Me.LDireccion1 = New System.Windows.Forms.Label()
@@ -102,9 +91,6 @@ Partial Class GestionEmpleados
         Me.LFechaNacimiento = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
-
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GestionarEmpleados.SuspendLayout()
         Me.ConsultarEmpleados.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -115,12 +101,10 @@ Partial Class GestionEmpleados
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.AgregarEmpleados.SuspendLayout()
-
         Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
-
         'GestionarEmpleados
         '
         Me.GestionarEmpleados.Controls.Add(Me.ConsultarEmpleados)
@@ -131,8 +115,8 @@ Partial Class GestionEmpleados
         Me.GestionarEmpleados.Location = New System.Drawing.Point(0, 0)
         Me.GestionarEmpleados.Name = "GestionarEmpleados"
         Me.GestionarEmpleados.SelectedIndex = 0
-        Me.GestionarEmpleados.Size = New System.Drawing.Size(839, 588)
-        Me.GestionarEmpleados.TabIndex = 0
+        Me.GestionarEmpleados.Size = New System.Drawing.Size(867, 575)
+        Me.GestionarEmpleados.TabIndex = 1
         '
         'ConsultarEmpleados
         '
@@ -147,19 +131,16 @@ Partial Class GestionEmpleados
         Me.ConsultarEmpleados.Location = New System.Drawing.Point(4, 25)
         Me.ConsultarEmpleados.Name = "ConsultarEmpleados"
         Me.ConsultarEmpleados.Padding = New System.Windows.Forms.Padding(3)
-        Me.ConsultarEmpleados.Size = New System.Drawing.Size(831, 559)
+        Me.ConsultarEmpleados.Size = New System.Drawing.Size(859, 546)
         Me.ConsultarEmpleados.TabIndex = 0
         Me.ConsultarEmpleados.Text = "Consultar Empelados"
-
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(270, 20)
         Me.Label1.Name = "Label1"
-
         Me.Label1.Size = New System.Drawing.Size(240, 16)
-
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -183,9 +164,7 @@ Partial Class GestionEmpleados
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(177, 28)
         Me.Button1.TabIndex = 11
-
         Me.Button1.Text = "Buscar Empleado"
-
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Panel3
@@ -193,11 +172,9 @@ Partial Class GestionEmpleados
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-
-        Me.Panel3.Location = New System.Drawing.Point(3, 271)
+        Me.Panel3.Location = New System.Drawing.Point(3, 258)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(825, 285)
-
+        Me.Panel3.Size = New System.Drawing.Size(853, 285)
         Me.Panel3.TabIndex = 10
         '
         'Panel4
@@ -210,11 +187,9 @@ Partial Class GestionEmpleados
         Me.Panel4.Controls.Add(Me.Label6)
         Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-
-        Me.Panel4.Location = New System.Drawing.Point(451, 0)
+        Me.Panel4.Location = New System.Drawing.Point(479, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(374, 285)
-
         Me.Panel4.TabIndex = 1
         '
         'Label2
@@ -222,9 +197,7 @@ Partial Class GestionEmpleados
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(36, 235)
         Me.Label2.Name = "Label2"
-
         Me.Label2.Size = New System.Drawing.Size(59, 16)
-
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Correo:"
         '
@@ -233,9 +206,7 @@ Partial Class GestionEmpleados
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(36, 192)
         Me.Label3.Name = "Label3"
-
         Me.Label3.Size = New System.Drawing.Size(74, 16)
-
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Teléfono:"
         '
@@ -244,9 +215,7 @@ Partial Class GestionEmpleados
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(36, 150)
         Me.Label4.Name = "Label4"
-
         Me.Label4.Size = New System.Drawing.Size(78, 16)
-
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Dirección:"
         '
@@ -255,9 +224,7 @@ Partial Class GestionEmpleados
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(36, 106)
         Me.Label5.Name = "Label5"
-
         Me.Label5.Size = New System.Drawing.Size(159, 16)
-
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Fecha de Nacimiento:"
         '
@@ -266,9 +233,7 @@ Partial Class GestionEmpleados
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(36, 70)
         Me.Label6.Name = "Label6"
-
         Me.Label6.Size = New System.Drawing.Size(38, 16)
-
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "DNI:"
         '
@@ -277,16 +242,13 @@ Partial Class GestionEmpleados
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(36, 30)
         Me.Label7.Name = "Label7"
-
         Me.Label7.Size = New System.Drawing.Size(138, 16)
-
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Apellido y nombre:"
         '
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-
         Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Usuario, Me.ApellidoyNombre})
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
@@ -306,15 +268,12 @@ Partial Class GestionEmpleados
         Me.ApellidoyNombre.Name = "ApellidoyNombre"
         Me.ApellidoyNombre.Width = 250
         '
-
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(231, 132)
         Me.CheckBox1.Name = "CheckBox1"
-
         Me.CheckBox1.Size = New System.Drawing.Size(85, 20)
-
         Me.CheckBox1.TabIndex = 9
         Me.CheckBox1.Text = "Apellido"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -324,14 +283,11 @@ Partial Class GestionEmpleados
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(231, 71)
         Me.CheckBox2.Name = "CheckBox2"
-
         Me.CheckBox2.Size = New System.Drawing.Size(50, 20)
-
         Me.CheckBox2.TabIndex = 8
         Me.CheckBox2.Text = "Dni"
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
-
         'EditarEmpleados
         '
         Me.EditarEmpleados.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -349,16 +305,13 @@ Partial Class GestionEmpleados
         Me.EditarEmpleados.Size = New System.Drawing.Size(831, 559)
         Me.EditarEmpleados.TabIndex = 1
         Me.EditarEmpleados.Text = "Editar Empleados"
-
         '
         'LTitulo
         '
         Me.LTitulo.AutoSize = True
         Me.LTitulo.Location = New System.Drawing.Point(270, 37)
         Me.LTitulo.Name = "LTitulo"
-
         Me.LTitulo.Size = New System.Drawing.Size(240, 16)
-
         Me.LTitulo.TabIndex = 7
         Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -378,18 +331,15 @@ Partial Class GestionEmpleados
         '
         'BBuscar
         '
-
         Me.BBuscar.Location = New System.Drawing.Point(322, 185)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(177, 28)
         Me.BBuscar.TabIndex = 4
         Me.BBuscar.Text = "Buscar Empleado"
-
         Me.BBuscar.UseVisualStyleBackColor = True
         '
         'Panel1
         '
-
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -408,7 +358,18 @@ Partial Class GestionEmpleados
         Me.DataGridView1.Size = New System.Drawing.Size(413, 325)
         Me.DataGridView1.TabIndex = 2
         '
-
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Usuario"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.Width = 120
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Apellido y Nombre"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.Width = 250
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
@@ -426,11 +387,9 @@ Partial Class GestionEmpleados
         Me.Panel2.Controls.Add(Me.LDni)
         Me.Panel2.Controls.Add(Me.LApellidoyNombre)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-
         Me.Panel2.Location = New System.Drawing.Point(419, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(404, 325)
-
         Me.Panel2.TabIndex = 1
         '
         'BCambios
@@ -489,9 +448,7 @@ Partial Class GestionEmpleados
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Location = New System.Drawing.Point(123, 235)
         Me.LCorreo.Name = "LCorreo"
-
         Me.LCorreo.Size = New System.Drawing.Size(59, 16)
-
         Me.LCorreo.TabIndex = 5
         Me.LCorreo.Text = "Correo:"
         '
@@ -500,9 +457,7 @@ Partial Class GestionEmpleados
         Me.LTelefono.AutoSize = True
         Me.LTelefono.Location = New System.Drawing.Point(108, 196)
         Me.LTelefono.Name = "LTelefono"
-
         Me.LTelefono.Size = New System.Drawing.Size(74, 16)
-
         Me.LTelefono.TabIndex = 4
         Me.LTelefono.Text = "Teléfono:"
         '
@@ -511,9 +466,7 @@ Partial Class GestionEmpleados
         Me.LDirección.AutoSize = True
         Me.LDirección.Location = New System.Drawing.Point(104, 152)
         Me.LDirección.Name = "LDirección"
-
         Me.LDirección.Size = New System.Drawing.Size(78, 16)
-
         Me.LDirección.TabIndex = 3
         Me.LDirección.Text = "Dirección:"
         '
@@ -522,9 +475,7 @@ Partial Class GestionEmpleados
         Me.LFechaNac.AutoSize = True
         Me.LFechaNac.Location = New System.Drawing.Point(23, 109)
         Me.LFechaNac.Name = "LFechaNac"
-
         Me.LFechaNac.Size = New System.Drawing.Size(159, 16)
-
         Me.LFechaNac.TabIndex = 2
         Me.LFechaNac.Text = "Fecha de Nacimiento:"
         '
@@ -533,9 +484,7 @@ Partial Class GestionEmpleados
         Me.LDni.AutoSize = True
         Me.LDni.Location = New System.Drawing.Point(144, 70)
         Me.LDni.Name = "LDni"
-
         Me.LDni.Size = New System.Drawing.Size(38, 16)
-
         Me.LDni.TabIndex = 1
         Me.LDni.Text = "DNI:"
         '
@@ -544,20 +493,16 @@ Partial Class GestionEmpleados
         Me.LApellidoyNombre.AutoSize = True
         Me.LApellidoyNombre.Location = New System.Drawing.Point(44, 27)
         Me.LApellidoyNombre.Name = "LApellidoyNombre"
-
         Me.LApellidoyNombre.Size = New System.Drawing.Size(138, 16)
         Me.LApellidoyNombre.TabIndex = 0
         Me.LApellidoyNombre.Text = "Apellido y nombre:"
         '
-
         'ChBApellido
         '
         Me.ChBApellido.AutoSize = True
         Me.ChBApellido.Location = New System.Drawing.Point(231, 149)
         Me.ChBApellido.Name = "ChBApellido"
-
         Me.ChBApellido.Size = New System.Drawing.Size(85, 20)
-
         Me.ChBApellido.TabIndex = 2
         Me.ChBApellido.Text = "Apellido"
         Me.ChBApellido.UseVisualStyleBackColor = True
@@ -567,14 +512,11 @@ Partial Class GestionEmpleados
         Me.ChBDni.AutoSize = True
         Me.ChBDni.Location = New System.Drawing.Point(231, 88)
         Me.ChBDni.Name = "ChBDni"
-
         Me.ChBDni.Size = New System.Drawing.Size(50, 20)
-
         Me.ChBDni.TabIndex = 1
         Me.ChBDni.Text = "Dni"
         Me.ChBDni.UseVisualStyleBackColor = True
         '
-
         'AgregarEmpleados
         '
         Me.AgregarEmpleados.BackColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -589,18 +531,15 @@ Partial Class GestionEmpleados
         Me.AgregarEmpleados.Size = New System.Drawing.Size(831, 559)
         Me.AgregarEmpleados.TabIndex = 2
         Me.AgregarEmpleados.Text = "Agregar Empleados"
-
         '
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Panel5.Controls.Add(Me.TextBox12)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-
         Me.Panel5.Location = New System.Drawing.Point(0, 527)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(831, 32)
-
         Me.Panel5.TabIndex = 21
         '
         'TextBox12
@@ -609,19 +548,15 @@ Partial Class GestionEmpleados
         Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Top
         Me.TextBox12.Enabled = False
-
         Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
         Me.TextBox12.ForeColor = System.Drawing.Color.Red
         Me.TextBox12.Location = New System.Drawing.Point(0, 0)
         Me.TextBox12.Multiline = True
         Me.TextBox12.Name = "TextBox12"
-
         Me.TextBox12.Size = New System.Drawing.Size(831, 100)
         Me.TextBox12.TabIndex = 20
         Me.TextBox12.Text = "Una vez confirmados los datos, el Gerente General se encargará de asignar usuario" &
     " y contraseña al nuevo empleado."
-
         Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Button3
@@ -635,9 +570,7 @@ Partial Class GestionEmpleados
         '
         'Button2
         '
-
         Me.Button2.Location = New System.Drawing.Point(594, 50)
-
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(80, 28)
         Me.Button2.TabIndex = 18
@@ -646,9 +579,7 @@ Partial Class GestionEmpleados
         '
         'TextBox11
         '
-
         Me.TextBox11.Location = New System.Drawing.Point(594, 22)
-
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.Size = New System.Drawing.Size(198, 22)
         Me.TextBox11.TabIndex = 17
@@ -658,11 +589,9 @@ Partial Class GestionEmpleados
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(36, 25)
         Me.Label8.Name = "Label8"
-
         Me.Label8.Size = New System.Drawing.Size(552, 16)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Ingresar DNI del nuevo empleado para comprobar que  no existe en el sistema"
-
         '
         'Panel6
         '
@@ -672,13 +601,11 @@ Partial Class GestionEmpleados
         Me.Panel6.Controls.Add(Me.TextBox6)
         Me.Panel6.Controls.Add(Me.TextBox5)
         Me.Panel6.Controls.Add(Me.DateTimePicker1)
-
         Me.Panel6.Controls.Add(Me.TextBox10)
         Me.Panel6.Controls.Add(Me.ListBox1)
         Me.Panel6.Controls.Add(Me.TextBox9)
         Me.Panel6.Controls.Add(Me.LSexo)
         Me.Panel6.Controls.Add(Me.TextBox8)
-
         Me.Panel6.Controls.Add(Me.LCorreo1)
         Me.Panel6.Controls.Add(Me.LTelefono1)
         Me.Panel6.Controls.Add(Me.LDireccion1)
@@ -686,9 +613,7 @@ Partial Class GestionEmpleados
         Me.Panel6.Controls.Add(Me.LFechaNacimiento)
         Me.Panel6.Controls.Add(Me.LNombre)
         Me.Panel6.Controls.Add(Me.LApellido)
-
         Me.Panel6.Location = New System.Drawing.Point(20, 117)
-
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(790, 289)
         Me.Panel6.TabIndex = 22
@@ -697,13 +622,11 @@ Partial Class GestionEmpleados
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
         Me.Label9.Location = New System.Drawing.Point(171, 29)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(453, 18)
         Me.Label9.TabIndex = 13
         Me.Label9.Text = "Completar los campos para el registro del nuevo empleado"
-
         '
         'TextBox7
         '
@@ -733,7 +656,6 @@ Partial Class GestionEmpleados
         Me.DateTimePicker1.Size = New System.Drawing.Size(198, 22)
         Me.DateTimePicker1.TabIndex = 9
         '
-
         'TextBox10
         '
         Me.TextBox10.Location = New System.Drawing.Point(545, 163)
@@ -741,7 +663,6 @@ Partial Class GestionEmpleados
         Me.TextBox10.Size = New System.Drawing.Size(227, 22)
         Me.TextBox10.TabIndex = 15
         '
-
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
@@ -752,7 +673,6 @@ Partial Class GestionEmpleados
         Me.ListBox1.Size = New System.Drawing.Size(158, 20)
         Me.ListBox1.TabIndex = 8
         '
-
         'TextBox9
         '
         Me.TextBox9.Location = New System.Drawing.Point(545, 119)
@@ -760,13 +680,11 @@ Partial Class GestionEmpleados
         Me.TextBox9.Size = New System.Drawing.Size(227, 22)
         Me.TextBox9.TabIndex = 14
         '
-
         'LSexo
         '
         Me.LSexo.AutoSize = True
         Me.LSexo.Location = New System.Drawing.Point(496, 213)
         Me.LSexo.Name = "LSexo"
-
         Me.LSexo.Size = New System.Drawing.Size(43, 16)
         Me.LSexo.TabIndex = 7
         Me.LSexo.Text = "Sexo"
@@ -778,15 +696,12 @@ Partial Class GestionEmpleados
         Me.TextBox8.Size = New System.Drawing.Size(227, 22)
         Me.TextBox8.TabIndex = 13
         '
-
         'LCorreo1
         '
         Me.LCorreo1.AutoSize = True
         Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
         Me.LCorreo1.Name = "LCorreo1"
-
         Me.LCorreo1.Size = New System.Drawing.Size(55, 16)
-
         Me.LCorreo1.TabIndex = 6
         Me.LCorreo1.Text = "Correo"
         '
@@ -795,9 +710,7 @@ Partial Class GestionEmpleados
         Me.LTelefono1.AutoSize = True
         Me.LTelefono1.Location = New System.Drawing.Point(469, 125)
         Me.LTelefono1.Name = "LTelefono1"
-
         Me.LTelefono1.Size = New System.Drawing.Size(70, 16)
-
         Me.LTelefono1.TabIndex = 5
         Me.LTelefono1.Text = "Telefono"
         '
@@ -806,9 +719,7 @@ Partial Class GestionEmpleados
         Me.LDireccion1.AutoSize = True
         Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
         Me.LDireccion1.Name = "LDireccion1"
-
         Me.LDireccion1.Size = New System.Drawing.Size(74, 16)
-
         Me.LDireccion1.TabIndex = 4
         Me.LDireccion1.Text = "Direccion"
         '
@@ -817,9 +728,7 @@ Partial Class GestionEmpleados
         Me.LDNI1.AutoSize = True
         Me.LDNI1.Location = New System.Drawing.Point(137, 213)
         Me.LDNI1.Name = "LDNI1"
-
         Me.LDNI1.Size = New System.Drawing.Size(34, 16)
-
         Me.LDNI1.TabIndex = 3
         Me.LDNI1.Text = "DNI"
         '
@@ -828,9 +737,7 @@ Partial Class GestionEmpleados
         Me.LFechaNacimiento.AutoSize = True
         Me.LFechaNacimiento.Location = New System.Drawing.Point(42, 165)
         Me.LFechaNacimiento.Name = "LFechaNacimiento"
-
         Me.LFechaNacimiento.Size = New System.Drawing.Size(129, 16)
-
         Me.LFechaNacimiento.TabIndex = 2
         Me.LFechaNacimiento.Text = "Fecha de Ingreso"
         '
@@ -839,9 +746,7 @@ Partial Class GestionEmpleados
         Me.LNombre.AutoSize = True
         Me.LNombre.Location = New System.Drawing.Point(95, 125)
         Me.LNombre.Name = "LNombre"
-
         Me.LNombre.Size = New System.Drawing.Size(76, 16)
-
         Me.LNombre.TabIndex = 1
         Me.LNombre.Text = "Nombre/s"
         '
@@ -850,42 +755,25 @@ Partial Class GestionEmpleados
         Me.LApellido.AutoSize = True
         Me.LApellido.Location = New System.Drawing.Point(105, 81)
         Me.LApellido.Name = "LApellido"
-
         Me.LApellido.Size = New System.Drawing.Size(66, 16)
         Me.LApellido.TabIndex = 0
         Me.LApellido.Text = "Apellido"
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Usuario"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.Width = 120
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Apellido y Nombre"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.Width = 250
-        '
-        'GestionEmpleados
+        'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(839, 588)
+        Me.ClientSize = New System.Drawing.Size(867, 575)
         Me.Controls.Add(Me.GestionarEmpleados)
-        Me.Name = "GestionEmpleados"
-        Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Gestion de Cajeros"
+        Me.Name = "Empleados"
+        Me.Text = "Empleados"
         Me.GestionarEmpleados.ResumeLayout(False)
         Me.ConsultarEmpleados.ResumeLayout(False)
         Me.ConsultarEmpleados.PerformLayout()
-
         Me.Panel3.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-
         Me.EditarEmpleados.ResumeLayout(False)
         Me.EditarEmpleados.PerformLayout()
         Me.Panel1.ResumeLayout(False)
@@ -894,7 +782,6 @@ Partial Class GestionEmpleados
         Me.Panel2.PerformLayout()
         Me.AgregarEmpleados.ResumeLayout(False)
         Me.AgregarEmpleados.PerformLayout()
-
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
@@ -903,27 +790,8 @@ Partial Class GestionEmpleados
 
     End Sub
 
-
     Friend WithEvents GestionarEmpleados As TabControl
     Friend WithEvents ConsultarEmpleados As TabPage
-    Friend WithEvents EditarEmpleados As TabPage
-    Friend WithEvents AgregarEmpleados As TabPage
-
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents BBuscar As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents ChBApellido As CheckBox
-    Friend WithEvents ChBDni As CheckBox
-    Friend WithEvents LTitulo As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents LCorreo As Label
-    Friend WithEvents LTelefono As Label
-    Friend WithEvents LDirección As Label
-    Friend WithEvents LFechaNac As Label
-    Friend WithEvents LDni As Label
-    Friend WithEvents LApellidoyNombre As Label
-
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents TextBox4 As TextBox
@@ -937,8 +805,20 @@ Partial Class GestionEmpleados
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents DataGridView2 As DataGridView
+    Friend WithEvents Usuario As DataGridViewTextBoxColumn
+    Friend WithEvents ApellidoyNombre As DataGridViewTextBoxColumn
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents EditarEmpleados As TabPage
+    Friend WithEvents LTitulo As Label
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents BBuscar As Button
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
+    Friend WithEvents Panel2 As Panel
     Friend WithEvents BCambios As Button
     Friend WithEvents TCorreo As TextBox
     Friend WithEvents TTelefono As TextBox
@@ -946,8 +826,32 @@ Partial Class GestionEmpleados
     Friend WithEvents TFechaNac As TextBox
     Friend WithEvents TDni As TextBox
     Friend WithEvents TApellidoYNombre As TextBox
+    Friend WithEvents LCorreo As Label
+    Friend WithEvents LTelefono As Label
+    Friend WithEvents LDirección As Label
+    Friend WithEvents LFechaNac As Label
+    Friend WithEvents LDni As Label
+    Friend WithEvents LApellidoyNombre As Label
+    Friend WithEvents ChBApellido As CheckBox
+    Friend WithEvents ChBDni As CheckBox
+    Friend WithEvents AgregarEmpleados As TabPage
+    Friend WithEvents Panel5 As Panel
+    Friend WithEvents TextBox12 As TextBox
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents TextBox11 As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TextBox7 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox5 As TextBox
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents TextBox10 As TextBox
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents TextBox9 As TextBox
     Friend WithEvents LSexo As Label
+    Friend WithEvents TextBox8 As TextBox
     Friend WithEvents LCorreo1 As Label
     Friend WithEvents LTelefono1 As Label
     Friend WithEvents LDireccion1 As Label
@@ -955,26 +859,4 @@ Partial Class GestionEmpleados
     Friend WithEvents LFechaNacimiento As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox12 As TextBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents TextBox11 As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents TextBox10 As TextBox
-    Friend WithEvents TextBox9 As TextBox
-    Friend WithEvents TextBox8 As TextBox
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Label9 As Label
-    Friend WithEvents TextBox7 As TextBox
-    Friend WithEvents TextBox6 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
-
-    Friend WithEvents Usuario As DataGridViewTextBoxColumn
-    Friend WithEvents ApellidoyNombre As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-
 End Class

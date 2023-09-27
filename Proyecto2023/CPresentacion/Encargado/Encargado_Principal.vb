@@ -9,7 +9,7 @@
     End Sub
 
     Private Sub Cajeros_Click(sender As Object, e As EventArgs) Handles Cajeros.Click
-        GestionEmpleados.ShowDialog()
+        Empleados.ShowDialog()
     End Sub
 
 
