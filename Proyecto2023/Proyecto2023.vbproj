@@ -147,16 +147,16 @@
     <Compile Include="CPresentacion\Encargado\Categoría.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Encargado\Empleados.Designer.vb">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Encargado\Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Encargado\Encargado_Principal.Designer.vb">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Encargado\Encargado_Principal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionEmpleados.Designer.vb">
-      <DependentUpon>GestionEmpleados.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionEmpleados.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Encargado\GestionProductos.Designer.vb">
@@ -291,11 +291,11 @@
     <EmbeddedResource Include="CPresentacion\Encargado\Categoría.resx">
       <DependentUpon>Categoría.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Encargado\Empleados.resx">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\Encargado_Principal.resx">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Encargado\GestionEmpleados.resx">
-      <DependentUpon>GestionEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
