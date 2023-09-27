@@ -3,6 +3,7 @@
 Imports System.Text.RegularExpressions
 
 Public Class GestionEmpleados
+
     'METODOS DE CONSULTA CAJEROS
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
 
@@ -353,7 +354,9 @@ Public Class GestionEmpleados
 
         If ((TextBox5.Text <> "") And
             (TextBox6.Text <> "") And
+
             (DateTimePicker1.Text <> "") And
+
             (TextBox7.Text <> "") And
             (TextBox8.Text <> "") And
             (TextBox9.Text <> "") And
@@ -361,6 +364,7 @@ Public Class GestionEmpleados
             ) Then
 
             If (EmailAddressCheck(TextBox10.Text)) Then
+
                 ask = MsgBox("Seguro desea Agregar Cajero?", MsgBoxStyle.YesNo, "Confirmar Edición")
 
                 If ask = MsgBoxResult.Yes Then
@@ -371,6 +375,7 @@ Public Class GestionEmpleados
                     TDireccion.Text = ""
                     TTelefono.Text = ""
                     TCorreo.Text = ""
+
                 Else
                     MsgBox("No se Agregó el cajero", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -379,8 +384,10 @@ Public Class GestionEmpleados
             Else
                 MessageBox.Show("Formato de correo no válido. Formato permitido ej: 'usuario@gmail.com'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
+
         End If
     End Sub
 
 
 End Class
+

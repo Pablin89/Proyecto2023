@@ -75,7 +75,7 @@ Partial Class AgregarCliente
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(152, 29)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(528, 16)
+        Me.Label8.Size = New System.Drawing.Size(527, 16)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Ingresar DNI del nuevo cliente para comprobar que  no existe en el sistema"
         '

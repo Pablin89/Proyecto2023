@@ -141,6 +141,12 @@
     <Compile Include="CPresentacion\Encargado\Baja_Ventas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Encargado\Categoría.Designer.vb">
+      <DependentUpon>Categoría.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Encargado\Categoría.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Encargado\Encargado_Principal.Designer.vb">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     <EmbeddedResource Include="CPresentacion\Encargado\Baja_Ventas.resx">
       <DependentUpon>Baja_Ventas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Encargado\Categoría.resx">
+      <DependentUpon>Categoría.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\Encargado_Principal.resx">
       <DependentUpon>Encargado_Principal.vb</DependentUpon>
     </EmbeddedResource>
@@ -394,7 +403,9 @@
   <ItemGroup>
     <None Include="Resources\backup_and_restore_15493.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\buy_13374.png" />
   </ItemGroup>
