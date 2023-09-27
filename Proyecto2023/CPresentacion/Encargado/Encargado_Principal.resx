@@ -120,6 +120,9 @@
   <metadata name="MenuEncargado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="MenuEncargado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Cajeros.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1464,6 +1467,18 @@
         EGCOuHZeUEc7b2/ogjlSGvowd+iIYe5R13buMbf02qEr6hzFXOIwRxTzgDphjgBzh3oBHahLQ5cI5mjo
         o92hE+TW0H1LZ9SloXMU84A6YY4o5og1cwSYM+iuoVPGY4dO+3O3QzfMCXKHeUB9RDt0Sb1Dd+0cqBPi
         iGIeUCfMEcUcMcwD6tLOh7NDp0g7Z8ztDn3L9P8BMb6wtrZOnIkAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="BMisDatos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAAYFJREFUWEft1r8vxkAAxvGymBADE2ExSzCIRQxiMSA2i3/AQEwGCzuDxSLBIswI
+        sYhNTHaLxMBiMvjt+7Rpcrlc377Xa3iHPskn6dt737snb9proypVSDuWsOFpHTMIziUeceXpGm9YQFC+
+        MJUceucQe8lh8fxgMjn0zgE+8FrAA6YRVGAYug6K2METggqERGtq7cYuMIIVjMafyk1ugTHoDtH4N3Tv
+        l5ncAmvQWOoOZSa3wCLMAtqwXJnDs4d+KLkFlmEWuIArfZj30AYlt0A33pEWCN5yreQWUPahcT0rWnTC
+        kXGceeiBUleBbWj8Hk064cgQNj10QalZYBC7+ITGRU+/WTSjjGQW2ILu+3Rh2w1akWYA9rtCLZ1QnAU6
+        4Hr228zCE3B9J0svlMx/4K9SFWicArri7QJHSC+arC24nui36Tya04zW1NrxJqMdatXwghMcQ2++5pgP
+        /VZzaC7NaY6dQmvH73XnuLXovU3brH3el+bQXPZ5ram1q/xnougXJ8nlyN3tdEgAAAAASUVORK5CYII=
 </value>
   </data>
 </root>

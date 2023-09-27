@@ -2,7 +2,7 @@
 
 Imports System.Text.RegularExpressions
 
-Public Class GestionCajeros
+Public Class GestionEmpleados
     'METODOS DE CONSULTA CAJEROS
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
 
@@ -381,5 +381,6 @@ Public Class GestionCajeros
             End If
         End If
     End Sub
+
 
 End Class
