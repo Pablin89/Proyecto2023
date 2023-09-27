@@ -32,7 +32,7 @@ Partial Class Misdatos
         Me.LNombreyApellido = New System.Windows.Forms.Label()
         Me.LTitulo1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BModificarU = New System.Windows.Forms.Button()
         Me.LTipo = New System.Windows.Forms.Label()
         Me.LContrasena = New System.Windows.Forms.Label()
         Me.LUsuario = New System.Windows.Forms.Label()
@@ -141,7 +141,7 @@ Partial Class Misdatos
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.BModificarU)
         Me.Panel2.Controls.Add(Me.LTipo)
         Me.Panel2.Controls.Add(Me.LContrasena)
         Me.Panel2.Controls.Add(Me.LUsuario)
@@ -152,14 +152,14 @@ Partial Class Misdatos
         Me.Panel2.Size = New System.Drawing.Size(814, 301)
         Me.Panel2.TabIndex = 1
         '
-        'Button1
+        'BModificarU
         '
-        Me.Button1.Location = New System.Drawing.Point(298, 266)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(190, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Modificar datos de usuario"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.BModificarU.Location = New System.Drawing.Point(298, 266)
+        Me.BModificarU.Name = "BModificarU"
+        Me.BModificarU.Size = New System.Drawing.Size(190, 23)
+        Me.BModificarU.TabIndex = 6
+        Me.BModificarU.Text = "Modificar datos de usuario"
+        Me.BModificarU.UseVisualStyleBackColor = True
         '
         'LTipo
         '
@@ -227,7 +227,7 @@ Partial Class Misdatos
     Friend WithEvents LCorreo As Label
     Friend WithEvents LNombreyApellido As Label
     Friend WithEvents LTitulo1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BModificarU As Button
     Friend WithEvents LTipo As Label
     Friend WithEvents LContrasena As Label
     Friend WithEvents LUsuario As Label

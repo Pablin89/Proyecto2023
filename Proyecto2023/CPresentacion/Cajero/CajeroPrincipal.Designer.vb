@@ -58,18 +58,22 @@ Partial Class CajeroPrincipal
         Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.Location = New System.Drawing.Point(0, 47)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Button1.Size = New System.Drawing.Size(200, 29)
+        Me.Button1.Size = New System.Drawing.Size(200, 45)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "Datos de usuario"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button1.UseVisualStyleBackColor = False
         '
         'BCerrarSesion
         '
-        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(30, Byte), Integer), CType(CType(30, Byte), Integer))
+        Me.BCerrarSesion.BackColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(70, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.BCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top
         Me.BCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
