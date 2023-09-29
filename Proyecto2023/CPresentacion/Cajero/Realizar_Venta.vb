@@ -61,6 +61,22 @@ Public Class Realizar_Venta
         End If
     End Sub
 
+    'Eliminar elemento
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim col As Integer = DataGridView1.CurrentCell.ColumnIndex
+        Dim opcion As MsgBoxResult
+        Dim i = DataGridView1.CurrentRow.Index
+
+        If (col = 4) Then
+            opcion = MsgBox("Esta seguro que desea eliminar?" + DataGridView1.Item(1, i).Value.ToString, vbYesNo + vbDefaultButton2 + vbCritical, "Eliminar")
+            If (opcion = DialogResult.Yes) Then
+                DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+
+            End If
+        End If
+    End Sub
+
+    'vaciar carrito
     Private Sub BVaciarCarrito_Click(sender As Object, e As EventArgs) Handles BVaciarCarrito.Click
         If (DataGridView1.Rows.Count > 0) Then
             For Each Fila As DataGridViewRow In DataGridView1.Rows
@@ -73,12 +89,17 @@ Public Class Realizar_Venta
     Private Sub BAgregarAlCarrito_Click(sender As Object, e As EventArgs) Handles BAgregarAlCarrito.Click
         Dim vasoPrecio As Integer = 500
         Dim bombillaPrecio As Integer = 300
+
+        'variables para el recorrido
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+
         If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
             MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
         ElseIf (TextBox1.Text = "vaso" Or TextBox1.Text = "Vaso") Then
             DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
         ElseIf (TextBox1.Text = "Bombilla" Or TextBox1.Text = "bombilla") Then
-            DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+                DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
         End If
     End Sub
 End Class
