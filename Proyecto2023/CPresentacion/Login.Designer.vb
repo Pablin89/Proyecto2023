@@ -68,7 +68,7 @@ Partial Class Login
         Me.TUsuario.Location = New System.Drawing.Point(100, 28)
         Me.TUsuario.Name = "TUsuario"
         Me.TUsuario.Size = New System.Drawing.Size(151, 21)
-        Me.TUsuario.TabIndex = 6
+        Me.TUsuario.TabIndex = 1
         '
         'TContraseña
         '
