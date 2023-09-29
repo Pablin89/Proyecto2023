@@ -24,8 +24,8 @@ Partial Class Login
     Private Sub InitializeComponent()
         Me.BLogin = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.TContraseña = New System.Windows.Forms.TextBox()
         Me.TUsuario = New System.Windows.Forms.TextBox()
+        Me.TContraseña = New System.Windows.Forms.TextBox()
         Me.LContraseña = New System.Windows.Forms.Label()
         Me.LUsuario = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -51,8 +51,8 @@ Partial Class Login
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel2.Controls.Add(Me.TContraseña)
         Me.Panel2.Controls.Add(Me.TUsuario)
+        Me.Panel2.Controls.Add(Me.TContraseña)
         Me.Panel2.Controls.Add(Me.LContraseña)
         Me.Panel2.Controls.Add(Me.LUsuario)
         Me.Panel2.Controls.Add(Me.BLogin)
@@ -62,6 +62,14 @@ Partial Class Login
         Me.Panel2.Size = New System.Drawing.Size(281, 179)
         Me.Panel2.TabIndex = 3
         '
+        'TUsuario
+        '
+        Me.TUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TUsuario.Location = New System.Drawing.Point(100, 28)
+        Me.TUsuario.Name = "TUsuario"
+        Me.TUsuario.Size = New System.Drawing.Size(151, 21)
+        Me.TUsuario.TabIndex = 6
+        '
         'TContraseña
         '
         Me.TContraseña.Location = New System.Drawing.Point(100, 76)
@@ -69,13 +77,6 @@ Partial Class Login
         Me.TContraseña.Size = New System.Drawing.Size(151, 20)
         Me.TContraseña.TabIndex = 5
         Me.TContraseña.UseSystemPasswordChar = True
-        '
-        'TUsuario
-        '
-        Me.TUsuario.Location = New System.Drawing.Point(100, 28)
-        Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(151, 20)
-        Me.TUsuario.TabIndex = 4
         '
         'LContraseña
         '
@@ -110,6 +111,7 @@ Partial Class Login
         '
         'Login
         '
+        Me.AcceptButton = Me.BLogin
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(281, 450)
@@ -127,7 +129,7 @@ Partial Class Login
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TContraseña As TextBox
-    Friend WithEvents TUsuario As TextBox
     Friend WithEvents LContraseña As Label
     Friend WithEvents LUsuario As Label
+    Friend WithEvents TUsuario As TextBox
 End Class
