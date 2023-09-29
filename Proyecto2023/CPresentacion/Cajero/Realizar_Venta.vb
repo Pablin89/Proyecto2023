@@ -112,8 +112,8 @@ Public Class Realizar_Venta
 
             If MsgBoxResult.Yes = ask Then
 
-                DataGridView1.Rows.Add(TextBox1.Text(), TPrecio.Text(), NumericUpDown1.Value, TPrecio.Text() * NumericUpDown1.Value)
-                
+                DataGridView1.Rows.Add(TextBox1.Text(), vasoPrecio, NumericUpDown1.Value, vasoPrecio * NumericUpDown1.Value)
+
             End If
         Else
             MsgBox("El producto ya esta agregado", vbOKOnly + vbCritical, "Agregar Producto")
