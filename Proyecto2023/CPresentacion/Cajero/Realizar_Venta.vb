@@ -89,13 +89,45 @@ Public Class Realizar_Venta
     Private Sub BAgregarAlCarrito_Click(sender As Object, e As EventArgs) Handles BAgregarAlCarrito.Click
         Dim vasoPrecio As Integer = 500
         Dim bombillaPrecio As Integer = 300
-
+        Dim carga As Boolean = False
         If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
             MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
         ElseIf (TextBox1.Text = "vaso" Or TextBox1.Text = "Vaso") Then
-            DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
-        ElseIf (TextBox1.Text = "Bombilla" Or TextBox1.Text = "bombilla") Then
-                DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+            If DataGridView1.Rows.Count > 0 Then
+                For j = 0 To (DataGridView1.Rows.Count - 1)
+                    If (DataGridView1.Item(0, j).Value.ToString = TextBox1.Text) Then
+                        carga = True
+                    End If
+                Next
+                MsgBox("Ya existe")
+            Else
+
+                DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
+            End If
+            'DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
+
+            'DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
         End If
+        carga = False
+
+        If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
+            MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
+        ElseIf (TextBox1.Text = "bombilla" Or TextBox1.Text = "Bombilla") Then
+            If DataGridView1.Rows.Count > 0 Then
+                For j = 0 To (DataGridView1.Rows.Count - 1)
+                    If (DataGridView1.Item(0, j).Value.ToString = TextBox1.Text) Then
+                        carga = True
+                    End If
+                Next
+                MsgBox("Ya existe")
+            Else
+                DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+            End If
+            'DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
+
+            'DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+        End If
+
+
     End Sub
 End Class
