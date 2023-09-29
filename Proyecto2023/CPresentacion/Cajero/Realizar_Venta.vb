@@ -90,10 +90,6 @@ Public Class Realizar_Venta
         Dim vasoPrecio As Integer = 500
         Dim bombillaPrecio As Integer = 300
 
-        'variables para el recorrido
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-
         If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
             MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
         ElseIf (TextBox1.Text = "vaso" Or TextBox1.Text = "Vaso") Then
