@@ -68,7 +68,7 @@ Public Class Realizar_Venta
         Dim i = DataGridView1.CurrentRow.Index
 
         If (col = 4) Then
-            opcion = MsgBox("Esta seguro que desea eliminar?" + DataGridView1.Item(1, i).Value.ToString, vbYesNo + vbDefaultButton2 + vbCritical, "Eliminar")
+            opcion = MsgBox("Esta seguro que desea eliminar " + DataGridView1.Item(0, i).Value.ToString + " de la compra?", vbYesNo + vbDefaultButton2 + vbCritical, "Eliminar")
             If (opcion = DialogResult.Yes) Then
                 DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
 
@@ -90,12 +90,48 @@ Public Class Realizar_Venta
         Dim vasoPrecio As Integer = 500
         Dim bombillaPrecio As Integer = 300
 
-        If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
-            MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
-        ElseIf (TextBox1.Text = "vaso" Or TextBox1.Text = "Vaso") Then
-            DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
-        ElseIf (TextBox1.Text = "Bombilla" Or TextBox1.Text = "bombilla") Then
-                DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+        Dim ask As MsgBoxResult
+        Dim j As Integer
+        Dim carga As Boolean = False
+
+
+
+
+
+        If DataGridView1.Rows.Count > 0 Then
+            For j = 0 To (DataGridView1.Rows.Count - 1)
+                If DataGridView1.Item(0, j).Value = TextBox1.Text() Then
+                    carga = True
+                End If
+            Next
+            DataGridView1.ClearSelection()
         End If
+
+        If carga = False Then
+            ask = MsgBox("Desea agregar el prducto?", vbYesNo + vbInformation, "Agregar Producto")
+
+            If MsgBoxResult.Yes = ask Then
+
+                DataGridView1.Rows.Add(TextBox1.Text(), vasoPrecio, NumericUpDown1.Value, vasoPrecio * NumericUpDown1.Value)
+
+            End If
+        Else
+            MsgBox("El producto ya esta agregado", vbOKOnly + vbCritical, "Agregar Producto")
+        End If
+
+
+
+
+
+
+
+
+        'If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
+        'MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
+        'ElseIf (TextBox1.Text = "vaso" Or TextBox1.Text = "Vaso") Then
+        'DataGridView1.Rows.Add(TextBox1.Text, vasoPrecio, NumericUpDown1.Text, NumericUpDown1.Text * vasoPrecio, "Eliminar")
+        ' ElseIf (TextBox1.Text = "Bombilla" Or TextBox1.Text = "bombilla") Then
+        'DataGridView1.Rows.Add(TextBox1.Text, bombillaPrecio, NumericUpDown1.Text, NumericUpDown1.Text * bombillaPrecio, "Eliminar")
+        ' End If/
     End Sub
 End Class

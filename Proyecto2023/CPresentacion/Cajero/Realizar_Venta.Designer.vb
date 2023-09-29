@@ -28,6 +28,11 @@ Partial Class Realizar_Venta
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
@@ -49,11 +54,7 @@ Partial Class Realizar_Venta
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LHora = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.LValorTotal = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -76,6 +77,48 @@ Partial Class Realizar_Venta
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(794, 253)
         Me.DataGridView1.TabIndex = 0
+        '
+        'Nombre
+        '
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Nombre.HeaderText = "Nombre del Producto"
+        Me.Nombre.Name = "Nombre"
+        Me.Nombre.ReadOnly = True
+        Me.Nombre.Width = 300
+        '
+        'Precio
+        '
+        Me.Precio.HeaderText = "Precio"
+        Me.Precio.Name = "Precio"
+        Me.Precio.ReadOnly = True
+        '
+        'Cantidad
+        '
+        Me.Cantidad.HeaderText = "Cantidad"
+        Me.Cantidad.Name = "Cantidad"
+        Me.Cantidad.ReadOnly = True
+        Me.Cantidad.Width = 80
+        '
+        'Subtotal
+        '
+        Me.Subtotal.HeaderText = "Subtotal"
+        Me.Subtotal.Name = "Subtotal"
+        Me.Subtotal.ReadOnly = True
+        Me.Subtotal.Width = 150
+        '
+        'Eliminar
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        Me.Eliminar.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Eliminar.HeaderText = "Elminar Producto"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar Producto"
+        Me.Eliminar.Width = 120
         '
         'BAgregarAlCarrito
         '
@@ -280,47 +323,16 @@ Partial Class Realizar_Venta
         Me.LFecha.TabIndex = 32
         Me.LFecha.Text = "Fecha"
         '
-        'Nombre
+        'LValorTotal
         '
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Nombre.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Nombre.HeaderText = "Nombre del Producto"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.ReadOnly = True
-        Me.Nombre.Width = 300
-        '
-        'Precio
-        '
-        Me.Precio.HeaderText = "Precio"
-        Me.Precio.Name = "Precio"
-        Me.Precio.ReadOnly = True
-        '
-        'Cantidad
-        '
-        Me.Cantidad.HeaderText = "Cantidad"
-        Me.Cantidad.Name = "Cantidad"
-        Me.Cantidad.ReadOnly = True
-        Me.Cantidad.Width = 80
-        '
-        'Subtotal
-        '
-        Me.Subtotal.HeaderText = "Subtotal"
-        Me.Subtotal.Name = "Subtotal"
-        Me.Subtotal.ReadOnly = True
-        Me.Subtotal.Width = 150
-        '
-        'Eliminar
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        Me.Eliminar.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.Eliminar.HeaderText = "Elminar Producto"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        Me.Eliminar.Text = "Eliminar Producto"
-        Me.Eliminar.Width = 120
+        Me.LValorTotal.AutoSize = True
+        Me.LValorTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LValorTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LValorTotal.Location = New System.Drawing.Point(610, 534)
+        Me.LValorTotal.Name = "LValorTotal"
+        Me.LValorTotal.Size = New System.Drawing.Size(29, 20)
+        Me.LValorTotal.TabIndex = 33
+        Me.LValorTotal.Text = "...."
         '
         'Realizar_Venta
         '
@@ -328,6 +340,7 @@ Partial Class Realizar_Venta
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(799, 650)
+        Me.Controls.Add(Me.LValorTotal)
         Me.Controls.Add(Me.LFecha)
         Me.Controls.Add(Me.LHora)
         Me.Controls.Add(Me.BVaciarCarrito)
@@ -390,4 +403,5 @@ Partial Class Realizar_Venta
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewButtonColumn
+    Friend WithEvents LValorTotal As Label
 End Class
