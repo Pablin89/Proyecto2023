@@ -1,5 +1,8 @@
 ﻿Public Class Login
 
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TUsuario.Focus()
+    End Sub
 
     Private Sub Blogin_Click(sender As Object, e As EventArgs) Handles BLogin.Click
 
@@ -18,14 +21,11 @@
             CajeroPrincipal.Show()
 
         ElseIf TUsuario.Text = "Gerente" Then
-        Me.Hide()
+            Me.Hide()
         Gerente_Principal.Show()
         End If
 
     End Sub
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TUsuario.Focus()
-    End Sub
 
 End Class
