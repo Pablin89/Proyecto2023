@@ -75,14 +75,14 @@ Partial Class Informes_Clientes
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label1.Location = New System.Drawing.Point(48, 53)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(123, 16)
+        Me.Label1.Size = New System.Drawing.Size(124, 16)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Seleccionar un filtro"
         '
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Clientes con mas compras", "Clientes con menos compras"})
+        Me.ComboBox2.Items.AddRange(New Object() {"Clientes con mas compras", "Clientes con menos compras", "Clientes Activos/inactivos", "Clientes Nuevos"})
         Me.ComboBox2.Location = New System.Drawing.Point(51, 72)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(230, 21)
@@ -102,7 +102,7 @@ Partial Class Informes_Clientes
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label2.Location = New System.Drawing.Point(432, 107)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 16)
+        Me.Label2.Size = New System.Drawing.Size(88, 16)
         Me.Label2.TabIndex = 11
         Me.Label2.Text = "Fecha desde"
         '
@@ -113,7 +113,7 @@ Partial Class Informes_Clientes
         Me.Label3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Label3.Location = New System.Drawing.Point(438, 53)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(81, 16)
+        Me.Label3.Size = New System.Drawing.Size(82, 16)
         Me.Label3.TabIndex = 12
         Me.Label3.Text = "Fecha hasta"
         '
