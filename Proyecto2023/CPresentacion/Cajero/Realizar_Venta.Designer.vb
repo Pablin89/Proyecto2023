@@ -34,7 +34,6 @@ Partial Class Realizar_Venta
         Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -55,6 +54,9 @@ Partial Class Realizar_Venta
         Me.LHora = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LValorTotal = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TPrecio = New System.Windows.Forms.TextBox()
+        Me.LPrecio = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -122,23 +124,16 @@ Partial Class Realizar_Venta
         '
         'BAgregarAlCarrito
         '
-        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(337, 218)
+        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(417, 218)
         Me.BAgregarAlCarrito.Name = "BAgregarAlCarrito"
         Me.BAgregarAlCarrito.Size = New System.Drawing.Size(141, 32)
         Me.BAgregarAlCarrito.TabIndex = 1
         Me.BAgregarAlCarrito.Text = "Agregar al carrito"
         Me.BAgregarAlCarrito.UseVisualStyleBackColor = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(338, 133)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(210, 20)
-        Me.TextBox1.TabIndex = 2
-        '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(122, 179)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(123, 218)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(210, 20)
         Me.NumericUpDown1.TabIndex = 4
@@ -148,7 +143,7 @@ Partial Class Realizar_Venta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(48, 179)
+        Me.Label2.Location = New System.Drawing.Point(49, 218)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 15)
         Me.Label2.TabIndex = 5
@@ -334,12 +329,39 @@ Partial Class Realizar_Venta
         Me.LValorTotal.TabIndex = 33
         Me.LValorTotal.Text = "...."
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(338, 133)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(210, 20)
+        Me.TextBox1.TabIndex = 2
+        '
+        'TPrecio
+        '
+        Me.TPrecio.Location = New System.Drawing.Point(123, 176)
+        Me.TPrecio.Name = "TPrecio"
+        Me.TPrecio.Size = New System.Drawing.Size(210, 20)
+        Me.TPrecio.TabIndex = 34
+        '
+        'LPrecio
+        '
+        Me.LPrecio.AutoSize = True
+        Me.LPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LPrecio.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LPrecio.Location = New System.Drawing.Point(49, 177)
+        Me.LPrecio.Name = "LPrecio"
+        Me.LPrecio.Size = New System.Drawing.Size(48, 15)
+        Me.LPrecio.TabIndex = 35
+        Me.LPrecio.Text = "Precio"
+        '
         'Realizar_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(799, 650)
+        Me.Controls.Add(Me.LPrecio)
+        Me.Controls.Add(Me.TPrecio)
         Me.Controls.Add(Me.LValorTotal)
         Me.Controls.Add(Me.LFecha)
         Me.Controls.Add(Me.LHora)
@@ -378,7 +400,6 @@ Partial Class Realizar_Venta
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BAgregarAlCarrito As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
@@ -404,4 +425,7 @@ Partial Class Realizar_Venta
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewButtonColumn
     Friend WithEvents LValorTotal As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TPrecio As TextBox
+    Friend WithEvents LPrecio As Label
 End Class
