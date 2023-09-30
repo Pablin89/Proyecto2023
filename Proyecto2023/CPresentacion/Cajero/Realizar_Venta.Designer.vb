@@ -183,9 +183,9 @@ Partial Class Realizar_Venta
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label5.Location = New System.Drawing.Point(541, 534)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(54, 20)
+        Me.Label5.Size = New System.Drawing.Size(74, 20)
         Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Total:"
+        Me.Label5.Text = "Total: $ "
         '
         'ComboBox1
         '
@@ -330,9 +330,8 @@ Partial Class Realizar_Venta
         Me.LValorTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.LValorTotal.Location = New System.Drawing.Point(610, 534)
         Me.LValorTotal.Name = "LValorTotal"
-        Me.LValorTotal.Size = New System.Drawing.Size(29, 20)
+        Me.LValorTotal.Size = New System.Drawing.Size(0, 20)
         Me.LValorTotal.TabIndex = 33
-        Me.LValorTotal.Text = "...."
         '
         'Realizar_Venta
         '
