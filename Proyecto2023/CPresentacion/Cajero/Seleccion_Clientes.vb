@@ -1,7 +1,9 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 
 Public Class Baja_Clientes
-
+    Dim conexion As SqlConnection
+    Dim comando As SqlCommand
     Private Sub TBuscarDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBuscarDni.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -81,5 +83,27 @@ Public Class Baja_Clientes
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Editar_Cliente.ShowDialog()
+    End Sub
+
+    Private Sub Baja_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        DataGridView1.AllowUserToAddRows = False
+        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        verClientes()
+    End Sub
+    Public Sub verClientes()
+        Dim query As String = "select 
+	                                id_cliente As id,
+	                                apellido As Apellido,
+	                                nombre As Nombre,
+	                                telefono As Telefono,
+	                                fecha_nacimiento As Nacimiento,
+	                                correo As Mail,
+	                                direccion As Dirección,
+	                                case when id_estado_cliente = 1 THEN 'Activo' ELSE 'Inactivo' END As 'Estado'
+                              from clientes"
+        Dim adaptador As New SqlDataAdapter(query, conexion)
+        Dim dt As New DataTable
+        adaptador.Fill(dt)
+        DataGridView1.DataSource = dt
     End Sub
 End Class

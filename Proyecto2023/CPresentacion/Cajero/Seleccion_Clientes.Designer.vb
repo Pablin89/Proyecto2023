@@ -22,6 +22,9 @@ Partial Class Baja_Clientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBuscarDni = New System.Windows.Forms.TextBox()
@@ -33,10 +36,10 @@ Partial Class Baja_Clientes
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
         Me.RBApellido = New System.Windows.Forms.RadioButton()
         Me.RBDni = New System.Windows.Forms.RadioButton()
+        Me.ButtonBuscar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
-        Me.ButtonBuscar = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -59,7 +62,7 @@ Partial Class Baja_Clientes
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(117, 73)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 16)
+        Me.Label2.Size = New System.Drawing.Size(75, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Buscar por:"
         '
@@ -74,11 +77,29 @@ Partial Class Baja_Clientes
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(800, 273)
         Me.DataGridView1.TabIndex = 7
         '
@@ -164,6 +185,20 @@ Partial Class Baja_Clientes
         Me.RBDni.Text = "DNI"
         Me.RBDni.UseVisualStyleBackColor = True
         '
+        'ButtonBuscar
+        '
+        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ButtonBuscar.Location = New System.Drawing.Point(554, 94)
+        Me.ButtonBuscar.Name = "ButtonBuscar"
+        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
+        Me.ButtonBuscar.TabIndex = 6
+        Me.ButtonBuscar.Text = "Buscar Cliente"
+        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.ButtonBuscar.UseVisualStyleBackColor = True
+        '
         'Panel2
         '
         Me.Panel2.Controls.Add(Me.Panel3)
@@ -196,21 +231,7 @@ Partial Class Baja_Clientes
         Me.BSeleccionar.Text = "Seleccionar Cliente"
         Me.BSeleccionar.UseVisualStyleBackColor = False
         '
-        'ButtonBuscar
-        '
-        Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBuscar.Location = New System.Drawing.Point(554, 94)
-        Me.ButtonBuscar.Name = "ButtonBuscar"
-        Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
-        Me.ButtonBuscar.TabIndex = 6
-        Me.ButtonBuscar.Text = "Buscar Cliente"
-        Me.ButtonBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.ButtonBuscar.UseVisualStyleBackColor = True
-        '
-        'Seleccion_Clientes
+        'Baja_Clientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -221,7 +242,7 @@ Partial Class Baja_Clientes
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "Seleccion_Clientes"
+        Me.Name = "Baja_Clientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Seleccion de Clientes"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()

@@ -1,8 +1,10 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class AgregarCliente
-
+    Dim conexion As SqlConnection
+    Dim comando As SqlCommand
     'BUSCAR POR DNI
     Private Sub TextBox11_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox11.KeyPress
 
@@ -131,6 +133,7 @@ Public Class AgregarCliente
                 ask = MsgBox("Seguro desea Agregar cliente?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+                    agregarCliente()
                     MsgBox("Cliente Agregado", MsgBoxStyle.OkOnly, "Agregado")
                     TextBox5.Text = ""
                     TextBox6.Text = ""
@@ -138,6 +141,9 @@ Public Class AgregarCliente
                     TextBox8.Text = ""
                     TextBox9.Text = ""
                     TextBox10.Text = ""
+                    If (MsgBoxResult.Ok = True) Then
+                        Baja_Clientes.ShowDialog()
+                    End If
                 Else
                     MsgBox("No se agregó el cliente", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -155,5 +161,36 @@ Public Class AgregarCliente
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
 
         End If
+    End Sub
+
+    Private Sub agregarCliente()
+        Dim nombre As String = TextBox6.Text
+        Dim apellido As String = TextBox5.Text
+        Dim fecha_nacimiento As String = DateTimePicker1.Value
+        Dim dni As String = Val(TextBox7.Text)
+        Dim direccion As String = TextBox8.Text
+        Dim telefono As String = Val(TextBox9.Text)
+        Dim correo As String = TextBox10.Text
+        Dim id_estado_cliente As Integer = 1
+
+        Dim query As String = "Insert into clientes (nombre,apellido,fecha_nacimiento,dni,direccion,telefono,correo,id_estado_cliente) values (@nombre,@apellido,@fecha_nacimiento,@dni,@direccion,@telefono,@correo,@id_estado_cliente)"
+
+        Using comando = New SqlCommand(query, conexion)
+            comando.Parameters.AddWithValue("@nombre", nombre)
+            comando.Parameters.AddWithValue("@apellido", apellido)
+            comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento)
+            comando.Parameters.AddWithValue("@dni", dni)
+            comando.Parameters.AddWithValue("@direccion", direccion)
+            comando.Parameters.AddWithValue("@telefono", telefono)
+            comando.Parameters.AddWithValue("@correo", correo)
+            comando.Parameters.AddWithValue("@id_estado_cliente", id_estado_cliente)
+            conexion.Open()
+            comando.ExecuteNonQuery()
+            conexion.Close()
+        End Using
+    End Sub
+
+    Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
     End Sub
 End Class
