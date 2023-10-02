@@ -165,12 +165,6 @@
     <Compile Include="CPresentacion\Encargado\GestionProductos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionInformes.Designer.vb">
-      <DependentUpon>GestionInformes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Encargado\GestionInformes.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CPresentacion\Gerente General\Permisos.Designer.vb">
       <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
@@ -299,9 +293,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Encargado\GestionInformes.resx">
-      <DependentUpon>GestionInformes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\Permisos.resx">
       <DependentUpon>Permisos.vb</DependentUpon>

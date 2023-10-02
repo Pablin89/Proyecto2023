@@ -22,6 +22,7 @@ Partial Class Empleados
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.GestionarEmpleados = New System.Windows.Forms.TabControl()
         Me.ConsultarEmpleados = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -55,7 +56,6 @@ Partial Class Empleados
         Me.TCorreo = New System.Windows.Forms.TextBox()
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TDireccion = New System.Windows.Forms.TextBox()
-        Me.TFechaNac = New System.Windows.Forms.TextBox()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.TApellidoYNombre = New System.Windows.Forms.TextBox()
         Me.LCorreo = New System.Windows.Forms.Label()
@@ -67,8 +67,6 @@ Partial Class Empleados
         Me.ChBApellido = New System.Windows.Forms.CheckBox()
         Me.ChBDni = New System.Windows.Forms.CheckBox()
         Me.AgregarEmpleados = New System.Windows.Forms.TabPage()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
@@ -78,7 +76,7 @@ Partial Class Empleados
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.DTFechaNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
@@ -91,6 +89,10 @@ Partial Class Empleados
         Me.LFechaNacimiento = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
+        Me.BRCambios = New System.Windows.Forms.Button()
+        Me.DTFechaNac = New System.Windows.Forms.DateTimePicker()
+        Me.DTFechaIngreso = New System.Windows.Forms.DateTimePicker()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.GestionarEmpleados.SuspendLayout()
         Me.ConsultarEmpleados.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -101,7 +103,6 @@ Partial Class Empleados
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.AgregarEmpleados.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -115,7 +116,7 @@ Partial Class Empleados
         Me.GestionarEmpleados.Location = New System.Drawing.Point(0, 0)
         Me.GestionarEmpleados.Name = "GestionarEmpleados"
         Me.GestionarEmpleados.SelectedIndex = 0
-        Me.GestionarEmpleados.Size = New System.Drawing.Size(834, 580)
+        Me.GestionarEmpleados.Size = New System.Drawing.Size(834, 576)
         Me.GestionarEmpleados.TabIndex = 1
         '
         'ConsultarEmpleados
@@ -131,7 +132,7 @@ Partial Class Empleados
         Me.ConsultarEmpleados.Location = New System.Drawing.Point(4, 25)
         Me.ConsultarEmpleados.Name = "ConsultarEmpleados"
         Me.ConsultarEmpleados.Padding = New System.Windows.Forms.Padding(3)
-        Me.ConsultarEmpleados.Size = New System.Drawing.Size(826, 551)
+        Me.ConsultarEmpleados.Size = New System.Drawing.Size(826, 547)
         Me.ConsultarEmpleados.TabIndex = 0
         Me.ConsultarEmpleados.Text = "Consultar Empelados"
         '
@@ -140,13 +141,13 @@ Partial Class Empleados
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(270, 20)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(240, 16)
+        Me.Label1.Size = New System.Drawing.Size(245, 16)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(332, 130)
+        Me.TextBox3.Location = New System.Drawing.Point(332, 119)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(214, 22)
         Me.TextBox3.TabIndex = 13
@@ -160,19 +161,25 @@ Partial Class Empleados
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(321, 213)
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(321, 188)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(177, 28)
+        Me.Button1.Size = New System.Drawing.Size(194, 43)
         Me.Button1.TabIndex = 11
         Me.Button1.Text = "Buscar Empleado"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Panel3
         '
         Me.Panel3.Controls.Add(Me.Panel4)
         Me.Panel3.Controls.Add(Me.DataGridView2)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 263)
+        Me.Panel3.Location = New System.Drawing.Point(3, 259)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(820, 285)
         Me.Panel3.TabIndex = 10
@@ -197,7 +204,7 @@ Partial Class Empleados
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(36, 235)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(59, 16)
+        Me.Label2.Size = New System.Drawing.Size(62, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Correo:"
         '
@@ -206,7 +213,7 @@ Partial Class Empleados
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(36, 192)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 16)
+        Me.Label3.Size = New System.Drawing.Size(75, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Teléfono:"
         '
@@ -215,7 +222,7 @@ Partial Class Empleados
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(36, 150)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(78, 16)
+        Me.Label4.Size = New System.Drawing.Size(80, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Dirección:"
         '
@@ -224,7 +231,7 @@ Partial Class Empleados
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(36, 106)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(159, 16)
+        Me.Label5.Size = New System.Drawing.Size(164, 16)
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Fecha de Nacimiento:"
         '
@@ -233,7 +240,7 @@ Partial Class Empleados
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(36, 70)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(38, 16)
+        Me.Label6.Size = New System.Drawing.Size(42, 16)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "DNI:"
         '
@@ -242,7 +249,7 @@ Partial Class Empleados
         Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(36, 30)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(138, 16)
+        Me.Label7.Size = New System.Drawing.Size(142, 16)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Apellido y nombre:"
         '
@@ -271,9 +278,9 @@ Partial Class Empleados
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(231, 132)
+        Me.CheckBox1.Location = New System.Drawing.Point(231, 121)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(85, 20)
+        Me.CheckBox1.Size = New System.Drawing.Size(86, 20)
         Me.CheckBox1.TabIndex = 9
         Me.CheckBox1.Text = "Apellido"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -283,7 +290,7 @@ Partial Class Empleados
         Me.CheckBox2.AutoSize = True
         Me.CheckBox2.Location = New System.Drawing.Point(231, 71)
         Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(50, 20)
+        Me.CheckBox2.Size = New System.Drawing.Size(51, 20)
         Me.CheckBox2.TabIndex = 8
         Me.CheckBox2.Text = "Dni"
         Me.CheckBox2.UseVisualStyleBackColor = True
@@ -302,50 +309,56 @@ Partial Class Empleados
         Me.EditarEmpleados.Location = New System.Drawing.Point(4, 25)
         Me.EditarEmpleados.Name = "EditarEmpleados"
         Me.EditarEmpleados.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditarEmpleados.Size = New System.Drawing.Size(831, 559)
+        Me.EditarEmpleados.Size = New System.Drawing.Size(826, 547)
         Me.EditarEmpleados.TabIndex = 1
         Me.EditarEmpleados.Text = "Editar Empleados"
         '
         'LTitulo
         '
         Me.LTitulo.AutoSize = True
-        Me.LTitulo.Location = New System.Drawing.Point(270, 37)
+        Me.LTitulo.Location = New System.Drawing.Point(270, 26)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
+        Me.LTitulo.Size = New System.Drawing.Size(245, 16)
         Me.LTitulo.TabIndex = 7
         Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(332, 147)
+        Me.TextBox2.Location = New System.Drawing.Point(332, 118)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(214, 22)
         Me.TextBox2.TabIndex = 6
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(332, 86)
+        Me.TextBox1.Location = New System.Drawing.Point(332, 75)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(214, 22)
         Me.TextBox1.TabIndex = 5
         '
         'BBuscar
         '
-        Me.BBuscar.Location = New System.Drawing.Point(322, 185)
+        Me.BBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
+        Me.BBuscar.Image = CType(resources.GetObject("BBuscar.Image"), System.Drawing.Image)
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscar.Location = New System.Drawing.Point(320, 161)
         Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(177, 28)
+        Me.BBuscar.Size = New System.Drawing.Size(195, 43)
         Me.BBuscar.TabIndex = 4
         Me.BBuscar.Text = "Buscar Empleado"
-        Me.BBuscar.UseVisualStyleBackColor = True
+        Me.BBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BBuscar.UseVisualStyleBackColor = False
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 229)
+        Me.Panel1.Location = New System.Drawing.Point(3, 206)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(823, 325)
+        Me.Panel1.Size = New System.Drawing.Size(818, 336)
         Me.Panel1.TabIndex = 3
         '
         'DataGridView1
@@ -355,7 +368,7 @@ Partial Class Empleados
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(413, 325)
+        Me.DataGridView1.Size = New System.Drawing.Size(413, 336)
         Me.DataGridView1.TabIndex = 2
         '
         'DataGridViewTextBoxColumn1
@@ -373,11 +386,12 @@ Partial Class Empleados
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel2.Controls.Add(Me.DTFechaNac)
+        Me.Panel2.Controls.Add(Me.BRCambios)
         Me.Panel2.Controls.Add(Me.BCambios)
         Me.Panel2.Controls.Add(Me.TCorreo)
         Me.Panel2.Controls.Add(Me.TTelefono)
         Me.Panel2.Controls.Add(Me.TDireccion)
-        Me.Panel2.Controls.Add(Me.TFechaNac)
         Me.Panel2.Controls.Add(Me.TDni)
         Me.Panel2.Controls.Add(Me.TApellidoYNombre)
         Me.Panel2.Controls.Add(Me.LCorreo)
@@ -389,17 +403,23 @@ Partial Class Empleados
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(419, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(404, 325)
+        Me.Panel2.Size = New System.Drawing.Size(399, 336)
         Me.Panel2.TabIndex = 1
         '
         'BCambios
         '
-        Me.BCambios.Location = New System.Drawing.Point(147, 281)
+        Me.BCambios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCambios.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.BCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCambios.Location = New System.Drawing.Point(215, 284)
         Me.BCambios.Name = "BCambios"
-        Me.BCambios.Size = New System.Drawing.Size(172, 23)
+        Me.BCambios.Size = New System.Drawing.Size(176, 48)
         Me.BCambios.TabIndex = 12
         Me.BCambios.Text = "Confirmar Cambios"
+        Me.BCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BCambios.UseVisualStyleBackColor = True
+        Me.BCambios.Visible = False
         '
         'TCorreo
         '
@@ -422,13 +442,6 @@ Partial Class Empleados
         Me.TDireccion.Size = New System.Drawing.Size(199, 22)
         Me.TDireccion.TabIndex = 9
         '
-        'TFechaNac
-        '
-        Me.TFechaNac.Location = New System.Drawing.Point(192, 106)
-        Me.TFechaNac.Name = "TFechaNac"
-        Me.TFechaNac.Size = New System.Drawing.Size(199, 22)
-        Me.TFechaNac.TabIndex = 8
-        '
         'TDni
         '
         Me.TDni.Location = New System.Drawing.Point(192, 67)
@@ -448,7 +461,7 @@ Partial Class Empleados
         Me.LCorreo.AutoSize = True
         Me.LCorreo.Location = New System.Drawing.Point(123, 235)
         Me.LCorreo.Name = "LCorreo"
-        Me.LCorreo.Size = New System.Drawing.Size(59, 16)
+        Me.LCorreo.Size = New System.Drawing.Size(62, 16)
         Me.LCorreo.TabIndex = 5
         Me.LCorreo.Text = "Correo:"
         '
@@ -457,7 +470,7 @@ Partial Class Empleados
         Me.LTelefono.AutoSize = True
         Me.LTelefono.Location = New System.Drawing.Point(108, 196)
         Me.LTelefono.Name = "LTelefono"
-        Me.LTelefono.Size = New System.Drawing.Size(74, 16)
+        Me.LTelefono.Size = New System.Drawing.Size(75, 16)
         Me.LTelefono.TabIndex = 4
         Me.LTelefono.Text = "Teléfono:"
         '
@@ -466,7 +479,7 @@ Partial Class Empleados
         Me.LDirección.AutoSize = True
         Me.LDirección.Location = New System.Drawing.Point(104, 152)
         Me.LDirección.Name = "LDirección"
-        Me.LDirección.Size = New System.Drawing.Size(78, 16)
+        Me.LDirección.Size = New System.Drawing.Size(80, 16)
         Me.LDirección.TabIndex = 3
         Me.LDirección.Text = "Dirección:"
         '
@@ -475,7 +488,7 @@ Partial Class Empleados
         Me.LFechaNac.AutoSize = True
         Me.LFechaNac.Location = New System.Drawing.Point(23, 109)
         Me.LFechaNac.Name = "LFechaNac"
-        Me.LFechaNac.Size = New System.Drawing.Size(159, 16)
+        Me.LFechaNac.Size = New System.Drawing.Size(164, 16)
         Me.LFechaNac.TabIndex = 2
         Me.LFechaNac.Text = "Fecha de Nacimiento:"
         '
@@ -484,7 +497,7 @@ Partial Class Empleados
         Me.LDni.AutoSize = True
         Me.LDni.Location = New System.Drawing.Point(144, 70)
         Me.LDni.Name = "LDni"
-        Me.LDni.Size = New System.Drawing.Size(38, 16)
+        Me.LDni.Size = New System.Drawing.Size(42, 16)
         Me.LDni.TabIndex = 1
         Me.LDni.Text = "DNI:"
         '
@@ -493,16 +506,16 @@ Partial Class Empleados
         Me.LApellidoyNombre.AutoSize = True
         Me.LApellidoyNombre.Location = New System.Drawing.Point(44, 27)
         Me.LApellidoyNombre.Name = "LApellidoyNombre"
-        Me.LApellidoyNombre.Size = New System.Drawing.Size(138, 16)
+        Me.LApellidoyNombre.Size = New System.Drawing.Size(142, 16)
         Me.LApellidoyNombre.TabIndex = 0
         Me.LApellidoyNombre.Text = "Apellido y nombre:"
         '
         'ChBApellido
         '
         Me.ChBApellido.AutoSize = True
-        Me.ChBApellido.Location = New System.Drawing.Point(231, 149)
+        Me.ChBApellido.Location = New System.Drawing.Point(231, 120)
         Me.ChBApellido.Name = "ChBApellido"
-        Me.ChBApellido.Size = New System.Drawing.Size(85, 20)
+        Me.ChBApellido.Size = New System.Drawing.Size(86, 20)
         Me.ChBApellido.TabIndex = 2
         Me.ChBApellido.Text = "Apellido"
         Me.ChBApellido.UseVisualStyleBackColor = True
@@ -510,9 +523,9 @@ Partial Class Empleados
         'ChBDni
         '
         Me.ChBDni.AutoSize = True
-        Me.ChBDni.Location = New System.Drawing.Point(231, 88)
+        Me.ChBDni.Location = New System.Drawing.Point(231, 77)
         Me.ChBDni.Name = "ChBDni"
-        Me.ChBDni.Size = New System.Drawing.Size(50, 20)
+        Me.ChBDni.Size = New System.Drawing.Size(51, 20)
         Me.ChBDni.TabIndex = 1
         Me.ChBDni.Text = "Dni"
         Me.ChBDni.UseVisualStyleBackColor = True
@@ -520,7 +533,6 @@ Partial Class Empleados
         'AgregarEmpleados
         '
         Me.AgregarEmpleados.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.AgregarEmpleados.Controls.Add(Me.Panel5)
         Me.AgregarEmpleados.Controls.Add(Me.Button3)
         Me.AgregarEmpleados.Controls.Add(Me.Button2)
         Me.AgregarEmpleados.Controls.Add(Me.TextBox11)
@@ -528,53 +540,34 @@ Partial Class Empleados
         Me.AgregarEmpleados.Controls.Add(Me.Panel6)
         Me.AgregarEmpleados.Location = New System.Drawing.Point(4, 25)
         Me.AgregarEmpleados.Name = "AgregarEmpleados"
-        Me.AgregarEmpleados.Size = New System.Drawing.Size(831, 559)
+        Me.AgregarEmpleados.Size = New System.Drawing.Size(826, 547)
         Me.AgregarEmpleados.TabIndex = 2
         Me.AgregarEmpleados.Text = "Agregar Empleados"
         '
-        'Panel5
-        '
-        Me.Panel5.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.Panel5.Controls.Add(Me.TextBox12)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(0, 527)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(831, 32)
-        Me.Panel5.TabIndex = 21
-        '
-        'TextBox12
-        '
-        Me.TextBox12.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.TextBox12.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TextBox12.Enabled = False
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.Red
-        Me.TextBox12.Location = New System.Drawing.Point(0, 0)
-        Me.TextBox12.Multiline = True
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(831, 100)
-        Me.TextBox12.TabIndex = 20
-        Me.TextBox12.Text = "Una vez confirmados los datos, el Gerente General se encargará de asignar usuario" &
-    " y contraseña al nuevo empleado."
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(307, 442)
+        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(321, 458)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(188, 34)
+        Me.Button3.Size = New System.Drawing.Size(188, 45)
         Me.Button3.TabIndex = 19
         Me.Button3.Text = "Confirmar Datos"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
+        Me.Button2.Image = Global.Proyecto2023.My.Resources.Resources.searchcircularbutton_79274
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.Location = New System.Drawing.Point(594, 50)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(80, 28)
+        Me.Button2.Size = New System.Drawing.Size(124, 42)
         Me.Button2.TabIndex = 18
         Me.Button2.Text = "Buscar"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox11
@@ -589,18 +582,20 @@ Partial Class Empleados
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(36, 25)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(552, 16)
+        Me.Label8.Size = New System.Drawing.Size(569, 16)
         Me.Label8.TabIndex = 16
         Me.Label8.Text = "Ingresar DNI del nuevo empleado para comprobar que  no existe en el sistema"
         '
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel6.Controls.Add(Me.DTFechaIngreso)
+        Me.Panel6.Controls.Add(Me.Label10)
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.TextBox7)
         Me.Panel6.Controls.Add(Me.TextBox6)
         Me.Panel6.Controls.Add(Me.TextBox5)
-        Me.Panel6.Controls.Add(Me.DateTimePicker1)
+        Me.Panel6.Controls.Add(Me.DTFechaNacimiento)
         Me.Panel6.Controls.Add(Me.TextBox10)
         Me.Panel6.Controls.Add(Me.ListBox1)
         Me.Panel6.Controls.Add(Me.TextBox9)
@@ -615,7 +610,7 @@ Partial Class Empleados
         Me.Panel6.Controls.Add(Me.LApellido)
         Me.Panel6.Location = New System.Drawing.Point(20, 117)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(790, 289)
+        Me.Panel6.Size = New System.Drawing.Size(790, 310)
         Me.Panel6.TabIndex = 22
         '
         'Label9
@@ -649,12 +644,12 @@ Partial Class Empleados
         Me.TextBox5.Size = New System.Drawing.Size(198, 22)
         Me.TextBox5.TabIndex = 10
         '
-        'DateTimePicker1
+        'DTFechaNacimiento
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 164)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(198, 22)
-        Me.DateTimePicker1.TabIndex = 9
+        Me.DTFechaNacimiento.Location = New System.Drawing.Point(194, 164)
+        Me.DTFechaNacimiento.Name = "DTFechaNacimiento"
+        Me.DTFechaNacimiento.Size = New System.Drawing.Size(198, 22)
+        Me.DTFechaNacimiento.TabIndex = 9
         '
         'TextBox10
         '
@@ -668,7 +663,7 @@ Partial Class Empleados
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 16
         Me.ListBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ListBox1.Location = New System.Drawing.Point(539, 212)
+        Me.ListBox1.Location = New System.Drawing.Point(545, 209)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(158, 20)
         Me.ListBox1.TabIndex = 8
@@ -683,9 +678,9 @@ Partial Class Empleados
         'LSexo
         '
         Me.LSexo.AutoSize = True
-        Me.LSexo.Location = New System.Drawing.Point(496, 213)
+        Me.LSexo.Location = New System.Drawing.Point(495, 213)
         Me.LSexo.Name = "LSexo"
-        Me.LSexo.Size = New System.Drawing.Size(43, 16)
+        Me.LSexo.Size = New System.Drawing.Size(44, 16)
         Me.LSexo.TabIndex = 7
         Me.LSexo.Text = "Sexo"
         '
@@ -701,7 +696,7 @@ Partial Class Empleados
         Me.LCorreo1.AutoSize = True
         Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
         Me.LCorreo1.Name = "LCorreo1"
-        Me.LCorreo1.Size = New System.Drawing.Size(55, 16)
+        Me.LCorreo1.Size = New System.Drawing.Size(57, 16)
         Me.LCorreo1.TabIndex = 6
         Me.LCorreo1.Text = "Correo"
         '
@@ -719,7 +714,7 @@ Partial Class Empleados
         Me.LDireccion1.AutoSize = True
         Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
         Me.LDireccion1.Name = "LDireccion1"
-        Me.LDireccion1.Size = New System.Drawing.Size(74, 16)
+        Me.LDireccion1.Size = New System.Drawing.Size(75, 16)
         Me.LDireccion1.TabIndex = 4
         Me.LDireccion1.Text = "Direccion"
         '
@@ -728,25 +723,25 @@ Partial Class Empleados
         Me.LDNI1.AutoSize = True
         Me.LDNI1.Location = New System.Drawing.Point(137, 213)
         Me.LDNI1.Name = "LDNI1"
-        Me.LDNI1.Size = New System.Drawing.Size(34, 16)
+        Me.LDNI1.Size = New System.Drawing.Size(37, 16)
         Me.LDNI1.TabIndex = 3
         Me.LDNI1.Text = "DNI"
         '
         'LFechaNacimiento
         '
         Me.LFechaNacimiento.AutoSize = True
-        Me.LFechaNacimiento.Location = New System.Drawing.Point(42, 165)
+        Me.LFechaNacimiento.Location = New System.Drawing.Point(19, 166)
         Me.LFechaNacimiento.Name = "LFechaNacimiento"
-        Me.LFechaNacimiento.Size = New System.Drawing.Size(129, 16)
+        Me.LFechaNacimiento.Size = New System.Drawing.Size(155, 16)
         Me.LFechaNacimiento.TabIndex = 2
-        Me.LFechaNacimiento.Text = "Fecha de Ingreso"
+        Me.LFechaNacimiento.Text = "Fecha de nacimiento"
         '
         'LNombre
         '
         Me.LNombre.AutoSize = True
         Me.LNombre.Location = New System.Drawing.Point(95, 125)
         Me.LNombre.Name = "LNombre"
-        Me.LNombre.Size = New System.Drawing.Size(76, 16)
+        Me.LNombre.Size = New System.Drawing.Size(77, 16)
         Me.LNombre.TabIndex = 1
         Me.LNombre.Text = "Nombre/s"
         '
@@ -755,15 +750,52 @@ Partial Class Empleados
         Me.LApellido.AutoSize = True
         Me.LApellido.Location = New System.Drawing.Point(105, 81)
         Me.LApellido.Name = "LApellido"
-        Me.LApellido.Size = New System.Drawing.Size(66, 16)
+        Me.LApellido.Size = New System.Drawing.Size(67, 16)
         Me.LApellido.TabIndex = 0
         Me.LApellido.Text = "Apellido"
+        '
+        'BRCambios
+        '
+        Me.BRCambios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BRCambios.Image = CType(resources.GetObject("BRCambios.Image"), System.Drawing.Image)
+        Me.BRCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BRCambios.Location = New System.Drawing.Point(15, 284)
+        Me.BRCambios.Name = "BRCambios"
+        Me.BRCambios.Size = New System.Drawing.Size(172, 48)
+        Me.BRCambios.TabIndex = 13
+        Me.BRCambios.Text = "Realizar Cambios"
+        Me.BRCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BRCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BRCambios.UseVisualStyleBackColor = True
+        '
+        'DTFechaNac
+        '
+        Me.DTFechaNac.Location = New System.Drawing.Point(191, 104)
+        Me.DTFechaNac.Name = "DTFechaNac"
+        Me.DTFechaNac.Size = New System.Drawing.Size(200, 22)
+        Me.DTFechaNac.TabIndex = 14
+        '
+        'DTFechaIngreso
+        '
+        Me.DTFechaIngreso.Location = New System.Drawing.Point(191, 255)
+        Me.DTFechaIngreso.Name = "DTFechaIngreso"
+        Me.DTFechaIngreso.Size = New System.Drawing.Size(198, 22)
+        Me.DTFechaIngreso.TabIndex = 17
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(39, 260)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(133, 16)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "Fecha de Ingreso"
         '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(834, 580)
+        Me.ClientSize = New System.Drawing.Size(834, 576)
         Me.Controls.Add(Me.GestionarEmpleados)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -785,8 +817,6 @@ Partial Class Empleados
         Me.Panel2.PerformLayout()
         Me.AgregarEmpleados.ResumeLayout(False)
         Me.AgregarEmpleados.PerformLayout()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.ResumeLayout(False)
@@ -826,7 +856,6 @@ Partial Class Empleados
     Friend WithEvents TCorreo As TextBox
     Friend WithEvents TTelefono As TextBox
     Friend WithEvents TDireccion As TextBox
-    Friend WithEvents TFechaNac As TextBox
     Friend WithEvents TDni As TextBox
     Friend WithEvents TApellidoYNombre As TextBox
     Friend WithEvents LCorreo As Label
@@ -838,8 +867,6 @@ Partial Class Empleados
     Friend WithEvents ChBApellido As CheckBox
     Friend WithEvents ChBDni As CheckBox
     Friend WithEvents AgregarEmpleados As TabPage
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Button3 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents TextBox11 As TextBox
@@ -849,7 +876,7 @@ Partial Class Empleados
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents DTFechaNacimiento As DateTimePicker
     Friend WithEvents TextBox10 As TextBox
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents TextBox9 As TextBox
@@ -862,4 +889,8 @@ Partial Class Empleados
     Friend WithEvents LFechaNacimiento As Label
     Friend WithEvents LNombre As Label
     Friend WithEvents LApellido As Label
+    Friend WithEvents BRCambios As Button
+    Friend WithEvents DTFechaNac As DateTimePicker
+    Friend WithEvents DTFechaIngreso As DateTimePicker
+    Friend WithEvents Label10 As Label
 End Class

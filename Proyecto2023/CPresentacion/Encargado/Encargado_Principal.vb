@@ -19,9 +19,7 @@
 
 
 
-    Private Sub Informes_Click(sender As Object, e As EventArgs)
-        GestionInformes.ShowDialog()
-    End Sub
+
 
     Private Sub BajaClientes_Click(sender As Object, e As EventArgs) Handles BajaClientes.Click
         Baja_Cliente.ShowDialog()

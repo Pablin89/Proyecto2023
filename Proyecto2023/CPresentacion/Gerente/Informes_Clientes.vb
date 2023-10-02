@@ -10,4 +10,8 @@ Public Class Informes_Clientes
             MsgBox("Seleccionaste buscar por 'Clientes con menos compras'", MsgBoxStyle.Information, "Buscar")
         End If
     End Sub
+
+    Private Sub Informes_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

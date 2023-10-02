@@ -1,42 +1,47 @@
 ﻿Public Class Informes_Productos
 
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-        If (ComboBox1.Text = "Productos por categorias") Then
-            ComboBox2.Enabled = True
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBFiltro.SelectedIndexChanged
+        If (CBFiltro.Text = "Productos por categorias") Then
+            LCategoria.Visible = True
+            CBCategoria.Visible = True
         Else
-            ComboBox2.Enabled = False
+            LCategoria.Visible = False
+            CBCategoria.Visible = False
         End If
     End Sub
 
     Private Sub Informes_Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ComboBox2.Enabled = False
+        CBCategoria.Visible = False
+        LCategoria.Visible = False
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If (ComboBox1.Text = "") Then
+        If (CBFiltro.Text = "") Then
             MsgBox("Seleccione un filtro para generar informe", MsgBoxStyle.Exclamation, "Atención")
-        ElseIf (ComboBox1.Text = "Ultimos productos agregados") Then
+        ElseIf (CBFiltro.Text = "Ultimos productos agregados") Then
             MsgBox("Seleccionaste buscar por 'Ultimos productos agregados'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.Text = "Productos eliminados") Then
+        ElseIf (CBFiltro.Text = "Productos eliminados") Then
             MsgBox("Seleccionaste buscar por 'Productos eliminados'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.Text = "Productos con bajo stock") Then
+        ElseIf (CBFiltro.Text = "Productos con bajo stock") Then
             MsgBox("Seleccionaste buscar por 'Productos con bajo stock'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.Text = "Productos mas vendidos") Then
+        ElseIf (CBFiltro.Text = "Productos mas vendidos") Then
             MsgBox("Seleccionaste buscar por 'Productos mas vendidos'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.Text = "Productos menos vendidos") Then
+        ElseIf (CBFiltro.Text = "Productos menos vendidos") Then
             MsgBox("Seleccionaste buscar por 'Productos menos vendidos'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.Text = "Productos por categorias") Then
-            If (ComboBox2.Text = "") Then
+        ElseIf (CBFiltro.Text = "Productos por categorias") Then
+            If (CBCategoria.Text = "") Then
                 MsgBox("Seleccione una categoria para generar informe", MsgBoxStyle.Exclamation, "Atención")
-            ElseIf (ComboBox2.Text = "Bazar") Then
+            ElseIf (CBCategoria.Text = "Bazar") Then
                 MsgBox("Seleccionaste categoria 'Bazar'", MsgBoxStyle.Information, "Buscar")
-            ElseIf (ComboBox2.Text = "Jugueteria") Then
+            ElseIf (CBCategoria.Text = "Jugueteria") Then
                 MsgBox("Seleccionaste categoria 'Jugueteria'", MsgBoxStyle.Information, "Buscar")
-            ElseIf (ComboBox2.Text = "Ferreteria") Then
+            ElseIf (CBCategoria.Text = "Ferreteria") Then
                 MsgBox("Seleccionaste categoria 'Ferreteria'", MsgBoxStyle.Information, "Buscar")
-            ElseIf (ComboBox2.Text = "Cotillon") Then
+            ElseIf (CBCategoria.Text = "Cotillon") Then
                 MsgBox("Seleccionaste categoria 'Cotillon'", MsgBoxStyle.Information, "Buscar")
             End If
         End If
     End Sub
+
+
 End Class
