@@ -74,18 +74,30 @@ Public Class Realizar_Venta
 
     'vaciar carrito
     Private Sub BVaciarCarrito_Click(sender As Object, e As EventArgs) Handles BVaciarCarrito.Click
-        vaciarCarrito()
-        calcularTotal()
-        vaciartextoCarrito()
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea cancelar la compra y vaciar el carrito?", vbYesNo + vbInformation, "Vaciar Carrito")
+
+        If (MsgBoxResult.Yes = ask) Then
+            vaciarCarrito()
+            calcularTotal()
+            vaciartextoCarrito()
+        End If
+
     End Sub
 
     Public Sub vaciarCarrito()
+
         If (DataGridView1.Rows.Count > 0) Then
             For Each Fila As DataGridViewRow In DataGridView1.Rows
                 DataGridView1.Rows.Clear()
                 'DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
             Next
+        Else
+            MsgBox(" El carrito se encuentra vacío.", vbOKOnly + vbCritical, "Vaciar Carrito")
         End If
+
+
+
     End Sub
 
     Private Sub BAgregarAlCarrito_Click(sender As Object, e As EventArgs) Handles BAgregarAlCarrito.Click
@@ -139,7 +151,7 @@ Public Class Realizar_Venta
 
 
         If (carga = False) Then
-            ask = MsgBox("Desea agregar el prducto?", vbYesNo + vbInformation, "Agregar Producto")
+            ask = MsgBox("Desea agregar el producto?", vbYesNo + vbInformation, "Agregar Producto")
 
             If (MsgBoxResult.Yes = ask And TextBox1.Text <> "" And NumericUpDown1.Text <> 0) Then
 
@@ -149,7 +161,7 @@ Public Class Realizar_Venta
                 MsgBox("Debe seleccionar un producto", MsgBoxStyle.Critical, "Atención")
             End If
         Else
-            MsgBox("Sumamos " + NumericUpDown1.Text + " más a '" + TextBox1.Text + "'", vbOKOnly + vbCritical, "Producto")
+            MsgBox("Sumamos " + NumericUpDown1.Text + " unidades más al producto '" + TextBox1.Text + "'", vbOKOnly + vbCritical, "Producto")
             calcularTotal()
         End If
 
@@ -192,7 +204,7 @@ Public Class Realizar_Venta
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
-                    vaciarCarrito()
+                    vaciartextoCarrito()
                     vaciarTexto()
                 End If
             End If

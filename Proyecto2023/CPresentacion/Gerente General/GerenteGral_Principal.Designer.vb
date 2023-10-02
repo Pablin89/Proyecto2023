@@ -30,7 +30,7 @@ Partial Class GerenteGral_Principal
         Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
@@ -113,7 +113,7 @@ Partial Class GerenteGral_Principal
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Button2)
         Me.Panel2.Controls.Add(Me.BCerrarSesion)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(600, 0)
@@ -121,19 +121,24 @@ Partial Class GerenteGral_Principal
         Me.Panel2.Size = New System.Drawing.Size(200, 620)
         Me.Panel2.TabIndex = 1
         '
-        'Button1
+        'Button2
         '
-        Me.Button1.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button1.Font = New System.Drawing.Font("Leelawadee", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(0, 47)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Button1.Size = New System.Drawing.Size(200, 29)
-        Me.Button1.TabIndex = 3
-        Me.Button1.Text = "Datos de usuario"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Button2.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(0, 47)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Button2.Size = New System.Drawing.Size(200, 45)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Datos de usuario"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'BCerrarSesion
         '
@@ -194,6 +199,6 @@ Partial Class GerenteGral_Principal
     Friend WithEvents Productos As ToolStripMenuItem
     Friend WithEvents Backup As ToolStripMenuItem
     Friend WithEvents Informes As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
     Friend WithEvents BCerrarSesion As Button
+    Friend WithEvents Button2 As Button
 End Class

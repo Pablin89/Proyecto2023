@@ -12,15 +12,20 @@
     End Sub
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        Me.Hide()
-        Login.Show()
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
+        If (MsgBoxResult.Yes = ask) Then
+            Me.Hide()
+            Login.Show()
+        End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Misdatos.ShowDialog()
-    End Sub
 
     Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
         Informes_General.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Misdatos.ShowDialog()
     End Sub
 End Class

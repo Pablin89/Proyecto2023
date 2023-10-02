@@ -24,6 +24,7 @@ Partial Class Gerente_Principal
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Gerente_Principal))
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.BCerrarSesion = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -34,7 +35,6 @@ Partial Class Gerente_Principal
         Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -52,6 +52,25 @@ Partial Class Gerente_Principal
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(189, 620)
         Me.Panel2.TabIndex = 2
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.CadetBlue
+        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(0, 47)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
+        Me.Button2.Name = "Button2"
+        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Button2.Size = New System.Drawing.Size(189, 45)
+        Me.Button2.TabIndex = 4
+        Me.Button2.Text = "Datos de usuario"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'BCerrarSesion
         '
@@ -167,25 +186,6 @@ Partial Class Gerente_Principal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.CadetBlue
-        Me.Button2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Button2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(0, 47)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 40, 3, 3)
-        Me.Button2.Name = "Button2"
-        Me.Button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Button2.Size = New System.Drawing.Size(189, 45)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Datos de usuario"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button2.UseVisualStyleBackColor = False
         '
         'Gerente_Principal
         '

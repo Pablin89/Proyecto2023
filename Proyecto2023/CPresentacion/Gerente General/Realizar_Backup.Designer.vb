@@ -25,9 +25,10 @@ Partial Class Realizar_Backup
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Realizar_Backup))
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.LRuta = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TBackup = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'LTitulo
@@ -50,12 +51,12 @@ Partial Class Realizar_Backup
         Me.LRuta.TabIndex = 1
         Me.LRuta.Text = "Ingresar Ruta de Guardado"
         '
-        'TextBox1
+        'TBackup
         '
-        Me.TextBox1.Location = New System.Drawing.Point(251, 164)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(342, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.TBackup.Location = New System.Drawing.Point(251, 164)
+        Me.TBackup.Name = "TBackup"
+        Me.TBackup.Size = New System.Drawing.Size(342, 20)
+        Me.TBackup.TabIndex = 2
         '
         'Button1
         '
@@ -79,6 +80,10 @@ Partial Class Realizar_Backup
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Realizar_Backup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -87,7 +92,7 @@ Partial Class Realizar_Backup
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TBackup)
         Me.Controls.Add(Me.LRuta)
         Me.Controls.Add(Me.LTitulo)
         Me.Name = "Realizar_Backup"
@@ -100,7 +105,8 @@ Partial Class Realizar_Backup
 
     Friend WithEvents LTitulo As Label
     Friend WithEvents LRuta As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TBackup As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
