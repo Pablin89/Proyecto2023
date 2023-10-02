@@ -85,7 +85,7 @@ Public Class Baja_Clientes
 
     Private Sub Baja_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DataGridView1.AllowUserToAddRows = False
-        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         verClientes()
     End Sub
     Public Sub verClientes()
