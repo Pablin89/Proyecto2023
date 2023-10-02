@@ -1,4 +1,8 @@
 ﻿Public Class Informes_General
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+        Me.ToolTipResultados.IsBalloon = True
+        Me.ToolTipResultados.SetToolTip(NumericUpDown1, "Este número representa la cantidad de resultados que va a tener cada selección.")
+    End Sub
     'Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs)
     '    If (CheckBox1.Checked) Then
     '        CheckBox2.Checked = False
