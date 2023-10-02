@@ -23,13 +23,14 @@ Partial Class Editar_Cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -37,9 +38,6 @@ Partial Class Editar_Cliente
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Panel6.SuspendLayout()
         Me.SuspendLayout()
@@ -55,8 +53,6 @@ Partial Class Editar_Cliente
         Me.Panel6.Controls.Add(Me.TextBox2)
         Me.Panel6.Controls.Add(Me.TextBox3)
         Me.Panel6.Controls.Add(Me.DateTimePicker2)
-        Me.Panel6.Controls.Add(Me.ListBox2)
-        Me.Panel6.Controls.Add(Me.Label1)
         Me.Panel6.Controls.Add(Me.Label2)
         Me.Panel6.Controls.Add(Me.Label3)
         Me.Panel6.Controls.Add(Me.Label4)
@@ -68,6 +64,27 @@ Partial Class Editar_Cliente
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(790, 268)
         Me.Panel6.TabIndex = 30
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(545, 164)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(198, 20)
+        Me.TextBox6.TabIndex = 16
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(545, 122)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(198, 20)
+        Me.TextBox5.TabIndex = 15
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(545, 78)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(198, 20)
+        Me.TextBox4.TabIndex = 14
         '
         'Label9
         '
@@ -106,24 +123,6 @@ Partial Class Editar_Cliente
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(198, 20)
         Me.DateTimePicker2.TabIndex = 9
-        '
-        'ListBox2
-        '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ListBox2.Location = New System.Drawing.Point(545, 212)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(158, 17)
-        Me.ListBox2.TabIndex = 8
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(496, 213)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(31, 13)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Sexo"
         '
         'Label2
         '
@@ -188,27 +187,6 @@ Partial Class Editar_Cliente
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Apellido"
         '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(545, 78)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox4.TabIndex = 14
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Location = New System.Drawing.Point(545, 122)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox5.TabIndex = 15
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Location = New System.Drawing.Point(545, 164)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(198, 20)
-        Me.TextBox6.TabIndex = 16
-        '
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -251,8 +229,6 @@ Partial Class Editar_Cliente
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
     Friend WithEvents DateTimePicker2 As DateTimePicker
-    Friend WithEvents ListBox2 As ListBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label

@@ -1,12 +1,18 @@
 ﻿Public Class CajeroPrincipal
 
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        Me.Hide()
-        Login.Show()
+
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
+        If (MsgBoxResult.Yes = ask) Then
+            Me.Hide()
+            Login.Show()
+        End If
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Misdatos.BModificarU.Visible = False
+
         Misdatos.BModificarP.Visible = False
         Misdatos.ShowDialog()
     End Sub

@@ -24,10 +24,11 @@ Partial Class Restauracion
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Restauracion))
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TRestaurar = New System.Windows.Forms.TextBox()
         Me.LRuta = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'Button1
@@ -39,12 +40,12 @@ Partial Class Restauracion
         Me.Button1.Text = "Restaurar Backup"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'TRestaurar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(261, 181)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(342, 20)
-        Me.TextBox1.TabIndex = 7
+        Me.TRestaurar.Location = New System.Drawing.Point(261, 181)
+        Me.TRestaurar.Name = "TRestaurar"
+        Me.TRestaurar.Size = New System.Drawing.Size(342, 20)
+        Me.TRestaurar.TabIndex = 7
         '
         'LRuta
         '
@@ -79,6 +80,10 @@ Partial Class Restauracion
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
         'Restauracion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -87,7 +92,7 @@ Partial Class Restauracion
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TRestaurar)
         Me.Controls.Add(Me.LRuta)
         Me.Controls.Add(Me.LTitulo)
         Me.Name = "Restauracion"
@@ -98,8 +103,9 @@ Partial Class Restauracion
 
     End Sub
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TRestaurar As TextBox
     Friend WithEvents LRuta As Label
     Friend WithEvents LTitulo As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class

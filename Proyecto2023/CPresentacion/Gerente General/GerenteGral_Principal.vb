@@ -1,12 +1,14 @@
 ﻿Public Class GerenteGral_Principal
     Private Sub BCerrarSesion_Click(sender As Object, e As EventArgs) Handles BCerrarSesion.Click
-        Me.Hide()
-        Login.Show()
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
+        If (MsgBoxResult.Yes = ask) Then
+            Me.Hide()
+            Login.Show()
+        End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Misdatos.ShowDialog()
-    End Sub
+
 
     Private Sub Backup_Click(sender As Object, e As EventArgs) Handles Backup.Click
         Realizar_Backup.ShowDialog()
@@ -18,5 +20,9 @@
 
     Private Sub Productos_Click(sender As Object, e As EventArgs) Handles Productos.Click
         Permisos.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Misdatos.ShowDialog()
     End Sub
 End Class

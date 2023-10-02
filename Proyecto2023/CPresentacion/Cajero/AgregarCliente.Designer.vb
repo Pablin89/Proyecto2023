@@ -34,8 +34,6 @@ Partial Class AgregarCliente
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
-        Me.LSexo = New System.Windows.Forms.Label()
         Me.LCorreo1 = New System.Windows.Forms.Label()
         Me.LTelefono1 = New System.Windows.Forms.Label()
         Me.LDireccion1 = New System.Windows.Forms.Label()
@@ -108,8 +106,6 @@ Partial Class AgregarCliente
         Me.Panel6.Controls.Add(Me.TextBox6)
         Me.Panel6.Controls.Add(Me.TextBox5)
         Me.Panel6.Controls.Add(Me.DateTimePicker1)
-        Me.Panel6.Controls.Add(Me.ListBox1)
-        Me.Panel6.Controls.Add(Me.LSexo)
         Me.Panel6.Controls.Add(Me.LCorreo1)
         Me.Panel6.Controls.Add(Me.LTelefono1)
         Me.Panel6.Controls.Add(Me.LDireccion1)
@@ -159,24 +155,6 @@ Partial Class AgregarCliente
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(198, 20)
         Me.DateTimePicker1.TabIndex = 9
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ListBox1.Location = New System.Drawing.Point(545, 212)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(158, 17)
-        Me.ListBox1.TabIndex = 8
-        '
-        'LSexo
-        '
-        Me.LSexo.AutoSize = True
-        Me.LSexo.Location = New System.Drawing.Point(496, 213)
-        Me.LSexo.Name = "LSexo"
-        Me.LSexo.Size = New System.Drawing.Size(31, 13)
-        Me.LSexo.TabIndex = 7
-        Me.LSexo.Text = "Sexo"
         '
         'LCorreo1
         '
@@ -293,8 +271,6 @@ Partial Class AgregarCliente
     Friend WithEvents TextBox6 As TextBox
     Friend WithEvents TextBox5 As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
-    Friend WithEvents ListBox1 As ListBox
-    Friend WithEvents LSexo As Label
     Friend WithEvents LCorreo1 As Label
     Friend WithEvents LTelefono1 As Label
     Friend WithEvents LDireccion1 As Label
