@@ -1,9 +1,7 @@
-﻿Imports System.Data.SqlClient
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 
 Public Class Baja_Clientes
-    Dim conexion As SqlConnection
-    Dim comando As SqlCommand
+
     Private Sub TBuscarDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TBuscarDni.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -78,47 +76,10 @@ Public Class Baja_Clientes
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
-        'Button1.Enabled = False
+        Button1.Enabled = False
     End Sub
 
-
-
-    Private Sub Baja_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DataGridView1.AllowUserToAddRows = False
-        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
-        verClientes()
-    End Sub
-    Public Sub verClientes()
-        Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                          from clientes"
-        Dim adaptador As New SqlDataAdapter(query, conexion)
-        Dim dt As New DataTable
-        adaptador.Fill(dt)
-        DataGridView1.DataSource = dt
-    End Sub
-
-    Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim ask As MsgBoxResult
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
-        If (MsgBoxResult.Yes = ask) Then
-            Realizar_Venta.TextBox5.Text = Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString
-            Realizar_Venta.TextBox6.Text = Me.DataGridView1.Item(7, i).Value.ToString
-            Me.Close()
-        End If
-
-    End Sub
-
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        AgregarCliente.ShowDialog()
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Editar_Cliente.ShowDialog()
     End Sub
 End Class

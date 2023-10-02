@@ -448,8 +448,5 @@
   <ItemGroup>
     <None Include="Resources\business_man_user_support_supportfortheuser_aquestion_theclient_2330.png" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add_client.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
