@@ -22,6 +22,7 @@ Partial Class Informes_Cajeros
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Informes_Cajeros))
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
@@ -48,13 +49,19 @@ Partial Class Informes_Cajeros
         '
         'Button1
         '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Location = New System.Drawing.Point(341, 354)
+        Me.Button1.BackColor = System.Drawing.Color.Teal
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(322, 339)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 23)
+        Me.Button1.Size = New System.Drawing.Size(170, 43)
         Me.Button1.TabIndex = 19
         Me.Button1.Text = "Generar Informe"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Chart1
         '
@@ -79,7 +86,7 @@ Partial Class Informes_Cajeros
         Me.LFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFiltro.Location = New System.Drawing.Point(48, 53)
         Me.LFiltro.Name = "LFiltro"
-        Me.LFiltro.Size = New System.Drawing.Size(123, 16)
+        Me.LFiltro.Size = New System.Drawing.Size(124, 16)
         Me.LFiltro.TabIndex = 17
         Me.LFiltro.Text = "Seleccionar un filtro"
         '
@@ -139,7 +146,7 @@ Partial Class Informes_Cajeros
         Me.LFechaHasta.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaHasta.Location = New System.Drawing.Point(438, 53)
         Me.LFechaHasta.Name = "LFechaHasta"
-        Me.LFechaHasta.Size = New System.Drawing.Size(81, 16)
+        Me.LFechaHasta.Size = New System.Drawing.Size(82, 16)
         Me.LFechaHasta.TabIndex = 12
         Me.LFechaHasta.Text = "Fecha hasta"
         '
@@ -150,7 +157,7 @@ Partial Class Informes_Cajeros
         Me.LFechaDesde.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaDesde.Location = New System.Drawing.Point(432, 111)
         Me.LFechaDesde.Name = "LFechaDesde"
-        Me.LFechaDesde.Size = New System.Drawing.Size(87, 16)
+        Me.LFechaDesde.Size = New System.Drawing.Size(88, 16)
         Me.LFechaDesde.TabIndex = 11
         Me.LFechaDesde.Text = "Fecha desde"
         '

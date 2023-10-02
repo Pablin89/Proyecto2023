@@ -22,9 +22,10 @@ Partial Class Informes_Productos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Informes_Productos))
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.LFechaDesde = New System.Windows.Forms.Label()
         Me.LFechaHasta = New System.Windows.Forms.Label()
@@ -35,12 +36,12 @@ Partial Class Informes_Productos
         Me.Categoria = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NroVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.CBFiltro = New System.Windows.Forms.ComboBox()
         Me.LFiltro = New System.Windows.Forms.Label()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.LCategoria = New System.Windows.Forms.Label()
+        Me.CBCategoria = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -67,7 +68,7 @@ Partial Class Informes_Productos
         Me.LFechaDesde.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaDesde.Location = New System.Drawing.Point(434, 128)
         Me.LFechaDesde.Name = "LFechaDesde"
-        Me.LFechaDesde.Size = New System.Drawing.Size(87, 16)
+        Me.LFechaDesde.Size = New System.Drawing.Size(88, 16)
         Me.LFechaDesde.TabIndex = 1
         Me.LFechaDesde.Text = "Fecha desde"
         '
@@ -78,7 +79,7 @@ Partial Class Informes_Productos
         Me.LFechaHasta.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFechaHasta.Location = New System.Drawing.Point(440, 81)
         Me.LFechaHasta.Name = "LFechaHasta"
-        Me.LFechaHasta.Size = New System.Drawing.Size(81, 16)
+        Me.LFechaHasta.Size = New System.Drawing.Size(82, 16)
         Me.LFechaHasta.TabIndex = 2
         Me.LFechaHasta.Text = "Fecha hasta"
         '
@@ -127,14 +128,14 @@ Partial Class Informes_Productos
         Me.NroVentas.HeaderText = "Cantidad de Ventas"
         Me.NroVentas.Name = "NroVentas"
         '
-        'ComboBox1
+        'CBFiltro
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Ultimos productos agregados", "Productos eliminados", "Productos con bajo stock", "Productos mas vendidos", "Productos menos vendidos", "Productos por categorias"})
-        Me.ComboBox1.Location = New System.Drawing.Point(64, 76)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(334, 21)
-        Me.ComboBox1.TabIndex = 6
+        Me.CBFiltro.FormattingEnabled = True
+        Me.CBFiltro.Items.AddRange(New Object() {"Ultimos productos agregados", "Productos eliminados", "Productos con bajo stock", "Productos mas vendidos", "Productos menos vendidos", "Productos por categorias"})
+        Me.CBFiltro.Location = New System.Drawing.Point(64, 76)
+        Me.CBFiltro.Name = "CBFiltro"
+        Me.CBFiltro.Size = New System.Drawing.Size(334, 21)
+        Me.CBFiltro.TabIndex = 6
         '
         'LFiltro
         '
@@ -143,61 +144,68 @@ Partial Class Informes_Productos
         Me.LFiltro.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.LFiltro.Location = New System.Drawing.Point(61, 51)
         Me.LFiltro.Name = "LFiltro"
-        Me.LFiltro.Size = New System.Drawing.Size(123, 16)
+        Me.LFiltro.Size = New System.Drawing.Size(124, 16)
         Me.LFiltro.TabIndex = 7
         Me.LFiltro.Text = "Seleccionar un filtro"
         '
         'Chart1
         '
-        ChartArea4.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend4)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend1)
         Me.Chart1.Location = New System.Drawing.Point(487, 18)
         Me.Chart1.Name = "Chart1"
-        Series4.ChartArea = "ChartArea1"
-        Series4.Legend = "Legend1"
-        Series4.Name = "Series1"
-        Me.Chart1.Series.Add(Series4)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart1.Series.Add(Series1)
         Me.Chart1.Size = New System.Drawing.Size(300, 300)
         Me.Chart1.TabIndex = 8
         Me.Chart1.Text = "Chart1"
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(334, 359)
+        Me.Button1.BackColor = System.Drawing.Color.Teal
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(334, 340)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(141, 23)
+        Me.Button1.Size = New System.Drawing.Size(154, 42)
         Me.Button1.TabIndex = 9
         Me.Button1.Text = "Generar Informe"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = False
         '
-        'Label1
+        'LCategoria
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(61, 124)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(139, 16)
-        Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Seleccionar categoria"
+        Me.LCategoria.AutoSize = True
+        Me.LCategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LCategoria.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.LCategoria.Location = New System.Drawing.Point(61, 124)
+        Me.LCategoria.Name = "LCategoria"
+        Me.LCategoria.Size = New System.Drawing.Size(140, 16)
+        Me.LCategoria.TabIndex = 10
+        Me.LCategoria.Text = "Seleccionar categoria"
         '
-        'ComboBox2
+        'CBCategoria
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Bazar", "Jugueteria", "Ferreteria", "Cotillon"})
-        Me.ComboBox2.Location = New System.Drawing.Point(207, 123)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(191, 21)
-        Me.ComboBox2.TabIndex = 11
+        Me.CBCategoria.FormattingEnabled = True
+        Me.CBCategoria.Items.AddRange(New Object() {"Bazar", "Jugueteria", "Ferreteria", "Cotillon"})
+        Me.CBCategoria.Location = New System.Drawing.Point(207, 123)
+        Me.CBCategoria.Name = "CBCategoria"
+        Me.CBCategoria.Size = New System.Drawing.Size(191, 21)
+        Me.CBCategoria.TabIndex = 11
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.ComboBox2)
-        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Controls.Add(Me.CBCategoria)
+        Me.Panel1.Controls.Add(Me.LCategoria)
         Me.Panel1.Controls.Add(Me.LFiltro)
-        Me.Panel1.Controls.Add(Me.ComboBox1)
+        Me.Panel1.Controls.Add(Me.CBFiltro)
         Me.Panel1.Controls.Add(Me.DateTimeHasta)
         Me.Panel1.Controls.Add(Me.DateTimeDesde)
         Me.Panel1.Controls.Add(Me.LFechaHasta)
@@ -249,12 +257,12 @@ Partial Class Informes_Productos
     Friend WithEvents DateTimeDesde As DateTimePicker
     Friend WithEvents DateTimeHasta As DateTimePicker
     Friend WithEvents DataGridView1 As DataGridView
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents CBFiltro As ComboBox
     Friend WithEvents LFiltro As Label
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents Button1 As Button
-    Friend WithEvents Label1 As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents LCategoria As Label
+    Friend WithEvents CBCategoria As ComboBox
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Categoria As DataGridViewTextBoxColumn
     Friend WithEvents Stock As DataGridViewTextBoxColumn
