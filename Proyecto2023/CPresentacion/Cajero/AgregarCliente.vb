@@ -191,6 +191,6 @@ Public Class AgregarCliente
     End Sub
 
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
     End Sub
 End Class

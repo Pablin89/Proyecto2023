@@ -66,8 +66,6 @@
             MsgBox("Seleccionaste buscar por 'Ventas con Mercado Pago'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(5)) Then
             MsgBox("Seleccionaste buscar por 'Ventas en efectivo'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.SelectedIndex.Equals(6)) Then
-            MsgBox("Seleccionaste buscar por 'Empleado específico'", MsgBoxStyle.Information, "Buscar")
         End If
     End Sub
 End Class

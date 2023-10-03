@@ -22,9 +22,7 @@
 
         ElseIf TUsuario.Text = "Gerente" Then
             Me.Hide()
-            Gerente_Principal.Show()
-        Else
-            MsgBox("Usuario incorrecto", MsgBoxStyle.Critical, "Alerta")
+        Gerente_Principal.Show()
         End If
 
     End Sub
