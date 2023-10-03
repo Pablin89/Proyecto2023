@@ -102,7 +102,7 @@ Partial Class Baja_Cliente
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(117, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 16)
+        Me.Label2.Size = New System.Drawing.Size(76, 16)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Buscar por:"
         '
@@ -168,6 +168,7 @@ Partial Class Baja_Cliente
         Me.Controls.Add(Me.TBuscarDni)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "Baja_Cliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Baja_Cliente"

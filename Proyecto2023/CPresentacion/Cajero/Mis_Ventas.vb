@@ -2,13 +2,13 @@
 
 Public Class Mis_ventas
 
-    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
+    Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
-            TextBox1.MaxLength = 8
+            TDni.MaxLength = 8
 
-            If (TextBox1.Text.Length > 7) Then
+            If (TDni.Text.Length > 7) Then
                 MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
 
@@ -26,26 +26,25 @@ Public Class Mis_ventas
 
     End Sub
     Private Sub Mis_ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox1.Enabled = False
+        TDni.Visible = False
+        LDni.Visible = False
         DateTimePicker1.Enabled = False
         DateTimePicker2.Enabled = False
+
+
+
+
     End Sub
 
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
         If (ComboBox1.Text = "Cliente especifico") Then
-                TextBox1.Enabled = True
-                DateTimePicker1.Enabled = False
-                DateTimePicker2.Enabled = False
-            ElseIf (ComboBox1.Text = "Por Fecha") Then
-                DateTimePicker1.Enabled = True
-                DateTimePicker2.Enabled = True
-                TextBox1.Enabled = False
-            Else
-                TextBox1.Enabled = False
-                DateTimePicker1.Enabled = False
-                DateTimePicker2.Enabled = False
-            End If
+            TDni.Visible = True
+            LDni.Visible = True
+        Else
+            TDni.Visible = False
+            LDni.Visible = False
+        End If
 
     End Sub
 
@@ -55,18 +54,16 @@ Public Class Mis_ventas
         ElseIf (ComboBox1.SelectedIndex.Equals(0)) Then
             MsgBox("Seleccionaste buscar por 'Todos las ventas'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(1)) Then
-            If (TextBox1.Text = "") Then
+            If (TDni.Text = "") Then
                 MsgBox("Introduzca un DNI", MsgBoxStyle.Exclamation, "Atencion")
             Else
-                MsgBox("Seleccionaste buscar por 'Cliente especifico': " + TextBox1.Text, MsgBoxStyle.Information, "Buscar")
+                MsgBox("Seleccionaste buscar por 'Cliente especifico': " + TDni.Text, MsgBoxStyle.Information, "Buscar")
             End If
         ElseIf (ComboBox1.SelectedIndex.Equals(2)) Then
-            MsgBox("Seleccionaste buscar 'Por Fecha'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.SelectedIndex.Equals(3)) Then
             MsgBox("Seleccionaste buscar por 'Ventas con tarjeta'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.SelectedIndex.Equals(4)) Then
+        ElseIf (ComboBox1.SelectedIndex.Equals(3)) Then
             MsgBox("Seleccionaste buscar por 'Ventas con Mercado Pago'", MsgBoxStyle.Information, "Buscar")
-        ElseIf (ComboBox1.SelectedIndex.Equals(5)) Then
+        ElseIf (ComboBox1.SelectedIndex.Equals(4)) Then
             MsgBox("Seleccionaste buscar por 'Ventas en efectivo'", MsgBoxStyle.Information, "Buscar")
         End If
     End Sub

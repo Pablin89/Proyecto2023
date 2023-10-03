@@ -36,7 +36,16 @@ Public Class AgregarCliente
         If (TextBox11.Text = "") Then
             MsgBox("Completa el campo de búsqueda", MsgBoxStyle.Information, "Atencion")
         Else
-            MsgBox("Seleccionaste buscar por DNI: " + dni, MsgBoxStyle.Information, "Buscar")
+            If (TextBox11.Text = "11111111") Then
+                MsgBox("Ya existe un cliente con el dni: " + dni, MsgBoxStyle.Information, "Buscar")
+            Else
+                MsgBox("No existe un cliente con el dni: " + dni + " , puede agregarlo como nuevo cliente", MsgBoxStyle.Information, "Buscar")
+                Panel6.Visible = True
+                Button3.Visible = True
+                Button2.Visible = False
+                TextBox11.Enabled = False
+            End If
+
         End If
     End Sub
 
@@ -191,6 +200,10 @@ Public Class AgregarCliente
     End Sub
 
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        TextBox11.Enabled = True
     End Sub
 End Class

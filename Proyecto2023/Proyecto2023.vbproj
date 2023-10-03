@@ -442,5 +442,9 @@
   <ItemGroup>
     <None Include="Resources\add_client.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CDatos\" />
+    <Folder Include="CNegocio\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

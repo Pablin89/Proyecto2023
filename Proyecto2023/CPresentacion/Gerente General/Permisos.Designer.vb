@@ -27,6 +27,8 @@ Partial Class Permisos
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.TContraseña = New System.Windows.Forms.TextBox()
+        Me.TNombreUsuario = New System.Windows.Forms.TextBox()
         Me.BConfirmarPerfil = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
@@ -44,8 +46,6 @@ Partial Class Permisos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ChSeleccionar2 = New System.Windows.Forms.CheckBox()
         Me.ChSeleccionar1 = New System.Windows.Forms.CheckBox()
-        Me.TNombreUsuario = New System.Windows.Forms.TextBox()
-        Me.TContraseña = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -106,6 +106,22 @@ Partial Class Permisos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(384, 349)
         Me.Panel4.TabIndex = 1
+        '
+        'TContraseña
+        '
+        Me.TContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TContraseña.Location = New System.Drawing.Point(168, 212)
+        Me.TContraseña.Name = "TContraseña"
+        Me.TContraseña.Size = New System.Drawing.Size(174, 22)
+        Me.TContraseña.TabIndex = 10
+        '
+        'TNombreUsuario
+        '
+        Me.TNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TNombreUsuario.Location = New System.Drawing.Point(168, 175)
+        Me.TNombreUsuario.Name = "TNombreUsuario"
+        Me.TNombreUsuario.Size = New System.Drawing.Size(174, 22)
+        Me.TNombreUsuario.TabIndex = 9
         '
         'BConfirmarPerfil
         '
@@ -281,22 +297,6 @@ Partial Class Permisos
         Me.ChSeleccionar1.Text = "Seleccionar un empleado sin perfil asignado."
         Me.ChSeleccionar1.UseVisualStyleBackColor = True
         '
-        'TNombreUsuario
-        '
-        Me.TNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TNombreUsuario.Location = New System.Drawing.Point(168, 175)
-        Me.TNombreUsuario.Name = "TNombreUsuario"
-        Me.TNombreUsuario.Size = New System.Drawing.Size(174, 22)
-        Me.TNombreUsuario.TabIndex = 9
-        '
-        'TContraseña
-        '
-        Me.TContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TContraseña.Location = New System.Drawing.Point(168, 212)
-        Me.TContraseña.Name = "TContraseña"
-        Me.TContraseña.Size = New System.Drawing.Size(174, 22)
-        Me.TContraseña.TabIndex = 10
-        '
         'Permisos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -307,6 +307,9 @@ Partial Class Permisos
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Permisos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Permisos"

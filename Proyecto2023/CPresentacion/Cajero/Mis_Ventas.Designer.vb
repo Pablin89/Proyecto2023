@@ -24,10 +24,10 @@ Partial Class Mis_ventas
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mis_ventas))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LDni = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TDni = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -50,17 +50,17 @@ Partial Class Mis_ventas
         Me.Label1.Text = "Mis Ventas"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label2
+        'LDni
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label2.Location = New System.Drawing.Point(52, 205)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(182, 16)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Ingrese el DNI del cliente"
+        Me.LDni.AutoSize = True
+        Me.LDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LDni.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.LDni.Location = New System.Drawing.Point(52, 205)
+        Me.LDni.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LDni.Name = "LDni"
+        Me.LDni.Size = New System.Drawing.Size(183, 16)
+        Me.LDni.TabIndex = 1
+        Me.LDni.Text = "Ingrese el DNI del cliente"
         '
         'Label4
         '
@@ -70,7 +70,7 @@ Partial Class Mis_ventas
         Me.Label4.Location = New System.Drawing.Point(408, 88)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(100, 16)
+        Me.Label4.Size = New System.Drawing.Size(101, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Fecha Desde"
         '
@@ -82,18 +82,18 @@ Partial Class Mis_ventas
         Me.Label5.Location = New System.Drawing.Point(413, 136)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 16)
+        Me.Label5.Size = New System.Drawing.Size(96, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Fecha Hasta"
         '
-        'TextBox1
+        'TDni
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(243, 202)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(206, 22)
-        Me.TextBox1.TabIndex = 6
+        Me.TDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TDni.Location = New System.Drawing.Point(243, 202)
+        Me.TDni.Margin = New System.Windows.Forms.Padding(4)
+        Me.TDni.Name = "TDni"
+        Me.TDni.Size = New System.Drawing.Size(206, 22)
+        Me.TDni.TabIndex = 6
         '
         'DateTimePicker1
         '
@@ -143,14 +143,14 @@ Partial Class Mis_ventas
         Me.Label3.Location = New System.Drawing.Point(52, 88)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(219, 16)
+        Me.Label3.Size = New System.Drawing.Size(220, 16)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Seleccionar filtro de búsqueda"
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Por Fecha", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
         Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
@@ -168,10 +168,10 @@ Partial Class Mis_ventas
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DateTimePicker2)
         Me.Controls.Add(Me.DateTimePicker1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TDni)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.LDni)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Margin = New System.Windows.Forms.Padding(4)
@@ -187,10 +187,10 @@ Partial Class Mis_ventas
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
+    Friend WithEvents LDni As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TDni As TextBox
     Friend WithEvents DateTimePicker1 As DateTimePicker
     Friend WithEvents DateTimePicker2 As DateTimePicker
     Friend WithEvents Button1 As Button

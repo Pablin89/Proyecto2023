@@ -26,6 +26,11 @@ Partial Class Informes_General
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Informes_General))
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DateTimeDesde = New System.Windows.Forms.DateTimePicker()
@@ -33,28 +38,14 @@ Partial Class Informes_General
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox9 = New System.Windows.Forms.CheckBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.ToolTipResultados = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel3.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.NumericUpDown1)
         Me.Panel3.Controls.Add(Me.Panel2)
-        Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.DateTimeDesde)
         Me.Panel3.Controls.Add(Me.DateTimePicker1)
@@ -72,26 +63,78 @@ Partial Class Informes_General
         '
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.CheckBox9)
-        Me.Panel2.Controls.Add(Me.CheckBox8)
         Me.Panel2.Controls.Add(Me.CheckBox7)
         Me.Panel2.Controls.Add(Me.CheckBox6)
-        Me.Panel2.Controls.Add(Me.CheckBox5)
-        Me.Panel2.Controls.Add(Me.CheckBox4)
         Me.Panel2.Controls.Add(Me.CheckBox3)
-        Me.Panel2.Controls.Add(Me.CheckBox2)
         Me.Panel2.Controls.Add(Me.CheckBox1)
         Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(134, 108)
+        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.Location = New System.Drawing.Point(120, 110)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(514, 168)
+        Me.Panel2.Size = New System.Drawing.Size(551, 206)
         Me.Panel2.TabIndex = 28
+        '
+        'CheckBox9
+        '
+        Me.CheckBox9.AutoSize = True
+        Me.CheckBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox9.Location = New System.Drawing.Point(325, 110)
+        Me.CheckBox9.Name = "CheckBox9"
+        Me.CheckBox9.Size = New System.Drawing.Size(112, 20)
+        Me.CheckBox9.TabIndex = 38
+        Me.CheckBox9.Text = "Ventas totales"
+        Me.CheckBox9.UseVisualStyleBackColor = True
+        '
+        'CheckBox7
+        '
+        Me.CheckBox7.AutoSize = True
+        Me.CheckBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox7.Location = New System.Drawing.Point(325, 64)
+        Me.CheckBox7.Name = "CheckBox7"
+        Me.CheckBox7.Size = New System.Drawing.Size(178, 20)
+        Me.CheckBox7.TabIndex = 36
+        Me.CheckBox7.Text = "Cliente con más compras"
+        Me.CheckBox7.UseVisualStyleBackColor = True
+        '
+        'CheckBox6
+        '
+        Me.CheckBox6.AutoSize = True
+        Me.CheckBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox6.Location = New System.Drawing.Point(49, 154)
+        Me.CheckBox6.Name = "CheckBox6"
+        Me.CheckBox6.Size = New System.Drawing.Size(221, 20)
+        Me.CheckBox6.TabIndex = 35
+        Me.CheckBox6.Text = "Categoria más y menos vendida"
+        Me.CheckBox6.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox3.Location = New System.Drawing.Point(49, 110)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(216, 20)
+        Me.CheckBox3.TabIndex = 32
+        Me.CheckBox3.Text = "Producto más y menos vendido"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(49, 64)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(241, 20)
+        Me.CheckBox1.TabIndex = 30
+        Me.CheckBox1.Text = "Empleado con más y menos ventas"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label1.Location = New System.Drawing.Point(18, 10)
+        Me.Label1.Location = New System.Drawing.Point(68, 12)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(408, 16)
         Me.Label1.TabIndex = 29
@@ -160,116 +203,6 @@ Partial Class Informes_General
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Informes Generales"
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(21, 42)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(156, 17)
-        Me.CheckBox1.TabIndex = 30
-        Me.CheckBox1.Text = "Empleados con más ventas"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(21, 65)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(168, 17)
-        Me.CheckBox2.TabIndex = 31
-        Me.CheckBox2.Text = "Empleados con menos ventas"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(21, 88)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(142, 17)
-        Me.CheckBox3.TabIndex = 32
-        Me.CheckBox3.Text = "Productos más vendidos"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(21, 113)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(154, 17)
-        Me.CheckBox4.TabIndex = 33
-        Me.CheckBox4.Text = "Productos menos vendidos"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(21, 136)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(144, 17)
-        Me.CheckBox5.TabIndex = 34
-        Me.CheckBox5.Text = "Categorias más vendidas"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
-        'CheckBox6
-        '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(269, 42)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(144, 17)
-        Me.CheckBox6.TabIndex = 35
-        Me.CheckBox6.Text = "Categorias más vendidas"
-        Me.CheckBox6.UseVisualStyleBackColor = True
-        '
-        'CheckBox7
-        '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(269, 65)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(149, 17)
-        Me.CheckBox7.TabIndex = 36
-        Me.CheckBox7.Text = "Clientes con más compras"
-        Me.CheckBox7.UseVisualStyleBackColor = True
-        '
-        'CheckBox8
-        '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(269, 88)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(161, 17)
-        Me.CheckBox8.TabIndex = 37
-        Me.CheckBox8.Text = "Clientes con menos compras"
-        Me.CheckBox8.UseVisualStyleBackColor = True
-        '
-        'CheckBox9
-        '
-        Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(269, 113)
-        Me.CheckBox9.Name = "CheckBox9"
-        Me.CheckBox9.Size = New System.Drawing.Size(93, 17)
-        Me.CheckBox9.TabIndex = 38
-        Me.CheckBox9.Text = "Ventas totales"
-        Me.CheckBox9.UseVisualStyleBackColor = True
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(131, 311)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(438, 15)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Seleccionar el número de resultados que requiera para su informe:"
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(575, 311)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.NumericUpDown1.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(79, 20)
-        Me.NumericUpDown1.TabIndex = 1
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
         'ToolTipResultados
         '
         Me.ToolTipResultados.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
@@ -281,6 +214,9 @@ Partial Class Informes_General
         Me.BackColor = System.Drawing.SystemColors.GradientActiveCaption
         Me.ClientSize = New System.Drawing.Size(781, 435)
         Me.Controls.Add(Me.Panel3)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Informes_General"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Informes_General"
@@ -288,7 +224,6 @@ Partial Class Informes_General
         Me.Panel3.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -305,13 +240,7 @@ Partial Class Informes_General
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents CheckBox7 As CheckBox
     Friend WithEvents CheckBox6 As CheckBox
-    Friend WithEvents CheckBox5 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox9 As CheckBox
-    Friend WithEvents CheckBox8 As CheckBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
-    Friend WithEvents Label5 As Label
     Friend WithEvents ToolTipResultados As ToolTip
 End Class
