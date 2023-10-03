@@ -48,7 +48,7 @@ Partial Class Baja_Ventas
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Empleado específico", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Por Fecha", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo", "Empleado específico"})
         Me.ComboBox1.Location = New System.Drawing.Point(43, 146)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(217, 21)
@@ -62,7 +62,7 @@ Partial Class Baja_Ventas
         Me.Label3.Location = New System.Drawing.Point(40, 106)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(220, 16)
+        Me.Label3.Size = New System.Drawing.Size(219, 16)
         Me.Label3.TabIndex = 26
         Me.Label3.Text = "Seleccionar filtro de búsqueda"
         '
@@ -151,7 +151,7 @@ Partial Class Baja_Ventas
         Me.Label5.Location = New System.Drawing.Point(401, 154)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 16)
+        Me.Label5.Size = New System.Drawing.Size(95, 16)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Fecha Hasta"
         '
@@ -163,7 +163,7 @@ Partial Class Baja_Ventas
         Me.Label4.Location = New System.Drawing.Point(396, 106)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 16)
+        Me.Label4.Size = New System.Drawing.Size(100, 16)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Fecha Desde"
         '
@@ -175,7 +175,7 @@ Partial Class Baja_Ventas
         Me.Label2.Location = New System.Drawing.Point(40, 223)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 16)
+        Me.Label2.Size = New System.Drawing.Size(182, 16)
         Me.Label2.TabIndex = 18
         Me.Label2.Text = "Ingrese el DNI del cliente"
         '
@@ -215,7 +215,7 @@ Partial Class Baja_Ventas
         Me.Label6.Location = New System.Drawing.Point(228, 200)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(218, 16)
+        Me.Label6.Size = New System.Drawing.Size(217, 16)
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Ingrese Usuario del empleado"
         '
