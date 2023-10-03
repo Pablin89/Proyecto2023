@@ -95,6 +95,9 @@ Partial Class Restauracion
         Me.Controls.Add(Me.TRestaurar)
         Me.Controls.Add(Me.LRuta)
         Me.Controls.Add(Me.LTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Restauracion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Restauracion"

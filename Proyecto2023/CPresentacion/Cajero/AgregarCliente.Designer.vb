@@ -73,27 +73,27 @@ Partial Class AgregarCliente
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(152, 29)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(527, 16)
+        Me.Label8.Size = New System.Drawing.Size(528, 16)
         Me.Label8.TabIndex = 26
         Me.Label8.Text = "Ingresar DNI del nuevo cliente para comprobar que  no existe en el sistema"
         '
         'TextBox10
         '
-        Me.TextBox10.Location = New System.Drawing.Point(545, 282)
+        Me.TextBox10.Location = New System.Drawing.Point(513, 173)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.Size = New System.Drawing.Size(227, 20)
         Me.TextBox10.TabIndex = 25
         '
         'TextBox9
         '
-        Me.TextBox9.Location = New System.Drawing.Point(545, 235)
+        Me.TextBox9.Location = New System.Drawing.Point(513, 128)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.Size = New System.Drawing.Size(227, 20)
         Me.TextBox9.TabIndex = 24
         '
         'TextBox8
         '
-        Me.TextBox8.Location = New System.Drawing.Point(545, 197)
+        Me.TextBox8.Location = New System.Drawing.Point(513, 84)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.Size = New System.Drawing.Size(227, 20)
         Me.TextBox8.TabIndex = 23
@@ -105,8 +105,11 @@ Partial Class AgregarCliente
         Me.Panel6.Controls.Add(Me.TextBox7)
         Me.Panel6.Controls.Add(Me.TextBox6)
         Me.Panel6.Controls.Add(Me.TextBox5)
+        Me.Panel6.Controls.Add(Me.TextBox10)
         Me.Panel6.Controls.Add(Me.DateTimePicker1)
+        Me.Panel6.Controls.Add(Me.TextBox9)
         Me.Panel6.Controls.Add(Me.LCorreo1)
+        Me.Panel6.Controls.Add(Me.TextBox8)
         Me.Panel6.Controls.Add(Me.LTelefono1)
         Me.Panel6.Controls.Add(Me.LDireccion1)
         Me.Panel6.Controls.Add(Me.LDNI1)
@@ -115,7 +118,7 @@ Partial Class AgregarCliente
         Me.Panel6.Controls.Add(Me.LApellido)
         Me.Panel6.Location = New System.Drawing.Point(5, 116)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(790, 289)
+        Me.Panel6.Size = New System.Drawing.Size(783, 289)
         Me.Panel6.TabIndex = 29
         '
         'Label9
@@ -130,28 +133,28 @@ Partial Class AgregarCliente
         '
         'TextBox7
         '
-        Me.TextBox7.Location = New System.Drawing.Point(194, 210)
+        Me.TextBox7.Location = New System.Drawing.Point(184, 216)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.Size = New System.Drawing.Size(198, 20)
         Me.TextBox7.TabIndex = 12
         '
         'TextBox6
         '
-        Me.TextBox6.Location = New System.Drawing.Point(194, 122)
+        Me.TextBox6.Location = New System.Drawing.Point(184, 128)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(198, 20)
         Me.TextBox6.TabIndex = 11
         '
         'TextBox5
         '
-        Me.TextBox5.Location = New System.Drawing.Point(194, 78)
+        Me.TextBox5.Location = New System.Drawing.Point(184, 84)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(198, 20)
         Me.TextBox5.TabIndex = 10
         '
         'DateTimePicker1
         '
-        Me.DateTimePicker1.Location = New System.Drawing.Point(194, 164)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(184, 170)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(198, 20)
         Me.DateTimePicker1.TabIndex = 9
@@ -159,7 +162,7 @@ Partial Class AgregarCliente
         'LCorreo1
         '
         Me.LCorreo1.AutoSize = True
-        Me.LCorreo1.Location = New System.Drawing.Point(484, 169)
+        Me.LCorreo1.Location = New System.Drawing.Point(452, 178)
         Me.LCorreo1.Name = "LCorreo1"
         Me.LCorreo1.Size = New System.Drawing.Size(38, 13)
         Me.LCorreo1.TabIndex = 6
@@ -168,7 +171,7 @@ Partial Class AgregarCliente
         'LTelefono1
         '
         Me.LTelefono1.AutoSize = True
-        Me.LTelefono1.Location = New System.Drawing.Point(469, 125)
+        Me.LTelefono1.Location = New System.Drawing.Point(441, 131)
         Me.LTelefono1.Name = "LTelefono1"
         Me.LTelefono1.Size = New System.Drawing.Size(49, 13)
         Me.LTelefono1.TabIndex = 5
@@ -177,7 +180,7 @@ Partial Class AgregarCliente
         'LDireccion1
         '
         Me.LDireccion1.AutoSize = True
-        Me.LDireccion1.Location = New System.Drawing.Point(465, 81)
+        Me.LDireccion1.Location = New System.Drawing.Point(441, 87)
         Me.LDireccion1.Name = "LDireccion1"
         Me.LDireccion1.Size = New System.Drawing.Size(52, 13)
         Me.LDireccion1.TabIndex = 4
@@ -186,7 +189,7 @@ Partial Class AgregarCliente
         'LDNI1
         '
         Me.LDNI1.AutoSize = True
-        Me.LDNI1.Location = New System.Drawing.Point(137, 213)
+        Me.LDNI1.Location = New System.Drawing.Point(127, 219)
         Me.LDNI1.Name = "LDNI1"
         Me.LDNI1.Size = New System.Drawing.Size(26, 13)
         Me.LDNI1.TabIndex = 3
@@ -195,7 +198,7 @@ Partial Class AgregarCliente
         'LFechaNacimiento
         '
         Me.LFechaNacimiento.AutoSize = True
-        Me.LFechaNacimiento.Location = New System.Drawing.Point(16, 169)
+        Me.LFechaNacimiento.Location = New System.Drawing.Point(45, 178)
         Me.LFechaNacimiento.Name = "LFechaNacimiento"
         Me.LFechaNacimiento.Size = New System.Drawing.Size(108, 13)
         Me.LFechaNacimiento.TabIndex = 2
@@ -204,7 +207,7 @@ Partial Class AgregarCliente
         'LNombre
         '
         Me.LNombre.AutoSize = True
-        Me.LNombre.Location = New System.Drawing.Point(95, 125)
+        Me.LNombre.Location = New System.Drawing.Point(95, 131)
         Me.LNombre.Name = "LNombre"
         Me.LNombre.Size = New System.Drawing.Size(54, 13)
         Me.LNombre.TabIndex = 1
@@ -213,7 +216,7 @@ Partial Class AgregarCliente
         'LApellido
         '
         Me.LApellido.AutoSize = True
-        Me.LApellido.Location = New System.Drawing.Point(105, 81)
+        Me.LApellido.Location = New System.Drawing.Point(105, 87)
         Me.LApellido.Name = "LApellido"
         Me.LApellido.Size = New System.Drawing.Size(44, 13)
         Me.LApellido.TabIndex = 0
@@ -245,9 +248,6 @@ Partial Class AgregarCliente
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox10)
-        Me.Controls.Add(Me.TextBox9)
-        Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "AgregarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent

@@ -1,8 +1,8 @@
 ﻿Public Class Baja_Ventas
     Private Sub Baja_Ventas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TextBox1.Enabled = False
-        DateTimePicker1.Enabled = False
-        DateTimePicker2.Enabled = False
+        TextBox1.Visible = False
+        Label2.Visible = False
+        Label6.Visible = False
     End Sub
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
@@ -32,17 +32,17 @@
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
 
         If (ComboBox1.Text = "Cliente especifico") Then
-            TextBox1.Enabled = True
-            DateTimePicker1.Enabled = False
-            DateTimePicker2.Enabled = False
-        ElseIf (ComboBox1.Text = "Por Fecha") Then
-            DateTimePicker1.Enabled = True
-            DateTimePicker2.Enabled = True
-            TextBox1.Enabled = False
+            TextBox1.Visible = True
+            Label2.Visible = True
+            Label6.Visible = False
+        ElseIf (ComboBox1.Text = "Empleado específico") Then
+            TextBox1.Visible = True
+            Label2.Visible = False
+            Label6.Visible = True
         Else
-            TextBox1.Enabled = False
-            DateTimePicker1.Enabled = False
-            DateTimePicker2.Enabled = False
+            TextBox1.Visible = False
+            Label2.Visible = False
+            Label6.Visible = False
         End If
 
     End Sub
@@ -67,5 +67,9 @@
         ElseIf (ComboBox1.SelectedIndex.Equals(5)) Then
             MsgBox("Seleccionaste buscar por 'Ventas en efectivo'", MsgBoxStyle.Information, "Buscar")
         End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        MsgBox("No Seleccionaste ninguna venta para cancelar", MsgBoxStyle.Critical, "Error")
     End Sub
 End Class

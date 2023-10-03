@@ -95,6 +95,9 @@ Partial Class Realizar_Backup
         Me.Controls.Add(Me.TBackup)
         Me.Controls.Add(Me.LRuta)
         Me.Controls.Add(Me.LTitulo)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Realizar_Backup"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Backup"

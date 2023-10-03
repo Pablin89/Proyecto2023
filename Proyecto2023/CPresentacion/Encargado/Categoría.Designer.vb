@@ -36,7 +36,7 @@ Partial Class Categoría
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(138, 33)
+        Me.Label1.Location = New System.Drawing.Point(137, 9)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(87, 20)
         Me.Label1.TabIndex = 0
@@ -78,9 +78,9 @@ Partial Class Categoría
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label3)
-        Me.Panel1.Location = New System.Drawing.Point(12, 68)
+        Me.Panel1.Location = New System.Drawing.Point(12, 47)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(372, 158)
+        Me.Panel1.Size = New System.Drawing.Size(372, 184)
         Me.Panel1.TabIndex = 4
         '
         'TextBox2
@@ -89,8 +89,9 @@ Partial Class Categoría
         Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox2.Location = New System.Drawing.Point(129, 87)
+        Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(202, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(202, 68)
         Me.TextBox2.TabIndex = 5
         '
         'Button5
@@ -99,7 +100,7 @@ Partial Class Categoría
         Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Button5.Image = Global.Proyecto2023.My.Resources.Resources.add
         Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(125, 248)
+        Me.Button5.Location = New System.Drawing.Point(132, 249)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(122, 43)
         Me.Button5.TabIndex = 32
@@ -117,6 +118,7 @@ Partial Class Categoría
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Categoría"
