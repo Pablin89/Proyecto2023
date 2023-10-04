@@ -195,6 +195,7 @@ Public Class AgregarCliente
             comando.Parameters.AddWithValue("@id_estado_cliente", id_estado_cliente)
             conexion.Open()
             comando.ExecuteNonQuery()
+            Baja_Clientes.verClientes()
             conexion.Close()
         End Using
     End Sub

@@ -214,7 +214,7 @@ Public Class Realizar_Venta
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
-                    vaciartextoCarrito()
+                    vaciarCarrito()
                     vaciarTexto()
                 End If
             End If

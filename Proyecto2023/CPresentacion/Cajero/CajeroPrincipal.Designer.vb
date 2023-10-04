@@ -32,6 +32,7 @@ Partial Class CajeroPrincipal
         Me.RealizarVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.MisVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
@@ -49,7 +50,7 @@ Partial Class CajeroPrincipal
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(600, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(200, 620)
+        Me.Panel2.Size = New System.Drawing.Size(200, 626)
         Me.Panel2.TabIndex = 2
         '
         'Button1
@@ -97,7 +98,7 @@ Partial Class CajeroPrincipal
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(600, 620)
+        Me.Panel3.Size = New System.Drawing.Size(600, 626)
         Me.Panel3.TabIndex = 3
         '
         'Panel1
@@ -108,7 +109,7 @@ Partial Class CajeroPrincipal
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(209, 620)
+        Me.Panel1.Size = New System.Drawing.Size(209, 626)
         Me.Panel1.TabIndex = 1
         '
         'MenuEncargado
@@ -117,12 +118,12 @@ Partial Class CajeroPrincipal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.ConsultarCliente})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.EditarCliente, Me.ConsultarCliente})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
         Me.MenuEncargado.Padding = New System.Windows.Forms.Padding(6, 6, 0, 2)
-        Me.MenuEncargado.Size = New System.Drawing.Size(209, 436)
+        Me.MenuEncargado.Size = New System.Drawing.Size(209, 442)
         Me.MenuEncargado.TabIndex = 2
         '
         'RealizarVenta
@@ -159,6 +160,15 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario.Text = "Agregar Cliente"
         Me.AgregarUsuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'EditarCliente
+        '
+        Me.EditarCliente.Image = CType(resources.GetObject("EditarCliente.Image"), System.Drawing.Image)
+        Me.EditarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.EditarCliente.Name = "EditarCliente"
+        Me.EditarCliente.Size = New System.Drawing.Size(202, 73)
+        Me.EditarCliente.Text = "Editar Clientes"
+        Me.EditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'ConsultarCliente
         '
         Me.ConsultarCliente.Image = CType(resources.GetObject("ConsultarCliente.Image"), System.Drawing.Image)
@@ -184,7 +194,7 @@ Partial Class CajeroPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 620)
+        Me.ClientSize = New System.Drawing.Size(800, 626)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.IsMdiContainer = True
@@ -212,5 +222,6 @@ Partial Class CajeroPrincipal
     Friend WithEvents MisVentas As ToolStripMenuItem
     Friend WithEvents AgregarUsuario As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents EditarCliente As ToolStripMenuItem
     Friend WithEvents ConsultarCliente As ToolStripMenuItem
 End Class
