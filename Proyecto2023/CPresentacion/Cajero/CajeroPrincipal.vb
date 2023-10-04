@@ -17,8 +17,8 @@
         Misdatos.ShowDialog()
     End Sub
 
-    Private Sub EditarCliente_Click(sender As Object, e As EventArgs) Handles EditarCliente.Click
-        Editar_Cliente.ShowDialog()
+    Private Sub ConsultarCliente_Click(sender As Object, e As EventArgs) Handles ConsultarCliente.Click
+        Baja_Clientes.ShowDialog()
 
     End Sub
 
@@ -32,10 +32,6 @@
 
     Private Sub RealizarVenta_Click(sender As Object, e As EventArgs) Handles RealizarVenta.Click
         Realizar_Venta.ShowDialog()
-    End Sub
-
-    Private Sub ConsultarCliente_Click(sender As Object, e As EventArgs) Handles ConsultarCliente.Click
-        Baja_Clientes.ShowDialog()
     End Sub
 End Class
 
