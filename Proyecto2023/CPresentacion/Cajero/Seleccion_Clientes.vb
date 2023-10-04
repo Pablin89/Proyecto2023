@@ -84,9 +84,45 @@ Public Class Baja_Clientes
 
 
     Private Sub Baja_Clientes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TBuscarapellido.Enabled = False
+        TBuscarCorreo.Enabled = False
+        TBuscarDni.Enabled = False
         DataGridView1.AllowUserToAddRows = False
         conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         verClientes()
+    End Sub
+
+    'metodos para ocultar los textboxs que no estén seleccionados
+    Private Sub RBDni_CheckedChanged(sender As Object, e As EventArgs) Handles RBDni.CheckedChanged
+        If (RBDni.Checked) Then
+            TBuscarapellido.Clear()
+            TBuscarapellido.Enabled = False
+            TBuscarCorreo.Clear()
+            TBuscarCorreo.Enabled = False
+            TBuscarDni.Enabled = True
+        End If
+    End Sub
+
+    Private Sub RBApellido_CheckedChanged(sender As Object, e As EventArgs) Handles RBApellido.CheckedChanged
+        If (RBApellido.Checked) Then
+            TBuscarapellido.Enabled = True
+            TBuscarCorreo.Enabled = False
+            TBuscarCorreo.Clear()
+            TBuscarDni.Enabled = False
+            TBuscarDni.Clear()
+        End If
+    End Sub
+
+    Private Sub RBCorreo_CheckedChanged(sender As Object, e As EventArgs) Handles RBCorreo.CheckedChanged
+        If (RBCorreo.Checked) Then
+
+            TBuscarDni.Clear()
+            RBApellido.Checked = False
+            TBuscarapellido.Clear()
+            TBuscarapellido.Enabled = False
+            TBuscarCorreo.Enabled = True
+            TBuscarDni.Enabled = False
+        End If
     End Sub
     Public Sub verClientes()
         Dim query As String = "select 
