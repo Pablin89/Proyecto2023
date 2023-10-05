@@ -34,6 +34,7 @@ Partial Class CajeroPrincipal
         Me.AgregarUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.EditarCliente = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -117,7 +118,9 @@ Partial Class CajeroPrincipal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.ConsultarCliente})
+
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.ConsultarCliente, Me.EditarCliente})
+
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -180,6 +183,15 @@ Partial Class CajeroPrincipal
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
+        'EditarCliente
+        '
+        Me.EditarCliente.Image = CType(resources.GetObject("EditarCliente.Image"), System.Drawing.Image)
+        Me.EditarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.EditarCliente.Name = "EditarCliente"
+        Me.EditarCliente.Size = New System.Drawing.Size(202, 73)
+        Me.EditarCliente.Text = "Editar Clientes"
+        Me.EditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'CajeroPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,4 +225,5 @@ Partial Class CajeroPrincipal
     Friend WithEvents AgregarUsuario As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents ConsultarCliente As ToolStripMenuItem
+    Friend WithEvents EditarCliente As ToolStripMenuItem
 End Class

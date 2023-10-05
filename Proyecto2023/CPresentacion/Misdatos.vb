@@ -16,6 +16,8 @@
     End Sub
 
     Private Sub BConfirmarModificaciones_Click(sender As Object, e As EventArgs) Handles BConfirmarModificaciones.Click
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Esta seguro que desea modificar sus datos? ", vbYesNo + vbDefaultButton2 + vbCritical, "Confirmar Modificaciones")
         BModificarP.Visible = True
         BConfirmarModificaciones.Visible = False
 
@@ -27,5 +29,10 @@
         DTFechaNac.Enabled = False
         TUsuario.Enabled = False
         TTipoUsuario.Enabled = False
+        If (MsgBoxResult.Yes = ask) Then
+            MsgBox(" Las modificaciones se realizaron correctamente.", vbOKOnly + vbInformation, "Modificaciones")
+        Else
+            MsgBox(" No se realizaron modificaciones.", vbOKOnly + vbInformation, "Modificaciones")
+        End If
     End Sub
 End Class

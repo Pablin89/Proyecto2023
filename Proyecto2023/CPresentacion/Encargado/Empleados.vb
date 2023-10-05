@@ -10,9 +10,10 @@
         DTFechaNac.Enabled = True
     End Sub
 
-    Private Sub BCambios_Click(sender As Object, e As EventArgs) Handles BCambios.Click
-        BRCambios.Visible = True
-        BCambios.Visible = False
+
+
+    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         TApellidoYNombre.Enabled = False
         TDireccion.Enabled = False
         TDni.Enabled = False

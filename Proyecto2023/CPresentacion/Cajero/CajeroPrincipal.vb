@@ -33,5 +33,10 @@
     Private Sub RealizarVenta_Click(sender As Object, e As EventArgs) Handles RealizarVenta.Click
         Realizar_Venta.ShowDialog()
     End Sub
+
+    Private Sub EditarCliente_Click(sender As Object, e As EventArgs) Handles EditarCliente.Click
+        Editar_Cliente.ShowDialog()
+    End Sub
+
 End Class
 
