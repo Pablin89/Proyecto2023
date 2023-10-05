@@ -14,12 +14,34 @@ Public Class Empleados
 
 
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TApellidoYNombre.Clear()
+        TDireccion.Clear()
+        TDni.Clear()
+        TCorreo.Clear()
+        TTelefono.Clear()
+        TextBox1.Clear()
+        TextBox2.Clear()
+        TextBox4.Clear()
+        TextBox3.Clear()
+
+
         TApellidoYNombre.Enabled = False
         TDireccion.Enabled = False
         TDni.Enabled = False
         TCorreo.Enabled = False
         TTelefono.Enabled = False
         DTFechaNac.Enabled = False
+        TextBox1.Enabled = False
+        TextBox2.Enabled = False
+        TextBox4.Enabled = False
+        TextBox3.Enabled = False
+
+
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        ChBApellido.Checked = False
+        ChBDni.Checked = False
+
     End Sub
 
     'Seccion Agregar empleado
@@ -401,6 +423,42 @@ Public Class Empleados
             End If
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+        End If
+    End Sub
+
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If (CheckBox2.Checked) Then
+            CheckBox1.Checked = False
+            TextBox3.Clear()
+            TextBox3.Enabled = False
+            TextBox4.Enabled = True
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If (CheckBox1.Checked) Then
+            CheckBox2.Checked = False
+            TextBox4.Clear()
+            TextBox4.Enabled = False
+            TextBox3.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ChBDni_CheckedChanged(sender As Object, e As EventArgs) Handles ChBDni.CheckedChanged
+        If (ChBDni.Checked) Then
+            ChBApellido.Checked = False
+            TextBox2.Clear()
+            TextBox2.Enabled = False
+            TextBox1.Enabled = True
+        End If
+    End Sub
+
+    Private Sub ChBApellido_CheckedChanged(sender As Object, e As EventArgs) Handles ChBApellido.CheckedChanged
+        If (ChBApellido.Checked) Then
+            ChBDni.Checked = False
+            TextBox1.Clear()
+            TextBox1.Enabled = False
+            TextBox2.Enabled = True
         End If
     End Sub
 End Class

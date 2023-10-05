@@ -4,20 +4,26 @@
     End Sub
 
     Private Sub BModificarP_Click(sender As Object, e As EventArgs) Handles BModificarP.Click
-        BModificarP.Visible = False
-        BConfirmarModificaciones.Visible = True
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea modificar sus datos? ", vbYesNo + vbDefaultButton2 + vbCritical, "Modificaciones")
+        If (MsgBoxResult.Yes = ask) Then
 
-        TNomYApe.Enabled = True
-        TDni.Enabled = True
-        TCorreo.Enabled = True
-        TTelefono.Enabled = True
-        TDireccion.Enabled = True
-        DTFechaNac.Enabled = True
+            BModificarP.Visible = False
+            BConfirmarModificaciones.Visible = True
+
+            TNomYApe.Enabled = True
+            TDni.Enabled = True
+            TCorreo.Enabled = True
+            TTelefono.Enabled = True
+            TDireccion.Enabled = True
+            DTFechaNac.Enabled = True
+            MsgBox(" Ya puede modificar sus datos.", vbOKOnly + vbInformation, "Modificaciones")
+        End If
     End Sub
 
     Private Sub BConfirmarModificaciones_Click(sender As Object, e As EventArgs) Handles BConfirmarModificaciones.Click
         Dim ask As MsgBoxResult
-        ask = MsgBox("Esta seguro que desea modificar sus datos? ", vbYesNo + vbDefaultButton2 + vbCritical, "Confirmar Modificaciones")
+        ask = MsgBox("Desea confirmar las modificaciones de sus datos? ", vbYesNo + vbDefaultButton2 + vbCritical, "Confirmar Modificaciones")
         BModificarP.Visible = True
         BConfirmarModificaciones.Visible = False
 

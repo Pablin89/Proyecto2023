@@ -3,6 +3,7 @@
         TextBox1.Visible = False
         Label2.Visible = False
         Label6.Visible = False
+        ComboBox1.SelectedIndex = -1
     End Sub
 
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
@@ -59,7 +60,11 @@
                 MsgBox("Seleccionaste buscar por 'Cliente especifico': " + TextBox1.Text, MsgBoxStyle.Information, "Buscar")
             End If
         ElseIf (ComboBox1.SelectedIndex.Equals(2)) Then
-            MsgBox("Seleccionaste buscar 'Por Fecha'", MsgBoxStyle.Information, "Buscar")
+            If (TextBox1.Text = "") Then
+                MsgBox("Introduzca un DNI", MsgBoxStyle.Exclamation, "Atencion")
+            Else
+                MsgBox("Seleccionaste buscar 'Por Empleado especifico'", MsgBoxStyle.Information, "Buscar")
+            End If
         ElseIf (ComboBox1.SelectedIndex.Equals(3)) Then
             MsgBox("Seleccionaste buscar por 'Ventas con tarjeta'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(4)) Then
