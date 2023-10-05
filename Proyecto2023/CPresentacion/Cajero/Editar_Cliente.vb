@@ -1,10 +1,7 @@
-﻿Imports System.Data.SqlClient
-Imports System.Text.RegularExpressions
+﻿Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Editar_Cliente
-    Dim conexion As SqlConnection
-    Dim comando As SqlCommand
     Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
@@ -122,6 +119,7 @@ Public Class Editar_Cliente
         End If
     End Sub
 
+
     'Buscar por DNI
     Private Sub TextBox7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox7.KeyPress
 
@@ -195,4 +193,5 @@ Public Class Editar_Cliente
         adaptador.Fill(dt)
         DataGridView1.DataSource = dt
     End Sub
+
 End Class

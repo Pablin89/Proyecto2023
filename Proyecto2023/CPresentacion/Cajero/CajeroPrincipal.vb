@@ -37,5 +37,6 @@
     Private Sub EditarCliente_Click(sender As Object, e As EventArgs) Handles EditarCliente.Click
         Editar_Cliente.ShowDialog()
     End Sub
+
 End Class
 

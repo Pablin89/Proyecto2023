@@ -39,12 +39,13 @@ Partial Class Editar_Cliente
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
+
         Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+
         Me.Panel6.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel6
@@ -199,15 +200,18 @@ Partial Class Editar_Cliente
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+
         Me.Button3.Location = New System.Drawing.Point(568, 339)
+
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(188, 44)
         Me.Button3.TabIndex = 31
-        Me.Button3.Text = "Editar Cliente"
+        Me.Button3.Text = "Confirmar Datos"
         Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button3.UseVisualStyleBackColor = False
         '
+
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -249,17 +253,19 @@ Partial Class Editar_Cliente
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(790, 167)
         Me.DataGridView1.TabIndex = 35
-        '
+
         'Editar_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+
         Me.ClientSize = New System.Drawing.Size(814, 585)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Button1)
+
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "Editar_Cliente"
@@ -267,9 +273,7 @@ Partial Class Editar_Cliente
         Me.Text = "Editar_Cliente"
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -290,8 +294,10 @@ Partial Class Editar_Cliente
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button3 As Button
+
     Friend WithEvents Button1 As Button
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
+
 End Class
