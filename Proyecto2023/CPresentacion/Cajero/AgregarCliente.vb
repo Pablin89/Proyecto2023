@@ -183,22 +183,27 @@ Public Class AgregarCliente
         Dim correo As String = TextBox10.Text
         Dim id_estado_cliente As Integer = 1
 
-        Dim query As String = "Insert into clientes (nombre,apellido,fecha_nacimiento,dni,direccion,telefono,correo,id_estado_cliente) values (@nombre,@apellido,@fecha_nacimiento,@dni,@direccion,@telefono,@correo,@id_estado_cliente)"
+        Try
+            Dim query As String = "Insert into clientes (nombre,apellido,fecha_nacimiento,dni,direccion,telefono,correo,id_estado_cliente) values (@nombre,@apellido,@fecha_nacimiento,@dni,@direccion,@telefono,@correo,@id_estado_cliente)"
 
-        Using comando = New SqlCommand(query, conexion)
-            comando.Parameters.AddWithValue("@nombre", nombre)
-            comando.Parameters.AddWithValue("@apellido", apellido)
-            comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento)
-            comando.Parameters.AddWithValue("@dni", dni)
-            comando.Parameters.AddWithValue("@direccion", direccion)
-            comando.Parameters.AddWithValue("@telefono", telefono)
-            comando.Parameters.AddWithValue("@correo", correo)
-            comando.Parameters.AddWithValue("@id_estado_cliente", id_estado_cliente)
-            conexion.Open()
-            comando.ExecuteNonQuery()
-            Baja_Clientes.verClientes()
-            conexion.Close()
-        End Using
+            Using comando = New SqlCommand(query, conexion)
+                comando.Parameters.AddWithValue("@nombre", nombre)
+                comando.Parameters.AddWithValue("@apellido", apellido)
+                comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento)
+                comando.Parameters.AddWithValue("@dni", dni)
+                comando.Parameters.AddWithValue("@direccion", direccion)
+                comando.Parameters.AddWithValue("@telefono", telefono)
+                comando.Parameters.AddWithValue("@correo", correo)
+                comando.Parameters.AddWithValue("@id_estado_cliente", id_estado_cliente)
+                conexion.Open()
+                comando.ExecuteNonQuery()
+                Baja_Clientes.verClientes()
+                conexion.Close()
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load

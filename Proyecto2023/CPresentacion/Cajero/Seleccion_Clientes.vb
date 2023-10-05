@@ -89,7 +89,8 @@ Public Class Baja_Clientes
         verClientes()
     End Sub
     Public Sub verClientes()
-        Dim query As String = "select 
+        Try
+            Dim query As String = "select 
                                 id_cliente As id,
                                 apellido As Apellido,
                                 nombre As Nombre,
@@ -99,10 +100,14 @@ Public Class Baja_Clientes
                                 direccion As Dirección,
                                 dni As DNI
                           from clientes"
-        Dim adaptador As New SqlDataAdapter(query, conexion)
-        Dim dt As New DataTable
-        adaptador.Fill(dt)
-        DataGridView1.DataSource = dt
+            Dim adaptador As New SqlDataAdapter(query, conexion)
+            Dim dt As New DataTable
+            adaptador.Fill(dt)
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
