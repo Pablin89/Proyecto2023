@@ -42,6 +42,14 @@ Public Class Empleados
         ChBApellido.Checked = False
         ChBDni.Checked = False
 
+
+
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        TextBox11.Enabled = True
+        TextBox11.Clear()
+
     End Sub
 
     'Seccion Agregar empleado
@@ -74,7 +82,16 @@ Public Class Empleados
         If (TextBox11.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
-            MsgBox("Buscar empleado por DNI: " + TextBox11.Text, MsgBoxStyle.Information, "Buscar")
+            If (TextBox11.Text = "11111111") Then
+                MsgBox("El empleado el DNI " + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
+            Else
+                MsgBox("Este DNI no existe en el sistema, puede agregar el empleado.", MsgBoxStyle.Information, "Buscar")
+                Panel6.Visible = True
+                TextBox7.Text = TextBox11.Text
+                Button3.Visible = True
+                Button2.Visible = True
+                TextBox11.Clear()
+            End If
         End If
     End Sub
 
@@ -461,4 +478,6 @@ Public Class Empleados
             TextBox2.Enabled = True
         End If
     End Sub
+
+
 End Class
