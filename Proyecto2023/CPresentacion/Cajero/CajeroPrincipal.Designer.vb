@@ -118,9 +118,7 @@ Partial Class CajeroPrincipal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-
         Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RealizarVenta, Me.MisVentas, Me.AgregarUsuario, Me.ConsultarCliente, Me.EditarCliente})
-
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"

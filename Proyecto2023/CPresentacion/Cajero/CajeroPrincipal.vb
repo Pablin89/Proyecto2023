@@ -5,8 +5,9 @@
         Dim ask As MsgBoxResult
         ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
         If (MsgBoxResult.Yes = ask) Then
-            Me.Hide()
+            Me.Close()
             Login.Show()
+            Login.TUsuario.Focus()
         End If
 
     End Sub
@@ -37,6 +38,5 @@
     Private Sub EditarCliente_Click(sender As Object, e As EventArgs) Handles EditarCliente.Click
         Editar_Cliente.ShowDialog()
     End Sub
-
 End Class
 

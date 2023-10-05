@@ -120,7 +120,6 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAYFJREFUWEft1r8vxkAAxvGymBADE2ExSzCIRQxiMSA2i3/AQEwGCzuDxSLBIswI
         sYhNTHaLxMBiMvjt+7Rpcrlc377Xa3iHPskn6dt737snb9proypVSDuWsOFpHTMIziUeceXpGm9YQFC+
@@ -129,18 +128,15 @@
         kXGceeiBUleBbWj8Hk064cgQNj10QalZYBC7+ITGRU+/WTSjjGQW2ILu+3Rh2w1akWYA9rtCLZ1QnAU6
         4Hr228zCE3B9J0svlMx/4K9SFWicArri7QJHSC+arC24nui36Tya04zW1NrxJqMdatXwghMcQ2++5pgP
         /VZzaC7NaY6dQmvH73XnuLXovU3brH3el+bQXPZ5ram1q/xnougXJ8nlyN3tdEgAAAAASUVORK5CYII=
-
 </value>
   </data>
   <metadata name="MenuEncargado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-
   <data name="ConsultarCliente.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAC/NJREFUaEPNWQlUlNcVJklr07TGtFmadDk5x6StUgWURXEBBEQUFBEBEdQQE1OT
-
         NInRJmmMjikuQY2CwLDMsMiwrwMOIIzsyyjKMjMwMDBsAhKNIuDGOrf3/vOPimKENAHvOd/577z/vvu+
         79373rDo/Az2jMtiA/0tNqZfvLNmWdC2tVbh9NxsY7pr3YLZf2VjnjyzNpw5Y52Z8W5XG7MmTzvz4S0r
         FoO7pTFstDBknltsl4CnvcXQllVm2a6L9S3YaU+GbbKYv8LdZnGHs4UJ2MzXhfWL5iDmjglXs3ngYbN4

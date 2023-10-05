@@ -22,8 +22,11 @@
 
         ElseIf TUsuario.Text = "Gerente" Then
             Me.Hide()
-        Gerente_Principal.Show()
+            Gerente_Principal.Show()
+        Else
+            MsgBox("Usuario incorrecto", MsgBoxStyle.Critical, "Error")
         End If
+        TUsuario.Clear()
 
     End Sub
 
