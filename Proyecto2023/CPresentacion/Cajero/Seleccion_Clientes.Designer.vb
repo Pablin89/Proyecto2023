@@ -29,13 +29,13 @@ Partial Class Baja_Clientes
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TBuscarDni = New System.Windows.Forms.TextBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         Me.TBuscarapellido = New System.Windows.Forms.TextBox()
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
         Me.RBApellido = New System.Windows.Forms.RadioButton()
         Me.RBDni = New System.Windows.Forms.RadioButton()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.BSeleccionar = New System.Windows.Forms.Button()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -89,22 +89,8 @@ Partial Class Baja_Clientes
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(824, 235)
+        Me.Panel1.Size = New System.Drawing.Size(794, 235)
         Me.Panel1.TabIndex = 8
-        '
-        'Button1
-        '
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.add_client
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(554, 168)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(132, 46)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Agregar Cliente"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TBuscarCorreo
         '
@@ -172,6 +158,20 @@ Partial Class Baja_Clientes
         Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.add_client
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(554, 168)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 46)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Agregar Cliente"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
@@ -179,7 +179,7 @@ Partial Class Baja_Clientes
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(0, 195)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(824, 78)
+        Me.Panel3.Size = New System.Drawing.Size(794, 78)
         Me.Panel3.TabIndex = 8
         '
         'BSeleccionar
@@ -201,7 +201,7 @@ Partial Class Baja_Clientes
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(0, 235)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(824, 273)
+        Me.Panel2.Size = New System.Drawing.Size(794, 273)
         Me.Panel2.TabIndex = 9
         '
         'DataGridView1
@@ -230,7 +230,7 @@ Partial Class Baja_Clientes
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(824, 273)
+        Me.DataGridView1.Size = New System.Drawing.Size(794, 273)
         Me.DataGridView1.TabIndex = 7
         '
         'Baja_Clientes
@@ -238,7 +238,7 @@ Partial Class Baja_Clientes
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(824, 508)
+        Me.ClientSize = New System.Drawing.Size(794, 508)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.ForeColor = System.Drawing.SystemColors.ButtonFace
