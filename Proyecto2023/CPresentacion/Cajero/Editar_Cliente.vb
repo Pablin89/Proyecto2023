@@ -1,7 +1,10 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Editar_Cliente
+    Dim conexion As SqlConnection
+    Dim comando As SqlCommand
     Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
@@ -117,5 +120,79 @@ Public Class Editar_Cliente
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
 
         End If
+    End Sub
+
+    'Buscar por DNI
+    Private Sub TextBox7_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox7.KeyPress
+
+        If (Char.IsNumber(e.KeyChar)) Then
+            e.Handled = False
+            TextBox7.MaxLength = 8
+
+            If (TextBox7.Text.Length > 7) Then
+                MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If (TextBox7.Text = "") Then
+            MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
+        Else
+            MsgBox("Buscar por DNI: '" + TextBox7.Text + "' se desarrolla en la segunda entrega", MsgBoxStyle.Information, "Buscar")
+            TextBox7.Clear()
+        End If
+    End Sub
+
+    Private Sub Editar_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        DataGridView1.AllowUserToAddRows = False
+        verClientes()
+    End Sub
+
+    Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
+        If (MsgBoxResult.Yes = ask) Then
+            TextBox3.Text = Me.DataGridView1.Item(1, i).Value.ToString
+            TextBox2.Text = Me.DataGridView1.Item(2, i).Value.ToString()
+            DateTimePicker2.Value = Me.DataGridView1.Item(4, i).Value
+            TextBox1.Text = Me.DataGridView1.Item(7, i).Value.ToString()
+            TextBox4.Text = Me.DataGridView1.Item(6, i).Value.ToString()
+            TextBox5.Text = Me.DataGridView1.Item(3, i).Value.ToString()
+            TextBox6.Text = Me.DataGridView1.Item(5, i).Value.ToString()
+        End If
+
+    End Sub
+
+    Public Sub verClientes()
+        Dim query As String = "select 
+                                id_cliente As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                telefono As Telefono,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                dni As DNI
+                          from clientes"
+        Dim adaptador As New SqlDataAdapter(query, conexion)
+        Dim dt As New DataTable
+        adaptador.Fill(dt)
+        DataGridView1.DataSource = dt
     End Sub
 End Class
