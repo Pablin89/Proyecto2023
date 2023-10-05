@@ -36,18 +36,15 @@ Public Class AgregarCliente
         If (TextBox11.Text = "") Then
             MsgBox("Completa el campo de búsqueda", MsgBoxStyle.Information, "Atencion")
         Else
-
-            'If (TextBox11.Text = "11111111") Then
-            'MsgBox("Ya existe un cliente con el dni: " + dni, MsgBoxStyle.Information, "Buscar")
-            'Else
-            'MsgBox("No existe un cliente con el dni: " + dni + " , puede agregarlo como nuevo cliente", MsgBoxStyle.Information, "Buscar")
-            'Panel6.Visible = True
-            'Button3.Visible = True
-            'Button2.Visible = False
-            'TextBox11.Enabled = False
-            'End If
-            MsgBox("buscar Si existe el cliente con DNI: " + dni, MsgBoxStyle.Information, "Buscar")
-
+            If (TextBox11.Text = "11111111") Then
+                MsgBox("Ya existe un cliente con el dni: " + dni, MsgBoxStyle.Information, "Buscar")
+            Else
+                MsgBox("No existe un cliente con el dni: " + dni + " , puede agregarlo como nuevo cliente", MsgBoxStyle.Information, "Buscar")
+                Panel6.Visible = True
+                Button3.Visible = True
+                Button2.Visible = False
+                TextBox11.Enabled = False
+            End If
 
         End If
     End Sub
