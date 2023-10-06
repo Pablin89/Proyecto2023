@@ -92,7 +92,7 @@ Public Class Baja_Clientes
         TBuscarCorreo.Enabled = False
         TBuscarDni.Enabled = False
         DataGridView1.AllowUserToAddRows = False
-        conexion = New SqlConnection("server = DIEGO\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         verClientes()
     End Sub
     Public Sub verClientes()
