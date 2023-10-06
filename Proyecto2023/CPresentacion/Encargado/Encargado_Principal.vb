@@ -35,4 +35,8 @@
         Misdatos.BModificarP.Visible = True
         Misdatos.ShowDialog()
     End Sub
+
+    Private Sub Cajero_Principal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        End
+    End Sub
 End Class

@@ -33,8 +33,8 @@ Partial Class CajeroPrincipal
         Me.MisVentas = New System.Windows.Forms.ToolStripMenuItem()
         Me.AgregarUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarCliente = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.EditarCliente = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -169,6 +169,15 @@ Partial Class CajeroPrincipal
         Me.ConsultarCliente.Text = "Consultar Clientes"
         Me.ConsultarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
+        'EditarCliente
+        '
+        Me.EditarCliente.Image = CType(resources.GetObject("EditarCliente.Image"), System.Drawing.Image)
+        Me.EditarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.EditarCliente.Name = "EditarCliente"
+        Me.EditarCliente.Size = New System.Drawing.Size(202, 73)
+        Me.EditarCliente.Text = "Editar Clientes"
+        Me.EditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
         'PictureBox1
         '
         Me.PictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -180,15 +189,6 @@ Partial Class CajeroPrincipal
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
-        '
-        'EditarCliente
-        '
-        Me.EditarCliente.Image = CType(resources.GetObject("EditarCliente.Image"), System.Drawing.Image)
-        Me.EditarCliente.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.EditarCliente.Name = "EditarCliente"
-        Me.EditarCliente.Size = New System.Drawing.Size(202, 73)
-        Me.EditarCliente.Text = "Editar Clientes"
-        Me.EditarCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'CajeroPrincipal
         '

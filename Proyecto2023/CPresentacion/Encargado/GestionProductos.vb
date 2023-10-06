@@ -121,7 +121,7 @@
             (TextBox13.Text <> "") And
             (TextBox12.Text <> "") And
             (TDescripcion2.Text <> "") And
-            (ComboBox1.Text <> "")
+            (ComboBox2.Text <> "")
             ) Then
 
 
@@ -137,7 +137,7 @@
                 TextBox13.Text = ""
                 TextBox12.Text = ""
                 TDescripcion2.Text = ""
-                ComboBox1.Text = ""
+                ComboBox2.Text = ""
             Else
                 MsgBox("No se agregó el producto", MsgBoxStyle.OkOnly, "Producto no insertado")
 

@@ -30,4 +30,9 @@
         Misdatos.BModificarP.Visible = False
         Misdatos.ShowDialog()
     End Sub
+
+    Private Sub Gerente_Principal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        End
+
+    End Sub
 End Class

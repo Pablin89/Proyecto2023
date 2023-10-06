@@ -27,6 +27,8 @@ Partial Class Permisos
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TContraseña = New System.Windows.Forms.TextBox()
         Me.TNombreUsuario = New System.Windows.Forms.TextBox()
         Me.BConfirmarPerfil = New System.Windows.Forms.Button()
@@ -46,6 +48,8 @@ Partial Class Permisos
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.ChSeleccionar2 = New System.Windows.Forms.CheckBox()
         Me.ChSeleccionar1 = New System.Windows.Forms.CheckBox()
+        Me.TextBox5 = New System.Windows.Forms.TextBox()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
         CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +94,10 @@ Partial Class Permisos
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.Panel4.Controls.Add(Me.TextBox6)
+        Me.Panel4.Controls.Add(Me.TextBox5)
+        Me.Panel4.Controls.Add(Me.TextBox2)
+        Me.Panel4.Controls.Add(Me.TextBox1)
         Me.Panel4.Controls.Add(Me.TContraseña)
         Me.Panel4.Controls.Add(Me.TNombreUsuario)
         Me.Panel4.Controls.Add(Me.BConfirmarPerfil)
@@ -106,6 +114,24 @@ Partial Class Permisos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(384, 349)
         Me.Panel4.TabIndex = 1
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(168, 137)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(174, 22)
+        Me.TextBox2.TabIndex = 12
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(168, 16)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(174, 22)
+        Me.TextBox1.TabIndex = 11
         '
         'TContraseña
         '
@@ -138,7 +164,7 @@ Partial Class Permisos
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(31, 254)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(110, 16)
+        Me.Label8.Size = New System.Drawing.Size(109, 16)
         Me.Label8.TabIndex = 7
         Me.Label8.Text = "Perfil de Usuario "
         '
@@ -158,7 +184,7 @@ Partial Class Permisos
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(31, 98)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(52, 16)
+        Me.Label2.Size = New System.Drawing.Size(51, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Correo:"
         '
@@ -168,7 +194,7 @@ Partial Class Permisos
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(31, 137)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(65, 16)
+        Me.Label3.Size = New System.Drawing.Size(64, 16)
         Me.Label3.TabIndex = 4
         Me.Label3.Text = "Teléfono:"
         '
@@ -178,7 +204,7 @@ Partial Class Permisos
         Me.LContraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LContraseña.Location = New System.Drawing.Point(31, 215)
         Me.LContraseña.Name = "LContraseña"
-        Me.LContraseña.Size = New System.Drawing.Size(77, 16)
+        Me.LContraseña.Size = New System.Drawing.Size(76, 16)
         Me.LContraseña.TabIndex = 3
         Me.LContraseña.Text = "Contraseña"
         '
@@ -188,7 +214,7 @@ Partial Class Permisos
         Me.LNombreUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LNombreUsuario.Location = New System.Drawing.Point(31, 178)
         Me.LNombreUsuario.Name = "LNombreUsuario"
-        Me.LNombreUsuario.Size = New System.Drawing.Size(123, 16)
+        Me.LNombreUsuario.Size = New System.Drawing.Size(122, 16)
         Me.LNombreUsuario.TabIndex = 2
         Me.LNombreUsuario.Text = "Nombre de usuario"
         '
@@ -198,7 +224,7 @@ Partial Class Permisos
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(31, 56)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(34, 16)
+        Me.Label6.Size = New System.Drawing.Size(33, 16)
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "DNI:"
         '
@@ -208,7 +234,7 @@ Partial Class Permisos
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(31, 16)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(120, 16)
+        Me.Label7.Size = New System.Drawing.Size(119, 16)
         Me.Label7.TabIndex = 0
         Me.Label7.Text = "Apellido y nombre:"
         '
@@ -281,7 +307,7 @@ Partial Class Permisos
         Me.ChSeleccionar2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChSeleccionar2.Location = New System.Drawing.Point(57, 85)
         Me.ChSeleccionar2.Name = "ChSeleccionar2"
-        Me.ChSeleccionar2.Size = New System.Drawing.Size(232, 20)
+        Me.ChSeleccionar2.Size = New System.Drawing.Size(231, 20)
         Me.ChSeleccionar2.TabIndex = 16
         Me.ChSeleccionar2.Text = "Modificar el perfil de un empleado."
         Me.ChSeleccionar2.UseVisualStyleBackColor = True
@@ -292,10 +318,28 @@ Partial Class Permisos
         Me.ChSeleccionar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ChSeleccionar1.Location = New System.Drawing.Point(57, 41)
         Me.ChSeleccionar1.Name = "ChSeleccionar1"
-        Me.ChSeleccionar1.Size = New System.Drawing.Size(296, 20)
+        Me.ChSeleccionar1.Size = New System.Drawing.Size(295, 20)
         Me.ChSeleccionar1.TabIndex = 15
         Me.ChSeleccionar1.Text = "Seleccionar un empleado sin perfil asignado."
         Me.ChSeleccionar1.UseVisualStyleBackColor = True
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Enabled = False
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(168, 95)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(174, 22)
+        Me.TextBox5.TabIndex = 13
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Enabled = False
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(166, 56)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(174, 22)
+        Me.TextBox6.TabIndex = 14
         '
         'Permisos
         '
@@ -350,4 +394,8 @@ Partial Class Permisos
     Friend WithEvents ChSeleccionar1 As CheckBox
     Friend WithEvents TContraseña As TextBox
     Friend WithEvents TNombreUsuario As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TextBox5 As TextBox
 End Class

@@ -38,5 +38,9 @@
     Private Sub EditarCliente_Click(sender As Object, e As EventArgs) Handles EditarCliente.Click
         Editar_Cliente.ShowDialog()
     End Sub
+
+    Private Sub CajeroPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        End
+    End Sub
 End Class
 
