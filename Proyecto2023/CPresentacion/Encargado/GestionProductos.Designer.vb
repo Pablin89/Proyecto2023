@@ -62,8 +62,8 @@ Partial Class GestionProductos
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TDireccion = New System.Windows.Forms.TextBox()
         Me.TFechaNac = New System.Windows.Forms.TextBox()
-        Me.TDni = New System.Windows.Forms.TextBox()
-        Me.TApellidoYNombre = New System.Windows.Forms.TextBox()
+        Me.TDescripcion = New System.Windows.Forms.TextBox()
+        Me.TNombre = New System.Windows.Forms.TextBox()
         Me.LEstado1 = New System.Windows.Forms.Label()
         Me.LPrecio1 = New System.Windows.Forms.Label()
         Me.LStock1 = New System.Windows.Forms.Label()
@@ -100,6 +100,14 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -237,6 +245,14 @@ Partial Class GestionProductos
         '
         Me.Panel2.BackColor = System.Drawing.Color.LightSteelBlue
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel2.Controls.Add(Me.TextBox1)
+        Me.Panel2.Controls.Add(Me.TextBox2)
+        Me.Panel2.Controls.Add(Me.TextBox3)
+        Me.Panel2.Controls.Add(Me.TextBox14)
+        Me.Panel2.Controls.Add(Me.TextBox15)
+        Me.Panel2.Controls.Add(Me.TextBox16)
+        Me.Panel2.Controls.Add(Me.TextBox17)
+        Me.Panel2.Controls.Add(Me.TextBox18)
         Me.Panel2.Controls.Add(Me.LStockMinimo)
         Me.Panel2.Controls.Add(Me.LCodigo)
         Me.Panel2.Controls.Add(Me.LEstado)
@@ -246,9 +262,9 @@ Partial Class GestionProductos
         Me.Panel2.Controls.Add(Me.LDescripcion)
         Me.Panel2.Controls.Add(Me.LNombrepro)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(366, 0)
+        Me.Panel2.Location = New System.Drawing.Point(397, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(434, 351)
+        Me.Panel2.Size = New System.Drawing.Size(403, 351)
         Me.Panel2.TabIndex = 1
         '
         'LStockMinimo
@@ -332,7 +348,7 @@ Partial Class GestionProductos
         Me.DataGridView1.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(360, 351)
+        Me.DataGridView1.Size = New System.Drawing.Size(391, 351)
         Me.DataGridView1.TabIndex = 0
         '
         'EditarProductos
@@ -420,8 +436,8 @@ Partial Class GestionProductos
         Me.Panel4.Controls.Add(Me.TTelefono)
         Me.Panel4.Controls.Add(Me.TDireccion)
         Me.Panel4.Controls.Add(Me.TFechaNac)
-        Me.Panel4.Controls.Add(Me.TDni)
-        Me.Panel4.Controls.Add(Me.TApellidoYNombre)
+        Me.Panel4.Controls.Add(Me.TDescripcion)
+        Me.Panel4.Controls.Add(Me.TNombre)
         Me.Panel4.Controls.Add(Me.LEstado1)
         Me.Panel4.Controls.Add(Me.LPrecio1)
         Me.Panel4.Controls.Add(Me.LStock1)
@@ -526,22 +542,22 @@ Partial Class GestionProductos
         Me.TFechaNac.Size = New System.Drawing.Size(209, 21)
         Me.TFechaNac.TabIndex = 8
         '
-        'TDni
+        'TDescripcion
         '
-        Me.TDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDni.Location = New System.Drawing.Point(166, 82)
-        Me.TDni.Multiline = True
-        Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(209, 60)
-        Me.TDni.TabIndex = 7
+        Me.TDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TDescripcion.Location = New System.Drawing.Point(166, 82)
+        Me.TDescripcion.Multiline = True
+        Me.TDescripcion.Name = "TDescripcion"
+        Me.TDescripcion.Size = New System.Drawing.Size(209, 60)
+        Me.TDescripcion.TabIndex = 7
         '
-        'TApellidoYNombre
+        'TNombre
         '
-        Me.TApellidoYNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TApellidoYNombre.Location = New System.Drawing.Point(166, 16)
-        Me.TApellidoYNombre.Name = "TApellidoYNombre"
-        Me.TApellidoYNombre.Size = New System.Drawing.Size(209, 21)
-        Me.TApellidoYNombre.TabIndex = 6
+        Me.TNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TNombre.Location = New System.Drawing.Point(166, 16)
+        Me.TNombre.Name = "TNombre"
+        Me.TNombre.Size = New System.Drawing.Size(209, 21)
+        Me.TNombre.TabIndex = 6
         '
         'LEstado1
         '
@@ -906,6 +922,79 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(140, 245)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox1.TabIndex = 25
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(140, 53)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox2.TabIndex = 24
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(140, 317)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox3.TabIndex = 23
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Enabled = False
+        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.Location = New System.Drawing.Point(140, 281)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox14.TabIndex = 22
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Enabled = False
+        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.Location = New System.Drawing.Point(140, 209)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(85, 22)
+        Me.TextBox15.TabIndex = 21
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Enabled = False
+        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox16.Location = New System.Drawing.Point(140, 173)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox16.TabIndex = 20
+        '
+        'TextBox17
+        '
+        Me.TextBox17.Enabled = False
+        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.Location = New System.Drawing.Point(140, 94)
+        Me.TextBox17.Multiline = True
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(209, 60)
+        Me.TextBox17.TabIndex = 19
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Enabled = False
+        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox18.Location = New System.Drawing.Point(140, 15)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox18.TabIndex = 18
+        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -967,8 +1056,8 @@ Partial Class GestionProductos
     Friend WithEvents TTelefono As TextBox
     Friend WithEvents TDireccion As TextBox
     Friend WithEvents TFechaNac As TextBox
-    Friend WithEvents TDni As TextBox
-    Friend WithEvents TApellidoYNombre As TextBox
+    Friend WithEvents TDescripcion As TextBox
+    Friend WithEvents TNombre As TextBox
     Friend WithEvents LEstado1 As Label
     Friend WithEvents LPrecio1 As Label
     Friend WithEvents LStock1 As Label
@@ -1017,4 +1106,12 @@ Partial Class GestionProductos
     Friend WithEvents Id As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Button5 As Button
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents TextBox3 As TextBox
+    Friend WithEvents TextBox14 As TextBox
+    Friend WithEvents TextBox15 As TextBox
+    Friend WithEvents TextBox16 As TextBox
+    Friend WithEvents TextBox17 As TextBox
+    Friend WithEvents TextBox18 As TextBox
 End Class

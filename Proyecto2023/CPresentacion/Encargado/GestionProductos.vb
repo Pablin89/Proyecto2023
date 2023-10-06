@@ -157,7 +157,17 @@
         If (TextBox11.Text = "") Then
             MsgBox("Debe introducir un nombre para buscar", MsgBoxStyle.Exclamation, "Advertencia")
         Else
-            MsgBox("Cuando existan productos en el sitema aparecerán en un datagridView", MsgBoxStyle.Exclamation, "Advertencia")
+
+            If (TextBox11.Text = "Vaso amarillo") Then
+                MsgBox("El producto" + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
+            Else
+                MsgBox("Ningún producto tiene este nombre en el sistema, puede agregarlo.", MsgBoxStyle.Information, "Buscar")
+                Panel6.Visible = True
+                TextBox5.Text = TextBox11.Text
+                Button3.Visible = True
+                Button2.Visible = True
+                TextBox11.Clear()
+            End If
         End If
     End Sub
 
@@ -190,57 +200,61 @@
         codigo = TextBox8.Text
         nombre = TextBox4.Text
         categoria = ComboBox3.Text
-        If (CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
-            If (categoria = "" Or nombre = "" Or codigo = "") Then
-                MsgBox("Completa los campos seleccionados", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Buscar por 'codigo': " + codigo + " 'nombre': " + nombre + " y 'categoria:' " + categoria, MsgBoxStyle.Information, "Buscar")
-            End If
+        'If (CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+        '    If (categoria = "" Or nombre = "" Or codigo = "") Then
+        '        MsgBox("Completa los campos seleccionados", MsgBoxStyle.Critical, "Error")
+        '    Else
+        '        MsgBox("Buscar por 'codigo': " + codigo + " 'nombre': " + nombre + " y 'categoria:' " + categoria, MsgBoxStyle.Information, "Buscar")
+        '    End If
 
-        ElseIf (Not CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
-            If (categoria = "" Or nombre = "") Then
-                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Buscar por 'nombre': " + nombre + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
-            End If
+        'ElseIf (Not CheckBox1.Checked And ChProducto.Checked And ChBCategoria.Checked) Then
+        '    If (categoria = "" Or nombre = "") Then
+        '        MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+        '    Else
+        '        MsgBox("Buscar por 'nombre': " + nombre + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+        '    End If
 
-        ElseIf (CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
-            If (categoria = "" Or codigo = "") Then
-                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Buscar por 'codigo': " + codigo + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
-            End If
+        'ElseIf (CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+        '    If (categoria = "" Or codigo = "") Then
+        '        MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+        '    Else
+        '        MsgBox("Buscar por 'codigo': " + codigo + " y 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+        '    End If
 
-        ElseIf (CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
-            If (nombre = "" Or codigo = "") Then
-                MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Buscar por 'codigo': " + codigo + " y 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
-            End If
+        'ElseIf (CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
+        '    If (nombre = "" Or codigo = "") Then
+        '        MsgBox("completa los capos seleccionados", MsgBoxStyle.Critical, "Error")
+        '    Else
+        '        MsgBox("Buscar por 'codigo': " + codigo + " y 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+        '    End If
 
-        ElseIf (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
-            If (categoria = "") Then
-                MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Seleccionaste buscar Producto por 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+        'Else
+        If (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
+                If (categoria = "") Then
+                    MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
+                Else
+                    MsgBox("Seleccionaste buscar Producto por 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+                Panel4.Enabled = True
             End If
 
         ElseIf (Not CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
-            If (nombre = "") Then
-                MsgBox("Completa el campo nombre", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Seleccionaste buscar Producto por 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+                If (nombre = "") Then
+                    MsgBox("Completa el campo nombre", MsgBoxStyle.Critical, "Error")
+                Else
+                    MsgBox("Seleccionaste buscar Producto por 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+                Panel4.Enabled = True
             End If
 
         ElseIf (CheckBox1.Checked And Not ChProducto.Checked And Not ChBCategoria.Checked) Then
-            If (codigo = "") Then
-                MsgBox("Completa el campo codigo", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Seleccionaste buscar Producto por 'codigo: '" + codigo, MsgBoxStyle.Information, "Buscar")
+                If (codigo = "") Then
+                    MsgBox("Completa el campo codigo", MsgBoxStyle.Critical, "Error")
+                Else
+                    MsgBox("Seleccionaste buscar Producto por 'codigo: '" + codigo, MsgBoxStyle.Information, "Buscar")
+                Panel4.Enabled = True
             End If
 
         Else
-            MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+                MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
     End Sub
 
@@ -316,9 +330,9 @@
     Private Sub BCambios_Click(sender As Object, e As EventArgs) Handles BCambios.Click
         Dim ask As MsgBoxResult
 
-        If ((TApellidoYNombre.Text <> "") And
+        If ((TNombre.Text <> "") And
             (TextBox9.Text <> "") And
-            (TDni.Text <> "") And
+            (TDescripcion.Text <> "") And
             (TFechaNac.Text <> "") And
             (TDireccion.Text <> "") And
             (TextBox10.Text <> "") And
@@ -332,9 +346,9 @@
 
             If ask = MsgBoxResult.Yes Then
                 MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
-                TApellidoYNombre.Text = ""
+                TNombre.Text = ""
                 TextBox9.Text = ""
-                TDni.Text = ""
+                TDescripcion.Text = ""
                 TFechaNac.Text = ""
                 TDireccion.Text = ""
                 TextBox10.Text = ""
@@ -440,5 +454,101 @@
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Categoría.ShowDialog()
+    End Sub
+
+    Private Sub GestionProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'CBCateg
+        ChBCategoria.Checked = False
+        ChCodigo.Checked = False
+        ChNombreProducto.Checked = False
+        TCodigo.Enabled = False
+        TNombreProd.Enabled = False
+
+        ComboBox3.Enabled = False
+        CBCateg.Enabled = False
+
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'ComboBox3
+        CheckBox1.Checked = False
+        ChProducto.Checked = False
+        ChBCategoria.Checked = False
+        TextBox8.Enabled = False
+        TextBox4.Enabled = False
+
+        Panel4.Enabled = False
+
+        Panel6.Visible = False
+        Button3.Visible = False
+
+    End Sub
+
+    Private Sub ChCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles ChCodigo.CheckedChanged
+        If (ChCodigo.Checked) Then
+            ChNombreProducto.Checked = False
+            ChCategoria.Checked = False
+            TNombreProd.Clear()
+            TCodigo.Enabled = True
+            TNombreProd.Enabled = False
+            CBCateg.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChNombreProducto_CheckedChanged(sender As Object, e As EventArgs) Handles ChNombreProducto.CheckedChanged
+        If (ChNombreProducto.Checked) Then
+            TCodigo.Clear()
+            ChCodigo.Checked = False
+            ChCategoria.Checked = False
+            TNombreProd.Enabled = True
+            TCodigo.Enabled = False
+            CBCateg.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChCategoria_CheckedChanged(sender As Object, e As EventArgs) Handles ChCategoria.CheckedChanged
+        If (ChCategoria.Checked) Then
+            TCodigo.Clear()
+            ChCodigo.Checked = False
+            ChNombreProducto.Checked = False
+            TNombreProd.Clear()
+            TCodigo.Enabled = False
+            TNombreProd.Enabled = False
+        End If
+    End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If (CheckBox1.Checked) Then
+            TextBox4.Clear()
+            ChProducto.Checked = False
+            ChBCategoria.Checked = False
+            TextBox8.Enabled = True
+            TextBox4.Enabled = False
+            ComboBox3.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChProducto_CheckedChanged(sender As Object, e As EventArgs) Handles ChProducto.CheckedChanged
+        If (ChProducto.Checked) Then
+            TextBox8.Clear()
+            CheckBox1.Checked = False
+            ChBCategoria.Checked = False
+            TextBox4.Enabled = True
+            TextBox8.Enabled = False
+            ComboBox3.Enabled = False
+        End If
+    End Sub
+
+    Private Sub ChBCategoria_CheckedChanged(sender As Object, e As EventArgs) Handles ChBCategoria.CheckedChanged
+        If (ChBCategoria.Checked) Then
+            TextBox8.Clear()
+            TextBox4.Clear()
+            ComboBox3.Enabled = True
+            CheckBox1.Checked = False
+            ChProducto.Checked = False
+            TextBox4.Enabled = False
+            TextBox8.Enabled = False
+        End If
     End Sub
 End Class
