@@ -106,7 +106,7 @@ Public Class Baja_Clientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                          from clientes"
+                          from clientes where id_estado_cliente = 1"
             Dim adaptador As New SqlDataAdapter(query, conexion)
             Dim dt As New DataTable
             adaptador.Fill(dt)
@@ -146,7 +146,7 @@ Public Class Baja_Clientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                                from clientes where dni like '%" & dni & "%'"
+                                from clientes where dni like '%" & dni & "%' and id_estado_cliente = 1"
             Dim adaptador As New SqlDataAdapter(query, conexion)
             Dim dt As New DataTable
             adaptador.Fill(dt)
@@ -168,7 +168,7 @@ Public Class Baja_Clientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                                from clientes where apellido like '%" & apellido & "%'"
+                                from clientes where apellido like '%" & apellido & "%' and id_estado_cliente = 1"
             Dim adaptador As New SqlDataAdapter(query, conexion)
             Dim dt As New DataTable
             adaptador.Fill(dt)
@@ -190,7 +190,7 @@ Public Class Baja_Clientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                                from clientes where correo like '%" & correo & "%'"
+                                from clientes where correo like '%" & correo & "%' and id_estado_cliente = 1"
             Dim adaptador As New SqlDataAdapter(query, conexion)
             Dim dt As New DataTable
             adaptador.Fill(dt)
