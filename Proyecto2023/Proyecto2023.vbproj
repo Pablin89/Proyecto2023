@@ -75,6 +75,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDatos\Cliente.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </Compile>
@@ -443,7 +444,6 @@
     <None Include="Resources\add_client.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CDatos\" />
     <Folder Include="CNegocio\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
