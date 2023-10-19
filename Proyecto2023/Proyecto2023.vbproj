@@ -48,11 +48,18 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -75,6 +82,64 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CDatos\Categorias.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\clientes.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\detalle.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Empleados.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CDatos\Estados_clientes.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Estados_empleados.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Estados_productos.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Estados_ventas.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Perfiles.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Productos.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Proyecto2023.Context.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto2023.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Proyecto2023.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto2023.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Proyecto2023.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Sexos.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\tipos_pagos.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\Usuarios.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CDatos\ventas.vb">
+      <DependentUpon>Proyecto2023.tt</DependentUpon>
+    </Compile>
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </Compile>
@@ -335,6 +400,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="CDatos\Proyecto2023.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Proyecto2023.Designer.vb</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CDatos\Proyecto2023.edmx.diagram">
+      <DependentUpon>Proyecto2023.edmx</DependentUpon>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -347,6 +419,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\login_90841.png" />
   </ItemGroup>
   <ItemGroup>
@@ -443,8 +516,22 @@
     <None Include="Resources\add_client.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CDatos\" />
     <Folder Include="CNegocio\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CDatos\Proyecto2023.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Proyecto2023.Context.vb</LastGenOutput>
+      <DependentUpon>Proyecto2023.edmx</DependentUpon>
+    </Content>
+    <Content Include="CDatos\Proyecto2023.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Proyecto2023.edmx</DependentUpon>
+      <LastGenOutput>Proyecto2023.vb</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
