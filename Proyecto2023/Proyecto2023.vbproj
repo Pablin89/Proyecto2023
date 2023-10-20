@@ -88,6 +88,7 @@
     <Compile Include="CDatos\clientes.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\Conexion.vb" />
     <Compile Include="CDatos\detalle.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
