@@ -15,7 +15,7 @@ Public Class DClientes
 
     Private comando As SqlCommand
 
-    Public Sub New(ape As String, nom As String, tel As Long, fech_nac As Date, corr As String, dir As String, dnip As Long)
+    Public Sub New(nom As String, ape As String, tel As Long, fech_nac As Date, corr As String, dir As String, dnip As Long)
 
         apellido = ape
         nombre = nom

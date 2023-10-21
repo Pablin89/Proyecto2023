@@ -142,6 +142,7 @@
     <Compile Include="CDatos\ventas.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CNegocio\NClientes.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </Compile>
@@ -517,9 +518,7 @@
   <ItemGroup>
     <None Include="Resources\add_client.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CNegocio\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="CDatos\Proyecto2023.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

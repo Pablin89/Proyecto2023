@@ -181,33 +181,16 @@ Public Class AgregarCliente
         Dim direccion As String = TextBox8.Text
         Dim telefono As String = Val(TextBox9.Text)
         Dim correo As String = TextBox10.Text
-        Dim id_estado_cliente As Integer = 1
-
         Try
-            Dim query As String = "Insert into clientes (nombre,apellido,fecha_nacimiento,dni,direccion,telefono,correo,id_estado_cliente) values (@nombre,@apellido,@fecha_nacimiento,@dni,@direccion,@telefono,@correo,@id_estado_cliente)"
-
-            Using comando = New SqlCommand(query, conexion)
-                comando.Parameters.AddWithValue("@nombre", nombre)
-                comando.Parameters.AddWithValue("@apellido", apellido)
-                comando.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento)
-                comando.Parameters.AddWithValue("@dni", dni)
-                comando.Parameters.AddWithValue("@direccion", direccion)
-                comando.Parameters.AddWithValue("@telefono", telefono)
-                comando.Parameters.AddWithValue("@correo", correo)
-                comando.Parameters.AddWithValue("@id_estado_cliente", id_estado_cliente)
-                conexion.Open()
-                comando.ExecuteNonQuery()
-                Baja_Clientes.verClientes()
-                conexion.Close()
-            End Using
-
+            Dim ccliente As New NClientes()
+            ccliente.insertarCliente(nombre, apellido, telefono, fecha_nacimiento, correo, direccion, dni)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         'Panel6.Visible = False
         'Button3.Visible = False
         'Button2.Visible = True
