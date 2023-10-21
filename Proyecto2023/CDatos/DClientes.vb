@@ -30,6 +30,14 @@ Public Class DClientes
 
     End Sub
 
+    Property CIdCliente As String
+        Get
+            Return id_cliente
+        End Get
+        Set(value As String)
+            id_cliente = value
+        End Set
+    End Property
     Property CApellido As String
         Get
             Return apellido
@@ -110,6 +118,7 @@ Public Class DClientes
             Else
                 Return False
             End If
+
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
@@ -143,6 +152,26 @@ Public Class DClientes
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing
+        End Try
+    End Function
+
+    Public Function editarCliente(nombre As String, apellido As String, telefono As Long, fecha_nacimiento As Date, correo As String, direccion As String, dni As Long, id_cliente As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update clientes set nombre = '" & nombre & "',apellido = '" & apellido & "',fecha_nacimiento = '" & fecha_nacimiento & "',dni = " & dni & ",direccion = '" & direccion & "',telefono = " & telefono & ",correo = '" & correo & "' where id_cliente = " & id_cliente & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
         End Try
     End Function
 

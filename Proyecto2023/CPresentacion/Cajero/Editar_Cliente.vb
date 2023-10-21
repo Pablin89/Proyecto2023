@@ -5,6 +5,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class Editar_Cliente
     Dim conexion As SqlConnection
     Dim comando As SqlCommand
+    Dim item As Integer
     Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
@@ -96,6 +97,10 @@ Public Class Editar_Cliente
                 ask = MsgBox("Seguro desea Editar El Cliente?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+
+                    editarCliente()
+                    verClientes()
+
                     MsgBox("Cliente Editado", MsgBoxStyle.OkOnly, "Editado")
                     TextBox3.Text = ""
                     TextBox2.Text = ""
@@ -120,6 +125,22 @@ Public Class Editar_Cliente
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
 
         End If
+    End Sub
+
+    Public Sub editarCliente()
+        Dim nombre As String = TextBox2.Text
+        Dim apellido As String = TextBox3.Text
+        Dim fecha_nacimiento As String = DateTimePicker2.Value
+        Dim dni As String = Val(TextBox1.Text)
+        Dim direccion As String = TextBox4.Text
+        Dim telefono As String = Val(TextBox5.Text)
+        Dim correo As String = TextBox6.Text
+        Try
+            Dim ccliente As New NClientes()
+            ccliente.editarCliente(nombre, apellido, telefono, fecha_nacimiento, correo, direccion, dni, item)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'Buscar por DNI
@@ -169,6 +190,8 @@ Public Class Editar_Cliente
         i = DataGridView1.CurrentRow.Index
         ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
         If (MsgBoxResult.Yes = ask) Then
+            'La variable item me permite recoger el id del cliente para hacer la edición
+            item = Me.DataGridView1.Item(0, i).Value
             TextBox3.Text = Me.DataGridView1.Item(1, i).Value.ToString
             TextBox2.Text = Me.DataGridView1.Item(2, i).Value.ToString()
             DateTimePicker2.Value = Me.DataGridView1.Item(4, i).Value

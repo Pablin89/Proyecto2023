@@ -23,4 +23,13 @@ Public Class NClientes
         End Try
     End Function
 
+    Public Function editarCliente(nombre As String, apellido As String, telefono As Long, fecha_nacimiento As Date, correo As String, direccion As String, dni As Long, id_cliente As Integer) As Boolean
+        Dim dcliente As New DClientes()
+        If (dcliente.editarCliente(nombre, apellido, telefono, fecha_nacimiento, correo, direccion, dni, id_cliente)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class

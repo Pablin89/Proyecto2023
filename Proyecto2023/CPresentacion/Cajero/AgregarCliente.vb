@@ -143,7 +143,9 @@ Public Class AgregarCliente
                 ask = MsgBox("Seguro desea Agregar cliente?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+
                     agregarCliente()
+
                     MsgBox("Cliente Agregado", MsgBoxStyle.OkOnly, "Agregado")
                     TextBox5.Text = ""
                     TextBox6.Text = ""
