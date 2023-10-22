@@ -93,7 +93,7 @@ Public Class Baja_Clientes
         TBuscarDni.Enabled = False
         DataGridView1.AllowUserToAddRows = False
         'Esta linea se quitará cuando se realizan las busquedas por cada campo
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         verClientes()
     End Sub
     Public Sub verClientes()
@@ -127,19 +127,8 @@ Public Class Baja_Clientes
     'busqueda diámica con dni
     Public Sub buscarClienteDni(dni As String)
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                                from clientes where dni like '%" & dni & "%' and id_estado_cliente = 1"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
             DataGridView1.DataSource = dt
 
         Catch ex As Exception
@@ -149,19 +138,8 @@ Public Class Baja_Clientes
 
     Public Sub buscarClienteApellido(apellido As String)
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                                from clientes where apellido like '%" & apellido & "%' and id_estado_cliente = 1"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.buscarClienteApellido(apellido)
             DataGridView1.DataSource = dt
 
         Catch ex As Exception
@@ -171,19 +149,8 @@ Public Class Baja_Clientes
 
     Public Sub buscarClienteCorreo(correo As String)
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                                from clientes where correo like '%" & correo & "%' and id_estado_cliente = 1"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.buscarClienteCorreo(correo)
             DataGridView1.DataSource = dt
 
         Catch ex As Exception

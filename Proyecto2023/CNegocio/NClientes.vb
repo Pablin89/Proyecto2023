@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Xml
 
 Public Class NClientes
 
@@ -30,6 +31,42 @@ Public Class NClientes
         Else
             Return False
         End If
+    End Function
+
+    Public Function buscarClienteDni(dni As Integer) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteDni(dni)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteApellido(apellido As String) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteApellido(apellido)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteCorreo(correo As String) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteCorreo(correo)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
 End Class

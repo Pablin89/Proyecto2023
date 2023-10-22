@@ -172,14 +172,14 @@ Public Class Editar_Cliente
         If (TextBox7.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
-            buscarCliente(TextBox7.Text)
+            buscarClienteDni(TextBox7.Text)
             MsgBox("Buscar por DNI: '" + TextBox7.Text, MsgBoxStyle.Information, "Buscar")
             TextBox7.Clear()
         End If
     End Sub
 
     Private Sub Editar_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         DataGridView1.AllowUserToAddRows = False
         verClientes()
     End Sub
@@ -205,19 +205,8 @@ Public Class Editar_Cliente
 
     Public Sub verClientes()
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                          from clientes"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.verClientes()
             DataGridView1.DataSource = dt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -226,21 +215,10 @@ Public Class Editar_Cliente
 
 
 
-    Public Sub buscarCliente(dni As String)
+    Public Sub buscarClienteDni(dni As String)
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                                from clientes where dni like '" & dni & "%'"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
             DataGridView1.DataSource = dt
 
         Catch ex As Exception

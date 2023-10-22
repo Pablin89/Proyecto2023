@@ -175,4 +175,94 @@ Public Class DClientes
         End Try
     End Function
 
+    Public Function buscarClienteDni(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_cliente As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                telefono As Telefono,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                dni As DNI
+                          from clientes where dni like '%" & dni & "%' and id_estado_cliente = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteApellido(apellido As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_cliente As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                telefono As Telefono,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                dni As DNI
+                          from clientes where apellido like '%" & apellido & "%' and id_estado_cliente = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteCorreo(correo As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_cliente As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                telefono As Telefono,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                dni As DNI
+                          from clientes where correo like '%" & correo & "%' and id_estado_cliente = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class
