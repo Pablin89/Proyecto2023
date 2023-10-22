@@ -265,4 +265,24 @@ Public Class DClientes
         End Try
     End Function
 
+    Public Function bajaCliente(id As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update clientes set id_estado_cliente = 0 where id_cliente = " & id & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Return False
+        End Try
+    End Function
+
 End Class
