@@ -88,6 +88,18 @@ Public Class Baja_Cliente
         TBuscarapellido.Enabled = False
         TBuscarCorreo.Enabled = False
         TBuscarDni.Enabled = False
+        DataGridView1.AllowUserToAddRows = False
+        verClientesE()
+    End Sub
+    Public Sub verClientesE()
+        Try
+            Dim nc As New NClientes
+            Dim dt As DataTable = nc.verClientesE()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
     Private Sub RBDni_CheckedChanged(sender As Object, e As EventArgs) Handles RBDni.CheckedChanged
@@ -122,4 +134,5 @@ Public Class Baja_Cliente
             TBuscarDni.Enabled = False
         End If
     End Sub
+
 End Class

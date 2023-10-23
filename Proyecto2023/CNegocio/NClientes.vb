@@ -69,4 +69,70 @@ Public Class NClientes
         End Try
     End Function
 
+    'Funciones para Encargado
+    Public Function verClientesE() As DataTable
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.verClientesE()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    Public Function buscarClienteDniE(dni As Integer) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteDniE(dni)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteApellidoE(apellido As String) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteApellidoE(apellido)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarClienteCorreoE(correo As String) As DataTable
+
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.buscarClienteCorreoe(correo)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function bajaCliente(id As Integer) As Boolean
+        Dim dcliente As New DClientes
+        If (dcliente.bajaCliente(id)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function altaCliente(id As Integer) As Boolean
+        Dim dcliente As New DClientes
+        If (dcliente.altaCliente(id)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
 End Class

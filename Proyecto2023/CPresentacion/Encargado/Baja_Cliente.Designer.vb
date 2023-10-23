@@ -102,7 +102,7 @@ Partial Class Baja_Cliente
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(117, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 16)
+        Me.Label2.Size = New System.Drawing.Size(75, 16)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Buscar por:"
         '
@@ -148,15 +148,14 @@ Partial Class Baja_Cliente
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(0, 218)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(800, 186)
+        Me.DataGridView1.Size = New System.Drawing.Size(899, 186)
         Me.DataGridView1.TabIndex = 24
         '
         'Baja_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 469)
+        Me.ClientSize = New System.Drawing.Size(900, 469)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.BSeleccionar)
         Me.Controls.Add(Me.TBuscarCorreo)
