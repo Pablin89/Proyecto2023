@@ -34,6 +34,9 @@ Insert into empleados values (3,02,'Gerente', 'Inicial',' ', 02,'usuario3@gmail.
 Insert into empleados values (4,03,'Cajero', 'Inicial',' ', 03,'usuario4@gmail.com', '2020-01-01', 3, 1)
 
 
-
-
+--Usuarios universales para el uso del sistema
+Insert into usuarios values (1,'EncargadoUniversal', '0000', 1,1)
+Insert into usuarios values (2,'GerenteGUniversal', '1111', 2,2)
+Insert into usuarios values (3,'GerenteUniversal', '2222', 3,3)
+Insert into usuarios values (4,'CajeroUniversal', '3333', 4,4)
 
