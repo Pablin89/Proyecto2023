@@ -5,6 +5,7 @@ Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class Editar_Cliente
     Dim conexion As SqlConnection
     Dim comando As SqlCommand
+    Dim item As Integer
     Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
@@ -96,6 +97,10 @@ Public Class Editar_Cliente
                 ask = MsgBox("Seguro desea Editar El Cliente?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+
+                    editarCliente()
+                    verClientes()
+
                     MsgBox("Cliente Editado", MsgBoxStyle.OkOnly, "Editado")
                     TextBox3.Text = ""
                     TextBox2.Text = ""
@@ -120,6 +125,22 @@ Public Class Editar_Cliente
             MsgBox("Debe completar todos los campos", MsgBoxStyle.Exclamation, "Error")
 
         End If
+    End Sub
+
+    Public Sub editarCliente()
+        Dim nombre As String = TextBox2.Text
+        Dim apellido As String = TextBox3.Text
+        Dim fecha_nacimiento As String = DateTimePicker2.Value
+        Dim dni As String = Val(TextBox1.Text)
+        Dim direccion As String = TextBox4.Text
+        Dim telefono As String = Val(TextBox5.Text)
+        Dim correo As String = TextBox6.Text
+        Try
+            Dim ccliente As New NClientes()
+            ccliente.editarCliente(nombre, apellido, telefono, fecha_nacimiento, correo, direccion, dni, item)
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'Buscar por DNI
@@ -151,14 +172,14 @@ Public Class Editar_Cliente
         If (TextBox7.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
-            buscarCliente(TextBox7.Text)
+            buscarClienteDni(TextBox7.Text)
             MsgBox("Buscar por DNI: '" + TextBox7.Text, MsgBoxStyle.Information, "Buscar")
             TextBox7.Clear()
         End If
     End Sub
 
     Private Sub Editar_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+        'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
         DataGridView1.AllowUserToAddRows = False
         verClientes()
     End Sub
@@ -169,6 +190,8 @@ Public Class Editar_Cliente
         i = DataGridView1.CurrentRow.Index
         ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
         If (MsgBoxResult.Yes = ask) Then
+            'La variable item me permite recoger el id del cliente para hacer la edición
+            item = Me.DataGridView1.Item(0, i).Value
             TextBox3.Text = Me.DataGridView1.Item(1, i).Value.ToString
             TextBox2.Text = Me.DataGridView1.Item(2, i).Value.ToString()
             DateTimePicker2.Value = Me.DataGridView1.Item(4, i).Value
@@ -182,19 +205,8 @@ Public Class Editar_Cliente
 
     Public Sub verClientes()
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                          from clientes"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.verClientes()
             DataGridView1.DataSource = dt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -203,21 +215,10 @@ Public Class Editar_Cliente
 
 
 
-    Public Sub buscarCliente(dni As String)
+    Public Sub buscarClienteDni(dni As String)
         Try
-            Dim query As String = "select 
-                                id_cliente As id,
-                                apellido As Apellido,
-                                nombre As Nombre,
-                                telefono As Telefono,
-                                fecha_nacimiento As Nacimiento,
-                                correo As Mail,
-                                direccion As Dirección,
-                                dni As DNI
-                                from clientes where dni like '" & dni & "%'"
-            Dim adaptador As New SqlDataAdapter(query, conexion)
-            Dim dt As New DataTable
-            adaptador.Fill(dt)
+            Dim dc As New NClientes
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
             DataGridView1.DataSource = dt
 
         Catch ex As Exception

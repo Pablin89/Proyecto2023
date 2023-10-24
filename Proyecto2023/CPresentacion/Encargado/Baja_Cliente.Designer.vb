@@ -22,6 +22,9 @@ Partial Class Baja_Cliente
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TBuscarCorreo = New System.Windows.Forms.TextBox()
         Me.TBuscarapellido = New System.Windows.Forms.TextBox()
         Me.RBCorreo = New System.Windows.Forms.RadioButton()
@@ -31,14 +34,16 @@ Partial Class Baja_Cliente
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ButtonBuscar = New System.Windows.Forms.Button()
-        Me.BSeleccionar = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TBuscarCorreo
         '
-        Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarCorreo.BackColor = System.Drawing.SystemColors.Menu
+        Me.TBuscarCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBuscarCorreo.Location = New System.Drawing.Point(226, 173)
         Me.TBuscarCorreo.Name = "TBuscarCorreo"
         Me.TBuscarCorreo.Size = New System.Drawing.Size(285, 21)
@@ -46,7 +51,8 @@ Partial Class Baja_Cliente
         '
         'TBuscarapellido
         '
-        Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarapellido.BackColor = System.Drawing.SystemColors.Menu
+        Me.TBuscarapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBuscarapellido.Location = New System.Drawing.Point(226, 137)
         Me.TBuscarapellido.Name = "TBuscarapellido"
         Me.TBuscarapellido.Size = New System.Drawing.Size(285, 21)
@@ -55,10 +61,10 @@ Partial Class Baja_Cliente
         'RBCorreo
         '
         Me.RBCorreo.AutoSize = True
-        Me.RBCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBCorreo.Location = New System.Drawing.Point(120, 175)
         Me.RBCorreo.Name = "RBCorreo"
-        Me.RBCorreo.Size = New System.Drawing.Size(62, 19)
+        Me.RBCorreo.Size = New System.Drawing.Size(68, 19)
         Me.RBCorreo.TabIndex = 19
         Me.RBCorreo.TabStop = True
         Me.RBCorreo.Text = "Correo"
@@ -67,10 +73,10 @@ Partial Class Baja_Cliente
         'RBApellido
         '
         Me.RBApellido.AutoSize = True
-        Me.RBApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBApellido.Location = New System.Drawing.Point(120, 137)
         Me.RBApellido.Name = "RBApellido"
-        Me.RBApellido.Size = New System.Drawing.Size(69, 19)
+        Me.RBApellido.Size = New System.Drawing.Size(77, 19)
         Me.RBApellido.TabIndex = 18
         Me.RBApellido.TabStop = True
         Me.RBApellido.Text = "Apellido"
@@ -79,10 +85,10 @@ Partial Class Baja_Cliente
         'RBDni
         '
         Me.RBDni.AutoSize = True
-        Me.RBDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RBDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBDni.Location = New System.Drawing.Point(120, 101)
         Me.RBDni.Name = "RBDni"
-        Me.RBDni.Size = New System.Drawing.Size(46, 19)
+        Me.RBDni.Size = New System.Drawing.Size(49, 19)
         Me.RBDni.TabIndex = 17
         Me.RBDni.TabStop = True
         Me.RBDni.Text = "DNI"
@@ -90,7 +96,8 @@ Partial Class Baja_Cliente
         '
         'TBuscarDni
         '
-        Me.TBuscarDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBuscarDni.BackColor = System.Drawing.SystemColors.Menu
+        Me.TBuscarDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBuscarDni.Location = New System.Drawing.Point(226, 99)
         Me.TBuscarDni.Name = "TBuscarDni"
         Me.TBuscarDni.Size = New System.Drawing.Size(285, 21)
@@ -99,10 +106,10 @@ Partial Class Baja_Cliente
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(117, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(76, 16)
+        Me.Label2.Size = New System.Drawing.Size(86, 16)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Buscar por:"
         '
@@ -110,18 +117,19 @@ Partial Class Baja_Cliente
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(291, 9)
+        Me.Label1.Location = New System.Drawing.Point(295, 18)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(189, 20)
+        Me.Label1.Size = New System.Drawing.Size(181, 20)
         Me.Label1.TabIndex = 13
-        Me.Label1.Text = "Seleccionar un Cliente"
+        Me.Label1.Text = "Alta y Baja de Cliente"
         '
         'ButtonBuscar
         '
+        Me.ButtonBuscar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ButtonBuscar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.ButtonBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
         Me.ButtonBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ButtonBuscar.Location = New System.Drawing.Point(553, 124)
+        Me.ButtonBuscar.Location = New System.Drawing.Point(553, 99)
         Me.ButtonBuscar.Name = "ButtonBuscar"
         Me.ButtonBuscar.Size = New System.Drawing.Size(132, 46)
         Me.ButtonBuscar.TabIndex = 16
@@ -130,35 +138,67 @@ Partial Class Baja_Cliente
         Me.ButtonBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.ButtonBuscar.UseVisualStyleBackColor = True
         '
-        'BSeleccionar
-        '
-        Me.BSeleccionar.BackColor = System.Drawing.Color.IndianRed
-        Me.BSeleccionar.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BSeleccionar.ForeColor = System.Drawing.Color.White
-        Me.BSeleccionar.Location = New System.Drawing.Point(316, 410)
-        Me.BSeleccionar.Name = "BSeleccionar"
-        Me.BSeleccionar.Size = New System.Drawing.Size(175, 47)
-        Me.BSeleccionar.TabIndex = 23
-        Me.BSeleccionar.Text = "Dar de baja al cliente"
-        Me.BSeleccionar.UseVisualStyleBackColor = False
-        '
         'DataGridView1
         '
         Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(0, 218)
+        Me.DataGridView1.Location = New System.Drawing.Point(0, 258)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.Size = New System.Drawing.Size(800, 186)
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridView1.Size = New System.Drawing.Size(899, 199)
         Me.DataGridView1.TabIndex = 24
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(222, 225)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(327, 20)
+        Me.Label3.TabIndex = 25
+        Me.Label3.Text = "Clic para Activar o Desactivar un cliente"
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(553, 162)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(132, 46)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "Buscar Todos"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Baja_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 469)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClientSize = New System.Drawing.Size(900, 469)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.BSeleccionar)
         Me.Controls.Add(Me.TBuscarCorreo)
         Me.Controls.Add(Me.TBuscarapellido)
         Me.Controls.Add(Me.RBCorreo)
@@ -186,6 +226,7 @@ Partial Class Baja_Cliente
     Friend WithEvents TBuscarDni As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents BSeleccionar As Button
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
 End Class

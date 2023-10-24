@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3da393500c394ec1a22d50fed727edd5" Name="Diagram1">
+        <EntityTypeShape EntityType="Proyecto2023Model.Categorias" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.clientes" Width="1.5" PointX="5.25" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.detalle" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Empleados" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Estados_clientes" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Estados_empleados" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Estados_productos" Width="1.5" PointX="5.25" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Estados_ventas" Width="1.5" PointX="5.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Perfiles" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Productos" Width="1.5" PointX="7.5" PointY="18.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Sexos" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.tipos_pagos" Width="1.5" PointX="5.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.Usuarios" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Proyecto2023Model.ventas" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="Proyecto2023Model.FK_productos_categorias" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_cliente_estados_clientes" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_venta_cliente" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_detalle_producto" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_detalle_venta" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_empleados_estados_empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_Empleados_sexos" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_usuarios_empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_productos_estados_productos" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.fk_estados" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_usuarios_perfiles" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.fk_tipo_pago" ManuallyRouted="false" />
+        <AssociationConnector Association="Proyecto2023Model.FK_venta_usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
