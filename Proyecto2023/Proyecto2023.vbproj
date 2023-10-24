@@ -143,6 +143,7 @@
     <Compile Include="CDatos\ventas.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DBackup.vb" />
     <Compile Include="CNegocio\NCategorias.vb" />
     <Compile Include="CNegocio\NClientes.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
@@ -239,6 +240,12 @@
       <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Gerente General\Permisos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\RBackup.Designer.vb">
+      <DependentUpon>RBackup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\RBackup.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Gerente General\Realizar_Backup.Designer.vb">
@@ -366,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\Permisos.resx">
       <DependentUpon>Permisos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\RBackup.resx">
+      <DependentUpon>RBackup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\Realizar_Backup.resx">
       <DependentUpon>Realizar_Backup.vb</DependentUpon>

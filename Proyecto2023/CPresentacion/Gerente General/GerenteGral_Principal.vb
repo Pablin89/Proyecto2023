@@ -12,7 +12,7 @@
 
 
     Private Sub Backup_Click(sender As Object, e As EventArgs) Handles Backup.Click
-        Realizar_Backup.ShowDialog()
+        RBackup.ShowDialog()
     End Sub
 
     Private Sub Informes_Click(sender As Object, e As EventArgs) Handles Informes.Click
