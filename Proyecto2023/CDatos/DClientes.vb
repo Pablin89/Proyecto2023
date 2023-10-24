@@ -14,6 +14,7 @@ Public Class DClientes
     Private dni As Long
 
     Private comando As SqlCommand
+    Private dr As SqlDataReader
 
     Public Sub New(nom As String, ape As String, tel As Long, fech_nac As Date, corr As String, dir As String, dnip As Long)
 
@@ -123,6 +124,29 @@ Public Class DClientes
             MsgBox(ex.Message)
             Return False
         End Try
+    End Function
+
+    Public Function existeCliente(dni As Integer) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            conectar()
+
+            Dim comando = New SqlCommand("select * from clientes where dni = " & dni & "")
+
+            comando.Connection = conexion
+
+            dr = comando.ExecuteReader
+
+            If (dr.Read) Then
+                resultado = True
+            End If
+            dr.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Return resultado
     End Function
 
     Public Function verClientes() As DataTable
