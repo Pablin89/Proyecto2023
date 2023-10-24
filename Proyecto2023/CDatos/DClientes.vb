@@ -278,7 +278,7 @@ Public Class DClientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI,
-                                case when id_estado_cliente = 1 THEN 'Baja' ELSE 'Alta' END As 'Alta/Baja'
+                                case when id_estado_cliente = 1 THEN 'Activo' ELSE 'Inactivo' END As 'Estado'
                           from clientes")
             comando.Connection = conexion
 
@@ -307,7 +307,8 @@ Public Class DClientes
                                 fecha_nacimiento As Nacimiento,
                                 correo As Mail,
                                 direccion As Dirección,
-                                dni As DNI
+                                dni As DNI,
+                                case when id_estado_cliente = 1 THEN 'Activo' ELSE 'Inactivo' END As 'Estado'
                           from clientes where dni like '%" & dni & "%'")
             comando.Connection = conexion
 
@@ -337,7 +338,8 @@ Public Class DClientes
                                 fecha_nacimiento As Nacimiento,
                                 correo As Mail,
                                 direccion As Dirección,
-                                dni As DNI
+                                dni As DNI,
+                                case when id_estado_cliente = 1 THEN 'Activo' ELSE 'Inactivo' END As 'Estado'
                           from clientes where apellido like '%" & apellido & "%'")
             comando.Connection = conexion
 
@@ -356,7 +358,7 @@ Public Class DClientes
         End Try
     End Function
 
-    Public Function buscarClienteCorreoe(correo As String) As DataTable
+    Public Function buscarClienteCorreoE(correo As String) As DataTable
         Try
             conectar()
             Dim comando = New SqlCommand("select 
@@ -367,7 +369,8 @@ Public Class DClientes
                                 fecha_nacimiento As Nacimiento,
                                 correo As Mail,
                                 direccion As Dirección,
-                                dni As DNI
+                                dni As DNI,
+                                case when id_estado_cliente = 1 THEN 'Activo' ELSE 'Inactivo' END As 'Estado'
                           from clientes where correo like '%" & correo & "%'")
             comando.Connection = conexion
 

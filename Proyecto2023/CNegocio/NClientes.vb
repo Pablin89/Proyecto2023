@@ -109,7 +109,7 @@ Public Class NClientes
 
         Try
             Dim dcliente As New DClientes
-            Dim dt As DataTable = dcliente.buscarClienteCorreoe(correo)
+            Dim dt As DataTable = dcliente.buscarClienteCorreoE(correo)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)

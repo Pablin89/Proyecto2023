@@ -89,6 +89,7 @@
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\Conexion.vb" />
+    <Compile Include="CDatos\DCategorias.vb" />
     <Compile Include="CDatos\DClientes.vb" />
     <Compile Include="CDatos\detalle.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
@@ -142,6 +143,7 @@
     <Compile Include="CDatos\ventas.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CNegocio\NCategorias.vb" />
     <Compile Include="CNegocio\NClientes.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
