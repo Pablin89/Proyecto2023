@@ -126,6 +126,7 @@ Public Class DClientes
         End Try
     End Function
 
+    'verifica si ya existe el cliente
     Public Function existeCliente(dni As Integer) As Boolean
         Dim resultado As Boolean = False
         Try
