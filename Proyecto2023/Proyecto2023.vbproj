@@ -94,6 +94,7 @@
     <Compile Include="CDatos\detalle.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\DProductos.vb" />
     <Compile Include="CDatos\Empleados.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
       <SubType>Form</SubType>
@@ -146,6 +147,7 @@
     <Compile Include="CDatos\DBackup.vb" />
     <Compile Include="CNegocio\NCategorias.vb" />
     <Compile Include="CNegocio\NClientes.vb" />
+    <Compile Include="CNegocio\NProductos.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </Compile>
