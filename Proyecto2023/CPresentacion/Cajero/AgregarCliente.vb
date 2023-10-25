@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 Imports System.Text.RegularExpressions
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
@@ -31,21 +32,23 @@ Public Class AgregarCliente
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        Dim dni As String
+        Dim dni As Integer
         dni = TextBox11.Text
         If (TextBox11.Text = "") Then
             MsgBox("Completa el campo de búsqueda", MsgBoxStyle.Information, "Atencion")
         Else
-            'If (TextBox11.Text = "11111111") Then
-            'MsgBox("Ya existe un cliente con el dni: " + dni, MsgBoxStyle.Information, "Buscar")
-            'Else
-            'MsgBox("No existe un cliente con el dni: " + dni + " , puede agregarlo como nuevo cliente", MsgBoxStyle.Information, "Buscar")
-            'Panel6.Visible = True
-            'Button3.Visible = True
-            'Button2.Visible = False
-            'TextBox11.Enabled = False
-            'End If
-            MsgBox("buscar Si existe el cliente con DNI: " + dni, MsgBoxStyle.Information, "Buscar")
+            If (existeCliente() = True) Then
+                MsgBox("Ya existe un cliente con el dni: " + dni.ToString, MsgBoxStyle.Information, "Buscar")
+            Else
+                MsgBox("No existe un cliente con el dni: " + dni.ToString + " , puede agregarlo como nuevo cliente", MsgBoxStyle.Information, "Buscar")
+                TextBox7.Text = dni
+                Panel6.Visible = True
+                Button3.Visible = True
+                Button2.Visible = False
+                Label8.Text = "AGREGAR NUEVO CLIENTE: "
+                TextBox11.Visible = False
+            End If
+            'MsgBox("buscar Si existe el cliente con DNI: " + dni, MsgBoxStyle.Information, "Buscar")
 
         End If
     End Sub
@@ -144,18 +147,24 @@ Public Class AgregarCliente
 
                 If ask = MsgBoxResult.Yes Then
 
-                    agregarCliente()
+                    'Verifico nuevamente si ya existe el DNI 
+                    If (existeCliente() = True) Then
+                        agregarCliente()
 
-                    MsgBox("Cliente Agregado", MsgBoxStyle.OkOnly, "Agregado")
-                    TextBox5.Text = ""
-                    TextBox6.Text = ""
-                    TextBox7.Text = ""
-                    TextBox8.Text = ""
-                    TextBox9.Text = ""
-                    TextBox10.Text = ""
-                    If (MsgBoxResult.Ok = True) Then
-                        Baja_Clientes.ShowDialog()
+                        MsgBox("Cliente Agregado", MsgBoxStyle.OkOnly, "Agregado")
+                        TextBox5.Text = ""
+                        TextBox6.Text = ""
+                        TextBox7.Text = ""
+                        TextBox8.Text = ""
+                        TextBox9.Text = ""
+                        TextBox10.Text = ""
+                        If (MsgBoxResult.Ok = True) Then
+                            Baja_Clientes.ShowDialog()
+                        End If
+                    Else
+                        MsgBox("Ya existe un cliente con el dni: " + TextBox7.Text, MsgBoxStyle.Critical, "Error")
                     End If
+
                 Else
                     MsgBox("No se agregó el cliente", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -191,11 +200,25 @@ Public Class AgregarCliente
         End Try
     End Sub
 
+    Public Function existeCliente()
+        Dim dni As Integer = Val(TextBox11.Text)
+        Try
+            Dim cte As New NClientes()
+            Return cte.existeCliente(dni)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
     Private Sub AgregarCliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
-        'Panel6.Visible = False
-        'Button3.Visible = False
-        'Button2.Visible = True
-        'TextBox11.Enabled = True
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        TextBox11.Visible = True
+        TextBox11.Text = ""
+        Label8.Visible = True
+        Label8.Text = "Ingresar DNI del nuevo cliente para comprobar que  no existe en el sistema"
     End Sub
 End Class
