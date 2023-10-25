@@ -7,7 +7,7 @@ Public Class DProductos
     Private nombre As String
     Private codigo As Integer
     Private stock As Integer
-    Private strock_minimo As Integer
+    Private stock_minimo As Integer
     Private precio As Double
     Private id_estado_producto As Integer
     Private id_categoria As Integer
@@ -75,10 +75,10 @@ Public Class DProductos
 
     Property CStockMinimo As String
         Get
-            Return strock_minimo
+            Return stock_minimo
         End Get
         Set(value As String)
-            strock_minimo = value
+            stock_minimo = value
         End Set
     End Property
 
@@ -113,7 +113,7 @@ Public Class DProductos
         Try
             conectar()
 
-            Dim query As String = "Insert into productos (descripcion,nombre,codigo,stock,stock_minimo,precio,id_estado_producto,id_categoria) values ('" & dproducto.descripcion & "','" & dproducto.CNombre & "','" & dproducto.CCodigo & "'," & dproducto.CStock & ",'" & dproducto.CStockMinimo & "'," & dproducto.CPrecio & ",'" & dproducto.CIdEstadoProducto & "'," & dproducto.CIdCategoria & ")"
+            Dim query As String = "Insert into productos (descripcion,nombre,codigo,stock,sock_minimo,precio,id_estado_producto,id_categoria) values ('" & dproducto.descripcion & "','" & dproducto.CNombre & "','" & dproducto.CCodigo & "'," & dproducto.CStock & ",'" & dproducto.CStockMinimo & "'," & dproducto.CPrecio & ",'" & dproducto.CIdEstadoProducto & "'," & dproducto.CIdCategoria & ")"
 
             comando = New SqlCommand(query, conexion)
 
@@ -129,5 +129,49 @@ Public Class DProductos
         End Try
     End Function
 
+    Public Function existeNombreProducto(nombre As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            conectar()
 
+            Dim comando = New SqlCommand("select * from productos where nombre = '" & nombre & "'")
+
+            comando.Connection = conexion
+
+            dr = comando.ExecuteReader
+
+            If (dr.Read) Then
+                resultado = True
+            End If
+            dr.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Return resultado
+    End Function
+
+    Public Function existeCodigoProducto(codigo As Integer) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            conectar()
+
+            Dim comando = New SqlCommand("select * from productos where codigo = " & codigo & "")
+
+            comando.Connection = conexion
+
+            dr = comando.ExecuteReader
+
+            If (dr.Read) Then
+                resultado = True
+            End If
+            dr.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Return resultado
+    End Function
 End Class

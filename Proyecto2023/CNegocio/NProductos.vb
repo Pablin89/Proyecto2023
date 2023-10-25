@@ -7,4 +7,22 @@
             Return False
         End If
     End Function
+
+    Public Function existeNombreProducto(nombre As String) As Boolean
+        Dim dproducto As New DProductos()
+        If (dproducto.existeNombreProducto(nombre)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Public Function existeCodigoProducto(codigo As Integer) As Boolean
+        Dim dproducto As New DProductos()
+        If (dproducto.existeCodigoProducto(codigo)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

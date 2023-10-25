@@ -35,6 +35,14 @@ Partial Class GestionProductos
         Me.ChNombreProducto = New System.Windows.Forms.CheckBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox17 = New System.Windows.Forms.TextBox()
+        Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.LStockMinimo = New System.Windows.Forms.Label()
         Me.LCodigo = New System.Windows.Forms.Label()
         Me.LEstado = New System.Windows.Forms.Label()
@@ -100,14 +108,6 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -190,7 +190,7 @@ Partial Class GestionProductos
         Me.ChCodigo.AutoSize = True
         Me.ChCodigo.Location = New System.Drawing.Point(194, 57)
         Me.ChCodigo.Name = "ChCodigo"
-        Me.ChCodigo.Size = New System.Drawing.Size(169, 20)
+        Me.ChCodigo.Size = New System.Drawing.Size(168, 20)
         Me.ChCodigo.TabIndex = 9
         Me.ChCodigo.Text = "Código del Producto"
         Me.ChCodigo.UseVisualStyleBackColor = True
@@ -200,7 +200,7 @@ Partial Class GestionProductos
         Me.LTitulo.AutoSize = True
         Me.LTitulo.Location = New System.Drawing.Point(263, 17)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(240, 16)
+        Me.LTitulo.Size = New System.Drawing.Size(239, 16)
         Me.LTitulo.TabIndex = 8
         Me.LTitulo.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -209,7 +209,7 @@ Partial Class GestionProductos
         Me.ChCategoria.AutoSize = True
         Me.ChCategoria.Location = New System.Drawing.Point(194, 143)
         Me.ChCategoria.Name = "ChCategoria"
-        Me.ChCategoria.Size = New System.Drawing.Size(99, 20)
+        Me.ChCategoria.Size = New System.Drawing.Size(98, 20)
         Me.ChCategoria.TabIndex = 3
         Me.ChCategoria.Text = "Categoría "
         Me.ChCategoria.UseVisualStyleBackColor = True
@@ -226,7 +226,7 @@ Partial Class GestionProductos
         Me.ChNombreProducto.AutoSize = True
         Me.ChNombreProducto.Location = New System.Drawing.Point(194, 101)
         Me.ChNombreProducto.Name = "ChNombreProducto"
-        Me.ChNombreProducto.Size = New System.Drawing.Size(174, 20)
+        Me.ChNombreProducto.Size = New System.Drawing.Size(173, 20)
         Me.ChNombreProducto.TabIndex = 1
         Me.ChNombreProducto.Text = "Nombre del Producto"
         Me.ChNombreProducto.UseVisualStyleBackColor = True
@@ -267,12 +267,85 @@ Partial Class GestionProductos
         Me.Panel2.Size = New System.Drawing.Size(403, 351)
         Me.Panel2.TabIndex = 1
         '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(140, 245)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox1.TabIndex = 25
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Enabled = False
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(140, 53)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox2.TabIndex = 24
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Enabled = False
+        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3.Location = New System.Drawing.Point(140, 317)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox3.TabIndex = 23
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Enabled = False
+        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox14.Location = New System.Drawing.Point(140, 281)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox14.TabIndex = 22
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Enabled = False
+        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox15.Location = New System.Drawing.Point(140, 209)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(85, 22)
+        Me.TextBox15.TabIndex = 21
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Enabled = False
+        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox16.Location = New System.Drawing.Point(140, 173)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox16.TabIndex = 20
+        '
+        'TextBox17
+        '
+        Me.TextBox17.Enabled = False
+        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox17.Location = New System.Drawing.Point(140, 94)
+        Me.TextBox17.Multiline = True
+        Me.TextBox17.Name = "TextBox17"
+        Me.TextBox17.Size = New System.Drawing.Size(209, 60)
+        Me.TextBox17.TabIndex = 19
+        '
+        'TextBox18
+        '
+        Me.TextBox18.Enabled = False
+        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox18.Location = New System.Drawing.Point(140, 15)
+        Me.TextBox18.Name = "TextBox18"
+        Me.TextBox18.Size = New System.Drawing.Size(209, 22)
+        Me.TextBox18.TabIndex = 18
+        '
         'LStockMinimo
         '
         Me.LStockMinimo.AutoSize = True
         Me.LStockMinimo.Location = New System.Drawing.Point(18, 287)
         Me.LStockMinimo.Name = "LStockMinimo"
-        Me.LStockMinimo.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo.Size = New System.Drawing.Size(99, 16)
         Me.LStockMinimo.TabIndex = 7
         Me.LStockMinimo.Text = "Stock mínimo"
         '
@@ -281,7 +354,7 @@ Partial Class GestionProductos
         Me.LCodigo.AutoSize = True
         Me.LCodigo.Location = New System.Drawing.Point(18, 53)
         Me.LCodigo.Name = "LCodigo"
-        Me.LCodigo.Size = New System.Drawing.Size(58, 16)
+        Me.LCodigo.Size = New System.Drawing.Size(57, 16)
         Me.LCodigo.TabIndex = 6
         Me.LCodigo.Text = "Codigo"
         '
@@ -290,7 +363,7 @@ Partial Class GestionProductos
         Me.LEstado.AutoSize = True
         Me.LEstado.Location = New System.Drawing.Point(18, 323)
         Me.LEstado.Name = "LEstado"
-        Me.LEstado.Size = New System.Drawing.Size(57, 16)
+        Me.LEstado.Size = New System.Drawing.Size(56, 16)
         Me.LEstado.TabIndex = 5
         Me.LEstado.Text = "Estado"
         '
@@ -299,7 +372,7 @@ Partial Class GestionProductos
         Me.LCategoria.AutoSize = True
         Me.LCategoria.Location = New System.Drawing.Point(18, 179)
         Me.LCategoria.Name = "LCategoria"
-        Me.LCategoria.Size = New System.Drawing.Size(76, 16)
+        Me.LCategoria.Size = New System.Drawing.Size(75, 16)
         Me.LCategoria.TabIndex = 4
         Me.LCategoria.Text = "Categoria"
         '
@@ -308,7 +381,7 @@ Partial Class GestionProductos
         Me.LStock.AutoSize = True
         Me.LStock.Location = New System.Drawing.Point(18, 251)
         Me.LStock.Name = "LStock"
-        Me.LStock.Size = New System.Drawing.Size(47, 16)
+        Me.LStock.Size = New System.Drawing.Size(46, 16)
         Me.LStock.TabIndex = 3
         Me.LStock.Text = "Stock"
         '
@@ -317,7 +390,7 @@ Partial Class GestionProductos
         Me.LPrecio.AutoSize = True
         Me.LPrecio.Location = New System.Drawing.Point(18, 215)
         Me.LPrecio.Name = "LPrecio"
-        Me.LPrecio.Size = New System.Drawing.Size(53, 16)
+        Me.LPrecio.Size = New System.Drawing.Size(52, 16)
         Me.LPrecio.TabIndex = 2
         Me.LPrecio.Text = "Precio"
         '
@@ -326,7 +399,7 @@ Partial Class GestionProductos
         Me.LDescripcion.AutoSize = True
         Me.LDescripcion.Location = New System.Drawing.Point(18, 94)
         Me.LDescripcion.Name = "LDescripcion"
-        Me.LDescripcion.Size = New System.Drawing.Size(91, 16)
+        Me.LDescripcion.Size = New System.Drawing.Size(90, 16)
         Me.LDescripcion.TabIndex = 1
         Me.LDescripcion.Text = "Descripcion"
         '
@@ -335,7 +408,7 @@ Partial Class GestionProductos
         Me.LNombrepro.AutoSize = True
         Me.LNombrepro.Location = New System.Drawing.Point(18, 15)
         Me.LNombrepro.Name = "LNombrepro"
-        Me.LNombrepro.Size = New System.Drawing.Size(67, 16)
+        Me.LNombrepro.Size = New System.Drawing.Size(66, 16)
         Me.LNombrepro.TabIndex = 0
         Me.LNombrepro.Text = "Nombre "
         '
@@ -391,7 +464,7 @@ Partial Class GestionProductos
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.Location = New System.Drawing.Point(184, 52)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(169, 20)
+        Me.CheckBox1.Size = New System.Drawing.Size(168, 20)
         Me.CheckBox1.TabIndex = 15
         Me.CheckBox1.Text = "Código del Producto"
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -401,7 +474,7 @@ Partial Class GestionProductos
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(272, 12)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(240, 16)
+        Me.Label1.Size = New System.Drawing.Size(239, 16)
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "Seleccionar un filtro de búsqueda"
         '
@@ -648,7 +721,7 @@ Partial Class GestionProductos
         Me.ChBCategoria.AutoSize = True
         Me.ChBCategoria.Location = New System.Drawing.Point(258, 134)
         Me.ChBCategoria.Name = "ChBCategoria"
-        Me.ChBCategoria.Size = New System.Drawing.Size(95, 20)
+        Me.ChBCategoria.Size = New System.Drawing.Size(94, 20)
         Me.ChBCategoria.TabIndex = 9
         Me.ChBCategoria.Text = "Categoria"
         Me.ChBCategoria.UseVisualStyleBackColor = True
@@ -658,7 +731,7 @@ Partial Class GestionProductos
         Me.ChProducto.AutoSize = True
         Me.ChProducto.Location = New System.Drawing.Point(179, 93)
         Me.ChProducto.Name = "ChProducto"
-        Me.ChProducto.Size = New System.Drawing.Size(174, 20)
+        Me.ChProducto.Size = New System.Drawing.Size(173, 20)
         Me.ChProducto.TabIndex = 8
         Me.ChProducto.Text = "Nombre del Producto"
         Me.ChProducto.UseVisualStyleBackColor = True
@@ -734,7 +807,7 @@ Partial Class GestionProductos
         Me.LBuscarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.LBuscarProducto.Location = New System.Drawing.Point(126, 15)
         Me.LBuscarProducto.Name = "LBuscarProducto"
-        Me.LBuscarProducto.Size = New System.Drawing.Size(573, 16)
+        Me.LBuscarProducto.Size = New System.Drawing.Size(572, 16)
         Me.LBuscarProducto.TabIndex = 26
         Me.LBuscarProducto.Text = "Ingresar nombre del nuevo  producto para comprobar que  no existe en el sistema"
         '
@@ -790,7 +863,7 @@ Partial Class GestionProductos
         Me.LStockMinimo2.AutoSize = True
         Me.LStockMinimo2.Location = New System.Drawing.Point(71, 320)
         Me.LStockMinimo2.Name = "LStockMinimo2"
-        Me.LStockMinimo2.Size = New System.Drawing.Size(100, 16)
+        Me.LStockMinimo2.Size = New System.Drawing.Size(99, 16)
         Me.LStockMinimo2.TabIndex = 29
         Me.LStockMinimo2.Text = "Stock Mínimo"
         '
@@ -806,7 +879,7 @@ Partial Class GestionProductos
         Me.LCódigo2.AutoSize = True
         Me.LCódigo2.Location = New System.Drawing.Point(401, 78)
         Me.LCódigo2.Name = "LCódigo2"
-        Me.LCódigo2.Size = New System.Drawing.Size(149, 16)
+        Me.LCódigo2.Size = New System.Drawing.Size(148, 16)
         Me.LCódigo2.TabIndex = 27
         Me.LCódigo2.Text = "Código del producto"
         '
@@ -873,7 +946,7 @@ Partial Class GestionProductos
         Me.LEstadoInicial.AutoSize = True
         Me.LEstadoInicial.Location = New System.Drawing.Point(444, 320)
         Me.LEstadoInicial.Name = "LEstadoInicial"
-        Me.LEstadoInicial.Size = New System.Drawing.Size(102, 16)
+        Me.LEstadoInicial.Size = New System.Drawing.Size(101, 16)
         Me.LEstadoInicial.TabIndex = 7
         Me.LEstadoInicial.Text = "Estado inicial"
         '
@@ -882,7 +955,7 @@ Partial Class GestionProductos
         Me.LDescripcion2.AutoSize = True
         Me.LDescripcion2.Location = New System.Drawing.Point(455, 138)
         Me.LDescripcion2.Name = "LDescripcion2"
-        Me.LDescripcion2.Size = New System.Drawing.Size(91, 16)
+        Me.LDescripcion2.Size = New System.Drawing.Size(90, 16)
         Me.LDescripcion2.TabIndex = 4
         Me.LDescripcion2.Text = "Descripción"
         '
@@ -891,7 +964,7 @@ Partial Class GestionProductos
         Me.LStockInicial.AutoSize = True
         Me.LStockInicial.Location = New System.Drawing.Point(79, 260)
         Me.LStockInicial.Name = "LStockInicial"
-        Me.LStockInicial.Size = New System.Drawing.Size(92, 16)
+        Me.LStockInicial.Size = New System.Drawing.Size(91, 16)
         Me.LStockInicial.TabIndex = 3
         Me.LStockInicial.Text = "Stock Inicial"
         '
@@ -900,7 +973,7 @@ Partial Class GestionProductos
         Me.LCategoria2.AutoSize = True
         Me.LCategoria2.Location = New System.Drawing.Point(95, 198)
         Me.LCategoria2.Name = "LCategoria2"
-        Me.LCategoria2.Size = New System.Drawing.Size(76, 16)
+        Me.LCategoria2.Size = New System.Drawing.Size(75, 16)
         Me.LCategoria2.TabIndex = 2
         Me.LCategoria2.Text = "Categoria"
         '
@@ -909,7 +982,7 @@ Partial Class GestionProductos
         Me.LPrecio2.AutoSize = True
         Me.LPrecio2.Location = New System.Drawing.Point(117, 138)
         Me.LPrecio2.Name = "LPrecio2"
-        Me.LPrecio2.Size = New System.Drawing.Size(53, 16)
+        Me.LPrecio2.Size = New System.Drawing.Size(52, 16)
         Me.LPrecio2.TabIndex = 1
         Me.LPrecio2.Text = "Precio"
         '
@@ -918,82 +991,9 @@ Partial Class GestionProductos
         Me.LNombre2.AutoSize = True
         Me.LNombre2.Location = New System.Drawing.Point(17, 78)
         Me.LNombre2.Name = "LNombre2"
-        Me.LNombre2.Size = New System.Drawing.Size(154, 16)
+        Me.LNombre2.Size = New System.Drawing.Size(153, 16)
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(140, 245)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox1.TabIndex = 25
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Enabled = False
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(140, 53)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox2.TabIndex = 24
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Enabled = False
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(140, 317)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox3.TabIndex = 23
-        '
-        'TextBox14
-        '
-        Me.TextBox14.Enabled = False
-        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(140, 281)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox14.TabIndex = 22
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Enabled = False
-        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.Location = New System.Drawing.Point(140, 209)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(85, 22)
-        Me.TextBox15.TabIndex = 21
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Enabled = False
-        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.Location = New System.Drawing.Point(140, 173)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox16.TabIndex = 20
-        '
-        'TextBox17
-        '
-        Me.TextBox17.Enabled = False
-        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.Location = New System.Drawing.Point(140, 94)
-        Me.TextBox17.Multiline = True
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(209, 60)
-        Me.TextBox17.TabIndex = 19
-        '
-        'TextBox18
-        '
-        Me.TextBox18.Enabled = False
-        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox18.Location = New System.Drawing.Point(140, 15)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(209, 22)
-        Me.TextBox18.TabIndex = 18
         '
         'GestionProductos
         '
