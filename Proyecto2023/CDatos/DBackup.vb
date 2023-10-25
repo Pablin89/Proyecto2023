@@ -76,4 +76,22 @@ Public Class DBackup
         Return salida
     End Function
 
+    Public Function restaurarDatos(p_direccion As String)
+        Try
+            Dim conexion As New SqlConnection("Data Source=.\SQLEXPRESS;Initial Catalog=Proyecto2023;Integrated Security=True")
+            Using conexion
+                conexion.Open()
+                Dim cmd As New SqlCommand("ALTER DATABASE Proyecto2023 ; RESTORE DATABASE Poyecto2023 FROM disk= N'" & p_direccion & "'", conexion)
+
+                cmd.ExecuteNonQuery()
+                conexion.Close()
+            End Using
+            'MsgBox("Restauracion completa", vbYes + vbExclamation, "Volver")
+            Return True
+        Catch ex As Exception
+            'MsgBox("Restauracion incompleta", vbYes, "Volver")
+            Return False
+        End Try
+    End Function
+
 End Class

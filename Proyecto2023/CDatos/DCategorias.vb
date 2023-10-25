@@ -7,7 +7,6 @@ Public Class DCategorias
     Private descripcion As String
 
     Private comando As SqlCommand
-    Private dr As SqlDataReader
 
     Public Sub New(desc As String)
         descripcion = desc
@@ -95,28 +94,5 @@ Public Class DCategorias
             MsgBox(ex.Message)
             Return False
         End Try
-    End Function
-
-    Public Function existeCategoria(descripcion As String) As Boolean
-        Dim resultado As Boolean = False
-        Try
-            conectar()
-
-            Dim comando = New SqlCommand("select * from Categorias where descripcion = '" & descripcion & "'")
-
-            comando.Connection = conexion
-
-            dr = comando.ExecuteReader
-
-            If (dr.Read) Then
-                resultado = True
-            End If
-            dr.Close()
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-            Return False
-        End Try
-        Return resultado
     End Function
 End Class

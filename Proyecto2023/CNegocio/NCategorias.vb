@@ -19,13 +19,4 @@
             Return Nothing
         End Try
     End Function
-
-    Public Function existeCategoria(descripcion As String) As Boolean
-        Dim dcateg As New DCategorias()
-        If (dcateg.existeCategoria(descripcion)) Then
-            Return True
-        Else
-            Return False
-        End If
-    End Function
 End Class

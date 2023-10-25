@@ -180,7 +180,10 @@ Partial Class RBackup
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnBackup)
         Me.Controls.Add(Me.Label5)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "RBackup"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "RBackup"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
