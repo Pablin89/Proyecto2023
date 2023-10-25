@@ -22,7 +22,7 @@ Public Class DProductos
         nombre = nom
         codigo = cod
         stock = stk
-        strock_minimo = stk_min
+        stock_minimo = stk_min
         precio = prec
         id_estado_producto = id_est
         id_categoria = id_cat
