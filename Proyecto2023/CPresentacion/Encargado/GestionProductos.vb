@@ -158,8 +158,8 @@
             MsgBox("Debe introducir un nombre para buscar", MsgBoxStyle.Exclamation, "Advertencia")
         Else
 
-            If (TextBox11.Text = "Vaso amarillo") Then
-                MsgBox("El producto" + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
+            If (existeNombreProductoA() = True) Then
+                MsgBox("El producto: " + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
             Else
                 MsgBox("Ningún producto tiene este nombre en el sistema, puede agregarlo.", MsgBoxStyle.Information, "Buscar")
                 Panel6.Visible = True
@@ -170,6 +170,28 @@
             End If
         End If
     End Sub
+
+    Public Function existeNombreProductoA()
+        Dim nombre As String = TextBox11.Text
+        Try
+            Dim prod As New NProductos()
+            Return prod.existeNombreProducto(nombre)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    Public Function existeCodigoProductoA()
+        Dim codigo As Integer = TextBox12.Text
+        Try
+            Dim prod As New NProductos()
+            Return prod.existeCodigoProducto(codigo)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
 
     'Metodos Formulario Editar producto
 
