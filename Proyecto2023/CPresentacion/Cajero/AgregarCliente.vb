@@ -148,7 +148,7 @@ Public Class AgregarCliente
                 If ask = MsgBoxResult.Yes Then
 
                     'Verifico nuevamente si ya existe el DNI 
-                    If (existeCliente() = True) Then
+                    If (existeClienteR() = False) Then
                         agregarCliente()
 
                         MsgBox("Cliente Agregado", MsgBoxStyle.OkOnly, "Agregado")
@@ -202,6 +202,18 @@ Public Class AgregarCliente
 
     Public Function existeCliente()
         Dim dni As Integer = Val(TextBox11.Text)
+        Try
+            Dim cte As New NClientes()
+            Return cte.existeCliente(dni)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    'Repreguntar si existe el cliente con el textbox7 del formulario
+    Public Function existeClienteR()
+        Dim dni As Integer = Val(TextBox7.Text)
         Try
             Dim cte As New NClientes()
             Return cte.existeCliente(dni)
