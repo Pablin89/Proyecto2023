@@ -77,6 +77,30 @@ Public Class DCategorias
         End Try
     End Function
 
+    Public Function verCategoriasCbx() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_categoria,
+                                descripcion
+                          from Categorias")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Function editarCategoria(descripcion As String, id As Integer) As Boolean
         Try
             conectar()

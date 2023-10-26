@@ -22,7 +22,7 @@ Partial Class GestionProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GestionarProductos = New System.Windows.Forms.TabControl()
         Me.ConsultarProductos = New System.Windows.Forms.TabPage()
         Me.CBCateg = New System.Windows.Forms.ComboBox()
@@ -704,8 +704,8 @@ Partial Class GestionProductos
         '
         'Id
         '
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Id.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Id.DefaultCellStyle = DataGridViewCellStyle2
         Me.Id.HeaderText = "ID Producto"
         Me.Id.Name = "Id"
         Me.Id.Width = 120
@@ -895,7 +895,6 @@ Partial Class GestionProductos
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
         Me.ComboBox1.Location = New System.Drawing.Point(177, 195)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(149, 24)

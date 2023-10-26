@@ -129,15 +129,28 @@
             ask = MsgBox("Seguro desea agregar producto?", MsgBoxStyle.YesNo, "Confirmar inserción")
 
             If ask = MsgBoxResult.Yes Then
-                MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
-                TextBox5.Text = ""
-                TextBox6.Text = ""
-                ComboBox1.Text = ""
-                TextBox7.Text = ""
-                TextBox13.Text = ""
-                TextBox12.Text = ""
-                TDescripcion2.Text = ""
-                ComboBox2.Text = ""
+                'Verifico de nuevo si existe el nombre del producto
+                If (existeNombreProductoAdd(TextBox5.Text) = True) Then
+                    MsgBox("El nombre del producto ya existe", MsgBoxStyle.Critical, "Error")
+                Else
+                    'Verifico si existe el código de producto
+                    If (existeCodigoProductoAdd() = True) Then
+                        MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
+                    Else
+                        agregarProducto()
+                        MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
+                        TextBox5.Text = ""
+                        TextBox6.Text = ""
+                        ComboBox1.Text = ""
+                        TextBox7.Text = ""
+                        TextBox13.Text = ""
+                        TextBox12.Text = ""
+                        TDescripcion2.Text = ""
+                        ComboBox2.Text = ""
+                    End If
+
+                End If
+
             Else
                 MsgBox("No se agregó el producto", MsgBoxStyle.OkOnly, "Producto no insertado")
 
@@ -158,7 +171,7 @@
             MsgBox("Debe introducir un nombre para buscar", MsgBoxStyle.Exclamation, "Advertencia")
         Else
 
-            If (existeNombreProductoA() = True) Then
+            If (existeNombreProductoAdd(TextBox11.Text) = True) Then
                 MsgBox("El producto: " + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
             Else
                 MsgBox("Ningún producto tiene este nombre en el sistema, puede agregarlo.", MsgBoxStyle.Information, "Buscar")
@@ -171,8 +184,7 @@
         End If
     End Sub
 
-    Public Function existeNombreProductoA()
-        Dim nombre As String = TextBox11.Text
+    Public Function existeNombreProductoAdd(nombre As String)
         Try
             Dim prod As New NProductos()
             Return prod.existeNombreProducto(nombre)
@@ -182,7 +194,8 @@
         End Try
     End Function
 
-    Public Function existeCodigoProductoA()
+
+    Public Function existeCodigoProductoAdd()
         Dim codigo As Integer = TextBox12.Text
         Try
             Dim prod As New NProductos()
@@ -192,6 +205,40 @@
             Return False
         End Try
     End Function
+
+    Public Sub comboboxCategorias()
+        Try
+            Dim dc As New NCategorias
+            Dim dt As DataTable = dc.verCategoriasCbx()
+            ComboBox1.DataSource = dt
+            ComboBox1.DisplayMember = "descripcion"
+            ComboBox1.ValueMember = "id_categoria"
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub agregarProducto()
+        Dim descripcion As String = TDescripcion2.Text
+        Dim nombre As String = TextBox5.Text
+        Dim codigo As String = Val(TextBox12.Text)
+        Dim stock As Integer = Val(TextBox7.Text)
+        Dim stock_minimo As Integer = Val(TextBox13.Text)
+        Dim precio As Double = Val(TextBox6.Text)
+        Dim id_estado_producto As Integer
+        If (ComboBox2.Text = "Activo") Then
+            id_estado_producto = 1
+        Else
+            id_estado_producto = 0
+        End If
+        Dim id_categoria As Integer = Val(ComboBox1.SelectedValue.ToString)
+        Try
+            Dim cproducto As New NProductos()
+            cproducto.insertarProducto(descripcion, nombre, codigo, stock, stock_minimo, precio, id_estado_producto, id_categoria)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     'Metodos Formulario Editar producto
 
@@ -505,6 +552,8 @@
         Panel6.Visible = False
         Button3.Visible = False
 
+
+        comboboxCategorias()
     End Sub
 
     Private Sub ChCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles ChCodigo.CheckedChanged
