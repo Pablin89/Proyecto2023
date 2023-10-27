@@ -328,7 +328,15 @@
     End Sub
 
     'Elementos del Formulario editar
-
+    Public Sub verProductosEditar()
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.verProductosEditar()
+            DataGridView2.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub TextBox9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox9.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -552,7 +560,8 @@
         Panel6.Visible = False
         Button3.Visible = False
 
-
+        DataGridView2.AllowUserToAddRows = False
+        verProductosEditar()
         comboboxCategorias()
     End Sub
 

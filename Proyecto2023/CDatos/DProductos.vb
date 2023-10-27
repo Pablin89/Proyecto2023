@@ -174,4 +174,37 @@ Public Class DProductos
         End Try
         Return resultado
     End Function
+
+    Public Function verProductosEditar() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Productos.descripcion As DESCRIPCIÓN,
+	                                            Categorias.descripcion As CATEGORIA,
+	                                            Productos.stock As STOCK,
+	                                            Productos.sock_minimo As 'STOCK MINIMO',
+	                                            Productos.precio As PRECIO,
+	                                            Estados_productos.descripcion As ESTADO
+                                            from Productos
+	                                            INNER JOIN Estados_productos ON (Estados_productos.id_estado_producto = Productos.id_estado_producto )
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

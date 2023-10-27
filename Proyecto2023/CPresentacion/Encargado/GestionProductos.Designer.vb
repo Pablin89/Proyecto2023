@@ -22,7 +22,6 @@ Partial Class GestionProductos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GestionarProductos = New System.Windows.Forms.TabControl()
         Me.ConsultarProductos = New System.Windows.Forms.TabPage()
         Me.CBCateg = New System.Windows.Forms.ComboBox()
@@ -79,8 +78,6 @@ Partial Class GestionProductos
         Me.LDescripcion1 = New System.Windows.Forms.Label()
         Me.LNombreProducto = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.Id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ChBCategoria = New System.Windows.Forms.CheckBox()
         Me.ChProducto = New System.Windows.Forms.CheckBox()
         Me.BBuscar = New System.Windows.Forms.Button()
@@ -695,26 +692,11 @@ Partial Class GestionProductos
         'DataGridView2
         '
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.Nombre})
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(413, 368)
         Me.DataGridView2.TabIndex = 0
-        '
-        'Id
-        '
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Id.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Id.HeaderText = "ID Producto"
-        Me.Id.Name = "Id"
-        Me.Id.Width = 120
-        '
-        'Nombre
-        '
-        Me.Nombre.HeaderText = "Nombre del Producto"
-        Me.Nombre.Name = "Nombre"
-        Me.Nombre.Width = 250
         '
         'ChBCategoria
         '
@@ -1102,8 +1084,6 @@ Partial Class GestionProductos
     Friend WithEvents ComboBox3 As ComboBox
     Friend WithEvents CBCateg As ComboBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Id As DataGridViewTextBoxColumn
-    Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Button5 As Button
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox

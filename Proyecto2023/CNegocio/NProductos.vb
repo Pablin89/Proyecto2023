@@ -25,4 +25,16 @@
             Return False
         End If
     End Function
+
+    Public Function verProductosEditar() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosEditar()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

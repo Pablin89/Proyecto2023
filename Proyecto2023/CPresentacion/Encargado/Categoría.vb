@@ -9,8 +9,11 @@ Public Class Categoría
                 MsgBox("Ya existe: " + TextBox1.Text, MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Categoría: '" + TextBox1.Text + "' Agregada", MsgBoxStyle.Information, "Agregada")
-                GestionProductos.ComboBox1.Items.Add(TextBox1.Text)
+                'GestionProductos.ComboBox1.Items.Add(TextBox1.Text)
                 agregarCategoria()
+                verCategorias()
+                GestionProductos.comboboxCategorias()
+
             End If
 
 
