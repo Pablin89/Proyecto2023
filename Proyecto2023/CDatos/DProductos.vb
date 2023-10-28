@@ -206,16 +206,19 @@ Public Class DProductos
         Try
             conectar()
             Dim comando = New SqlCommand("select 
-	                                            id_producto,
-	                                            nombre,
-                                                codigo,
-	                                            descripcion,
-	                                            id_categoria,
-	                                            stock,
-	                                            sock_minimo,
-	                                            precio,
-	                                            id_estado_producto
-                                            from Productos where id_producto =" & id & "")
+	                                            Productos.id_producto,
+	                                            Productos.nombre,
+                                                Productos.codigo,
+	                                            Productos.descripcion,
+	                                            Categorias.descripcion,
+	                                            Productos.stock,
+	                                            Productos.sock_minimo,
+	                                            Productos.precio,
+	                                            Productos.id_estado_producto
+                                            from Productos 
+                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where id_producto =" & id & "")
+                                            
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then

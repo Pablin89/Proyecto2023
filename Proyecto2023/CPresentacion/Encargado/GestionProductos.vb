@@ -347,7 +347,20 @@
             TNombre.Text = dt.Rows(0)(1).ToString
             TextBox9.Text = dt.Rows(0)(2).ToString
             TDescripcion.Text = dt.Rows(0)(3).ToString
+            'categoriaSeleccionadaEdit(dt.Rows(0)(4).ToString)
             TDireccion.Text = dt.Rows(0)(5).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub categoriaSeleccionadaEdit(idcat As String)
+        Try
+            Dim dc As New NCategorias
+            Dim dt As DataTable = dc.verCategoriasCbx()
+            ComboBox4.DataSource = dt
+            ComboBox4.DisplayMember = "descripcion"
+            ComboBox4.ValueMember = "id_categoria"
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -362,6 +375,7 @@
         'id = Me.DataGridView2.Item(0, i).Value
         'MsgBox("" + id.ToString)
         If (MsgBoxResult.Yes = ask) Then
+            ComboBox4.Text = Me.DataGridView2.Item(3, i).Value.ToString
             id = Me.DataGridView2.Item(0, i).Value
             'MsgBox("" + id.ToString)
             seleccionarProductoEditar(id)
@@ -440,7 +454,6 @@
         If ((TNombre.Text <> "") And
             (TextBox9.Text <> "") And
             (TDescripcion.Text <> "") And
-            (TFechaNac.Text <> "") And
             (TDireccion.Text <> "") And
             (TextBox10.Text <> "") And
             (TTelefono.Text <> "") And
@@ -456,7 +469,7 @@
                 TNombre.Text = ""
                 TextBox9.Text = ""
                 TDescripcion.Text = ""
-                TFechaNac.Text = ""
+                'TFechaNac.Text = ""
                 TDireccion.Text = ""
                 TextBox10.Text = ""
                 TTelefono.Text = ""
