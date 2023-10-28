@@ -431,7 +431,6 @@ Partial Class GestionProductos
         'ComboBox3
         '
         Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"Bazar", "Libreria", "Ferreteria"})
         Me.ComboBox3.Location = New System.Drawing.Point(376, 132)
         Me.ComboBox3.Name = "ComboBox3"
         Me.ComboBox3.Size = New System.Drawing.Size(225, 24)

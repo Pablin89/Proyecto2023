@@ -213,6 +213,7 @@
             ComboBox1.DataSource = dt
             ComboBox1.DisplayMember = "descripcion"
             ComboBox1.ValueMember = "id_categoria"
+            ComboBox1.SelectedValue = -1
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -261,6 +262,20 @@
         End If
 
 
+    End Sub
+
+    Public Sub comboboxCategoriasEditarBuscar()
+        Try
+            Dim dc As New NCategorias
+            Dim dt As DataTable = dc.verCategoriasCbx()
+            ComboBox3.DataSource = dt
+            ComboBox3.DisplayMember = "descripcion"
+            ComboBox3.ValueMember = "id_categoria"
+            ComboBox3.SelectedValue = -1
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
     Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
         Dim nombre As String
@@ -665,6 +680,7 @@
         DataGridView2.AllowUserToAddRows = False
         verProductosEditar()
         comboboxCategorias()
+        comboboxCategoriasEditarBuscar()
     End Sub
 
     Private Sub ChCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles ChCodigo.CheckedChanged
