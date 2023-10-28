@@ -375,7 +375,7 @@
         'id = Me.DataGridView2.Item(0, i).Value
         'MsgBox("" + id.ToString)
         If (MsgBoxResult.Yes = ask) Then
-            ComboBox4.Text = Me.DataGridView2.Item(3, i).Value.ToString
+            'ComboBox4.Text = Me.DataGridView2.Item(3, i).Value.ToString
             id = Me.DataGridView2.Item(0, i).Value
             'MsgBox("" + id.ToString)
             seleccionarProductoEditar(id)
@@ -598,7 +598,7 @@
         TextBox8.Enabled = False
         TextBox4.Enabled = False
 
-        Panel4.Enabled = False
+        'Panel4.Enabled = False
 
         Panel6.Visible = False
         Button3.Visible = False
