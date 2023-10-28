@@ -210,6 +210,7 @@ Public Class DProductos
 	                                            Productos.nombre,
                                                 Productos.codigo,
 	                                            Productos.descripcion,
+                                                Productos.id_categoria,
 	                                            Categorias.descripcion,
 	                                            Productos.stock,
 	                                            Productos.sock_minimo,

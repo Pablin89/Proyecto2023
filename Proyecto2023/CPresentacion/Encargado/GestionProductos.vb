@@ -347,20 +347,38 @@
             TNombre.Text = dt.Rows(0)(1).ToString
             TextBox9.Text = dt.Rows(0)(2).ToString
             TDescripcion.Text = dt.Rows(0)(3).ToString
-            'categoriaSeleccionadaEdit(dt.Rows(0)(4).ToString)
-            TDireccion.Text = dt.Rows(0)(5).ToString
+            categoriaSeleccionadaEdit(Val(dt.Rows(0)(4).ToString))
+            TStockEdit.Text = dt.Rows(0)(6).ToString
+            TextBox10.Text = dt.Rows(0)(7).ToString
+            TPrecioEdit.Text = dt.Rows(0)(8).ToString
+            estadoSeleccionadoEdit(Val(dt.Rows(0)(9).ToString))
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Public Sub categoriaSeleccionadaEdit(idcat As String)
+    Public Sub categoriaSeleccionadaEdit(idcat As Integer)
         Try
             Dim dc As New NCategorias
             Dim dt As DataTable = dc.verCategoriasCbx()
             ComboBox4.DataSource = dt
             ComboBox4.DisplayMember = "descripcion"
             ComboBox4.ValueMember = "id_categoria"
+            ComboBox4.SelectedValue = idcat
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub estadoSeleccionadoEdit(idestado As Integer)
+        Try
+            Dim de As New NEstados
+            Dim dt As DataTable = de.verEstadoProductos()
+            ComboBox5.DataSource = dt
+            ComboBox5.DisplayMember = "descripcion"
+            ComboBox5.ValueMember = "id_estado_producto"
+            ComboBox5.SelectedValue = idestado
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -401,7 +419,7 @@
 
     End Sub
 
-    Private Sub TDireccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDireccion.KeyPress
+    Private Sub TDireccion_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TStockEdit.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
 
@@ -441,9 +459,9 @@
 
     End Sub
 
-    Private Sub TTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TTelefono.KeyPress
+    Private Sub TTelefono_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TPrecioEdit.KeyPress
 
-        Call entradaDecimal(TTelefono, e)
+        Call entradaDecimal(TPrecioEdit, e)
 
 
     End Sub
@@ -454,10 +472,9 @@
         If ((TNombre.Text <> "") And
             (TextBox9.Text <> "") And
             (TDescripcion.Text <> "") And
-            (TDireccion.Text <> "") And
+            (TStockEdit.Text <> "") And
             (TextBox10.Text <> "") And
-            (TTelefono.Text <> "") And
-            (TCorreo.Text <> "")
+            (TPrecioEdit.Text <> "")
             ) Then
 
 
@@ -469,11 +486,11 @@
                 TNombre.Text = ""
                 TextBox9.Text = ""
                 TDescripcion.Text = ""
-                'TFechaNac.Text = ""
-                TDireccion.Text = ""
+                ComboBox4.DataSource = Nothing
+                TStockEdit.Text = ""
                 TextBox10.Text = ""
-                TTelefono.Text = ""
-                TCorreo.Text = ""
+                TPrecioEdit.Text = ""
+                ComboBox5.DataSource = Nothing
             Else
                 MsgBox("No se Editó el producto", MsgBoxStyle.OkOnly, "Producto No Editado")
 

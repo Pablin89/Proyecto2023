@@ -59,15 +59,15 @@ Partial Class GestionProductos
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.LStockMinimo1 = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.LCódigo1 = New System.Windows.Forms.Label()
         Me.BCambios = New System.Windows.Forms.Button()
-        Me.TCorreo = New System.Windows.Forms.TextBox()
-        Me.TTelefono = New System.Windows.Forms.TextBox()
-        Me.TDireccion = New System.Windows.Forms.TextBox()
+        Me.TPrecioEdit = New System.Windows.Forms.TextBox()
+        Me.TStockEdit = New System.Windows.Forms.TextBox()
         Me.TDescripcion = New System.Windows.Forms.TextBox()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.LEstado1 = New System.Windows.Forms.Label()
@@ -104,7 +104,7 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -496,6 +496,7 @@ Partial Class GestionProductos
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.ComboBox5)
         Me.Panel4.Controls.Add(Me.ComboBox4)
         Me.Panel4.Controls.Add(Me.Button4)
         Me.Panel4.Controls.Add(Me.TextBox10)
@@ -503,9 +504,8 @@ Partial Class GestionProductos
         Me.Panel4.Controls.Add(Me.TextBox9)
         Me.Panel4.Controls.Add(Me.LCódigo1)
         Me.Panel4.Controls.Add(Me.BCambios)
-        Me.Panel4.Controls.Add(Me.TCorreo)
-        Me.Panel4.Controls.Add(Me.TTelefono)
-        Me.Panel4.Controls.Add(Me.TDireccion)
+        Me.Panel4.Controls.Add(Me.TPrecioEdit)
+        Me.Panel4.Controls.Add(Me.TStockEdit)
         Me.Panel4.Controls.Add(Me.TDescripcion)
         Me.Panel4.Controls.Add(Me.TNombre)
         Me.Panel4.Controls.Add(Me.LEstado1)
@@ -519,6 +519,14 @@ Partial Class GestionProductos
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(389, 368)
         Me.Panel4.TabIndex = 1
+        '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(171, 150)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(204, 24)
+        Me.ComboBox4.TabIndex = 18
         '
         'Button4
         '
@@ -580,29 +588,21 @@ Partial Class GestionProductos
         Me.BCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BCambios.UseVisualStyleBackColor = True
         '
-        'TCorreo
+        'TPrecioEdit
         '
-        Me.TCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TCorreo.Location = New System.Drawing.Point(166, 285)
-        Me.TCorreo.Name = "TCorreo"
-        Me.TCorreo.Size = New System.Drawing.Size(209, 21)
-        Me.TCorreo.TabIndex = 11
+        Me.TPrecioEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TPrecioEdit.Location = New System.Drawing.Point(166, 252)
+        Me.TPrecioEdit.Name = "TPrecioEdit"
+        Me.TPrecioEdit.Size = New System.Drawing.Size(209, 21)
+        Me.TPrecioEdit.TabIndex = 10
         '
-        'TTelefono
+        'TStockEdit
         '
-        Me.TTelefono.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TTelefono.Location = New System.Drawing.Point(166, 252)
-        Me.TTelefono.Name = "TTelefono"
-        Me.TTelefono.Size = New System.Drawing.Size(209, 21)
-        Me.TTelefono.TabIndex = 10
-        '
-        'TDireccion
-        '
-        Me.TDireccion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TDireccion.Location = New System.Drawing.Point(166, 186)
-        Me.TDireccion.Name = "TDireccion"
-        Me.TDireccion.Size = New System.Drawing.Size(85, 21)
-        Me.TDireccion.TabIndex = 9
+        Me.TStockEdit.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TStockEdit.Location = New System.Drawing.Point(166, 186)
+        Me.TStockEdit.Name = "TStockEdit"
+        Me.TStockEdit.Size = New System.Drawing.Size(85, 21)
+        Me.TStockEdit.TabIndex = 9
         '
         'TDescripcion
         '
@@ -968,13 +968,13 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
-        'ComboBox4
+        'ComboBox5
         '
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(171, 150)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(204, 24)
-        Me.ComboBox4.TabIndex = 18
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Location = New System.Drawing.Point(166, 285)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(209, 24)
+        Me.ComboBox5.TabIndex = 19
         '
         'GestionProductos
         '
@@ -1033,9 +1033,8 @@ Partial Class GestionProductos
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BCambios As Button
-    Friend WithEvents TCorreo As TextBox
-    Friend WithEvents TTelefono As TextBox
-    Friend WithEvents TDireccion As TextBox
+    Friend WithEvents TPrecioEdit As TextBox
+    Friend WithEvents TStockEdit As TextBox
     Friend WithEvents TDescripcion As TextBox
     Friend WithEvents TNombre As TextBox
     Friend WithEvents LEstado1 As Label
@@ -1093,4 +1092,5 @@ Partial Class GestionProductos
     Friend WithEvents TextBox17 As TextBox
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents ComboBox4 As ComboBox
+    Friend WithEvents ComboBox5 As ComboBox
 End Class
