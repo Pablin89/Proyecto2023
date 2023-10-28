@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 
 Public Class DProductos
     Inherits Conexion
@@ -254,6 +255,240 @@ Public Class DProductos
         Catch ex As Exception
             MsgBox(ex.Message)
             Return False
+        End Try
+    End Function
+
+    'Busquedas en editar
+    Public Function buscarProductoNombreE(nombre As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Productos.nombre like '%" & nombre & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarProductoCodigoE(codigo As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Productos.codigo like '%" & codigo & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarProductoCategoriaE(categoria As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Categorias.descripcion like '%" & categoria & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Consultar productos
+    Public Function verProductosConsultar() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Busqueda en consultar
+
+    Public Function buscarProductoNombreC(nombre As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Productos.nombre like '%" & nombre & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarProductoCodigoC(codigo As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Productos.codigo like '%" & codigo & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarProductoCategoriaC(categoria As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto As ID,
+	                                            Productos.codigo As CÓDIGO,
+	                                            Productos.nombre As NOMBRE,
+	                                            Categorias.descripcion As CATEGORIA
+                                            from Productos
+	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            where Categorias.descripcion like '%" & categoria & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function seleccionarProductoConsultar(id As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                            Productos.id_producto,
+	                                            Productos.nombre,
+                                                Productos.codigo,
+	                                            Productos.descripcion,
+	                                            Categorias.descripcion,
+                                                Productos.precio,
+	                                            Productos.stock,
+	                                            Productos.sock_minimo,
+	                                            Estados_productos.descripcion
+                                            from Productos 
+                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                            INNER JOIN Estados_productos ON (Estados_productos.id_estado_producto = Productos.id_estado_producto)
+                                            where id_producto =" & id & "")
+
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
         End Try
     End Function
 End Class

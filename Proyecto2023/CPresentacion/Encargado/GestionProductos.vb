@@ -314,32 +314,77 @@
 
         'Else
         If (Not CheckBox1.Checked And Not ChProducto.Checked And ChBCategoria.Checked) Then
-                If (categoria = "") Then
-                    MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
-                Else
-                    MsgBox("Seleccionaste buscar Producto por 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
-                Panel4.Enabled = True
+            If (categoria = "") Then
+                MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Seleccionaste buscar Producto por 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+                'Panel4.Enabled = True
+                buscarProductoCategoriaeE(categoria)
             End If
 
         ElseIf (Not CheckBox1.Checked And ChProducto.Checked And Not ChBCategoria.Checked) Then
-                If (nombre = "") Then
-                    MsgBox("Completa el campo nombre", MsgBoxStyle.Critical, "Error")
-                Else
-                    MsgBox("Seleccionaste buscar Producto por 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
-                Panel4.Enabled = True
+            If (nombre = "") Then
+                MsgBox("Completa el campo nombre", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Seleccionaste buscar Producto por 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+                'Panel4.Enabled = True
+                buscarProductoNombreE(nombre)
+
             End If
 
         ElseIf (CheckBox1.Checked And Not ChProducto.Checked And Not ChBCategoria.Checked) Then
-                If (codigo = "") Then
-                    MsgBox("Completa el campo codigo", MsgBoxStyle.Critical, "Error")
-                Else
-                    MsgBox("Seleccionaste buscar Producto por 'codigo: '" + codigo, MsgBoxStyle.Information, "Buscar")
-                Panel4.Enabled = True
+            If (codigo = "") Then
+                MsgBox("Completa el campo codigo", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Seleccionaste buscar Producto por 'codigo: '" + codigo, MsgBoxStyle.Information, "Buscar")
+                'Panel4.Enabled = True
+                buscarProductoCodigoeE(codigo)
+
             End If
 
         Else
-                MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+            MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
+    End Sub
+
+    'Listar todos los productos en el formulario editar
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        verProductosEditar()
+    End Sub
+
+    'Busqueda de producto por nombre del formulario editar
+    Public Sub buscarProductoNombreE(nombre As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoNombreE(nombre)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'Busqueda de producto por codigo del formulario editar
+    Public Sub buscarProductoCodigoeE(codigo As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoCodigoE(codigo)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Busqueda de producto por categoria del formulario editar
+    Public Sub buscarProductoCategoriaeE(categoria As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoCategoriaE(categoria)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     'Elementos del Formulario editar
@@ -353,6 +398,7 @@
         End Try
     End Sub
 
+    '
     Public Sub seleccionarProductoEditar(id As Integer)
         Try
             Dim dp As New NProductos
@@ -561,8 +607,102 @@
         End If
     End Sub
 
-    'Metodos de Consultar productos
+    'METODOS DE CONSULTAR PRODUCTOS
+    'Elementos del Formulario editar
+    Public Sub verProductosConsultar()
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.verProductosConsultar()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
+    'Listar todos los productos en el formulario consultar
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        limpiarDetalles()
+        verProductosConsultar()
+    End Sub
+    'Busqueda de producto por nombre del formulario consultar
+    Public Sub buscarProductoNombreC(nombre As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoNombreC(nombre)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'Busqueda de producto por codigo del formulario consultar
+    Public Sub buscarProductoCodigoC(codigo As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoCodigoC(codigo)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Busqueda de producto por categoria del formulario consultar
+    Public Sub buscarProductoCategoriaC(categoria As String)
+        Try
+            Dim dp As New NProductos()
+            Dim dt As DataTable = dp.buscarProductoCategoriaC(categoria)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+    'Seleccionar un producto del datagrid haciendo click
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+
+        ask = MsgBox("Ver detalle del producto: '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
+        If (MsgBoxResult.Yes = ask) Then
+            id = Me.DataGridView1.Item(0, i).Value
+            seleccionarProductoConsultar(id)
+        End If
+    End Sub
+
+    Public Sub seleccionarProductoConsultar(id As Integer)
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.seleccionarProductoConsultar(id)
+
+            'DataGridView2.DataSource = dt
+            LRnombre.Text = dt.Rows(0)(1).ToString
+            LRcodigo.Text = dt.Rows(0)(2).ToString
+            LRdescripcion.Text = dt.Rows(0)(3).ToString
+            LRcategoria.Text = dt.Rows(0)(4).ToString
+            LRprecio.Text = dt.Rows(0)(5).ToString
+            LRstock.Text = dt.Rows(0)(6).ToString
+            LRstock_minimo.Text = dt.Rows(0)(7).ToString
+            LRestado.Text = dt.Rows(0)(8).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Limpiar los Labels del detalle
+    Public Sub limpiarDetalles()
+        LRnombre.Text = ""
+        LRcodigo.Text = ""
+        LRdescripcion.Text = ""
+        LRcategoria.Text = ""
+        LRprecio.Text = ""
+        LRstock.Text = ""
+        LRstock_minimo.Text = ""
+        LRestado.Text = ""
+    End Sub
     Private Sub TCodigo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TCodigo.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -581,7 +721,22 @@
 
 
     End Sub
+
+    Public Sub comboboxCategoriasConsultarBuscar()
+        Try
+            Dim dc As New NCategorias
+            Dim dt As DataTable = dc.verCategoriasCbx()
+            CBCateg.DataSource = dt
+            CBCateg.DisplayMember = "descripcion"
+            CBCateg.ValueMember = "id_categoria"
+            CBCateg.SelectedValue = -1
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        limpiarDetalles()
         Dim nombre As String
         Dim codigo As String
         Dim categoria As String
@@ -621,6 +776,7 @@
                 MsgBox("elige una categoría", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Seleccionaste buscar Producto por 'categoria': " + categoria, MsgBoxStyle.Information, "Buscar")
+                buscarProductoCategoriaC(categoria)
             End If
 
         ElseIf (Not ChCodigo.Checked And ChNombreProducto.Checked And Not ChCategoria.Checked) Then
@@ -628,6 +784,7 @@
                 MsgBox("Campo nombre obligatorio", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Seleccionaste buscar Producto por 'nombre': " + nombre, MsgBoxStyle.Information, "Buscar")
+                buscarProductoNombreC(nombre)
             End If
 
         ElseIf (ChCodigo.Checked And Not ChNombreProducto.Checked And Not ChCategoria.Checked) Then
@@ -635,6 +792,7 @@
                 MsgBox("Campo código obligatorio", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Seleccionaste buscar Producto por 'codigo': " + codigo, MsgBoxStyle.Information, "Buscar")
+                buscarProductoCodigoC(codigo)
             End If
 
         Else
@@ -681,6 +839,9 @@
         verProductosEditar()
         comboboxCategorias()
         comboboxCategoriasEditarBuscar()
+
+        verProductosConsultar()
+        comboboxCategoriasConsultarBuscar()
     End Sub
 
     Private Sub ChCodigo_CheckedChanged(sender As Object, e As EventArgs) Handles ChCodigo.CheckedChanged
@@ -691,6 +852,7 @@
             TCodigo.Enabled = True
             TNombreProd.Enabled = False
             CBCateg.Enabled = False
+            CBCateg.SelectedValue = -1
         End If
     End Sub
 
@@ -702,6 +864,7 @@
             TNombreProd.Enabled = True
             TCodigo.Enabled = False
             CBCateg.Enabled = False
+            CBCateg.SelectedValue = -1
         End If
     End Sub
 
@@ -713,6 +876,7 @@
             TNombreProd.Clear()
             TCodigo.Enabled = False
             TNombreProd.Enabled = False
+            CBCateg.Enabled = True
         End If
     End Sub
 
@@ -724,6 +888,7 @@
             TextBox8.Enabled = True
             TextBox4.Enabled = False
             ComboBox3.Enabled = False
+            ComboBox3.SelectedValue = -1
         End If
     End Sub
 
@@ -735,6 +900,7 @@
             TextBox4.Enabled = True
             TextBox8.Enabled = False
             ComboBox3.Enabled = False
+            ComboBox3.SelectedValue = -1
         End If
     End Sub
 
@@ -749,6 +915,5 @@
             TextBox8.Enabled = False
         End If
     End Sub
-
 
 End Class

@@ -58,4 +58,99 @@
             Return False
         End If
     End Function
+
+    'Busqueda por nombre de editar
+    Public Function buscarProductoNombreE(nombre As String) As DataTable
+
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoNombreE(nombre)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    'busqueda por código de editar
+    Public Function buscarProductoCodigoE(codigo As Integer) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCodigoE(codigo)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'busqueda por categoria de editar
+    Public Function buscarProductoCategoriaE(categoria As String) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCategoriaE(categoria)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Busqueda por nombre de consultar
+    Public Function buscarProductoNombreC(nombre As String) As DataTable
+
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoNombreC(nombre)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    'busqueda por código de consultar
+    Public Function buscarProductoCodigoC(codigo As Integer) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCodigoC(codigo)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'busqueda por categoria de consultar
+    Public Function buscarProductoCategoriaC(categoria As String) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCategoriaC(categoria)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    'Listar todos los productos en consultar
+    Public Function verProductosConsultar() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosConsultar()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    Public Function seleccionarProductoConsultar(id As Integer) As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.seleccionarProductoConsultar(id)
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
