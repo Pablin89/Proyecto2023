@@ -384,6 +384,23 @@
         End Try
     End Sub
 
+    Private Sub editarProducto()
+        Dim descripcion As String = TDescripcion.Text
+        Dim nombre As String = TNombre.Text
+        Dim codigo As String = Val(TextBox9.Text)
+        Dim stock As Integer = Val(TStockEdit.Text)
+        Dim stock_minimo As Integer = Val(TextBox10.Text)
+        Dim precio As Double = Val(TPrecioEdit.Text)
+        Dim id_estado_producto As Integer = Val(ComboBox5.SelectedValue.ToString)
+        Dim id_categoria As Integer = Val(ComboBox4.SelectedValue.ToString)
+        Try
+            Dim cproducto As New NProductos()
+            cproducto.editarProducto(descripcion, nombre, codigo, stock, stock_minimo, precio, id_estado_producto, id_categoria, id)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
         Dim ask As MsgBoxResult
         Dim i As Integer
@@ -395,6 +412,7 @@
         If (MsgBoxResult.Yes = ask) Then
             'ComboBox4.Text = Me.DataGridView2.Item(3, i).Value.ToString
             id = Me.DataGridView2.Item(0, i).Value
+            Panel4.Enabled = True
             'MsgBox("" + id.ToString)
             seleccionarProductoEditar(id)
         End If
@@ -466,6 +484,27 @@
 
     End Sub
 
+    'Button para cancelar edición
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim ask As MsgBoxResult
+
+        ask = MsgBox("Seguro desea Cancelar edición?", MsgBoxStyle.YesNo, "Cancelar Edición")
+
+        If ask = MsgBoxResult.Yes Then
+            TNombre.Text = ""
+            TextBox9.Text = ""
+            TDescripcion.Text = ""
+            ComboBox4.DataSource = Nothing
+            TStockEdit.Text = ""
+            TextBox10.Text = ""
+            TPrecioEdit.Text = ""
+            ComboBox5.DataSource = Nothing
+            Panel4.Enabled = False
+        End If
+
+    End Sub
+
+    'Button para editar
     Private Sub BCambios_Click(sender As Object, e As EventArgs) Handles BCambios.Click
         Dim ask As MsgBoxResult
 
@@ -482,6 +521,8 @@
             ask = MsgBox("Seguro desea editar el producto?", MsgBoxStyle.YesNo, "Confirmar Edición")
 
             If ask = MsgBoxResult.Yes Then
+                editarProducto()
+                verProductosEditar()
                 MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
                 TNombre.Text = ""
                 TextBox9.Text = ""
@@ -491,6 +532,7 @@
                 TextBox10.Text = ""
                 TPrecioEdit.Text = ""
                 ComboBox5.DataSource = Nothing
+                Panel4.Enabled = False
             Else
                 MsgBox("No se Editó el producto", MsgBoxStyle.OkOnly, "Producto No Editado")
 
@@ -615,7 +657,7 @@
         TextBox8.Enabled = False
         TextBox4.Enabled = False
 
-        'Panel4.Enabled = False
+        Panel4.Enabled = False
 
         Panel6.Visible = False
         Button3.Visible = False
@@ -691,5 +733,6 @@
             TextBox8.Enabled = False
         End If
     End Sub
+
 
 End Class

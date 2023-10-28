@@ -183,6 +183,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property cancel_77947() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("cancel_77947", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_231909() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("chart_marketing_report_shop_graph_business_sales_shopping_analytics_finance_icon_"& _ 
@@ -207,6 +217,16 @@ Namespace My.Resources
         Friend ReadOnly Property Drive_Backup_23188() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Drive_Backup_23188", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ic_cancel_128_28318() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ic_cancel_128_28318", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

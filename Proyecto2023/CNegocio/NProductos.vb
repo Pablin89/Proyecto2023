@@ -49,4 +49,13 @@
             Return Nothing
         End Try
     End Function
+
+    Public Function editarProducto(descripcion As String, nombre As String, codigo As Integer, stock As Integer, sock_minimo As Integer, precio As Double, id_estado_producto As Integer, id_categoria As Integer, id_producto As Integer) As Boolean
+        Dim dproducto As New DProductos()
+        If (dproducto.editarProducto(descripcion, nombre, codigo, stock, sock_minimo, precio, id_estado_producto, id_categoria, id_producto)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class

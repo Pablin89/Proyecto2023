@@ -219,7 +219,7 @@ Public Class DProductos
                                             from Productos 
                                             INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
                                             where id_producto =" & id & "")
-                                            
+
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -234,6 +234,26 @@ Public Class DProductos
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing
+        End Try
+    End Function
+
+    Public Function editarProducto(descripcion As String, nombre As String, codigo As Integer, stock As Integer, sock_minimo As Integer, precio As Double, id_estado_producto As Integer, id_categoria As Integer, id_producto As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update Productos set descripcion = '" & descripcion & "',nombre = '" & nombre & "',codigo = " & codigo & ",stock = " & stock & ",sock_minimo = " & sock_minimo & ",precio = " & precio & ",id_estado_producto = " & id_estado_producto & ",id_categoria = " & id_categoria & " where id_producto = " & id_producto & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
         End Try
     End Function
 End Class

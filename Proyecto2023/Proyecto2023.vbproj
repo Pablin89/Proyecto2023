@@ -546,6 +546,8 @@
       <DependentUpon>Proyecto2023.edmx</DependentUpon>
       <LastGenOutput>Proyecto2023.vb</LastGenOutput>
     </Content>
+    <None Include="Resources\ic_cancel_128_28318.png" />
+    <None Include="Resources\cancel_77947.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

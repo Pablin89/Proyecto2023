@@ -25,7 +25,6 @@ Partial Class GestionProductos
         Me.GestionarProductos = New System.Windows.Forms.TabControl()
         Me.ConsultarProductos = New System.Windows.Forms.TabPage()
         Me.CBCateg = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TCodigo = New System.Windows.Forms.TextBox()
         Me.ChCodigo = New System.Windows.Forms.CheckBox()
         Me.LTitulo = New System.Windows.Forms.Label()
@@ -59,13 +58,13 @@ Partial Class GestionProductos
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.LStockMinimo1 = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
         Me.LCódigo1 = New System.Windows.Forms.Label()
-        Me.BCambios = New System.Windows.Forms.Button()
         Me.TPrecioEdit = New System.Windows.Forms.TextBox()
         Me.TStockEdit = New System.Windows.Forms.TextBox()
         Me.TDescripcion = New System.Windows.Forms.TextBox()
@@ -79,14 +78,10 @@ Partial Class GestionProductos
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
         Me.ChBCategoria = New System.Windows.Forms.CheckBox()
         Me.ChProducto = New System.Windows.Forms.CheckBox()
-        Me.BBuscar = New System.Windows.Forms.Button()
         Me.AgregarProductos = New System.Windows.Forms.TabPage()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.LBuscarProducto = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.LStockMinimo2 = New System.Windows.Forms.Label()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
@@ -104,7 +99,13 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
-        Me.ComboBox5 = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.BCambios = New System.Windows.Forms.Button()
+        Me.BBuscar = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -131,7 +132,7 @@ Partial Class GestionProductos
         Me.GestionarProductos.Multiline = True
         Me.GestionarProductos.Name = "GestionarProductos"
         Me.GestionarProductos.SelectedIndex = 0
-        Me.GestionarProductos.Size = New System.Drawing.Size(814, 621)
+        Me.GestionarProductos.Size = New System.Drawing.Size(843, 621)
         Me.GestionarProductos.TabIndex = 0
         '
         'ConsultarProductos
@@ -149,7 +150,7 @@ Partial Class GestionProductos
         Me.ConsultarProductos.Location = New System.Drawing.Point(4, 28)
         Me.ConsultarProductos.Name = "ConsultarProductos"
         Me.ConsultarProductos.Padding = New System.Windows.Forms.Padding(3)
-        Me.ConsultarProductos.Size = New System.Drawing.Size(806, 589)
+        Me.ConsultarProductos.Size = New System.Drawing.Size(835, 589)
         Me.ConsultarProductos.TabIndex = 0
         Me.ConsultarProductos.Text = "Consultar Productos"
         '
@@ -161,19 +162,6 @@ Partial Class GestionProductos
         Me.CBCateg.Name = "CBCateg"
         Me.CBCateg.Size = New System.Drawing.Size(225, 24)
         Me.CBCateg.TabIndex = 13
-        '
-        'Button1
-        '
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(302, 184)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(177, 37)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Buscar Producto"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'TCodigo
         '
@@ -235,7 +223,7 @@ Partial Class GestionProductos
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(3, 235)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(800, 351)
+        Me.Panel1.Size = New System.Drawing.Size(829, 351)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
@@ -259,7 +247,7 @@ Partial Class GestionProductos
         Me.Panel2.Controls.Add(Me.LDescripcion)
         Me.Panel2.Controls.Add(Me.LNombrepro)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(397, 0)
+        Me.Panel2.Location = New System.Drawing.Point(426, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(403, 351)
         Me.Panel2.TabIndex = 1
@@ -436,7 +424,7 @@ Partial Class GestionProductos
         Me.EditarProductos.Location = New System.Drawing.Point(4, 28)
         Me.EditarProductos.Name = "EditarProductos"
         Me.EditarProductos.Padding = New System.Windows.Forms.Padding(3)
-        Me.EditarProductos.Size = New System.Drawing.Size(806, 589)
+        Me.EditarProductos.Size = New System.Drawing.Size(835, 589)
         Me.EditarProductos.TabIndex = 1
         Me.EditarProductos.Text = "Editar Productos"
         '
@@ -489,13 +477,14 @@ Partial Class GestionProductos
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel3.Location = New System.Drawing.Point(3, 218)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(800, 368)
+        Me.Panel3.Size = New System.Drawing.Size(829, 368)
         Me.Panel3.TabIndex = 10
         '
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.Button6)
         Me.Panel4.Controls.Add(Me.ComboBox5)
         Me.Panel4.Controls.Add(Me.ComboBox4)
         Me.Panel4.Controls.Add(Me.Button4)
@@ -515,10 +504,18 @@ Partial Class GestionProductos
         Me.Panel4.Controls.Add(Me.LDescripcion1)
         Me.Panel4.Controls.Add(Me.LNombreProducto)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(411, 0)
+        Me.Panel4.Location = New System.Drawing.Point(440, 0)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(389, 368)
         Me.Panel4.TabIndex = 1
+        '
+        'ComboBox5
+        '
+        Me.ComboBox5.FormattingEnabled = True
+        Me.ComboBox5.Location = New System.Drawing.Point(166, 285)
+        Me.ComboBox5.Name = "ComboBox5"
+        Me.ComboBox5.Size = New System.Drawing.Size(209, 24)
+        Me.ComboBox5.TabIndex = 19
         '
         'ComboBox4
         '
@@ -573,20 +570,6 @@ Partial Class GestionProductos
         Me.LCódigo1.Size = New System.Drawing.Size(140, 15)
         Me.LCódigo1.TabIndex = 13
         Me.LCódigo1.Text = "Código del producto:"
-        '
-        'BCambios
-        '
-        Me.BCambios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BCambios.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
-        Me.BCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BCambios.Location = New System.Drawing.Point(105, 321)
-        Me.BCambios.Name = "BCambios"
-        Me.BCambios.Size = New System.Drawing.Size(202, 41)
-        Me.BCambios.TabIndex = 12
-        Me.BCambios.Text = "Confirmar Cambios"
-        Me.BCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BCambios.UseVisualStyleBackColor = True
         '
         'TPrecioEdit
         '
@@ -687,7 +670,7 @@ Partial Class GestionProductos
         Me.DataGridView2.Dock = System.Windows.Forms.DockStyle.Left
         Me.DataGridView2.Location = New System.Drawing.Point(0, 0)
         Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(413, 368)
+        Me.DataGridView2.Size = New System.Drawing.Size(449, 368)
         Me.DataGridView2.TabIndex = 0
         '
         'ChBCategoria
@@ -710,19 +693,6 @@ Partial Class GestionProductos
         Me.ChProducto.Text = "Nombre del Producto"
         Me.ChProducto.UseVisualStyleBackColor = True
         '
-        'BBuscar
-        '
-        Me.BBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
-        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(317, 162)
-        Me.BBuscar.Name = "BBuscar"
-        Me.BBuscar.Size = New System.Drawing.Size(177, 37)
-        Me.BBuscar.TabIndex = 11
-        Me.BBuscar.Text = "Buscar Producto"
-        Me.BBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BBuscar.UseVisualStyleBackColor = True
-        '
         'AgregarProductos
         '
         Me.AgregarProductos.BackColor = System.Drawing.SystemColors.GradientActiveCaption
@@ -735,37 +705,9 @@ Partial Class GestionProductos
         Me.AgregarProductos.Location = New System.Drawing.Point(4, 28)
         Me.AgregarProductos.Name = "AgregarProductos"
         Me.AgregarProductos.Padding = New System.Windows.Forms.Padding(3)
-        Me.AgregarProductos.Size = New System.Drawing.Size(806, 589)
+        Me.AgregarProductos.Size = New System.Drawing.Size(835, 589)
         Me.AgregarProductos.TabIndex = 2
         Me.AgregarProductos.Text = "Agregar nuevos productos"
-        '
-        'Button3
-        '
-        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(310, 507)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(188, 43)
-        Me.Button3.TabIndex = 29
-        Me.Button3.Text = "Confirmar Datos"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button2.Image = Global.Proyecto2023.My.Resources.Resources.searchcircularbutton_79274
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(579, 37)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(120, 46)
-        Me.Button2.TabIndex = 28
-        Me.Button2.Text = "Buscar"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox11
         '
@@ -811,19 +753,6 @@ Partial Class GestionProductos
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(790, 364)
         Me.Panel6.TabIndex = 31
-        '
-        'Button5
-        '
-        Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Button5.Image = Global.Proyecto2023.My.Resources.Resources.add
-        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button5.Location = New System.Drawing.Point(332, 185)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(42, 43)
-        Me.Button5.TabIndex = 31
-        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'TextBox13
         '
@@ -968,19 +897,106 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
-        'ComboBox5
+        'Button1
         '
-        Me.ComboBox5.FormattingEnabled = True
-        Me.ComboBox5.Location = New System.Drawing.Point(166, 285)
-        Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(209, 24)
-        Me.ComboBox5.TabIndex = 19
+        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.Location = New System.Drawing.Point(302, 184)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(177, 37)
+        Me.Button1.TabIndex = 12
+        Me.Button1.Text = "Buscar Producto"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button6.Image = Global.Proyecto2023.My.Resources.Resources.ic_cancel_128_28318
+        Me.Button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button6.Location = New System.Drawing.Point(16, 315)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(150, 41)
+        Me.Button6.TabIndex = 20
+        Me.Button6.Text = "Cancelar"
+        Me.Button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button6.UseVisualStyleBackColor = True
+        '
+        'BCambios
+        '
+        Me.BCambios.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BCambios.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.BCambios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BCambios.Location = New System.Drawing.Point(188, 315)
+        Me.BCambios.Name = "BCambios"
+        Me.BCambios.Size = New System.Drawing.Size(180, 41)
+        Me.BCambios.TabIndex = 12
+        Me.BCambios.Text = "Confirmar Cambios"
+        Me.BCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BCambios.UseVisualStyleBackColor = True
+        '
+        'BBuscar
+        '
+        Me.BBuscar.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscar.Location = New System.Drawing.Point(317, 162)
+        Me.BBuscar.Name = "BBuscar"
+        Me.BBuscar.Size = New System.Drawing.Size(177, 37)
+        Me.BBuscar.TabIndex = 11
+        Me.BBuscar.Text = "Buscar Producto"
+        Me.BBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BBuscar.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.sign_check_icon_34365
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(310, 507)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(188, 43)
+        Me.Button3.TabIndex = 29
+        Me.Button3.Text = "Confirmar Datos"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button2.Image = Global.Proyecto2023.My.Resources.Resources.searchcircularbutton_79274
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.Location = New System.Drawing.Point(579, 37)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(120, 46)
+        Me.Button2.TabIndex = 28
+        Me.Button2.Text = "Buscar"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button5.Image = Global.Proyecto2023.My.Resources.Resources.add
+        Me.Button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button5.Location = New System.Drawing.Point(332, 185)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(42, 43)
+        Me.Button5.TabIndex = 31
+        Me.Button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(814, 621)
+        Me.ClientSize = New System.Drawing.Size(843, 621)
         Me.Controls.Add(Me.GestionarProductos)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -1093,4 +1109,5 @@ Partial Class GestionProductos
     Friend WithEvents TextBox18 As TextBox
     Friend WithEvents ComboBox4 As ComboBox
     Friend WithEvents ComboBox5 As ComboBox
+    Friend WithEvents Button6 As Button
 End Class
