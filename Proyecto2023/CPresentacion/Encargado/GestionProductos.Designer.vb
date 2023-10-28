@@ -68,7 +68,6 @@ Partial Class GestionProductos
         Me.TCorreo = New System.Windows.Forms.TextBox()
         Me.TTelefono = New System.Windows.Forms.TextBox()
         Me.TDireccion = New System.Windows.Forms.TextBox()
-        Me.TFechaNac = New System.Windows.Forms.TextBox()
         Me.TDescripcion = New System.Windows.Forms.TextBox()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.LEstado1 = New System.Windows.Forms.Label()
@@ -105,6 +104,7 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -496,6 +496,7 @@ Partial Class GestionProductos
         '
         Me.Panel4.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.Panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel4.Controls.Add(Me.ComboBox4)
         Me.Panel4.Controls.Add(Me.Button4)
         Me.Panel4.Controls.Add(Me.TextBox10)
         Me.Panel4.Controls.Add(Me.LStockMinimo1)
@@ -505,7 +506,6 @@ Partial Class GestionProductos
         Me.Panel4.Controls.Add(Me.TCorreo)
         Me.Panel4.Controls.Add(Me.TTelefono)
         Me.Panel4.Controls.Add(Me.TDireccion)
-        Me.Panel4.Controls.Add(Me.TFechaNac)
         Me.Panel4.Controls.Add(Me.TDescripcion)
         Me.Panel4.Controls.Add(Me.TNombre)
         Me.Panel4.Controls.Add(Me.LEstado1)
@@ -603,14 +603,6 @@ Partial Class GestionProductos
         Me.TDireccion.Name = "TDireccion"
         Me.TDireccion.Size = New System.Drawing.Size(85, 21)
         Me.TDireccion.TabIndex = 9
-        '
-        'TFechaNac
-        '
-        Me.TFechaNac.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TFechaNac.Location = New System.Drawing.Point(166, 153)
-        Me.TFechaNac.Name = "TFechaNac"
-        Me.TFechaNac.Size = New System.Drawing.Size(209, 21)
-        Me.TFechaNac.TabIndex = 8
         '
         'TDescripcion
         '
@@ -976,6 +968,14 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(171, 150)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(204, 24)
+        Me.ComboBox4.TabIndex = 18
+        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1036,7 +1036,6 @@ Partial Class GestionProductos
     Friend WithEvents TCorreo As TextBox
     Friend WithEvents TTelefono As TextBox
     Friend WithEvents TDireccion As TextBox
-    Friend WithEvents TFechaNac As TextBox
     Friend WithEvents TDescripcion As TextBox
     Friend WithEvents TNombre As TextBox
     Friend WithEvents LEstado1 As Label
@@ -1093,4 +1092,5 @@ Partial Class GestionProductos
     Friend WithEvents TextBox16 As TextBox
     Friend WithEvents TextBox17 As TextBox
     Friend WithEvents TextBox18 As TextBox
+    Friend WithEvents ComboBox4 As ComboBox
 End Class

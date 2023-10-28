@@ -1,5 +1,5 @@
 ﻿Public Class GestionProductos
-
+    Dim id As Integer
     'Metodos para agregar producto
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
@@ -336,6 +336,36 @@
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Public Sub seleccionarProductoEditar(id As Integer)
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.seleccionarProductoEditar(id)
+
+            'DataGridView2.DataSource = dt
+            TNombre.Text = dt.Rows(0)(1).ToString
+            TextBox9.Text = dt.Rows(0)(2).ToString
+            TDescripcion.Text = dt.Rows(0)(3).ToString
+            TDireccion.Text = dt.Rows(0)(5).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView2.CurrentRow.Index
+
+        ask = MsgBox("Editar el Producto '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Confirmar")
+        'id = Me.DataGridView2.Item(0, i).Value
+        'MsgBox("" + id.ToString)
+        If (MsgBoxResult.Yes = ask) Then
+            id = Me.DataGridView2.Item(0, i).Value
+            'MsgBox("" + id.ToString)
+            seleccionarProductoEditar(id)
+        End If
     End Sub
     Private Sub TextBox9_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox9.KeyPress
 

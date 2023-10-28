@@ -37,4 +37,16 @@
             Return Nothing
         End Try
     End Function
+
+    Public Function seleccionarProductoEditar(id As Integer) As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.seleccionarProductoEditar(id)
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
