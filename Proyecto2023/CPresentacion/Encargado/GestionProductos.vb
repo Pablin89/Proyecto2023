@@ -1,5 +1,8 @@
 ﻿Public Class GestionProductos
     Dim id As Integer
+    Dim nombreProdEdit As String
+    Dim codigoProdEdit As Integer
+
     'Metodos para agregar producto
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
@@ -134,7 +137,7 @@
                     MsgBox("El nombre del producto ya existe", MsgBoxStyle.Critical, "Error")
                 Else
                     'Verifico si existe el código de producto
-                    If (existeCodigoProductoAdd() = True) Then
+                    If (existeCodigoProductoAdd(TextBox12.Text) = True) Then
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
                     Else
                         agregarProducto()
@@ -195,8 +198,8 @@
     End Function
 
 
-    Public Function existeCodigoProductoAdd()
-        Dim codigo As Integer = TextBox12.Text
+    Public Function existeCodigoProductoAdd(codigo As Integer)
+        'Dim codigo As Integer = TextBox12.Text
         Try
             Dim prod As New NProductos()
             Return prod.existeCodigoProducto(codigo)
@@ -404,7 +407,12 @@
             Dim dp As New NProductos
             Dim dt As DataTable = dp.seleccionarProductoEditar(id)
 
-            'DataGridView2.DataSource = dt
+
+            'Asigno a nombreProdEditpara verificar si es distino y hacer el control si ya existe
+            nombreProdEdit = dt.Rows(0)(1).ToString
+            'Asigno a codigoProdEditpara verificar si es distino y hacer el control si ya existe
+            codigoProdEdit = dt.Rows(0)(2).ToString
+
             TNombre.Text = dt.Rows(0)(1).ToString
             TextBox9.Text = dt.Rows(0)(2).ToString
             TDescripcion.Text = dt.Rows(0)(3).ToString
@@ -468,13 +476,12 @@
         i = DataGridView2.CurrentRow.Index
 
         ask = MsgBox("Editar el Producto '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Confirmar")
-        'id = Me.DataGridView2.Item(0, i).Value
-        'MsgBox("" + id.ToString)
+
         If (MsgBoxResult.Yes = ask) Then
-            'ComboBox4.Text = Me.DataGridView2.Item(3, i).Value.ToString
+
             id = Me.DataGridView2.Item(0, i).Value
             Panel4.Enabled = True
-            'MsgBox("" + id.ToString)
+
             seleccionarProductoEditar(id)
         End If
     End Sub
@@ -582,18 +589,36 @@
             ask = MsgBox("Seguro desea editar el producto?", MsgBoxStyle.YesNo, "Confirmar Edición")
 
             If ask = MsgBoxResult.Yes Then
-                editarProducto()
-                verProductosEditar()
-                MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
-                TNombre.Text = ""
-                TextBox9.Text = ""
-                TDescripcion.Text = ""
-                ComboBox4.DataSource = Nothing
-                TStockEdit.Text = ""
-                TextBox10.Text = ""
-                TPrecioEdit.Text = ""
-                ComboBox5.DataSource = Nothing
-                Panel4.Enabled = False
+                'Probar si modificamos el campo del codigo
+                If (codigoProdEdit <> Val(TextBox9.Text)) Then
+                    'Verifico si el código de producto ya existe
+                    If (existeCodigoProductoAdd(TextBox9.Text) = True) Then
+                        MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
+
+                    Else
+                    End If
+                    'Probar si modificamos el campo nombre
+                ElseIf (nombreProdEdit <> TNombre.Text) Then
+                    'Verifico si el nombre de producto ya existe
+                    If (existeNombreProductoAdd(TNombre.Text) = True) Then
+                        MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
+                    Else
+                    End If
+                Else
+                    editarProducto()
+                    verProductosEditar()
+                    MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                    TNombre.Text = ""
+                    TextBox9.Text = ""
+                    TDescripcion.Text = ""
+                    ComboBox4.DataSource = Nothing
+                    TStockEdit.Text = ""
+                    TextBox10.Text = ""
+                    TPrecioEdit.Text = ""
+                    ComboBox5.DataSource = Nothing
+                    Panel4.Enabled = False
+                End If
+
             Else
                 MsgBox("No se Editó el producto", MsgBoxStyle.OkOnly, "Producto No Editado")
 
