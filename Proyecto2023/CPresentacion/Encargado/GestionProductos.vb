@@ -141,6 +141,8 @@
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
                     Else
                         agregarProducto()
+                        verProductosConsultar()
+                        verProductosEditar()
                         MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
                         TextBox5.Text = ""
                         TextBox6.Text = ""
@@ -471,6 +473,7 @@
     End Sub
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
         Dim ask As MsgBoxResult
         Dim i As Integer
         i = DataGridView2.CurrentRow.Index
@@ -687,6 +690,7 @@
 
     'Seleccionar un producto del datagrid haciendo click
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
         Dim ask As MsgBoxResult
         Dim i As Integer
         i = DataGridView1.CurrentRow.Index
