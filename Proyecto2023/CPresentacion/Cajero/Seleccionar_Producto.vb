@@ -118,6 +118,7 @@ Public Class Seleccionar_Producto
             Realizar_Venta.TNombreProd.Text = dt.Rows(0)(1).ToString
             Realizar_Venta.TCodigoProd.Text = dt.Rows(0)(2).ToString
             Realizar_Venta.TPrecioProd.Text = dt.Rows(0)(5).ToString
+            Realizar_Venta.stock = Val(dt.Rows(0)(6).ToString)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

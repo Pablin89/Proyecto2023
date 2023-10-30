@@ -1,6 +1,8 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Realizar_Venta
+    'con la variable stock voy a obtener el stock de cada producto para hacer el control
+    Public stock As Integer
 
     'Restricciones
     Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox5.KeyPress
@@ -67,8 +69,8 @@ Public Class Realizar_Venta
         Dim opcion As MsgBoxResult
         Dim i = DataGridView1.CurrentRow.Index
 
-        If (col = 4) Then
-            opcion = MsgBox("Esta seguro que desea eliminar " + DataGridView1.Item(0, i).Value.ToString + " de la compra?", vbYesNo + vbDefaultButton2 + vbCritical, "Eliminar")
+        If (col = 5) Then
+            opcion = MsgBox("Esta seguro que desea eliminar " + DataGridView1.Item(1, i).Value.ToString + " de la compra?", vbYesNo + vbDefaultButton2 + vbCritical, "Eliminar")
             If (opcion = DialogResult.Yes) Then
                 DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
                 calcularTotal()
@@ -121,16 +123,23 @@ Public Class Realizar_Venta
         If DataGridView1.Rows.Count > 0 Then
             For j = 0 To (DataGridView1.Rows.Count - 1)
                 If DataGridView1.Item(1, j).Value = TNombreProd.Text() Then
-                    'cuando cargamos un producto se activa la carga
-                    carga = True
-                    nombreExistente = DataGridView1.Item(2, j).Value.ToString
-                    nuevaCantidad = DataGridView1.Item(3, j).Value + NumericUpDown1.Value
-                    nuevoSubtotal = nuevaCantidad * precio
+                    'controlo el stock
+                    If (DataGridView1.Item(3, j).Value + NumericUpDown1.Value > stock) Then
+                        MsgBox("Cantidad mayor a " + stock.ToString + " que quedan en stock")
+                        carga = True
+                    Else
+                        'cuando cargamos un producto se activa la carga
+                        carga = True
+                        nombreExistente = DataGridView1.Item(2, j).Value.ToString
+                        nuevaCantidad = DataGridView1.Item(3, j).Value + NumericUpDown1.Value
+                        nuevoSubtotal = nuevaCantidad * precio
 
-                    DataGridView1.Item(3, j).Value = nuevaCantidad
-                    DataGridView1.Item(4, j).Value = nuevoSubtotal
-                    calcularTotal()
-                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
+                        DataGridView1.Item(3, j).Value = nuevaCantidad
+                        DataGridView1.Item(4, j).Value = nuevoSubtotal
+                        calcularTotal()
+                        MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
+                    End If
+
                 End If
             Next
             DataGridView1.ClearSelection()
@@ -142,19 +151,37 @@ Public Class Realizar_Venta
         If (TNombreProd.Text = "" Or NumericUpDown1.Text = 0) Then
             MsgBox("Debe seleccionar un producto o agregar stock", MsgBoxStyle.Critical, "Atención")
         Else
+            'Variable cantidad para verificar el stock
+            Dim cantidad As Integer
+            For j = 0 To (DataGridView1.Rows.Count - 1)
+                If DataGridView1.Item(1, j).Value <> TNombreProd.Text() Then
+                    cantidad = NumericUpDown1.Value
+                    NumericUpDown1.Value = cantidad
+                End If
+            Next
+            cantidad = NumericUpDown1.Value
             If (carga = False) Then
+                'Si la cantidad es mayor que el stock disponible no me permite agregar
+                If (cantidad > stock) Then
+                    'MsgBox("Stock > " + stock.ToString)
+                    MsgBox("Cantidad > a " + stock.ToString + " que quedan en stock")
+                    DataGridView1.ClearSelection()
+                    
+                Else
 
-                ask = MsgBox("Desea agregar el producto?", vbYesNo + vbInformation, "Agregar Producto")
+                    ask = MsgBox("Desea agregar el producto?", vbYesNo + vbInformation, "Agregar Producto")
 
-                If (MsgBoxResult.Yes = ask) Then
+                    If (MsgBoxResult.Yes = ask) Then
 
-                    DataGridView1.Rows.Add(TIdProd.Text, TNombreProd.Text, precio, NumericUpDown1.Text, precio * NumericUpDown1.Text, "Eliminar")
-                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
-                    calcularTotal()
+                        DataGridView1.Rows.Add(TIdProd.Text, TNombreProd.Text, precio, NumericUpDown1.Text, precio * NumericUpDown1.Text, "Eliminar")
+                        MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
+                        calcularTotal()
+
+                    End If
 
                 End If
-
             End If
+
         End If
 
 
