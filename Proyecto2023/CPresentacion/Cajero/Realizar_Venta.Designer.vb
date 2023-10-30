@@ -30,7 +30,7 @@ Partial Class Realizar_Venta
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TIdProd = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -51,11 +51,18 @@ Partial Class Realizar_Venta
         Me.LHora = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
         Me.LValorTotal = New System.Windows.Forms.Label()
+        Me.TCodigoProd = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TPrecioProd = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.TNombreProd = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -73,8 +80,8 @@ Partial Class Realizar_Venta
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Nombre, Me.Precio, Me.Cantidad, Me.Subtotal, Me.Eliminar})
-        Me.DataGridView1.Location = New System.Drawing.Point(3, 256)
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Nombre, Me.Precio, Me.Cantidad, Me.Subtotal, Me.Eliminar})
+        Me.DataGridView1.Location = New System.Drawing.Point(3, 333)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(794, 253)
         Me.DataGridView1.TabIndex = 0
@@ -86,7 +93,7 @@ Partial Class Realizar_Venta
         Me.BAgregarAlCarrito.ForeColor = System.Drawing.Color.DarkGreen
         Me.BAgregarAlCarrito.Image = CType(resources.GetObject("BAgregarAlCarrito.Image"), System.Drawing.Image)
         Me.BAgregarAlCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(338, 177)
+        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(325, 282)
         Me.BAgregarAlCarrito.Name = "BAgregarAlCarrito"
         Me.BAgregarAlCarrito.Size = New System.Drawing.Size(210, 46)
         Me.BAgregarAlCarrito.TabIndex = 1
@@ -95,16 +102,17 @@ Partial Class Realizar_Venta
         Me.BAgregarAlCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.BAgregarAlCarrito.UseVisualStyleBackColor = False
         '
-        'TextBox1
+        'TIdProd
         '
-        Me.TextBox1.Location = New System.Drawing.Point(338, 133)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(210, 20)
-        Me.TextBox1.TabIndex = 2
+        Me.TIdProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TIdProd.Location = New System.Drawing.Point(325, 133)
+        Me.TIdProd.Name = "TIdProd"
+        Me.TIdProd.Size = New System.Drawing.Size(210, 22)
+        Me.TIdProd.TabIndex = 2
         '
         'NumericUpDown1
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(123, 189)
+        Me.NumericUpDown1.Location = New System.Drawing.Point(125, 297)
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(177, 20)
         Me.NumericUpDown1.TabIndex = 4
@@ -114,7 +122,7 @@ Partial Class Realizar_Venta
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label2.Location = New System.Drawing.Point(49, 189)
+        Me.Label2.Location = New System.Drawing.Point(51, 297)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 15)
         Me.Label2.TabIndex = 5
@@ -123,13 +131,13 @@ Partial Class Realizar_Venta
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label4.Location = New System.Drawing.Point(49, 134)
+        Me.Label4.Location = New System.Drawing.Point(280, 133)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(283, 15)
+        Me.Label4.Size = New System.Drawing.Size(22, 16)
         Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Nombre del producto / Código del producto"
+        Me.Label4.Text = "ID"
         '
         'Label3
         '
@@ -147,7 +155,7 @@ Partial Class Realizar_Venta
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(541, 534)
+        Me.Label5.Location = New System.Drawing.Point(541, 602)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(74, 20)
         Me.Label5.TabIndex = 9
@@ -157,7 +165,7 @@ Partial Class Realizar_Venta
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Efectivo", "Debito", "Crédito", "MercadoPago"})
-        Me.ComboBox1.Location = New System.Drawing.Point(197, 533)
+        Me.ComboBox1.Location = New System.Drawing.Point(197, 601)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(210, 21)
         Me.ComboBox1.TabIndex = 11
@@ -167,7 +175,7 @@ Partial Class Realizar_Venta
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(24, 534)
+        Me.Label7.Location = New System.Drawing.Point(24, 602)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(167, 15)
         Me.Label7.TabIndex = 12
@@ -178,7 +186,7 @@ Partial Class Realizar_Venta
         Me.BRealizarVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BRealizarVenta.Image = CType(resources.GetObject("BRealizarVenta.Image"), System.Drawing.Image)
         Me.BRealizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BRealizarVenta.Location = New System.Drawing.Point(325, 597)
+        Me.BRealizarVenta.Location = New System.Drawing.Point(325, 654)
         Me.BRealizarVenta.Name = "BRealizarVenta"
         Me.BRealizarVenta.Size = New System.Drawing.Size(150, 41)
         Me.BRealizarVenta.TabIndex = 19
@@ -191,7 +199,7 @@ Partial Class Realizar_Venta
         '
         Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
         Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(27, 57)
+        Me.Button3.Location = New System.Drawing.Point(30, 55)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(161, 39)
         Me.Button3.TabIndex = 20
@@ -215,7 +223,7 @@ Partial Class Realizar_Venta
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label1.Location = New System.Drawing.Point(194, 77)
+        Me.Label1.Location = New System.Drawing.Point(197, 75)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 15)
         Me.Label1.TabIndex = 29
@@ -223,16 +231,16 @@ Partial Class Realizar_Venta
         '
         'TextBox5
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(262, 74)
+        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5.Location = New System.Drawing.Point(265, 72)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(226, 22)
         Me.TextBox5.TabIndex = 28
         '
         'TextBox6
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(535, 74)
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(538, 72)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.Size = New System.Drawing.Size(210, 22)
         Me.TextBox6.TabIndex = 27
@@ -242,7 +250,7 @@ Partial Class Realizar_Venta
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label11.Location = New System.Drawing.Point(494, 77)
+        Me.Label11.Location = New System.Drawing.Point(497, 75)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(35, 15)
         Me.Label11.TabIndex = 26
@@ -255,7 +263,7 @@ Partial Class Realizar_Venta
         Me.BVaciarCarrito.ForeColor = System.Drawing.Color.Red
         Me.BVaciarCarrito.Image = CType(resources.GetObject("BVaciarCarrito.Image"), System.Drawing.Image)
         Me.BVaciarCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BVaciarCarrito.Location = New System.Drawing.Point(659, 205)
+        Me.BVaciarCarrito.Location = New System.Drawing.Point(659, 282)
         Me.BVaciarCarrito.Name = "BVaciarCarrito"
         Me.BVaciarCarrito.Size = New System.Drawing.Size(138, 45)
         Me.BVaciarCarrito.TabIndex = 30
@@ -271,7 +279,7 @@ Partial Class Realizar_Venta
         Me.BBuscarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BBuscarProducto.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
         Me.BBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscarProducto.Location = New System.Drawing.Point(554, 106)
+        Me.BBuscarProducto.Location = New System.Drawing.Point(572, 133)
         Me.BBuscarProducto.Name = "BBuscarProducto"
         Me.BBuscarProducto.Size = New System.Drawing.Size(173, 47)
         Me.BBuscarProducto.TabIndex = 22
@@ -311,19 +319,43 @@ Partial Class Realizar_Venta
         Me.LValorTotal.AutoSize = True
         Me.LValorTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LValorTotal.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.LValorTotal.Location = New System.Drawing.Point(610, 534)
+        Me.LValorTotal.Location = New System.Drawing.Point(610, 602)
         Me.LValorTotal.Name = "LValorTotal"
         Me.LValorTotal.Size = New System.Drawing.Size(0, 20)
         Me.LValorTotal.TabIndex = 33
+        '
+        'TCodigoProd
+        '
+        Me.TCodigoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TCodigoProd.Location = New System.Drawing.Point(325, 168)
+        Me.TCodigoProd.Name = "TCodigoProd"
+        Me.TCodigoProd.Size = New System.Drawing.Size(210, 22)
+        Me.TCodigoProd.TabIndex = 34
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label6.Location = New System.Drawing.Point(154, 164)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(148, 16)
+        Me.Label6.TabIndex = 35
+        Me.Label6.Text = "Código del producto"
+        '
+        'id
+        '
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
         '
         'Nombre
         '
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Nombre.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Nombre.HeaderText = "Nombre del Producto"
+        Me.Nombre.HeaderText = "Producto"
         Me.Nombre.Name = "Nombre"
         Me.Nombre.ReadOnly = True
-        Me.Nombre.Width = 300
+        Me.Nombre.Width = 210
         '
         'Precio
         '
@@ -357,12 +389,56 @@ Partial Class Realizar_Venta
         Me.Eliminar.Text = "Eliminar Producto"
         Me.Eliminar.Width = 120
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label8.Location = New System.Drawing.Point(238, 240)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(64, 16)
+        Me.Label8.TabIndex = 39
+        Me.Label8.Text = "Precio $"
+        '
+        'TPrecioProd
+        '
+        Me.TPrecioProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TPrecioProd.Location = New System.Drawing.Point(325, 240)
+        Me.TPrecioProd.Name = "TPrecioProd"
+        Me.TPrecioProd.Size = New System.Drawing.Size(210, 22)
+        Me.TPrecioProd.TabIndex = 38
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.Label9.Location = New System.Drawing.Point(149, 205)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(153, 16)
+        Me.Label9.TabIndex = 37
+        Me.Label9.Text = "Nombre del producto"
+        '
+        'TNombreProd
+        '
+        Me.TNombreProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TNombreProd.Location = New System.Drawing.Point(325, 205)
+        Me.TNombreProd.Name = "TNombreProd"
+        Me.TNombreProd.Size = New System.Drawing.Size(210, 22)
+        Me.TNombreProd.TabIndex = 36
+        '
         'Realizar_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(801, 650)
+        Me.ClientSize = New System.Drawing.Size(801, 716)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.TPrecioProd)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.TNombreProd)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.TCodigoProd)
         Me.Controls.Add(Me.LValorTotal)
         Me.Controls.Add(Me.LFecha)
         Me.Controls.Add(Me.LHora)
@@ -382,7 +458,7 @@ Partial Class Realizar_Venta
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.NumericUpDown1)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TIdProd)
         Me.Controls.Add(Me.BAgregarAlCarrito)
         Me.Controls.Add(Me.DataGridView1)
         Me.Cursor = System.Windows.Forms.Cursors.Arrow
@@ -401,7 +477,7 @@ Partial Class Realizar_Venta
 
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents BAgregarAlCarrito As Button
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TIdProd As TextBox
     Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label2 As Label
     Friend WithEvents Label4 As Label
@@ -422,9 +498,16 @@ Partial Class Realizar_Venta
     Friend WithEvents LFecha As Label
     Friend WithEvents LHora As Label
     Friend WithEvents LValorTotal As Label
+    Friend WithEvents TCodigoProd As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents Nombre As DataGridViewTextBoxColumn
     Friend WithEvents Precio As DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As DataGridViewTextBoxColumn
     Friend WithEvents Subtotal As DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As DataGridViewButtonColumn
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TPrecioProd As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents TNombreProd As TextBox
 End Class

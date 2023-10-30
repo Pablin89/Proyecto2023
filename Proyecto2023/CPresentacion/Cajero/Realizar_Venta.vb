@@ -51,6 +51,10 @@ Public Class Realizar_Venta
     End Sub
 
     Private Sub Realizar_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TIdProd.Enabled = False
+        TCodigoProd.Enabled = False
+        TNombreProd.Enabled = False
+        TPrecioProd.Enabled = False
         Timer1.Start()
         DataGridView1.AllowUserToAddRows = False
         LValorTotal.Text = "0"
@@ -79,14 +83,13 @@ Public Class Realizar_Venta
 
         If (MsgBoxResult.Yes = ask) Then
             vaciarCarrito()
-            calcularTotal()
             vaciartextoCarrito()
+            calcularTotal()
         End If
 
     End Sub
 
     Public Sub vaciarCarrito()
-
         If (DataGridView1.Rows.Count > 0) Then
             For Each Fila As DataGridViewRow In DataGridView1.Rows
                 DataGridView1.Rows.Clear()
@@ -101,24 +104,8 @@ Public Class Realizar_Venta
     End Sub
 
     Private Sub BAgregarAlCarrito_Click(sender As Object, e As EventArgs) Handles BAgregarAlCarrito.Click
-        Dim precio As Integer = 500
+        Dim precio As Integer = Val(TPrecioProd.Text)
 
-        Select Case TextBox1.Text
-            Case "Bombilla"
-                precio = 300
-            Case "bombilla"
-                precio = 300
-            Case "vaso"
-                precio = 400
-            Case "Vaso"
-                precio = 400
-            Case "Ropa"
-                precio = 800
-            Case "ropa"
-                precio = 800
-            Case Else
-                precio = 500
-        End Select
 
 
         Dim ask As MsgBoxResult
@@ -133,17 +120,17 @@ Public Class Realizar_Venta
         'SI EL PRODUCTO EXISTE SE ACTUALIZA LA CANTIDAD Y EL SUBTOTAL
         If DataGridView1.Rows.Count > 0 Then
             For j = 0 To (DataGridView1.Rows.Count - 1)
-                If DataGridView1.Item(0, j).Value = TextBox1.Text() Then
+                If DataGridView1.Item(1, j).Value = TNombreProd.Text() Then
                     'cuando cargamos un producto se activa la carga
                     carga = True
-                    nombreExistente = DataGridView1.Item(0, j).Value.ToString
-                    nuevaCantidad = DataGridView1.Item(2, j).Value + NumericUpDown1.Value
+                    nombreExistente = DataGridView1.Item(2, j).Value.ToString
+                    nuevaCantidad = DataGridView1.Item(3, j).Value + NumericUpDown1.Value
                     nuevoSubtotal = nuevaCantidad * precio
 
-                    DataGridView1.Item(2, j).Value = nuevaCantidad
-                    DataGridView1.Item(3, j).Value = nuevoSubtotal
+                    DataGridView1.Item(3, j).Value = nuevaCantidad
+                    DataGridView1.Item(4, j).Value = nuevoSubtotal
                     calcularTotal()
-                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TextBox1.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
+                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
                 End If
             Next
             DataGridView1.ClearSelection()
@@ -152,7 +139,7 @@ Public Class Realizar_Venta
 
 
 
-        If (TextBox1.Text = "" Or NumericUpDown1.Text = 0) Then
+        If (TNombreProd.Text = "" Or NumericUpDown1.Text = 0) Then
             MsgBox("Debe seleccionar un producto o agregar stock", MsgBoxStyle.Critical, "Atención")
         Else
             If (carga = False) Then
@@ -161,8 +148,8 @@ Public Class Realizar_Venta
 
                 If (MsgBoxResult.Yes = ask) Then
 
-                    DataGridView1.Rows.Add(TextBox1.Text(), precio, NumericUpDown1.Text, precio * NumericUpDown1.Text, "Eliminar")
-                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TextBox1.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
+                    DataGridView1.Rows.Add(TIdProd.Text, TNombreProd.Text, precio, NumericUpDown1.Text, precio * NumericUpDown1.Text, "Eliminar")
+                    MsgBox(NumericUpDown1.Text + " unidades del producto '" + TNombreProd.Text + "' fueron agregados", vbOKOnly + vbInformation, "Producto")
                     calcularTotal()
 
                 End If
@@ -182,14 +169,14 @@ Public Class Realizar_Venta
         LValorTotal.Text = "0"
         If DataGridView1.Rows.Count > 0 Then
             For j = 0 To (DataGridView1.Rows.Count - 1)
-                LValorTotal.Text += Val(DataGridView1.Item(3, j).Value)
+                LValorTotal.Text += Val(DataGridView1.Item(4, j).Value)
             Next
         End If
     End Sub
 
     Public Sub vaciarTexto()
         NumericUpDown1.Text = 0
-        TextBox1.Text = ""
+        TIdProd.Text = ""
         ComboBox1.Text = ""
         TextBox5.Text = ""
         TextBox6.Text = ""
@@ -198,7 +185,10 @@ Public Class Realizar_Venta
 
     Public Sub vaciartextoCarrito()
         NumericUpDown1.Text = 0
-        TextBox1.Text = ""
+        TIdProd.Text = ""
+        TNombreProd.Text = ""
+        TCodigoProd.Text = ""
+        TPrecioProd.Text = ""
         ComboBox1.Text = ""
         LValorTotal.Text = "0"
     End Sub

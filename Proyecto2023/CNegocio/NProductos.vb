@@ -94,7 +94,7 @@
             Return Nothing
         End Try
     End Function
-
+    'METODOS DE CONSULTAR -----------------------------------------------------------------------------------------------
     'Busqueda por nombre de consultar
     Public Function buscarProductoNombreC(nombre As String) As DataTable
 
@@ -176,12 +176,25 @@
             Return Nothing
         End Try
     End Function
-
+    'buscar productos por categoria
     Public Function buscarProductoCajeroCategoria(categoria As String) As DataTable
         Try
             Dim dproducto As New DProductos()
             Dim dt As DataTable = dproducto.buscarProductoCajeroCategoria(categoria)
             Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Seleccionar un producto especifico 
+    Public Function seleccionarProductoCajero(id As Integer) As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.seleccionarProductoCajero(id)
+            Return dt
+
         Catch ex As Exception
             MsgBox(ex.Message)
             Return Nothing

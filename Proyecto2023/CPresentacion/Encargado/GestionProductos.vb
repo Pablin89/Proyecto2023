@@ -695,7 +695,7 @@
         Dim i As Integer
         i = DataGridView1.CurrentRow.Index
 
-        ask = MsgBox("Ver detalle del producto: '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
+        ask = MsgBox("Ver detalle del producto: '" + Me.DataGridView1.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
         If (MsgBoxResult.Yes = ask) Then
             id = Me.DataGridView1.Item(0, i).Value
             seleccionarProductoConsultar(id)

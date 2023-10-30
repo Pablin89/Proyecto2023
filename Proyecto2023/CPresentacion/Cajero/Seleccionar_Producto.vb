@@ -1,5 +1,7 @@
-﻿Public Class Seleccionar_Producto
+﻿Imports System.Runtime.Remoting.Proxies
 
+Public Class Seleccionar_Producto
+    Dim idProducto As Integer
     Private Sub TcodigoProd_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TcodigoProd.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -92,4 +94,34 @@
         verProductosActivos()
         verCategoriasCbx()
     End Sub
+
+    'Metodos para seleccionar el producto
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+
+        ask = MsgBox("Seleccionar el Producto : '" + Me.DataGridView1.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
+        If (MsgBoxResult.Yes = ask) Then
+            idProducto = Me.DataGridView1.Item(0, i).Value
+            seleccionarProductoCajero(idProducto)
+            Me.Close()
+        End If
+    End Sub
+
+    Public Sub seleccionarProductoCajero(id As Integer)
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.seleccionarProductoCajero(id)
+
+            Realizar_Venta.TIdProd.Text = dt.Rows(0)(0).ToString
+            Realizar_Venta.TNombreProd.Text = dt.Rows(0)(1).ToString
+            Realizar_Venta.TCodigoProd.Text = dt.Rows(0)(2).ToString
+            Realizar_Venta.TPrecioProd.Text = dt.Rows(0)(5).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
 End Class

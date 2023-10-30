@@ -342,7 +342,7 @@ Public Class DProductos
             Return Nothing
         End Try
     End Function
-
+    'METODOS DE CONSULTAR -----------------------------------------------------------------------------------------------
     'Consultar productos
     Public Function verProductosConsultar() As DataTable
         Try
@@ -570,6 +570,40 @@ Public Class DProductos
                                             from Productos
 	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
                                             where Productos.id_estado_producto = 1 and  Categorias.descripcion like '%" & categoria & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Seleccionar un producto de la base de datos
+    Public Function seleccionarProductoCajero(id As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                          Productos.id_producto,
+                                          Productos.nombre,
+                                          Productos.codigo,
+                                          Productos.descripcion,
+                                          Categorias.descripcion,
+                                          Productos.precio,
+                                          Productos.stock,
+                                          Productos.sock_minimo
+                                         from Productos 
+                                         INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
+                                         where Productos.id_producto =" & id & "and Productos.id_estado_producto = 1")
+
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
