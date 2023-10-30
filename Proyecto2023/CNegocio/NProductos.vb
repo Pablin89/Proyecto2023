@@ -153,4 +153,38 @@
             Return Nothing
         End Try
     End Function
+    'FUNCIONES DEL EMPLEADO CAJERO---------------------------------------------------------------------------------
+    'VER PRODUCTOS ACTIVOS
+    Public Function verProductosActivos() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosActivos()
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    'buscar por codigo
+    Public Function buscarProductoCajeroCodigo(codigo As String) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCajeroCodigo(codigo)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function buscarProductoCajeroCategoria(categoria As String) As DataTable
+        Try
+            Dim dproducto As New DProductos()
+            Dim dt As DataTable = dproducto.buscarProductoCajeroCategoria(categoria)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
