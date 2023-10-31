@@ -113,10 +113,9 @@ Public Class Baja_Clientes
         i = DataGridView1.CurrentRow.Index
         ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
         If (MsgBoxResult.Yes = ask) Then
+            Realizar_Venta.idCliente = Me.DataGridView1.Item(0, i).Value
             Realizar_Venta.TextBox5.Text = Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString
             Realizar_Venta.TextBox6.Text = Me.DataGridView1.Item(7, i).Value.ToString
-            Realizar_Venta.TextBox5.Enabled = False
-            Realizar_Venta.TextBox6.Enabled = False
             Me.Close()
         End If
 
