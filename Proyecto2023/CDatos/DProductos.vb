@@ -620,4 +620,26 @@ Public Class DProductos
             Return Nothing
         End Try
     End Function
+
+    'se actualiza el stock al realizar la compra
+    Public Function actualizarStock(id_producto As Integer, stock As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update Productos set stock = " & stock & " where id_producto = " & id_producto & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
 End Class
