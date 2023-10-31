@@ -507,7 +507,7 @@ Public Class DProductos
 	                                        Productos.precio As PRECIO
                                         from Productos 
 	                                         INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
-                                        where Productos.id_estado_producto = 1")
+                                        where Productos.id_estado_producto = 1 and stock > 0")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then

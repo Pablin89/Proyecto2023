@@ -164,7 +164,7 @@ Public Class Realizar_Venta
                 'Si la cantidad es mayor que el stock disponible no me permite agregar
                 If (cantidad > stock) Then
                     'MsgBox("Stock > " + stock.ToString)
-                    MsgBox("Cantidad > a " + stock.ToString + " que quedan en stock")
+                    MsgBox("Cantidad mayor a " + stock.ToString + " que quedan en stock")
                     DataGridView1.ClearSelection()
                     
                 Else
@@ -232,6 +232,7 @@ Public Class Realizar_Venta
             Else
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
+                    actualizarStock()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
                     vaciartextoCarrito()
                     vaciarCarrito()
@@ -239,6 +240,21 @@ Public Class Realizar_Venta
                 End If
             End If
         End If
+    End Sub
+
+    'actualiza los stocks de los productos seleccionados
+    Public Sub actualizarStock()
+        For j = 0 To (DataGridView1.Rows.Count - 1)
+            Seleccionar_Producto.seleccionarProductoCajero(DataGridView1.Item(0, j).Value)
+            Dim nuevo_stock As Integer = stock - DataGridView1.Item(3, j).Value
+            'MsgBox(DataGridView1.Item(0, j).Value.ToString + " " + nuevo_stock.ToString)
+            Try
+                Dim cproducto As New NProductos()
+                cproducto.actualizarStock(DataGridView1.Item(0, j).Value, nuevo_stock)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        Next
     End Sub
 
 End Class
