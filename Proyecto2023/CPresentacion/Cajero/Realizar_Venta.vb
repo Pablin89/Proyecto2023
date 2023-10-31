@@ -208,6 +208,8 @@ Public Class Realizar_Venta
         TextBox5.Text = ""
         TextBox6.Text = ""
         LValorTotal.Text = "0"
+        TextBox5.Enabled = True
+        TextBox6.Enabled = True
     End Sub
 
     Public Sub vaciartextoCarrito()
