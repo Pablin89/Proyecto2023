@@ -253,8 +253,8 @@ Public Class Realizar_Venta
             Else
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
-                    'nuevaVenta()
-                    'agregarDetalles()
+                    nuevaVenta()
+                    agregarDetalles()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
                     vaciartextoCarrito()
                     listarTiposPagoCbx()
@@ -314,8 +314,24 @@ Public Class Realizar_Venta
 
     'insertar los detalles de la venta
     Public Sub agregarDetalles()
+        Dim id_venta_detalle As Integer = DataGridView1.CurrentRow.Index
+        Dim id_venta As Integer
+        Dim id_Producto As Integer
+        Dim cantidad As Integer
+        Dim precio As Double
         For j = 0 To (DataGridView1.Rows.Count - 1)
-            'una vez que tenga la clase DDetalles y NDetalles insertaremos los detalles
+
+            id_venta = idVenta
+            id_venta_detalle = id_venta_detalle + 1
+            id_Producto = DataGridView1.Item(0, j).Value
+            cantidad = DataGridView1.Item(3, j).Value
+            precio = DataGridView1.Item(2, j).Value
+            Try
+                Dim cdetalle As New NDetalles
+                cdetalle.insertarDetalle(id_venta, id_venta_detalle, id_Producto, cantidad, precio)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
         Next
     End Sub
 
