@@ -114,7 +114,7 @@ Public Class DProductos
         Try
             conectar()
 
-            Dim query As String = "Insert into productos (descripcion,nombre,codigo,stock,sock_minimo,precio,id_estado_producto,id_categoria) values ('" & dproducto.descripcion & "','" & dproducto.CNombre & "','" & dproducto.CCodigo & "'," & dproducto.CStock & ",'" & dproducto.CStockMinimo & "'," & dproducto.CPrecio & ",'" & dproducto.CIdEstadoProducto & "'," & dproducto.CIdCategoria & ")"
+            Dim query As String = "Insert into productos (descripcion,nombre,codigo,stock,stock_minimo,precio,id_estado_producto,id_categoria) values ('" & dproducto.descripcion & "','" & dproducto.CNombre & "','" & dproducto.CCodigo & "'," & dproducto.CStock & ",'" & dproducto.CStockMinimo & "'," & dproducto.CPrecio & ",'" & dproducto.CIdEstadoProducto & "'," & dproducto.CIdCategoria & ")"
 
             comando = New SqlCommand(query, conexion)
 
@@ -214,7 +214,7 @@ Public Class DProductos
                                                 Productos.id_categoria,
 	                                            Categorias.descripcion,
 	                                            Productos.stock,
-	                                            Productos.sock_minimo,
+	                                            Productos.stock_minimo,
 	                                            Productos.precio,
 	                                            Productos.id_estado_producto
                                             from Productos 
@@ -242,7 +242,7 @@ Public Class DProductos
         Try
             conectar()
 
-            Dim query As String = "update Productos set descripcion = '" & descripcion & "',nombre = '" & nombre & "',codigo = " & codigo & ",stock = " & stock & ",sock_minimo = " & sock_minimo & ",precio = " & precio & ",id_estado_producto = " & id_estado_producto & ",id_categoria = " & id_categoria & " where id_producto = " & id_producto & ""
+            Dim query As String = "update Productos set descripcion = '" & descripcion & "',nombre = '" & nombre & "',codigo = " & codigo & ",stock = " & stock & ",stock_minimo = " & sock_minimo & ",precio = " & precio & ",id_estado_producto = " & id_estado_producto & ",id_categoria = " & id_categoria & " where id_producto = " & id_producto & ""
 
             comando = New SqlCommand(query, conexion)
 
@@ -468,7 +468,7 @@ Public Class DProductos
 	                                            Categorias.descripcion,
                                                 Productos.precio,
 	                                            Productos.stock,
-	                                            Productos.sock_minimo,
+	                                            Productos.stock_minimo,
 	                                            Estados_productos.descripcion
                                             from Productos 
                                             INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
@@ -503,7 +503,7 @@ Public Class DProductos
 	                                        Productos.nombre As NOMBRE,
 	                                        Categorias.descripcion As CATEGORIA,
 	                                        Productos.stock As STOCK,
-	                                        Productos.sock_minimo As 'STOCK MINIMO',
+	                                        Productos.stock_minimo As 'STOCK MINIMO',
 	                                        Productos.precio As PRECIO
                                         from Productos 
 	                                         INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
@@ -534,7 +534,7 @@ Public Class DProductos
 	                                            Productos.nombre As NOMBRE,
 	                                            Categorias.descripcion As CATEGORIA,
 	                                            Productos.stock As STOCK,
-	                                            Productos.sock_minimo As 'STOCK MINIMO',
+	                                            Productos.stock_minimo As 'STOCK MINIMO',
 	                                            Productos.precio As PRECIO
                                             from Productos
 	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
@@ -565,7 +565,7 @@ Public Class DProductos
 	                                            Productos.nombre As NOMBRE,
 	                                            Categorias.descripcion As CATEGORIA,
 	                                            Productos.stock As STOCK,
-	                                            Productos.sock_minimo As 'STOCK MINIMO',
+	                                            Productos.stock_minimo As 'STOCK MINIMO',
 	                                            Productos.precio As PRECIO
                                             from Productos
 	                                            INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
@@ -599,7 +599,7 @@ Public Class DProductos
                                           Categorias.descripcion,
                                           Productos.precio,
                                           Productos.stock,
-                                          Productos.sock_minimo
+                                          Productos.stock_minimo
                                          from Productos 
                                          INNER JOIN Categorias ON(Categorias.id_categoria = Productos.id_categoria)
                                          where Productos.id_producto =" & id & "and Productos.id_estado_producto = 1")
