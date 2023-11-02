@@ -3,10 +3,6 @@
 Public Class Realizar_Venta
     'con la variable stock voy a obtener el stock de cada producto para hacer el control
     Public stock As Integer
-    'Variables para recoger los id
-    Public idCliente As Integer
-    'Variable idVenta recoge el último id para hacer el detalle
-    Public idVenta As Integer
 
     'Restricciones
     Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox5.KeyPress
@@ -61,28 +57,9 @@ Public Class Realizar_Venta
         TCodigoProd.Enabled = False
         TNombreProd.Enabled = False
         TPrecioProd.Enabled = False
-        TextBox5.Enabled = False
-        TextBox6.Enabled = False
         Timer1.Start()
         DataGridView1.AllowUserToAddRows = False
         LValorTotal.Text = "0"
-
-        listarTiposPagoCbx()
-    End Sub
-
-    'listar tipos de pago 
-    Public Sub listarTiposPagoCbx()
-        Try
-            Dim dp As New NTiposPagos
-            Dim dt As DataTable = dp.verTipoPagosCbx()
-            ComboBox1.DataSource = dt
-            ComboBox1.DisplayMember = "descripcion"
-            ComboBox1.ValueMember = "id_tipo_pago"
-            ComboBox1.SelectedValue = -1
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
     End Sub
 
 
@@ -187,7 +164,7 @@ Public Class Realizar_Venta
                 'Si la cantidad es mayor que el stock disponible no me permite agregar
                 If (cantidad > stock) Then
                     'MsgBox("Stock > " + stock.ToString)
-                    MsgBox("Cantidad mayor a " + stock.ToString + " que quedan en stock")
+                    MsgBox("Cantidad > a " + stock.ToString + " que quedan en stock")
                     DataGridView1.ClearSelection()
                     
                 Else
@@ -248,16 +225,13 @@ Public Class Realizar_Venta
         If (DataGridView1.RowCount.ToString() = 0) Then
             MsgBox("Agrega algún producto a la compra", MsgBoxStyle.Critical, "Atención")
         Else
-            If (ComboBox1.Text = "" Or TextBox5.Text = "" Or TextBox6.Text = "") Then
-                MsgBox("Completa todos los campos", MsgBoxStyle.Critical, "Atención")
+            If (ComboBox1.Text = "") Then
+                MsgBox("Selecciona  tipo de pago", MsgBoxStyle.Critical, "Atención")
             Else
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
-                    nuevaVenta()
-                    agregarDetalles()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
                     vaciartextoCarrito()
-                    listarTiposPagoCbx()
                     vaciarCarrito()
                     vaciarTexto()
                 End If
@@ -265,74 +239,8 @@ Public Class Realizar_Venta
         End If
     End Sub
 
-
-    'insertar una venta 
-    Public Sub nuevaVenta()
-        Dim id_cliente As Integer = idCliente
-        'Se modificará cuando existan inicios de seión id_usuario 
-        Dim id_usuario As Integer = 1
-        Dim total As Double = Val(LValorTotal.Text)
-        Dim fecha_compra As Date = Today
-        Dim id_tipo_pago As Integer = Val(ComboBox1.SelectedValue.ToString)
-        Try
-            Dim cventa As New NVentas()
-            cventa.insertarVenta(id_cliente, id_usuario, total, fecha_compra, id_tipo_pago)
-            ultimoId()
-            actualizarStock()
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+    Private Sub Realizar_Venta_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        vaciarTexto()
+        vaciartextoCarrito()
     End Sub
-
-    'Recoger el ultimo id_venta y asignar a idVenta
-    Public Sub ultimoId()
-        Try
-            Dim vt As New NVentas
-            Dim dt As DataTable = vt.ultimoId()
-            idVenta = Val(dt.Rows(0)(0).ToString)
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-
-    'actualiza los stocks de los productos seleccionados
-    Public Sub actualizarStock()
-        For j = 0 To (DataGridView1.Rows.Count - 1)
-            'Selecciono los productos para poder recuperar el stock actual de cada uno
-            Seleccionar_Producto.seleccionarProductoCajero(DataGridView1.Item(0, j).Value)
-            'Descuenta los valores del stock actual y los guarda en nuevo_stock
-            Dim nuevo_stock As Integer = stock - DataGridView1.Item(3, j).Value
-            Try
-                Dim cproducto As New NProductos()
-                'envio el id del producto y el nuevo stock para hacer la actualización
-                cproducto.actualizarStock(DataGridView1.Item(0, j).Value, nuevo_stock)
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Next
-    End Sub
-
-    'insertar los detalles de la venta
-    Public Sub agregarDetalles()
-        Dim id_venta_detalle As Integer = DataGridView1.CurrentRow.Index
-        Dim id_venta As Integer
-        Dim id_Producto As Integer
-        Dim cantidad As Integer
-        Dim precio As Double
-        For j = 0 To (DataGridView1.Rows.Count - 1)
-
-            id_venta = idVenta
-            id_venta_detalle = id_venta_detalle + 1
-            id_Producto = DataGridView1.Item(0, j).Value
-            cantidad = DataGridView1.Item(3, j).Value
-            precio = DataGridView1.Item(2, j).Value
-            Try
-                Dim cdetalle As New NDetalles
-                cdetalle.insertarDetalle(id_venta, id_venta_detalle, id_Producto, cantidad, precio)
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
-        Next
-    End Sub
-
 End Class

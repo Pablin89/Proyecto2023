@@ -5,9 +5,9 @@
         Dim ask As MsgBoxResult
         ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
         If (MsgBoxResult.Yes = ask) Then
-            Me.Close()
             Login.Show()
-            Login.TUsuario.Focus()
+            Me.Hide()
+            Login.iniciarLogin()
         End If
 
     End Sub

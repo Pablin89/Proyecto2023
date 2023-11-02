@@ -24,7 +24,6 @@
             MsgBox("Debe ingresar un stock", MsgBoxStyle.Critical, "Atención")
         Else
             MsgBox("Stock agregado", MsgBoxStyle.Information, "Agregado")
-            GestionProductos.TStockEdit.Text = Val(GestionProductos.TStockEdit.Text) + Val(TextBox1.Text)
             Me.Close()
         End If
     End Sub

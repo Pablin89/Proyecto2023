@@ -868,7 +868,6 @@
         verProductosEditar()
         comboboxCategorias()
         comboboxCategoriasEditarBuscar()
-        TStockEdit.Enabled = False
 
         verProductosConsultar()
         comboboxCategoriasConsultarBuscar()
