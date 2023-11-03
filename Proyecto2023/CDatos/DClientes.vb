@@ -212,7 +212,7 @@ Public Class DClientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                          from clientes where dni like '%" & dni & "%' and id_estado_cliente = 1")
+                          from clientes where dni like '" & dni & "%' and id_estado_cliente = 1")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -242,7 +242,7 @@ Public Class DClientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                          from clientes where apellido like '%" & apellido & "%' and id_estado_cliente = 1")
+                          from clientes where apellido like '" & apellido & "%' and id_estado_cliente = 1")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -272,7 +272,7 @@ Public Class DClientes
                                 correo As Mail,
                                 direccion As Dirección,
                                 dni As DNI
-                          from clientes where correo like '%" & correo & "%' and id_estado_cliente = 1")
+                          from clientes where correo like '" & correo & "%' and id_estado_cliente = 1")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then

@@ -190,7 +190,7 @@ Public Class Editar_Cliente
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         If (TextBox7.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
@@ -202,6 +202,7 @@ Public Class Editar_Cliente
 
     Private Sub Editar_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+
         DataGridView1.AllowUserToAddRows = False
         verClientes()
     End Sub
@@ -258,4 +259,22 @@ Public Class Editar_Cliente
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
+        If TextBox7.Text <> "" Then
+            listarPorDni(TextBox7.Text)
+        End If
+    End Sub
+
+    Public Sub listarPorDni(dni As String)
+        Try
+            Dim dc As New NClientes()
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class

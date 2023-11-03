@@ -34,6 +34,7 @@ Partial Class Seleccionar_Producto
         Me.TcodigoProd = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -50,9 +51,9 @@ Partial Class Seleccionar_Producto
         '
         Me.LTitulo.AutoSize = True
         Me.LTitulo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LTitulo.Location = New System.Drawing.Point(227, 9)
+        Me.LTitulo.Location = New System.Drawing.Point(167, 9)
         Me.LTitulo.Name = "LTitulo"
-        Me.LTitulo.Size = New System.Drawing.Size(434, 16)
+        Me.LTitulo.Size = New System.Drawing.Size(435, 16)
         Me.LTitulo.TabIndex = 18
         Me.LTitulo.Text = "Para una búsqueda mas específica, selecciona una categoría"
         '
@@ -62,7 +63,7 @@ Partial Class Seleccionar_Producto
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(157, 61)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 16)
+        Me.Label1.Size = New System.Drawing.Size(76, 16)
         Me.Label1.TabIndex = 24
         Me.Label1.Text = "Categoría"
         '
@@ -129,7 +130,7 @@ Partial Class Seleccionar_Producto
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(20, 141)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 16)
+        Me.Label2.Size = New System.Drawing.Size(66, 16)
         Me.Label2.TabIndex = 27
         Me.Label2.Text = "CÓDIGO"
         '
@@ -148,12 +149,23 @@ Partial Class Seleccionar_Producto
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(181, 525)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(376, 16)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Text = "Para seleccionar un producto, haz doble clic sobre él"
+        '
         'Seleccionar_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(757, 576)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TcodigoProd)
@@ -180,4 +192,5 @@ Partial Class Seleccionar_Producto
     Friend WithEvents TcodigoProd As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label3 As Label
 End Class

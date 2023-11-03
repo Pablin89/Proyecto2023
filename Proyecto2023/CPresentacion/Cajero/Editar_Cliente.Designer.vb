@@ -39,7 +39,6 @@ Partial Class Editar_Cliente
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -103,6 +102,7 @@ Partial Class Editar_Cliente
         '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(194, 210)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(198, 20)
@@ -128,6 +128,7 @@ Partial Class Editar_Cliente
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(198, 20)
         Me.DateTimePicker2.TabIndex = 9
+        Me.DateTimePicker2.Value = New Date(2023, 10, 30, 0, 0, 0, 0)
         '
         'Label2
         '
@@ -208,22 +209,6 @@ Partial Class Editar_Cliente
         Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(290, 339)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(188, 44)
-        Me.Button1.TabIndex = 32
-        Me.Button1.Text = "Buscar DNI"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'TextBox7
         '
         Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -259,7 +244,6 @@ Partial Class Editar_Cliente
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox7)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel6)
         Me.Name = "Editar_Cliente"
@@ -290,7 +274,6 @@ Partial Class Editar_Cliente
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button1 As Button
     Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView

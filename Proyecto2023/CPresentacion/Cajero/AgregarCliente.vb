@@ -34,6 +34,7 @@ Public Class AgregarCliente
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Dim dni As Integer
         dni = TextBox11.Text
+        TextBox7.Enabled = False
         If (TextBox11.Text = "") Then
             MsgBox("Completa el campo de búsqueda", MsgBoxStyle.Information, "Atencion")
         Else
@@ -185,6 +186,7 @@ Public Class AgregarCliente
     End Sub
 
     Private Sub agregarCliente()
+
         Dim nombre As String = TextBox6.Text
         Dim apellido As String = TextBox5.Text
         Dim fecha_nacimiento As String = DateTimePicker1.Value
