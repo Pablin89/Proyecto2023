@@ -39,8 +39,6 @@
         Editar_Cliente.ShowDialog()
     End Sub
 
-    Private Sub CajeroPrincipal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        End
-    End Sub
+
 End Class
 

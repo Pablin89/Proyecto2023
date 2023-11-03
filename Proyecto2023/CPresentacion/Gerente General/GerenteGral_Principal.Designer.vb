@@ -176,6 +176,7 @@ Partial Class GerenteGral_Principal
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.Name = "GerenteGral_Principal"
         Me.Opacity = 0.94R

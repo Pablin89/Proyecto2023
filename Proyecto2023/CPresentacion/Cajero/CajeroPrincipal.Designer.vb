@@ -197,7 +197,10 @@ Partial Class CajeroPrincipal
         Me.ClientSize = New System.Drawing.Size(800, 620)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "CajeroPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CajeroPrincipal"

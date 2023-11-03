@@ -5,7 +5,7 @@ Public Class Realizar_Venta
     Public stock As Integer
 
     'Restricciones
-    Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox5.KeyPress
+    Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNombre.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
             e.Handled = False
@@ -16,13 +16,13 @@ Public Class Realizar_Venta
 
     End Sub
 
-    Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
+    Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
             e.Handled = False
-            TextBox6.MaxLength = 8
+            TDni.MaxLength = 8
 
-            If (TextBox6.Text.Length > 7) Then
+            If (TDni.Text.Length > 7) Then
                 MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             End If
 
@@ -41,10 +41,18 @@ Public Class Realizar_Venta
     End Sub
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Baja_Clientes.ShowDialog()
+        If TNombre.Text <> "" Then
+            BAgregarAlCarrito.Enabled = True
+            BBuscarProducto.Enabled = True
+
+        End If
     End Sub
 
     Private Sub BBuscarProducto_Click(sender As Object, e As EventArgs) Handles BBuscarProducto.Click
         Seleccionar_Producto.ShowDialog()
+        If TIdProd.Text <> "" Then
+            NumericUpDown1.Enabled = True
+        End If
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -53,13 +61,19 @@ Public Class Realizar_Venta
     End Sub
 
     Private Sub Realizar_Venta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TNombre.Enabled = False
+        TDni.Enabled = False
         TIdProd.Enabled = False
         TCodigoProd.Enabled = False
         TNombreProd.Enabled = False
         TPrecioProd.Enabled = False
+        NumericUpDown1.Enabled = False
+        BAgregarAlCarrito.Enabled = False
+        BBuscarProducto.Enabled = False
         Timer1.Start()
         DataGridView1.AllowUserToAddRows = False
         LValorTotal.Text = "0"
+
     End Sub
 
 
@@ -85,7 +99,7 @@ Public Class Realizar_Venta
 
         If (MsgBoxResult.Yes = ask) Then
             vaciarCarrito()
-            vaciartextoCarrito()
+            reinicarVenta()
             calcularTotal()
         End If
 
@@ -166,7 +180,7 @@ Public Class Realizar_Venta
                     'MsgBox("Stock > " + stock.ToString)
                     MsgBox("Cantidad > a " + stock.ToString + " que quedan en stock")
                     DataGridView1.ClearSelection()
-                    
+
                 Else
 
                     ask = MsgBox("Desea agregar el producto?", vbYesNo + vbInformation, "Agregar Producto")
@@ -201,23 +215,21 @@ Public Class Realizar_Venta
         End If
     End Sub
 
-    Public Sub vaciarTexto()
-        NumericUpDown1.Text = 0
-        TIdProd.Text = ""
-        ComboBox1.Text = ""
-        TextBox5.Text = ""
-        TextBox6.Text = ""
-        LValorTotal.Text = "0"
-    End Sub
 
-    Public Sub vaciartextoCarrito()
+
+    Public Sub reinicarVenta()
         NumericUpDown1.Text = 0
         TIdProd.Text = ""
         TNombreProd.Text = ""
         TCodigoProd.Text = ""
         TPrecioProd.Text = ""
         ComboBox1.Text = ""
+        TNombre.Text = ""
+        TDni.Text = ""
         LValorTotal.Text = "0"
+        NumericUpDown1.Enabled = False
+        BAgregarAlCarrito.Enabled = False
+        BBuscarProducto.Enabled = False
     End Sub
 
     Private Sub BRealizarVenta_Click(sender As Object, e As EventArgs) Handles BRealizarVenta.Click
@@ -231,16 +243,20 @@ Public Class Realizar_Venta
                 ask = MsgBox("Confirmar compra?", vbYesNo + vbInformation, "Confirmar")
                 If (MsgBoxResult.Yes = ask) Then
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
-                    vaciartextoCarrito()
                     vaciarCarrito()
-                    vaciarTexto()
+                    reinicarVenta()
                 End If
             End If
         End If
     End Sub
 
     Private Sub Realizar_Venta_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        vaciarTexto()
-        vaciartextoCarrito()
+        reinicarVenta()
+        If (DataGridView1.Rows.Count > 0) Then
+            For Each Fila As DataGridViewRow In DataGridView1.Rows
+                DataGridView1.Rows.Clear()
+                'DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+            Next
+        End If
     End Sub
 End Class

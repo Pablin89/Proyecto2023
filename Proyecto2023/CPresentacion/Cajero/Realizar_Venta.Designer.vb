@@ -51,8 +51,8 @@ Partial Class Realizar_Venta
         Me.Button3 = New System.Windows.Forms.Button()
         Me.LFecha1 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TNombre = New System.Windows.Forms.TextBox()
+        Me.TDni = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.BVaciarCarrito = New System.Windows.Forms.Button()
         Me.BBuscarProducto = New System.Windows.Forms.Button()
@@ -304,21 +304,21 @@ Partial Class Realizar_Venta
         Me.Label1.TabIndex = 29
         Me.Label1.Text = "Nombre:"
         '
-        'TextBox5
+        'TNombre
         '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(253, 25)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(250, 22)
-        Me.TextBox5.TabIndex = 28
+        Me.TNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TNombre.Location = New System.Drawing.Point(253, 25)
+        Me.TNombre.Name = "TNombre"
+        Me.TNombre.Size = New System.Drawing.Size(250, 22)
+        Me.TNombre.TabIndex = 28
         '
-        'TextBox6
+        'TDni
         '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(563, 25)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(189, 22)
-        Me.TextBox6.TabIndex = 27
+        Me.TDni.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TDni.Location = New System.Drawing.Point(563, 25)
+        Me.TDni.Name = "TDni"
+        Me.TDni.Size = New System.Drawing.Size(189, 22)
+        Me.TDni.TabIndex = 27
         '
         'Label11
         '
@@ -483,8 +483,8 @@ Partial Class Realizar_Venta
         '
         Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Controls.Add(Me.TextBox5)
-        Me.Panel1.Controls.Add(Me.TextBox6)
+        Me.Panel1.Controls.Add(Me.TNombre)
+        Me.Panel1.Controls.Add(Me.TDni)
         Me.Panel1.Controls.Add(Me.Label11)
         Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Location = New System.Drawing.Point(27, 46)
@@ -544,8 +544,8 @@ Partial Class Realizar_Venta
     Friend WithEvents BBuscarProducto As Button
     Friend WithEvents LFecha1 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TNombre As TextBox
+    Friend WithEvents TDni As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents BVaciarCarrito As Button
     Friend WithEvents Timer1 As Timer
