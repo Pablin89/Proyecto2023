@@ -3,6 +3,12 @@
 Public Class Realizar_Venta
     'con la variable stock voy a obtener el stock de cada producto para hacer el control
     Public stock As Integer
+    'Variables para recoger los id
+    Public idCliente As Integer
+    'Variable idVenta recoge el último id para hacer el detalle
+    Public idVenta As Integer
+    'Variable idUsuario recoge el id del cajero que hace la venta
+    Public idUsuario As Integer
 
     'Restricciones
     Private Sub TextBox5_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNombre.KeyPress
@@ -75,6 +81,8 @@ Public Class Realizar_Venta
         LValorTotal.Text = "0"
 
     End Sub
+
+
 
 
     'Eliminar elemento
