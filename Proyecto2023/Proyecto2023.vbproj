@@ -95,12 +95,15 @@
     <Compile Include="CDatos\Conexion.vb" />
     <Compile Include="CDatos\DCategorias.vb" />
     <Compile Include="CDatos\DClientes.vb" />
+    <Compile Include="CDatos\DDetalles.vb" />
     <Compile Include="CDatos\DEstados.vb" />
     <Compile Include="CDatos\detalle.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
     <Compile Include="CDatos\DProductos.vb" />
+    <Compile Include="CDatos\DTiposPagos.vb" />
     <Compile Include="CDatos\DUsuarios.vb" />
+    <Compile Include="CDatos\DVentas.vb" />
     <Compile Include="CDatos\Empleados.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
       <SubType>Form</SubType>
@@ -153,9 +156,12 @@
     <Compile Include="CDatos\DBackup.vb" />
     <Compile Include="CNegocio\NCategorias.vb" />
     <Compile Include="CNegocio\NClientes.vb" />
+    <Compile Include="CNegocio\NDetalles.vb" />
     <Compile Include="CNegocio\NEstados.vb" />
     <Compile Include="CNegocio\NProductos.vb" />
+    <Compile Include="CNegocio\NTiposPagos.vb" />
     <Compile Include="CNegocio\NUsuarios.vb" />
+    <Compile Include="CNegocio\NVentas.vb" />
     <Compile Include="CPresentacion\Cajero\AgregarCliente.Designer.vb">
       <DependentUpon>AgregarCliente.vb</DependentUpon>
     </Compile>

@@ -135,5 +135,4 @@ Public Class DVentas
             Return Nothing
         End Try
     End Function
-
 End Class
