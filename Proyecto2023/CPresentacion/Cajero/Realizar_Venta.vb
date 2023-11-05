@@ -269,6 +269,7 @@ Public Class Realizar_Venta
                     nuevaVenta()
                     agregarDetalles()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
+                    VentaRealizada.ShowDialog()
                     listarTiposPagoCbx()
                     vaciarCarrito()
                     reinicarVenta()

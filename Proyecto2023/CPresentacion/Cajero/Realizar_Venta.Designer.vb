@@ -38,7 +38,6 @@ Partial Class Realizar_Venta
         Me.Cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Subtotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
         Me.TIdProd = New System.Windows.Forms.TextBox()
         Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -47,15 +46,11 @@ Partial Class Realizar_Venta
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.BRealizarVenta = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.LFecha1 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TNombre = New System.Windows.Forms.TextBox()
         Me.TDni = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.BVaciarCarrito = New System.Windows.Forms.Button()
-        Me.BBuscarProducto = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.LHora = New System.Windows.Forms.Label()
         Me.LFecha = New System.Windows.Forms.Label()
@@ -68,6 +63,11 @@ Partial Class Realizar_Venta
         Me.TNombreProd = New System.Windows.Forms.TextBox()
         Me.PProducto = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.BBuscarProducto = New System.Windows.Forms.Button()
+        Me.BAgregarAlCarrito = New System.Windows.Forms.Button()
+        Me.BVaciarCarrito = New System.Windows.Forms.Button()
+        Me.BRealizarVenta = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PProducto.SuspendLayout()
@@ -96,7 +96,7 @@ Partial Class Realizar_Venta
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 311)
+        Me.DataGridView1.Location = New System.Drawing.Point(12, 290)
         Me.DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
@@ -108,7 +108,7 @@ Partial Class Realizar_Venta
         Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle7
-        Me.DataGridView1.Size = New System.Drawing.Size(796, 236)
+        Me.DataGridView1.Size = New System.Drawing.Size(796, 238)
         Me.DataGridView1.TabIndex = 0
         '
         'id
@@ -157,30 +157,14 @@ Partial Class Realizar_Venta
         Me.Eliminar.Text = "Eliminar Producto"
         Me.Eliminar.Width = 120
         '
-        'BAgregarAlCarrito
-        '
-        Me.BAgregarAlCarrito.BackColor = System.Drawing.Color.Honeydew
-        Me.BAgregarAlCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BAgregarAlCarrito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BAgregarAlCarrito.ForeColor = System.Drawing.Color.Black
-        Me.BAgregarAlCarrito.Image = CType(resources.GetObject("BAgregarAlCarrito.Image"), System.Drawing.Image)
-        Me.BAgregarAlCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(587, 79)
-        Me.BAgregarAlCarrito.Name = "BAgregarAlCarrito"
-        Me.BAgregarAlCarrito.Size = New System.Drawing.Size(166, 58)
-        Me.BAgregarAlCarrito.TabIndex = 1
-        Me.BAgregarAlCarrito.Text = "Agregar producto al carrito"
-        Me.BAgregarAlCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BAgregarAlCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BAgregarAlCarrito.UseVisualStyleBackColor = False
-        '
         'TIdProd
         '
         Me.TIdProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TIdProd.Location = New System.Drawing.Point(365, 11)
+        Me.TIdProd.Location = New System.Drawing.Point(50, 80)
         Me.TIdProd.Name = "TIdProd"
-        Me.TIdProd.Size = New System.Drawing.Size(210, 22)
+        Me.TIdProd.Size = New System.Drawing.Size(128, 22)
         Me.TIdProd.TabIndex = 2
+        Me.TIdProd.Visible = False
         '
         'NumericUpDown1
         '
@@ -190,6 +174,7 @@ Partial Class Realizar_Venta
         Me.NumericUpDown1.Name = "NumericUpDown1"
         Me.NumericUpDown1.Size = New System.Drawing.Size(93, 22)
         Me.NumericUpDown1.TabIndex = 4
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label2
         '
@@ -198,7 +183,7 @@ Partial Class Realizar_Venta
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.Location = New System.Drawing.Point(583, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(69, 16)
+        Me.Label2.Size = New System.Drawing.Size(70, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Cantidad"
         '
@@ -207,11 +192,12 @@ Partial Class Realizar_Venta
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label4.Location = New System.Drawing.Point(329, 14)
+        Me.Label4.Location = New System.Drawing.Point(21, 83)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(22, 16)
+        Me.Label4.Size = New System.Drawing.Size(23, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "ID"
+        Me.Label4.Visible = False
         '
         'LCajero
         '
@@ -229,7 +215,7 @@ Partial Class Realizar_Venta
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label5.Location = New System.Drawing.Point(518, 571)
+        Me.Label5.Location = New System.Drawing.Point(518, 553)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(74, 20)
         Me.Label5.TabIndex = 9
@@ -238,7 +224,7 @@ Partial Class Realizar_Venta
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(182, 570)
+        Me.ComboBox1.Location = New System.Drawing.Point(182, 552)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(210, 21)
         Me.ComboBox1.TabIndex = 11
@@ -248,39 +234,11 @@ Partial Class Realizar_Venta
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.Label7.Location = New System.Drawing.Point(9, 571)
+        Me.Label7.Location = New System.Drawing.Point(9, 553)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(167, 15)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Seleccionar tipo de pago"
-        '
-        'BRealizarVenta
-        '
-        Me.BRealizarVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BRealizarVenta.Image = CType(resources.GetObject("BRealizarVenta.Image"), System.Drawing.Image)
-        Me.BRealizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BRealizarVenta.Location = New System.Drawing.Point(662, 621)
-        Me.BRealizarVenta.Name = "BRealizarVenta"
-        Me.BRealizarVenta.Size = New System.Drawing.Size(146, 45)
-        Me.BRealizarVenta.TabIndex = 19
-        Me.BRealizarVenta.Text = "Realizar Venta"
-        Me.BRealizarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BRealizarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BRealizarVenta.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
-        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button3.Location = New System.Drawing.Point(4, 17)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(161, 39)
-        Me.Button3.TabIndex = 20
-        Me.Button3.Text = "Seleccionar Cliente"
-        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'LFecha1
         '
@@ -330,39 +288,6 @@ Partial Class Realizar_Venta
         Me.Label11.TabIndex = 26
         Me.Label11.Text = "DNI:"
         '
-        'BVaciarCarrito
-        '
-        Me.BVaciarCarrito.BackColor = System.Drawing.Color.White
-        Me.BVaciarCarrito.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BVaciarCarrito.ForeColor = System.Drawing.Color.Red
-        Me.BVaciarCarrito.Image = CType(resources.GetObject("BVaciarCarrito.Image"), System.Drawing.Image)
-        Me.BVaciarCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BVaciarCarrito.Location = New System.Drawing.Point(12, 621)
-        Me.BVaciarCarrito.Name = "BVaciarCarrito"
-        Me.BVaciarCarrito.Size = New System.Drawing.Size(138, 45)
-        Me.BVaciarCarrito.TabIndex = 30
-        Me.BVaciarCarrito.Text = "Vaciar Carrito"
-        Me.BVaciarCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BVaciarCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BVaciarCarrito.UseVisualStyleBackColor = False
-        '
-        'BBuscarProducto
-        '
-        Me.BBuscarProducto.BackColor = System.Drawing.Color.Gainsboro
-        Me.BBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.BBuscarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BBuscarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.BBuscarProducto.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
-        Me.BBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscarProducto.Location = New System.Drawing.Point(5, 42)
-        Me.BBuscarProducto.Name = "BBuscarProducto"
-        Me.BBuscarProducto.Size = New System.Drawing.Size(173, 47)
-        Me.BBuscarProducto.TabIndex = 22
-        Me.BBuscarProducto.Text = "Buscar Producto"
-        Me.BBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BBuscarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BBuscarProducto.UseVisualStyleBackColor = False
-        '
         'Timer1
         '
         '
@@ -402,7 +327,7 @@ Partial Class Realizar_Venta
         'TCodigoProd
         '
         Me.TCodigoProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TCodigoProd.Location = New System.Drawing.Point(365, 46)
+        Me.TCodigoProd.Location = New System.Drawing.Point(361, 11)
         Me.TCodigoProd.Name = "TCodigoProd"
         Me.TCodigoProd.Size = New System.Drawing.Size(210, 22)
         Me.TCodigoProd.TabIndex = 34
@@ -412,9 +337,9 @@ Partial Class Realizar_Venta
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label6.Location = New System.Drawing.Point(203, 49)
+        Me.Label6.Location = New System.Drawing.Point(199, 14)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(148, 16)
+        Me.Label6.Size = New System.Drawing.Size(149, 16)
         Me.Label6.TabIndex = 35
         Me.Label6.Text = "Código del producto"
         '
@@ -423,16 +348,16 @@ Partial Class Realizar_Venta
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label8.Location = New System.Drawing.Point(287, 121)
+        Me.Label8.Location = New System.Drawing.Point(283, 86)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(64, 16)
+        Me.Label8.Size = New System.Drawing.Size(65, 16)
         Me.Label8.TabIndex = 39
         Me.Label8.Text = "Precio $"
         '
         'TPrecioProd
         '
         Me.TPrecioProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TPrecioProd.Location = New System.Drawing.Point(365, 118)
+        Me.TPrecioProd.Location = New System.Drawing.Point(361, 83)
         Me.TPrecioProd.Name = "TPrecioProd"
         Me.TPrecioProd.Size = New System.Drawing.Size(210, 22)
         Me.TPrecioProd.TabIndex = 38
@@ -442,16 +367,16 @@ Partial Class Realizar_Venta
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label9.Location = New System.Drawing.Point(198, 86)
+        Me.Label9.Location = New System.Drawing.Point(194, 51)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(153, 16)
+        Me.Label9.Size = New System.Drawing.Size(154, 16)
         Me.Label9.TabIndex = 37
         Me.Label9.Text = "Nombre del producto"
         '
         'TNombreProd
         '
         Me.TNombreProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TNombreProd.Location = New System.Drawing.Point(365, 83)
+        Me.TNombreProd.Location = New System.Drawing.Point(361, 48)
         Me.TNombreProd.Name = "TNombreProd"
         Me.TNombreProd.Size = New System.Drawing.Size(210, 22)
         Me.TNombreProd.TabIndex = 36
@@ -475,7 +400,7 @@ Partial Class Realizar_Venta
         Me.PProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PProducto.Location = New System.Drawing.Point(27, 129)
         Me.PProducto.Name = "PProducto"
-        Me.PProducto.Size = New System.Drawing.Size(770, 158)
+        Me.PProducto.Size = New System.Drawing.Size(770, 143)
         Me.PProducto.TabIndex = 40
         '
         'Panel1
@@ -491,12 +416,95 @@ Partial Class Realizar_Venta
         Me.Panel1.Size = New System.Drawing.Size(770, 77)
         Me.Panel1.TabIndex = 41
         '
+        'Button3
+        '
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Image = Global.Proyecto2023.My.Resources.Resources.search_find_client_user_16693__1_
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(4, 17)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(161, 39)
+        Me.Button3.TabIndex = 20
+        Me.Button3.Text = "Seleccionar Cliente"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'BBuscarProducto
+        '
+        Me.BBuscarProducto.BackColor = System.Drawing.Color.Gainsboro
+        Me.BBuscarProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BBuscarProducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BBuscarProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.BBuscarProducto.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
+        Me.BBuscarProducto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BBuscarProducto.Location = New System.Drawing.Point(5, 11)
+        Me.BBuscarProducto.Name = "BBuscarProducto"
+        Me.BBuscarProducto.Size = New System.Drawing.Size(173, 47)
+        Me.BBuscarProducto.TabIndex = 22
+        Me.BBuscarProducto.Text = "Buscar Producto"
+        Me.BBuscarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BBuscarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BBuscarProducto.UseVisualStyleBackColor = False
+        '
+        'BAgregarAlCarrito
+        '
+        Me.BAgregarAlCarrito.BackColor = System.Drawing.Color.Honeydew
+        Me.BAgregarAlCarrito.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BAgregarAlCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.BAgregarAlCarrito.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BAgregarAlCarrito.ForeColor = System.Drawing.Color.Black
+        Me.BAgregarAlCarrito.Image = CType(resources.GetObject("BAgregarAlCarrito.Image"), System.Drawing.Image)
+        Me.BAgregarAlCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BAgregarAlCarrito.Location = New System.Drawing.Point(587, 51)
+        Me.BAgregarAlCarrito.Name = "BAgregarAlCarrito"
+        Me.BAgregarAlCarrito.Size = New System.Drawing.Size(166, 58)
+        Me.BAgregarAlCarrito.TabIndex = 1
+        Me.BAgregarAlCarrito.Text = "Agregar producto al carrito"
+        Me.BAgregarAlCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BAgregarAlCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BAgregarAlCarrito.UseVisualStyleBackColor = False
+        '
+        'BVaciarCarrito
+        '
+        Me.BVaciarCarrito.BackColor = System.Drawing.Color.White
+        Me.BVaciarCarrito.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BVaciarCarrito.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BVaciarCarrito.ForeColor = System.Drawing.Color.Red
+        Me.BVaciarCarrito.Image = CType(resources.GetObject("BVaciarCarrito.Image"), System.Drawing.Image)
+        Me.BVaciarCarrito.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BVaciarCarrito.Location = New System.Drawing.Point(12, 602)
+        Me.BVaciarCarrito.Name = "BVaciarCarrito"
+        Me.BVaciarCarrito.Size = New System.Drawing.Size(138, 45)
+        Me.BVaciarCarrito.TabIndex = 30
+        Me.BVaciarCarrito.Text = "Vaciar Carrito"
+        Me.BVaciarCarrito.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BVaciarCarrito.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BVaciarCarrito.UseVisualStyleBackColor = False
+        '
+        'BRealizarVenta
+        '
+        Me.BRealizarVenta.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BRealizarVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BRealizarVenta.Image = CType(resources.GetObject("BRealizarVenta.Image"), System.Drawing.Image)
+        Me.BRealizarVenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BRealizarVenta.Location = New System.Drawing.Point(662, 602)
+        Me.BRealizarVenta.Name = "BRealizarVenta"
+        Me.BRealizarVenta.Size = New System.Drawing.Size(146, 45)
+        Me.BRealizarVenta.TabIndex = 19
+        Me.BRealizarVenta.Text = "Realizar Venta"
+        Me.BRealizarVenta.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BRealizarVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BRealizarVenta.UseVisualStyleBackColor = True
+        '
         'Realizar_Venta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(30, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(820, 688)
+        Me.ClientSize = New System.Drawing.Size(820, 659)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PProducto)
         Me.Controls.Add(Me.LValorTotal)
