@@ -40,7 +40,8 @@ Public Class Login
 
                 Me.Hide()
                 cargarMisDatos()
-                Cajero_Principal.Show()
+                CajeroPrincipal.Show()
+                Realizar_Venta.LCajero.Text = "Cajero: " + (datos.Rows(0)("apellido").ToString)
             ElseIf (perfil = 1) Then
 
                 Me.Hide()
@@ -56,14 +57,14 @@ Public Class Login
 
                 Me.Hide()
                 cargarMisDatos()
-                Realizar_Venta.LCajero.Text = "Cajero: " + (datos.Rows(0)("apellido").ToString) + " " + (datos.Rows(0)("nombre").ToString)
 
-                CajeroPrincipal.Show()
+                Cajero_Principal.Show()
 
             End If
 
 
         Else
+
             MsgBox("Usuario incorrecto", MsgBoxStyle.Critical, "Error")
         End If
         TUsuario.Clear()

@@ -32,6 +32,29 @@ Insert into empleados values (1,00,'Ecargado', 'Inicial',' ', 00,'usuario1@gmail
 Insert into empleados values (2,01,'Gerente General', 'Inicial',' ', 01,'usuario2@gmail.com', '2020-01-01', 3, 1)
 Insert into empleados values (3,02,'Gerente', 'Inicial',' ', 02,'usuario3@gmail.com', '2020-01-01', 3, 1)
 Insert into empleados values (4,03,'Cajero', 'Inicial',' ', 03,'usuario4@gmail.com', '2020-01-01', 3, 1)
+insert into Empleados values(5,4,'Cajero','inicial','',4,'usuario5@gmail.com','2020-01-01',3,1)
+
+
+--insertar registros en tipo de pago
+insert into tipos_pagos values(1,'Efectivo')
+insert into tipos_pagos values(2,'Débito')
+insert into tipos_pagos values(3,'Crédito')
+insert into tipos_pagos values(4,'Mercado Pago')
+
+
+-- Se modificó los valores para la contraseña por varchar(50)
+--Creación de un cajero Usuario: Cajero contraseña: cajero
+insert into Usuarios Values('Cajero','YwBhAGoAZQByAG8A',4,4)
+--Creación de un cajero Usuario: Cajero2 contraseña: cajero
+insert into Usuarios Values('Cajero2','YwBhAGoAZQByAG8A',5,4)
+--Creación de un Encargado Usuario: Encargado contraseña: encargado 
+insert into Usuarios Values('Encargado','ZQBuAGMAYQByAGcAYQBkAG8A',1,3)
+--Creación de un Encargado Usuario: Encargado2 contraseña: encargado 
+insert into Usuarios Values('Encargado2','ZQBuAGMAYQByAGcAYQBkAG8A',1,3)
+--Creación de un Gerente Usuario: Gerente contraseña: gerente 
+insert into Usuarios Values('Gerente','ZwBlAHIAZQBuAHQAZQA=',3,2)
+--Creación de un Gerente Gral Usuario: GerenteGral contraseña: gerentegral 
+insert into Usuarios Values('GerenteGral','ZwBlAHIAZQBuAHQAZQBnAHIAYQBsAA==',2,1)
 
 
 
