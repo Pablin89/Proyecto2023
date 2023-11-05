@@ -200,4 +200,14 @@
             Return Nothing
         End Try
     End Function
+
+    'Actualizar el stock al realizar la compra
+    Public Function actualizarStock(id_producto As Integer, stock As Integer) As Boolean
+        Dim dproducto As New DProductos()
+        If (dproducto.actualizarStock(id_producto, stock)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
 End Class
