@@ -135,4 +135,29 @@ Public Class DVentas
             Return Nothing
         End Try
     End Function
+
+    Public Function verMisVentas(id) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select *
+                                        from ventas v inner join detalles d 
+                                        (on v.id_venta = d.id_venta)
+                                        where v.id_usuario =" & id & "")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class

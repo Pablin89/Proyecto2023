@@ -19,4 +19,22 @@
             Return Nothing
         End Try
     End Function
+
+
+    Public Function verMisVentas(id) As DataTable
+        Try
+            Dim dventa As New DVentas
+            Dim dt As DataTable = dventa.verMisVentas(id)
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+
+
 End Class

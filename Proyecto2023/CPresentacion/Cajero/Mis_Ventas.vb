@@ -1,7 +1,7 @@
 ﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 
 Public Class Mis_ventas
-
+    Public id As Integer
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -31,7 +31,7 @@ Public Class Mis_ventas
         DateTimePicker1.Enabled = False
         DateTimePicker2.Enabled = False
 
-
+        verMisVentas(id)
 
 
     End Sub
@@ -67,4 +67,16 @@ Public Class Mis_ventas
             MsgBox("Seleccionaste buscar por 'Ventas en efectivo'", MsgBoxStyle.Information, "Buscar")
         End If
     End Sub
+
+    Public Sub verMisVentas(id As Integer)
+        Try
+            Dim nv As New NVentas
+            Dim dt As DataTable = nv.verMisVentas(id)
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
 End Class

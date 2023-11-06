@@ -52,6 +52,7 @@ Public Class Login
 
                 Me.Hide()
                 cargarMisDatos()
+                cargarIdVentas()
                 Gerente_Principal.Show()
             ElseIf (perfil = 3) Then
 
@@ -84,6 +85,13 @@ Public Class Login
         Misdatos.DTFechaNac.Text = (datos.Rows(0)("fecha_nacimiento").ToString)
 
     End Sub
+
+
+    Public Sub cargarIdVentas()
+        Mis_ventas.id = datos.Rows(0)("id_usuario")
+    End Sub
+
+
 
 
 End Class
