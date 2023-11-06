@@ -626,7 +626,7 @@ Public Class DProductos
         Try
             conectar()
 
-            Dim query As String = "update Productos set stock = stock + " & stock & " where id_producto = " & id_producto & ""
+            Dim query As String = "update Productos set stock = " & stock & " where id_producto = " & id_producto & ""
 
             comando = New SqlCommand(query, conexion)
 

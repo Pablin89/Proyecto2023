@@ -136,13 +136,20 @@ Public Class DVentas
         End Try
     End Function
 
+    'Listar las ventas del cajero
     Public Function verMisVentas(id) As DataTable
         Try
             conectar()
-            Dim comando = New SqlCommand("select *
-                                        from ventas v inner join detalles d 
-                                        (on v.id_venta = d.id_venta)
-                                        where v.id_usuario =" & id & "")
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta,
+	                                        fecha_compra,
+	                                        total,
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+                                        from ventas 
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        where  ventas.id_usuario =" & id & "")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -159,5 +166,8 @@ Public Class DVentas
             Return Nothing
         End Try
     End Function
+    'Listar los detalles de las ventas del cajero
+    Public Function verMisDetalles(id) As DataTable
 
+    End Function
 End Class

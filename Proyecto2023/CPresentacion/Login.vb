@@ -74,6 +74,7 @@ Public Class Login
 
 
     Public Sub cargarMisDatos()
+        Mis_ventas.id = datos.Rows(0)("id_usuario")
         Realizar_Venta.idUsuario = datos.Rows(0)("id_usuario")
         Misdatos.TNomYApe.Text = (datos.Rows(0)("apellido").ToString) + " " + (datos.Rows(0)("nombre").ToString)
         Misdatos.TDni.Text = datos.Rows(0)("dni").ToString
