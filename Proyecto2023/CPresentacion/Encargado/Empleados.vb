@@ -1,10 +1,15 @@
-﻿Imports System.Text.RegularExpressions
-
+﻿
+Imports System.Data.SqlClient
+Imports System.Text.RegularExpressions
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
 Public Class Empleados
+
+    Dim item As Integer
     Private Sub BRCambios_Click(sender As Object, e As EventArgs) Handles BRCambios.Click
         BRCambios.Visible = False
         BCambios.Visible = True
-        TApellidoYNombre.Enabled = True
+        TApellidos.Enabled = True
+        TNombres.Enabled = True
         TDireccion.Enabled = True
         TDni.Enabled = True
         TCorreo.Enabled = True
@@ -12,45 +17,84 @@ Public Class Empleados
         DTFechaNac.Enabled = True
     End Sub
 
+    Public Sub cargarConsultar()
+        TextBox4.Clear()
+        TextBox3.Clear()
+        TextBox4.Enabled = False
+        TextBox3.Enabled = False
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        BLimpiarFiltros.Visible = False
+        verEmpleados()
+        LApeyNom.Text = ""
+        LCorreo2.Text = ""
+        LDireccion2.Text = ""
+        LDni2.Text = ""
+        LFechaNac2.Text = ""
+        LEstado2.Text = ""
+        LTelefono2.Text = ""
+        DataGridView2.Columns(0).Visible = False
+        DataGridView2.Columns(1).Width = 200
+        DataGridView2.Columns(2).Width = 200
+        DataGridView2.Columns(4).Visible = False
+        DataGridView2.Columns(5).Visible = False
+        DataGridView2.Columns(6).Visible = False
+        DataGridView2.Columns(7).Visible = False
 
-    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TApellidoYNombre.Clear()
+    End Sub
+
+
+    Public Sub cargarEditar()
+        TNombres.Clear()
         TDireccion.Clear()
         TDni.Clear()
         TCorreo.Clear()
         TTelefono.Clear()
-        TextBox1.Clear()
-        TextBox2.Clear()
-        TextBox4.Clear()
-        TextBox3.Clear()
-
-
-        TApellidoYNombre.Enabled = False
+        TApellidos.Enabled = False
+        TNombres.Enabled = False
         TDireccion.Enabled = False
         TDni.Enabled = False
         TCorreo.Enabled = False
         TTelefono.Enabled = False
         DTFechaNac.Enabled = False
+        TextBox1.Clear()
+        TextBox2.Clear()
         TextBox1.Enabled = False
         TextBox2.Enabled = False
-        TextBox4.Enabled = False
-        TextBox3.Enabled = False
-
-
-        CheckBox1.Checked = False
-        CheckBox2.Checked = False
         ChBApellido.Checked = False
         ChBDni.Checked = False
+        verEmpleadosEditar()
+        DataGridView1.Columns(0).Visible = False
+        DataGridView1.Columns(1).Width = 200
+        DataGridView1.Columns(2).Width = 200
+        DataGridView1.Columns(4).Visible = False
+        DataGridView1.Columns(5).Visible = False
+        DataGridView1.Columns(6).Visible = False
+        DataGridView1.Columns(7).Visible = False
+    End Sub
 
 
+    Public Sub cargarAgregar()
 
+        Button9.Visible = False
         Panel6.Visible = False
         Button3.Visible = False
         Button2.Visible = True
         TextBox11.Enabled = True
         TextBox11.Clear()
-
     End Sub
+
+
+
+    Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cargarConsultar()
+        cargarEditar()
+        cargarAgregar()
+    End Sub
+
+
+
+
 
     'Seccion Agregar empleado
     'restricciones(Busqueda)
@@ -88,8 +132,10 @@ Public Class Empleados
                 MsgBox("Este DNI no existe en el sistema, puede agregar el empleado.", MsgBoxStyle.Information, "Buscar")
                 Panel6.Visible = True
                 TextBox7.Text = TextBox11.Text
+                TextBox7.Enabled = False
                 Button3.Visible = True
                 Button2.Visible = True
+                Button9.Visible = True
                 TextBox11.Clear()
             End If
         End If
@@ -275,7 +321,7 @@ Public Class Empleados
     End Sub
 
     'Restricciones de editar empleado
-    Private Sub TApellidoYNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TApellidoYNombre.KeyPress
+    Private Sub TApellidoYNombre_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNombres.KeyPress
 
         If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
             e.Handled = False
@@ -336,7 +382,7 @@ Public Class Empleados
 
         Dim ask As MsgBoxResult
 
-        If ((TApellidoYNombre.Text <> "") And
+        If ((TNombres.Text <> "") And
             (TDireccion.Text <> "") And
             (TDni.Text <> "") And
             (TCorreo.Text <> "") And
@@ -348,14 +394,15 @@ Public Class Empleados
 
                 If ask = MsgBoxResult.Yes Then
                     MsgBox("Empleado Editado", MsgBoxStyle.OkOnly, "Agregado")
-                    TApellidoYNombre.Text = ""
+                    TNombres.Text = ""
                     TDireccion.Text = ""
                     TDni.Text = ""
                     TCorreo.Text = ""
                     TTelefono.Text = ""
                     BRCambios.Visible = True
                     BCambios.Visible = False
-                    TApellidoYNombre.Enabled = False
+                    TApellidos.Enabled = False
+                    TNombres.Enabled = False
                     TDireccion.Enabled = False
                     TDni.Enabled = False
                     TCorreo.Enabled = False
@@ -441,6 +488,7 @@ Public Class Empleados
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
+        BLimpiarFiltros.Visible = True
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
@@ -479,5 +527,112 @@ Public Class Empleados
         End If
     End Sub
 
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea volver a ingresar un nombre para agregar un producto distinto?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirmación")
+        If (ask = MsgBoxResult.Yes) Then
+            reiniciarAgregar()
+        End If
+    End Sub
 
+    'Reinicio de valores textbox y combobox al elegir modificar el nombre del producto.
+    Public Sub reiniciarAgregar()
+
+        Button9.Visible = False
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        TextBox5.Clear()
+        TextBox8.Clear()
+        TextBox6.Clear()
+        TextBox7.Clear()
+        TextBox9.Clear()
+        TextBox10.Clear()
+        ComboBox2.SelectedIndex = -1
+
+    End Sub
+
+    'Listar todos los empleados
+    Public Sub verEmpleados()
+        Try
+            Dim ne As New NEmpleados
+            Dim dt As DataTable = ne.verEmpleados()
+            DataGridView2.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
+
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView2.CurrentRow.Index
+
+        ask = MsgBox("Ver detalle del producto: '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
+        If (MsgBoxResult.Yes = ask) Then
+            item = Me.DataGridView2.Item(0, i).Value
+            seleccionarEmpleadoConsultar(item)
+        End If
+    End Sub
+
+
+
+    Public Sub seleccionarEmpleadoConsultar(id As Integer)
+
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.seleccionarEmpleadoConsultar(id)
+
+            'DataGridView2.DataSource = dt
+            LApeyNom.Text = dt.Rows(0)(1).ToString + " " + dt.Rows(0)(2).ToString
+            LDni2.Text = dt.Rows(0)(3).ToString
+            LFechaNac2.Text = dt.Rows(0)(4).ToString
+            LCorreo2.Text = dt.Rows(0)(5).ToString
+            LDireccion2.Text = dt.Rows(0)(6).ToString
+            LTelefono2.Text = dt.Rows(0)(7).ToString
+            LEstado2.Text = dt.Rows(0)(8).ToString
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+
+    Public Sub verEmpleadosEditar()
+        Try
+            Dim ne As New NEmpleados
+            Dim dt As DataTable = ne.verEmpleados()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    'Activar los campos para editar el empleado seleccionado
+    Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
+        If (MsgBoxResult.Yes = ask) Then
+            'La variable item me permite recoger el id del cliente para hacer la edición
+            item = Me.DataGridView1.Item(0, i).Value
+            TApellidos.Text = Me.DataGridView1.Item(1, i).Value.ToString()
+            TNombres.Text = Me.DataGridView1.Item(2, i).Value.ToString()
+            DTFechaNac.Value = Me.DataGridView1.Item(4, i).Value
+            TTelefono.Text = Me.DataGridView1.Item(7, i).Value.ToString()
+            TDireccion.Text = Me.DataGridView1.Item(6, i).Value.ToString()
+            TDni.Text = Me.DataGridView1.Item(3, i).Value.ToString()
+            TCorreo.Text = Me.DataGridView1.Item(5, i).Value.ToString()
+        End If
+
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles BLimpiarFiltros.Click
+        cargarConsultar()
+    End Sub
 End Class
