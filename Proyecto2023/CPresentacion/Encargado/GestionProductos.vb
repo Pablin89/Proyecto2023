@@ -182,9 +182,12 @@
                 MsgBox("Ningún producto tiene este nombre en el sistema, puede agregarlo.", MsgBoxStyle.Information, "Buscar")
                 Panel6.Visible = True
                 TextBox5.Text = TextBox11.Text
+                TextBox5.Enabled = False
                 Button3.Visible = True
                 Button2.Visible = True
                 TextBox11.Clear()
+                Button2.Visible = False
+                Button9.Visible = True
             End If
         End If
     End Sub
@@ -831,6 +834,7 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         AgregarStock.ShowDialog()
+        seleccionarProductoEditar(id)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -863,6 +867,8 @@
 
         Panel6.Visible = False
         Button3.Visible = False
+        Button2.Visible = True
+        Button9.Visible = False
 
         DataGridView2.AllowUserToAddRows = False
         verProductosEditar()
@@ -945,4 +951,33 @@
         End If
     End Sub
 
+
+    Public Sub reiniciarAgregar()
+
+        Button9.Visible = False
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        TextBox5.Clear()
+        TextBox12.Clear()
+        TextBox6.Clear()
+        TextBox7.Clear()
+        TextBox13.Clear()
+        TDescripcion2.Clear()
+        ComboBox1.SelectedIndex = -1
+        ComboBox2.SelectedIndex = -1
+
+
+
+
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim ask As MsgBoxResult
+        ask = MsgBox("Desea volver a ingresar un nombre para agregar un producto distinto?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirmación")
+        If (ask = MsgBoxResult.Yes) Then
+            reiniciarAgregar()
+        End If
+
+    End Sub
 End Class

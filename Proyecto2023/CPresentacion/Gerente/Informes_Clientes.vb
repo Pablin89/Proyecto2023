@@ -9,6 +9,7 @@ Public Class Informes_Clientes
         'ElseIf (ComboBox2.Text = "Clientes con menos compras") Then
         '    MsgBox("Seleccionaste buscar por 'Clientes con menos compras'", MsgBoxStyle.Information, "Buscar")
         'End If
+        ReporteClientes.ShowDialog()
         MsgBox("Actualmente no se puede generar el informe por que no hay datos disponibles'", MsgBoxStyle.Exclamation, "Informe")
     End Sub
 

@@ -78,7 +78,7 @@ Public Class Realizar_Venta
         BBuscarProducto.Enabled = False
         Timer1.Start()
         DataGridView1.AllowUserToAddRows = False
-        LValorTotal.Text = "0"
+        LValorTotal.Text = "00.00"
 
         listarTiposPagoCbx()
     End Sub
@@ -250,7 +250,7 @@ Public Class Realizar_Venta
         ComboBox1.Text = ""
         TNombre.Text = ""
         TDni.Text = ""
-        LValorTotal.Text = "0"
+        LValorTotal.Text = "00.00"
         NumericUpDown1.Enabled = False
         BAgregarAlCarrito.Enabled = False
         BBuscarProducto.Enabled = False

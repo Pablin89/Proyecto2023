@@ -10,6 +10,5 @@
         '    MsgBox("Seleccionaste buscar por 'Ultimos cajeros añadidos'", MsgBoxStyle.Information, "Buscar")
         'End If
         ReporteCajeros.ShowDialog()
-        MsgBox("Actualmente no se puede generar el informe por que no hay datos disponibles'", MsgBoxStyle.Exclamation, "Informe")
     End Sub
 End Class

@@ -26,6 +26,9 @@ Partial Class Informes_Cajeros
         Me.LFiltro = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TotalVendido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NroVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateTimeHasta = New System.Windows.Forms.DateTimePicker()
         Me.DateTimeDesde = New System.Windows.Forms.DateTimePicker()
         Me.LFechaHasta = New System.Windows.Forms.Label()
@@ -35,9 +38,7 @@ Partial Class Informes_Cajeros
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Usuario = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TotalVendido = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NroVentas = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -58,19 +59,36 @@ Partial Class Informes_Cajeros
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Cajeros con mas ventas", "Cajeros con menos ventas", "Ultimos cajeros añadidos"})
-        Me.ComboBox1.Location = New System.Drawing.Point(26, 95)
+        Me.ComboBox1.Location = New System.Drawing.Point(41, 95)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(230, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(215, 21)
         Me.ComboBox1.TabIndex = 16
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Usuario, Me.TotalVendido, Me.NroVentas})
-        Me.DataGridView1.Location = New System.Drawing.Point(49, 17)
+        Me.DataGridView1.Location = New System.Drawing.Point(41, 17)
         Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(743, 289)
+        Me.DataGridView1.Size = New System.Drawing.Size(751, 289)
         Me.DataGridView1.TabIndex = 15
+        '
+        'Usuario
+        '
+        Me.Usuario.HeaderText = "Usuario"
+        Me.Usuario.Name = "Usuario"
+        Me.Usuario.Width = 300
+        '
+        'TotalVendido
+        '
+        Me.TotalVendido.HeaderText = "Total vendido"
+        Me.TotalVendido.Name = "TotalVendido"
+        Me.TotalVendido.Width = 300
+        '
+        'NroVentas
+        '
+        Me.NroVentas.HeaderText = "Cantidad de Ventas"
+        Me.NroVentas.Name = "NroVentas"
         '
         'DateTimeHasta
         '
@@ -121,6 +139,7 @@ Partial Class Informes_Cajeros
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button3)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.DataGridView1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -153,9 +172,9 @@ Partial Class Informes_Cajeros
         Me.Button1.ForeColor = System.Drawing.SystemColors.Control
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(605, 326)
+        Me.Button1.Location = New System.Drawing.Point(635, 326)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(187, 56)
+        Me.Button1.Size = New System.Drawing.Size(157, 45)
         Me.Button1.TabIndex = 19
         Me.Button1.Text = "Generar Informe"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -170,7 +189,7 @@ Partial Class Informes_Cajeros
         Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
         Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.Location = New System.Drawing.Point(625, 75)
+        Me.Button2.Location = New System.Drawing.Point(635, 75)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(157, 41)
         Me.Button2.TabIndex = 20
@@ -179,22 +198,22 @@ Partial Class Informes_Cajeros
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button2.UseVisualStyleBackColor = False
         '
-        'Usuario
+        'Button3
         '
-        Me.Usuario.HeaderText = "Usuario"
-        Me.Usuario.Name = "Usuario"
-        Me.Usuario.Width = 300
-        '
-        'TotalVendido
-        '
-        Me.TotalVendido.HeaderText = "Total vendido"
-        Me.TotalVendido.Name = "TotalVendido"
-        Me.TotalVendido.Width = 300
-        '
-        'NroVentas
-        '
-        Me.NroVentas.HeaderText = "Cantidad de Ventas"
-        Me.NroVentas.Name = "NroVentas"
+        Me.Button3.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.Button3.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Button3.Image = CType(resources.GetObject("Button3.Image"), System.Drawing.Image)
+        Me.Button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button3.Location = New System.Drawing.Point(41, 326)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(152, 45)
+        Me.Button3.TabIndex = 21
+        Me.Button3.Text = "Limpiar Filtros"
+        Me.Button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button3.UseVisualStyleBackColor = False
         '
         'Informes_Cajeros
         '
@@ -234,4 +253,5 @@ Partial Class Informes_Cajeros
     Friend WithEvents TotalVendido As DataGridViewTextBoxColumn
     Friend WithEvents NroVentas As DataGridViewTextBoxColumn
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class

@@ -342,6 +342,12 @@
     <Compile Include="CPresentacion\Gerente\ReporteCajeros.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteClientes.Designer.vb">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Gerente\ReporteGeneral.Designer.vb">
       <DependentUpon>ReporteGeneral.vb</DependentUpon>
     </Compile>
@@ -439,9 +445,13 @@
     <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReportClientes.rdlc" />
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteCajeros.rdlc" />
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteCajeros.resx">
       <DependentUpon>ReporteCajeros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteClientes.resx">
+      <DependentUpon>ReporteClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteGeneral.rdlc" />
     <EmbeddedResource Include="CPresentacion\Gerente General\Restauracion.resx">
@@ -465,6 +475,7 @@
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteGeneral.resx">
       <DependentUpon>ReporteGeneral.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteProductos.rdlc" />
     <EmbeddedResource Include="CPresentacion\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
