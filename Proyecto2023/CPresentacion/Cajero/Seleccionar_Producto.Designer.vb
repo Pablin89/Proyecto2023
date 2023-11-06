@@ -175,6 +175,9 @@ Partial Class Seleccionar_Producto
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.LTitulo)
         Me.ForeColor = System.Drawing.SystemColors.ControlLight
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Seleccionar_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Seleccionar_Producto"

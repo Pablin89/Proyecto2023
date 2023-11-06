@@ -41,6 +41,9 @@ Partial Class ReporteGeneral
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(839, 748)
         Me.Controls.Add(Me.ReportViewer1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "ReporteGeneral"
         Me.Text = "ReporteGeneral"
         Me.ResumeLayout(False)

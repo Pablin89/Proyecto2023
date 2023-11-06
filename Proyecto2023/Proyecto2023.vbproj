@@ -284,12 +284,6 @@
     <Compile Include="CPresentacion\Gerente General\RBackup.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Gerente General\Realizar_Backup.Designer.vb">
-      <DependentUpon>Realizar_Backup.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente General\Realizar_Backup.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.Designer.vb">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </Compile>
@@ -431,9 +425,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\RBackup.resx">
       <DependentUpon>RBackup.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente General\Realizar_Backup.resx">
-      <DependentUpon>Realizar_Backup.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>

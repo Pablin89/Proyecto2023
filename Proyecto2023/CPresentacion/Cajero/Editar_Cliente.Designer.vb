@@ -246,6 +246,9 @@ Partial Class Editar_Cliente
         Me.Controls.Add(Me.TextBox7)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Panel6)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Editar_Cliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Editar_Cliente"
