@@ -141,9 +141,9 @@ Public Class DVentas
         Try
             conectar()
             Dim comando = New SqlCommand("select 
-	                                        ventas.id_venta,
-	                                        fecha_compra,
-	                                        total,
+	                                        ventas.id_venta As 'ID',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        '$'+STR(total) As 'Total',
 	                                        tipos_pagos.descripcion As 'Tipo de Pago',
 	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
                                         from ventas 

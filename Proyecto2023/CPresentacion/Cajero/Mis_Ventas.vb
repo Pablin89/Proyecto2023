@@ -30,7 +30,7 @@ Public Class Mis_ventas
         LDni.Visible = False
         DateTimePicker1.Enabled = False
         DateTimePicker2.Enabled = False
-
+        DataGridView1.AllowUserToAddRows = False
         verMisVentas(id)
 
 
@@ -72,11 +72,27 @@ Public Class Mis_ventas
         Try
             Dim nv As New NVentas
             Dim dt As DataTable = nv.verMisVentas(id)
-            DataGridView1.DataSource = dt
+            'DataGridView1.DataSource = dt
+            For j = 0 To (dt.Rows.Count - 1)
+                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-mm-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
+            Next
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
 
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+        Dim col As Integer = DataGridView1.CurrentCell.ColumnIndex
+        Dim opcion As MsgBoxResult
+
+        If (col = 5) Then
+            opcion = MsgBox("Ver detalle de la venta?", vbYesNo + vbDefaultButton2 + vbInformation, "Detalle")
+            If (opcion = DialogResult.Yes) Then
+                'DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
+                MsgBox("Se mostrará el detalle de la venta")
+            End If
+        End If
+    End Sub
 End Class
