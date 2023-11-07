@@ -166,8 +166,97 @@ Public Class DVentas
             Return Nothing
         End Try
     End Function
-    'Listar los detalles de las ventas del cajero
-    Public Function verMisDetalles(id) As DataTable
 
+    'Listar ventas por DNI del cliente
+    Public Function ventasPorDni(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        '$'+STR(total) As 'Total',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+                                        from ventas 
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        where  Clientes.dni like '%" & dni & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
     End Function
+
+    Public Function ventasPorTipoDePago(id_tipo_pago As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        '$'+STR(total) As 'Total',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+                                        from ventas 
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        where  tipos_pagos.id_tipo_pago = " & id_tipo_pago & "")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Listar ventas por rango de fecha
+    Public Function ventasPorFecha(desde As Date, hasta As Date) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        '$'+STR(total) As 'Total',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+                                        from ventas 
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        where fecha_compra between '" & desde & "' and '" & hasta & "'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class
