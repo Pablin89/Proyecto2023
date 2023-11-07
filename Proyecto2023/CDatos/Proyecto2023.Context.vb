@@ -24,7 +24,7 @@ Partial Public Class Proyecto2023Entities
 
     Public Property Categorias() As DbSet(Of Categorias)
     Public Property clientes() As DbSet(Of clientes)
-    Public Property detalle() As DbSet(Of detalle)
+    Public Property detalle() As DbSet(Of DetalleVenta)
     Public Property Empleados() As DbSet(Of Empleados)
     Public Property Estados_clientes() As DbSet(Of Estados_clientes)
     Public Property Estados_empleados() As DbSet(Of Estados_empleados)

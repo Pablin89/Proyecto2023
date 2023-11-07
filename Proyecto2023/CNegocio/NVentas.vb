@@ -1,4 +1,6 @@
-﻿Public Class NVentas
+﻿Imports System.Security.Cryptography
+
+Public Class NVentas
     Public Function insertarVenta(id_cliente As Integer, id_usuario As Integer, total As Double, fecha_compra As Date, id_tipo_pago As Integer) As Boolean
         Dim dventa As New DVentas(id_cliente, id_usuario, total, fecha_compra, id_tipo_pago)
         If (dventa.insertarVenta(dventa)) Then
@@ -62,6 +64,18 @@
         Try
             Dim dventa As New DVentas
             Dim dt As DataTable = dventa.ventasPorFecha(desde, hasta)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Seleccionar una venta para el encabezado del detalle
+    Public Function seleccionarVenta(id As Integer) As DataTable
+        Try
+            Dim dventa As New DVentas
+            Dim dt As DataTable = dventa.seleccionarVenta(id)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)

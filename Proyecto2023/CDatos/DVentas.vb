@@ -145,7 +145,7 @@ Public Class DVentas
 	                                        fecha_compra As 'Fecha de Compra',
 	                                        '$'+STR(total) As 'Total',
 	                                        tipos_pagos.descripcion As 'Tipo de Pago',
-	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+	                                        clientes.nombre + ' ' + Clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente'
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
@@ -176,7 +176,7 @@ Public Class DVentas
 	                                        fecha_compra As 'Fecha de Compra',
 	                                        '$'+STR(total) As 'Total',
 	                                        tipos_pagos.descripcion As 'Tipo de Pago',
-	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+	                                        clientes.nombre + ' ' + Clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente'
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
@@ -206,7 +206,7 @@ Public Class DVentas
 	                                        fecha_compra As 'Fecha de Compra',
 	                                        '$'+STR(total) As 'Total',
 	                                        tipos_pagos.descripcion As 'Tipo de Pago',
-	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+	                                        clientes.nombre + ' ' + Clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente'
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
@@ -237,11 +237,44 @@ Public Class DVentas
 	                                        fecha_compra As 'Fecha de Compra',
 	                                        '$'+STR(total) As 'Total',
 	                                        tipos_pagos.descripcion As 'Tipo de Pago',
-	                                        clientes.nombre + ' ' + Clientes.apellido As 'Cliente'
+	                                        clientes.nombre + ' ' + Clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente'
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
                                         where fecha_compra between '" & desde & "' and '" & hasta & "'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Seleccionar una venta para el encabezado del detalle
+    Public Function seleccionarVenta(id As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta,
+	                                        fecha_compra,
+	                                        total,
+	                                        tipos_pagos.descripcion,
+	                                        clientes.nombre,
+                                            clientes.apellido,
+                                            clientes.dni
+                                        from ventas 
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        where  ventas.id_venta=" & id & "")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then

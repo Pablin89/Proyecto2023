@@ -22,7 +22,7 @@ Partial Public Class Productos
     Public Property id_categoria As Nullable(Of Integer)
 
     Public Overridable Property Categorias As Categorias
-    Public Overridable Property detalle As ICollection(Of detalle) = New HashSet(Of detalle)
+    Public Overridable Property detalle As ICollection(Of DetalleVenta) = New HashSet(Of DetalleVenta)
     Public Overridable Property Estados_productos As Estados_productos
 
 End Class

@@ -23,7 +23,7 @@ Partial Class Mis_ventas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mis_ventas))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LDni = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -33,14 +33,14 @@ Partial Class Mis_ventas
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.IDVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Detalle = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,6 +143,27 @@ Partial Class Mis_ventas
         Me.DataGridView1.Size = New System.Drawing.Size(880, 209)
         Me.DataGridView1.TabIndex = 14
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label3.Location = New System.Drawing.Point(52, 88)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(219, 16)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Seleccionar filtro de búsqueda"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con Efectivo", "Ventas con Débito", "Ventas con Crédito", "Ventas con Mercado Pago", "Por Rango de Fechas"})
+        Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
+        Me.ComboBox1.TabIndex = 16
+        '
         'IDVenta
         '
         Me.IDVenta.HeaderText = "ID"
@@ -171,37 +192,15 @@ Partial Class Mis_ventas
         '
         Me.Cliente.HeaderText = "Cliente"
         Me.Cliente.Name = "Cliente"
-        Me.Cliente.Width = 250
+        Me.Cliente.Width = 270
         '
         'Detalle
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Detalle.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Detalle.DefaultCellStyle = DataGridViewCellStyle1
         Me.Detalle.HeaderText = "Detalle"
         Me.Detalle.Name = "Detalle"
-        Me.Detalle.Width = 120
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label3.Location = New System.Drawing.Point(52, 88)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(219, 16)
-        Me.Label3.TabIndex = 15
-        Me.Label3.Text = "Seleccionar filtro de búsqueda"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con Efectivo", "Ventas con Débito", "Ventas con Crédito", "Ventas con Mercado Pago", "Por Rango de Fechas"})
-        Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
-        Me.ComboBox1.TabIndex = 16
         '
         'Mis_ventas
         '

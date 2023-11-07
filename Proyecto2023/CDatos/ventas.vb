@@ -20,7 +20,7 @@ Partial Public Class ventas
     Public Property id_tipo_pago As Integer
 
     Public Overridable Property clientes As clientes
-    Public Overridable Property detalle As ICollection(Of detalle) = New HashSet(Of detalle)
+    Public Overridable Property detalle As ICollection(Of DetalleVenta) = New HashSet(Of DetalleVenta)
     Public Overridable Property Estados_ventas As Estados_ventas
     Public Overridable Property tipos_pagos As tipos_pagos
     Public Overridable Property Usuarios As Usuarios

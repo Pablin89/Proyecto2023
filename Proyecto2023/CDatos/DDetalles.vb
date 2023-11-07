@@ -83,4 +83,33 @@ Public Class DDetalles
             Return False
         End Try
     End Function
+
+    Public Function verDetalle(id As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select
+	                                        Productos.nombre As 'Producto',
+	                                        '$'+str(detalle.precio) As 'Precio',
+	                                        detalle.cantidad As 'Cantidad',
+	                                        '$'+str(detalle.cantidad*detalle.precio) As 'Subtotal'
+                                        from detalle
+	                                        inner join ventas on (detalle.id_venta = ventas.id_venta)
+	                                        inner join Productos on (detalle.id_producto = Productos.id_producto)
+                                        where detalle.id_venta =" & id & "")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class

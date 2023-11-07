@@ -118,6 +118,7 @@
     <Compile Include="CDatos\DEstados.vb" />
     <Compile Include="CDatos\detalle.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDatos\DProductos.vb" />
     <Compile Include="CDatos\DTiposPagos.vb" />
@@ -192,6 +193,12 @@
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DetalleVenta.Designer.vb">
+      <DependentUpon>DetalleVenta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DetalleVenta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Cajero\Editar_Cliente.Designer.vb">
@@ -379,6 +386,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\CajeroPrincipal.resx">
       <DependentUpon>CajeroPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Cajero\DetalleVenta.resx">
+      <DependentUpon>DetalleVenta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Cajero\Editar_Cliente.resx">
       <DependentUpon>Editar_Cliente.vb</DependentUpon>

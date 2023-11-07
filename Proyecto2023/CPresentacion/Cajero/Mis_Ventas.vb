@@ -105,7 +105,7 @@ Public Class Mis_ventas
             Dim dt As DataTable = nv.verMisVentas(id)
             'DataGridView1.DataSource = dt
             For j = 0 To (dt.Rows.Count - 1)
-                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-mm-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
+                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
             Next
 
         Catch ex As Exception
@@ -121,7 +121,7 @@ Public Class Mis_ventas
             Dim dt As DataTable = nv.ventasPorDni(dni)
             'DataGridView1.DataSource = dt
             For j = 0 To (dt.Rows.Count - 1)
-                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-mm-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
+                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
             Next
 
         Catch ex As Exception
@@ -136,7 +136,7 @@ Public Class Mis_ventas
             Dim dt As DataTable = nv.ventasPorTipoDePago(id_tipo)
 
             For j = 0 To (dt.Rows.Count - 1)
-                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-mm-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
+                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -150,7 +150,7 @@ Public Class Mis_ventas
             Dim dt As DataTable = nv.ventasPorFecha(desde, hasta)
 
             For j = 0 To (dt.Rows.Count - 1)
-                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-mm-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
+                DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
             Next
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -160,12 +160,48 @@ Public Class Mis_ventas
         Dim col As Integer = DataGridView1.CurrentCell.ColumnIndex
         Dim opcion As MsgBoxResult
 
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+
         If (col = 5) Then
             opcion = MsgBox("Ver detalle de la venta?", vbYesNo + vbDefaultButton2 + vbInformation, "Detalle")
             If (opcion = DialogResult.Yes) Then
-                'DataGridView1.Rows.Remove(DataGridView1.CurrentRow)
-                MsgBox("Se mostrará el detalle de la venta")
+
+                Dim id_vta As Integer = Me.DataGridView1.Item(0, i).Value
+
+                seleccionarVenta(id_vta)
+                verDetalle(id_vta)
+
+                DetalleVenta.Show()
             End If
         End If
+    End Sub
+
+    'METODOS PARA MOSTRAR EL DETALLE DE LA VENTA---------------------------------------------------------------------------------------------------------------
+    'Metodo para el encabezado de la venta
+    Public Sub seleccionarVenta(id As Integer)
+        Try
+            Dim dv As New NVentas
+            Dim dt As DataTable = dv.seleccionarVenta(id)
+
+            DetalleVenta.LNroVenta.Text = dt.Rows(0)(0).ToString
+            DetalleVenta.LFechaCompra.Text = Format(dt.Rows(0)(1), "dd-MM-yyyy")
+            DetalleVenta.LTotal.Text = dt.Rows(0)(2).ToString
+            DetalleVenta.LTipoPago.Text = dt.Rows(0)(3).ToString
+            DetalleVenta.LCliente.Text = dt.Rows(0)(4).ToString + " " + dt.Rows(0)(5).ToString + " DNI: " + dt.Rows(0)(6).ToString
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    ' Ver detalle de la venta
+    Public Sub verDetalle(id As Integer)
+        Try
+            Dim dd As New NDetalles
+            Dim dt As DataTable = dd.verDetalle(id)
+            DetalleVenta.DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 End Class

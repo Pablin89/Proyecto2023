@@ -10,7 +10,7 @@
 Imports System
 Imports System.Collections.Generic
 
-Partial Public Class detalle
+Partial Public Class DetalleVenta
     Public Property id_venta As Integer
     Public Property id_venta_detalle As Integer
     Public Property id_producto As Nullable(Of Integer)

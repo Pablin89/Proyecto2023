@@ -7,4 +7,15 @@
             Return False
         End If
     End Function
+
+    Public Function verDetalle(id As Integer) As DataTable
+        Try
+            Dim dventa As New DDetalles
+            Dim dt As DataTable = dventa.verDetalle(id)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 End Class
