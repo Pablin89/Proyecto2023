@@ -40,6 +40,7 @@ Public Class Login
 
                 Me.Hide()
                 cargarMisDatos()
+                cargarIdVentas()
                 CajeroPrincipal.Show()
                 Realizar_Venta.LCajero.Text = "Cajero: " + (datos.Rows(0)("apellido").ToString)
             ElseIf (perfil = 1) Then
@@ -52,7 +53,7 @@ Public Class Login
 
                 Me.Hide()
                 cargarMisDatos()
-                cargarIdVentas()
+
                 Gerente_Principal.Show()
             ElseIf (perfil = 3) Then
 
@@ -74,7 +75,7 @@ Public Class Login
 
 
     Public Sub cargarMisDatos()
-        Mis_ventas.id = datos.Rows(0)("id_usuario")
+
         Realizar_Venta.idUsuario = datos.Rows(0)("id_usuario")
         Misdatos.TNomYApe.Text = (datos.Rows(0)("apellido").ToString) + " " + (datos.Rows(0)("nombre").ToString)
         Misdatos.TDni.Text = datos.Rows(0)("dni").ToString
