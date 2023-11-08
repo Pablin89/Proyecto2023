@@ -3,16 +3,16 @@
         Dim ask As MsgBoxResult
         ask = MsgBox("Desea cerrar su sesión?", vbYesNo + vbInformation, "Cerrar Sesión")
         If (MsgBoxResult.Yes = ask) Then
-            Me.Close()
             Login.Show()
-            Login.TUsuario.Focus()
+            Me.Hide()
+            Login.iniciarLogin()
         End If
     End Sub
 
 
 
     Private Sub Backup_Click(sender As Object, e As EventArgs) Handles Backup.Click
-        Realizar_Backup.ShowDialog()
+        RBackup.ShowDialog()
     End Sub
 
     Private Sub Informes_Click(sender As Object, e As EventArgs) Handles Informes.Click
@@ -29,8 +29,6 @@
         Misdatos.ShowDialog()
     End Sub
 
-    Private Sub GerenteGral_Principal_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        End
 
-    End Sub
+
 End Class

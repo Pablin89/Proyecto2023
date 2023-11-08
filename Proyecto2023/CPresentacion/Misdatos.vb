@@ -41,4 +41,34 @@
             MsgBox(" No se realizaron modificaciones.", vbOKOnly + vbInformation, "Modificaciones")
         End If
     End Sub
+
+    Private Sub TDni_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TDni.KeyPress
+        If (Char.IsNumber(e.KeyChar)) Then
+            e.Handled = False
+            TDni.MaxLength = 8
+
+            If (TDni.Text.Length > 7) Then
+                MessageBox.Show("El DNI tiene un máximo de 8 digitos", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            End If
+
+        ElseIf (Char.IsControl(e.KeyChar)) Then
+
+            e.Handled = False
+
+        Else
+
+            e.Handled = True
+            MessageBox.Show("solo se permiten numeros", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+
+        End If
+    End Sub
+
+    Private Sub TNomYApe_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TNomYApe.KeyPress
+        If Char.IsLetter(e.KeyChar) Or Char.IsControl(e.KeyChar) Or Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            MessageBox.Show("solo se permiten letras", "Avdertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        End If
+    End Sub
 End Class

@@ -249,6 +249,9 @@ Partial Class AgregarCliente
         Me.Controls.Add(Me.TextBox11)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Panel6)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AgregarCliente"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "AgregarCliente"

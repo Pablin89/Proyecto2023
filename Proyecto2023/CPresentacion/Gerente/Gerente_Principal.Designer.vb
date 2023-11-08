@@ -194,6 +194,7 @@ Partial Class Gerente_Principal
         Me.ClientSize = New System.Drawing.Size(847, 620)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Gerente_Principal"
         Me.Text = "Gerente_Principal"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

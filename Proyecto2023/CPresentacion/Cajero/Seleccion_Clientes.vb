@@ -50,35 +50,7 @@ Public Class Baja_Clientes
         End If
     End Function
     Private Sub ButtonBuscar_Click(sender As Object, e As EventArgs) Handles ButtonBuscar.Click
-        Dim dni As String = TBuscarDni.Text
-        Dim apellido As String = TBuscarapellido.Text
-        Dim correo As String = TBuscarCorreo.Text
-        If (RBDni.Checked) Then
-            If (dni = "") Then
-                MsgBox("Introduzca un DNI", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Seleccionaste buscar por DNI: " + dni, MsgBoxStyle.Information, "Buscar")
-                buscarClienteDni(dni)
-            End If
-        ElseIf (RBApellido.Checked) Then
-            If (apellido = "") Then
-                MsgBox("Introduzca un apellido", MsgBoxStyle.Critical, "Error")
-            Else
-                MsgBox("Seleccionaste buscar por Apellido: " + apellido, MsgBoxStyle.Information, "Buscar")
-                buscarClienteApellido(apellido)
-            End If
-        ElseIf (RBCorreo.Checked) Then
-            If (correo = "") Then
-                MsgBox("Introduzca un correo", MsgBoxStyle.Critical, "Error")
-            ElseIf (EmailAddressCheck(correo)) Then
-                MsgBox("Seleccionaste buscar por Correo: " + correo, MsgBoxStyle.Information, "Buscar")
-                buscarClienteCorreo(correo)
-            Else
-                MsgBox("Formato de correo no válido. Formato permitido ej: 'usuario@gmail.com'", MsgBoxStyle.Critical, "Error")
-            End If
-        Else
-            MsgBox("No Seleccionaste ninguna busqueda", MsgBoxStyle.Critical, "Error")
-        End If
+        verClientes()
     End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
@@ -113,14 +85,15 @@ Public Class Baja_Clientes
         i = DataGridView1.CurrentRow.Index
         ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
         If (MsgBoxResult.Yes = ask) Then
-            Realizar_Venta.TextBox5.Text = Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString
-            Realizar_Venta.TextBox6.Text = Me.DataGridView1.Item(7, i).Value.ToString
+            Realizar_Venta.idCliente = Me.DataGridView1.Item(0, i).Value
+            Realizar_Venta.TNombre.Text = Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString
+            Realizar_Venta.TDni.Text = Me.DataGridView1.Item(7, i).Value.ToString
             Me.Close()
         End If
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         AgregarCliente.ShowDialog()
     End Sub
 
@@ -190,6 +163,63 @@ Public Class Baja_Clientes
             TBuscarCorreo.Enabled = True
             TBuscarDni.Enabled = False
         End If
+    End Sub
+
+    Private Sub TBuscarDni_TextChanged(sender As Object, e As EventArgs) Handles TBuscarDni.TextChanged
+        If TBuscarDni.Text <> "" Then
+            listarPorDni(TBuscarDni.Text)
+        Else
+            verClientes()
+        End If
+    End Sub
+
+    Public Sub listarPorDni(dni As String)
+        Try
+            Dim dc As New NClientes()
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TBuscarapellido_TextChanged(sender As Object, e As EventArgs) Handles TBuscarapellido.TextChanged
+        If TBuscarapellido.Text <> "" Then
+            buscarPorApellido(TBuscarapellido.Text)
+        Else
+            verClientes()
+        End If
+    End Sub
+
+    Public Sub buscarPorApellido(apellido As String)
+        Try
+            Dim dc As New NClientes()
+            Dim dt As DataTable = dc.buscarClienteApellido(apellido)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub TBuscarCorreo_TextChanged(sender As Object, e As EventArgs) Handles TBuscarCorreo.TextChanged
+        If TBuscarCorreo.Text <> "" Then
+            buscarPorCorreo(TBuscarCorreo.Text)
+        Else
+            verClientes()
+        End If
+    End Sub
+
+    Public Sub buscarPorCorreo(correo As String)
+        Try
+            Dim dc As New NClientes()
+            Dim dt As DataTable = dc.buscarClienteCorreo(correo)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 End Class

@@ -200,6 +200,7 @@ Partial Class Cajero_Principal
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuEncargado
         Me.MaximizeBox = False

@@ -24,6 +24,13 @@ Partial Class Misdatos
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Misdatos))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BConfirmarModificaciones = New System.Windows.Forms.Button()
+        Me.DTFechaNac = New System.Windows.Forms.DateTimePicker()
+        Me.TDireccion = New System.Windows.Forms.TextBox()
+        Me.TTelefono = New System.Windows.Forms.TextBox()
+        Me.TCorreo = New System.Windows.Forms.TextBox()
+        Me.TDni = New System.Windows.Forms.TextBox()
+        Me.TNomYApe = New System.Windows.Forms.TextBox()
         Me.BModificarP = New System.Windows.Forms.Button()
         Me.LFechaNac = New System.Windows.Forms.Label()
         Me.LDireccion = New System.Windows.Forms.Label()
@@ -33,18 +40,11 @@ Partial Class Misdatos
         Me.LNombreyApellido = New System.Windows.Forms.Label()
         Me.LTitulo1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.TTipoUsuario = New System.Windows.Forms.TextBox()
+        Me.TUsuario = New System.Windows.Forms.TextBox()
         Me.LTipo = New System.Windows.Forms.Label()
         Me.LUsuario = New System.Windows.Forms.Label()
         Me.LTitulo2 = New System.Windows.Forms.Label()
-        Me.TNomYApe = New System.Windows.Forms.TextBox()
-        Me.TDni = New System.Windows.Forms.TextBox()
-        Me.TCorreo = New System.Windows.Forms.TextBox()
-        Me.TTelefono = New System.Windows.Forms.TextBox()
-        Me.TDireccion = New System.Windows.Forms.TextBox()
-        Me.DTFechaNac = New System.Windows.Forms.DateTimePicker()
-        Me.TUsuario = New System.Windows.Forms.TextBox()
-        Me.TTipoUsuario = New System.Windows.Forms.TextBox()
-        Me.BConfirmarModificaciones = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
@@ -73,6 +73,70 @@ Partial Class Misdatos
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(814, 308)
         Me.Panel1.TabIndex = 0
+        '
+        'BConfirmarModificaciones
+        '
+        Me.BConfirmarModificaciones.BackColor = System.Drawing.Color.PaleGreen
+        Me.BConfirmarModificaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BConfirmarModificaciones.Image = CType(resources.GetObject("BConfirmarModificaciones.Image"), System.Drawing.Image)
+        Me.BConfirmarModificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BConfirmarModificaciones.Location = New System.Drawing.Point(528, 249)
+        Me.BConfirmarModificaciones.Name = "BConfirmarModificaciones"
+        Me.BConfirmarModificaciones.Size = New System.Drawing.Size(209, 41)
+        Me.BConfirmarModificaciones.TabIndex = 14
+        Me.BConfirmarModificaciones.Text = "Confirmar modificaciones"
+        Me.BConfirmarModificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BConfirmarModificaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BConfirmarModificaciones.UseVisualStyleBackColor = False
+        Me.BConfirmarModificaciones.Visible = False
+        '
+        'DTFechaNac
+        '
+        Me.DTFechaNac.Enabled = False
+        Me.DTFechaNac.Location = New System.Drawing.Point(537, 189)
+        Me.DTFechaNac.Name = "DTFechaNac"
+        Me.DTFechaNac.Size = New System.Drawing.Size(200, 20)
+        Me.DTFechaNac.TabIndex = 13
+        '
+        'TDireccion
+        '
+        Me.TDireccion.Enabled = False
+        Me.TDireccion.Location = New System.Drawing.Point(537, 135)
+        Me.TDireccion.Name = "TDireccion"
+        Me.TDireccion.Size = New System.Drawing.Size(200, 20)
+        Me.TDireccion.TabIndex = 12
+        '
+        'TTelefono
+        '
+        Me.TTelefono.Enabled = False
+        Me.TTelefono.Location = New System.Drawing.Point(537, 70)
+        Me.TTelefono.Name = "TTelefono"
+        Me.TTelefono.Size = New System.Drawing.Size(200, 20)
+        Me.TTelefono.TabIndex = 11
+        '
+        'TCorreo
+        '
+        Me.TCorreo.Enabled = False
+        Me.TCorreo.Location = New System.Drawing.Point(190, 192)
+        Me.TCorreo.Name = "TCorreo"
+        Me.TCorreo.Size = New System.Drawing.Size(182, 20)
+        Me.TCorreo.TabIndex = 10
+        '
+        'TDni
+        '
+        Me.TDni.Enabled = False
+        Me.TDni.Location = New System.Drawing.Point(190, 132)
+        Me.TDni.Name = "TDni"
+        Me.TDni.Size = New System.Drawing.Size(182, 20)
+        Me.TDni.TabIndex = 9
+        '
+        'TNomYApe
+        '
+        Me.TNomYApe.Enabled = False
+        Me.TNomYApe.Location = New System.Drawing.Point(190, 70)
+        Me.TNomYApe.Name = "TNomYApe"
+        Me.TNomYApe.Size = New System.Drawing.Size(182, 20)
+        Me.TNomYApe.TabIndex = 8
         '
         'BModificarP
         '
@@ -174,6 +238,22 @@ Partial Class Misdatos
         Me.Panel2.Size = New System.Drawing.Size(814, 132)
         Me.Panel2.TabIndex = 1
         '
+        'TTipoUsuario
+        '
+        Me.TTipoUsuario.Enabled = False
+        Me.TTipoUsuario.Location = New System.Drawing.Point(537, 73)
+        Me.TTipoUsuario.Name = "TTipoUsuario"
+        Me.TTipoUsuario.Size = New System.Drawing.Size(182, 20)
+        Me.TTipoUsuario.TabIndex = 12
+        '
+        'TUsuario
+        '
+        Me.TUsuario.Enabled = False
+        Me.TUsuario.Location = New System.Drawing.Point(146, 73)
+        Me.TUsuario.Name = "TUsuario"
+        Me.TUsuario.Size = New System.Drawing.Size(182, 20)
+        Me.TUsuario.TabIndex = 11
+        '
         'LTipo
         '
         Me.LTipo.AutoSize = True
@@ -202,86 +282,6 @@ Partial Class Misdatos
         Me.LTitulo2.TabIndex = 2
         Me.LTitulo2.Text = "Datos de Usuario"
         '
-        'TNomYApe
-        '
-        Me.TNomYApe.Enabled = False
-        Me.TNomYApe.Location = New System.Drawing.Point(190, 70)
-        Me.TNomYApe.Name = "TNomYApe"
-        Me.TNomYApe.Size = New System.Drawing.Size(182, 20)
-        Me.TNomYApe.TabIndex = 8
-        '
-        'TDni
-        '
-        Me.TDni.Enabled = False
-        Me.TDni.Location = New System.Drawing.Point(190, 132)
-        Me.TDni.Name = "TDni"
-        Me.TDni.Size = New System.Drawing.Size(182, 20)
-        Me.TDni.TabIndex = 9
-        '
-        'TCorreo
-        '
-        Me.TCorreo.Enabled = False
-        Me.TCorreo.Location = New System.Drawing.Point(190, 192)
-        Me.TCorreo.Name = "TCorreo"
-        Me.TCorreo.Size = New System.Drawing.Size(182, 20)
-        Me.TCorreo.TabIndex = 10
-        '
-        'TTelefono
-        '
-        Me.TTelefono.Enabled = False
-        Me.TTelefono.Location = New System.Drawing.Point(537, 70)
-        Me.TTelefono.Name = "TTelefono"
-        Me.TTelefono.Size = New System.Drawing.Size(200, 20)
-        Me.TTelefono.TabIndex = 11
-        '
-        'TDireccion
-        '
-        Me.TDireccion.Enabled = False
-        Me.TDireccion.Location = New System.Drawing.Point(537, 135)
-        Me.TDireccion.Name = "TDireccion"
-        Me.TDireccion.Size = New System.Drawing.Size(200, 20)
-        Me.TDireccion.TabIndex = 12
-        '
-        'DTFechaNac
-        '
-        Me.DTFechaNac.Enabled = False
-        Me.DTFechaNac.Location = New System.Drawing.Point(537, 189)
-        Me.DTFechaNac.Name = "DTFechaNac"
-        Me.DTFechaNac.Size = New System.Drawing.Size(200, 20)
-        Me.DTFechaNac.TabIndex = 13
-        '
-        'TUsuario
-        '
-        Me.TUsuario.Enabled = False
-        Me.TUsuario.Location = New System.Drawing.Point(146, 73)
-        Me.TUsuario.Name = "TUsuario"
-        Me.TUsuario.Size = New System.Drawing.Size(182, 20)
-        Me.TUsuario.TabIndex = 11
-        '
-        'TTipoUsuario
-        '
-        Me.TTipoUsuario.Enabled = False
-        Me.TTipoUsuario.Location = New System.Drawing.Point(537, 73)
-        Me.TTipoUsuario.Name = "TTipoUsuario"
-        Me.TTipoUsuario.Size = New System.Drawing.Size(182, 20)
-        Me.TTipoUsuario.TabIndex = 12
-        '
-        'BConfirmarModificaciones
-        '
-        Me.BConfirmarModificaciones.BackColor = System.Drawing.Color.PaleGreen
-        Me.BConfirmarModificaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BConfirmarModificaciones.Image = CType(resources.GetObject("BConfirmarModificaciones.Image"), System.Drawing.Image)
-        Me.BConfirmarModificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BConfirmarModificaciones.Location = New System.Drawing.Point(528, 249)
-        Me.BConfirmarModificaciones.Name = "BConfirmarModificaciones"
-        Me.BConfirmarModificaciones.Size = New System.Drawing.Size(209, 41)
-        Me.BConfirmarModificaciones.TabIndex = 14
-        Me.BConfirmarModificaciones.Text = "Confirmar modificaciones"
-        Me.BConfirmarModificaciones.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BConfirmarModificaciones.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BConfirmarModificaciones.UseVisualStyleBackColor = False
-        Me.BConfirmarModificaciones.Visible = False
-        '
         'Misdatos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -290,6 +290,9 @@ Partial Class Misdatos
         Me.ClientSize = New System.Drawing.Size(814, 440)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Misdatos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Misdatos"

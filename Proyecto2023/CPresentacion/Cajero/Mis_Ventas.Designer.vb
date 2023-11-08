@@ -23,6 +23,7 @@ Partial Class Mis_ventas
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Mis_ventas))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LDni = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -34,6 +35,12 @@ Partial Class Mis_ventas
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.IDVenta = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoPago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Detalle = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -58,7 +65,7 @@ Partial Class Mis_ventas
         Me.LDni.Location = New System.Drawing.Point(52, 205)
         Me.LDni.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.LDni.Name = "LDni"
-        Me.LDni.Size = New System.Drawing.Size(183, 16)
+        Me.LDni.Size = New System.Drawing.Size(182, 16)
         Me.LDni.TabIndex = 1
         Me.LDni.Text = "Ingrese el DNI del cliente"
         '
@@ -70,7 +77,7 @@ Partial Class Mis_ventas
         Me.Label4.Location = New System.Drawing.Point(408, 88)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 16)
+        Me.Label4.Size = New System.Drawing.Size(100, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "Fecha Desde"
         '
@@ -82,7 +89,7 @@ Partial Class Mis_ventas
         Me.Label5.Location = New System.Drawing.Point(413, 136)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 16)
+        Me.Label5.Size = New System.Drawing.Size(95, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Fecha Hasta"
         '
@@ -130,6 +137,7 @@ Partial Class Mis_ventas
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDVenta, Me.Fecha, Me.Total, Me.TipoPago, Me.Cliente, Me.Detalle})
         Me.DataGridView1.Location = New System.Drawing.Point(12, 292)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(880, 209)
@@ -143,18 +151,56 @@ Partial Class Mis_ventas
         Me.Label3.Location = New System.Drawing.Point(52, 88)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(220, 16)
+        Me.Label3.Size = New System.Drawing.Size(219, 16)
         Me.Label3.TabIndex = 15
         Me.Label3.Text = "Seleccionar filtro de búsqueda"
         '
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
+        Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Ventas con Efectivo", "Ventas con Débito", "Ventas con Crédito", "Ventas con Mercado Pago", "Por Rango de Fechas"})
         Me.ComboBox1.Location = New System.Drawing.Point(55, 128)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
         Me.ComboBox1.TabIndex = 16
+        '
+        'IDVenta
+        '
+        Me.IDVenta.HeaderText = "ID"
+        Me.IDVenta.Name = "IDVenta"
+        Me.IDVenta.Width = 50
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha De Compra"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.Width = 160
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
+        Me.Total.Width = 105
+        '
+        'TipoPago
+        '
+        Me.TipoPago.HeaderText = "Tipo de Pago"
+        Me.TipoPago.Name = "TipoPago"
+        Me.TipoPago.Width = 150
+        '
+        'Cliente
+        '
+        Me.Cliente.HeaderText = "Cliente"
+        Me.Cliente.Name = "Cliente"
+        Me.Cliente.Width = 270
+        '
+        'Detalle
+        '
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Detalle.DefaultCellStyle = DataGridViewCellStyle1
+        Me.Detalle.HeaderText = "Detalle"
+        Me.Detalle.Name = "Detalle"
         '
         'Mis_ventas
         '
@@ -174,6 +220,7 @@ Partial Class Mis_ventas
         Me.Controls.Add(Me.LDni)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -197,4 +244,10 @@ Partial Class Mis_ventas
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents IDVenta As DataGridViewTextBoxColumn
+    Friend WithEvents Fecha As DataGridViewTextBoxColumn
+    Friend WithEvents Total As DataGridViewTextBoxColumn
+    Friend WithEvents TipoPago As DataGridViewTextBoxColumn
+    Friend WithEvents Cliente As DataGridViewTextBoxColumn
+    Friend WithEvents Detalle As DataGridViewButtonColumn
 End Class

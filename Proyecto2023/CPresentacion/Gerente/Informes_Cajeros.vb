@@ -9,7 +9,6 @@
         'ElseIf (ComboBox1.Text = "Ultimos cajeros añadidos") Then
         '    MsgBox("Seleccionaste buscar por 'Ultimos cajeros añadidos'", MsgBoxStyle.Information, "Buscar")
         'End If
-
-        MsgBox("Actualmente no se puede generar el informe por que no hay datos disponibles'", MsgBoxStyle.Exclamation, "Informe")
+        ReporteCajeros.ShowDialog()
     End Sub
 End Class

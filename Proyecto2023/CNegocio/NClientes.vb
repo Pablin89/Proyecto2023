@@ -12,6 +12,15 @@ Public Class NClientes
         End If
     End Function
 
+    Public Function existeCliente(id As Integer) As Boolean
+        Dim dcliente As New DClientes()
+        If (dcliente.existeCliente(id)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
     Public Function verClientes() As DataTable
         Try
             Dim dcliente As New DClientes

@@ -83,6 +83,8 @@ Public Class Editar_Cliente
     End Function
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
         Dim ask As MsgBoxResult
 
         If ((TextBox3.Text <> "") And
@@ -97,17 +99,37 @@ Public Class Editar_Cliente
                 ask = MsgBox("Seguro desea Editar El Cliente?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+                    'Verificar que el DNI sea distinto para hacer el control de existencia del registro
+                    If (TextBox1.Text <> Me.DataGridView1.Item(7, i).Value.ToString()) Then
 
-                    editarCliente()
-                    verClientes()
+                        'Si no existe otro dni igual al ingresado edita
+                        If (existeCliente() = False) Then
+                            editarCliente()
+                            verClientes()
 
-                    MsgBox("Cliente Editado", MsgBoxStyle.OkOnly, "Editado")
-                    TextBox3.Text = ""
-                    TextBox2.Text = ""
-                    TextBox1.Text = ""
-                    TextBox4.Text = ""
-                    TextBox5.Text = ""
-                    TextBox6.Text = ""
+                            MsgBox("Cliente Editado", MsgBoxStyle.OkOnly, "Editado")
+                            TextBox3.Text = ""
+                            TextBox2.Text = ""
+                            TextBox1.Text = ""
+                            TextBox4.Text = ""
+                            TextBox5.Text = ""
+                            TextBox6.Text = ""
+                        Else
+                            MsgBox("Ya existe un cliente con el dni: " + TextBox1.Text, MsgBoxStyle.Critical, "Error")
+                        End If
+                    Else
+                        editarCliente()
+                        verClientes()
+
+                        MsgBox("Cliente Editado", MsgBoxStyle.OkOnly, "Editado")
+                        TextBox3.Text = ""
+                        TextBox2.Text = ""
+                        TextBox1.Text = ""
+                        TextBox4.Text = ""
+                        TextBox5.Text = ""
+                        TextBox6.Text = ""
+                    End If
+
                 Else
                     MsgBox("No se editó el cliente", MsgBoxStyle.OkOnly, "No Editado")
 
@@ -168,7 +190,7 @@ Public Class Editar_Cliente
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         If (TextBox7.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
@@ -180,6 +202,7 @@ Public Class Editar_Cliente
 
     Private Sub Editar_Cliente_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'conexion = New SqlConnection("server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true")
+
         DataGridView1.AllowUserToAddRows = False
         verClientes()
     End Sub
@@ -213,6 +236,17 @@ Public Class Editar_Cliente
         End Try
     End Sub
 
+    Public Function existeCliente()
+        Dim dni As Integer = Val(TextBox1.Text)
+        Try
+            Dim cte As New NClientes()
+            Return cte.existeCliente(dni)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
 
 
     Public Sub buscarClienteDni(dni As String)
@@ -225,4 +259,22 @@ Public Class Editar_Cliente
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub TextBox7_TextChanged(sender As Object, e As EventArgs) Handles TextBox7.TextChanged
+        If TextBox7.Text <> "" Then
+            listarPorDni(TextBox7.Text)
+        End If
+    End Sub
+
+    Public Sub listarPorDni(dni As String)
+        Try
+            Dim dc As New NClientes()
+            Dim dt As DataTable = dc.buscarClienteDni(dni)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
 End Class
