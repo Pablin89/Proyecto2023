@@ -1,17 +1,4 @@
-# Inicio de Sesión
+Agregar Fecha ingreso empleado
 
-Perfil cajero:
-Usuario: "Cajero"
-Contraseña:""
 
-Perfil encargado:
-Usuario: "Encargado"
-Contraseña:""
-
-Perfil gerente:
-Usuario: "Gerente"
-Contraseña:""
-
-Perfil gerente general:
-Usuario: "GerenteGral"
-Contraseña:""
+alter table Empleados add fecha_ingreso date
