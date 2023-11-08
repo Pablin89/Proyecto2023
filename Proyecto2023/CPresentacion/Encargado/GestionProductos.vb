@@ -3,7 +3,7 @@
     Dim nombreProdEdit As String
     Dim codigoProdEdit As Integer
 
-    'Metodos para agregar producto
+    'METODOS DE CONSULTAR PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
         Call entradaDecimal(TextBox6, e)
@@ -249,7 +249,7 @@
         End Try
     End Sub
 
-    'Metodos Formulario Editar producto
+    'METODOS DE EDITAR PRODUCTOS ---------------------------------------------------------------------------------------------------------------
 
     'Configurar busqueda en editar
 
@@ -565,17 +565,21 @@
         ask = MsgBox("Seguro desea Cancelar edición?", MsgBoxStyle.YesNo, "Cancelar Edición")
 
         If ask = MsgBoxResult.Yes Then
-            TNombre.Text = ""
-            TextBox9.Text = ""
-            TDescripcion.Text = ""
-            ComboBox4.DataSource = Nothing
-            TStockEdit.Text = ""
-            TextBox10.Text = ""
-            TPrecioEdit.Text = ""
-            ComboBox5.DataSource = Nothing
-            Panel4.Enabled = False
+            vaciarCamposEdicion()
         End If
 
+    End Sub
+
+    Public Sub vaciarCamposEdicion()
+        TNombre.Text = ""
+        TextBox9.Text = ""
+        TDescripcion.Text = ""
+        ComboBox4.DataSource = Nothing
+        TStockEdit.Text = ""
+        TextBox10.Text = ""
+        TPrecioEdit.Text = ""
+        ComboBox5.DataSource = Nothing
+        Panel4.Enabled = False
     End Sub
 
     'Button para editar
@@ -602,6 +606,10 @@
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
 
                     Else
+                        editarProducto()
+                        verProductosEditar()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        vaciarCamposEdicion()
                     End If
                     'Probar si modificamos el campo nombre
                 ElseIf (nombreProdEdit <> TNombre.Text) Then
@@ -609,20 +617,16 @@
                     If (existeNombreProductoAdd(TNombre.Text) = True) Then
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
                     Else
+                        editarProducto()
+                        verProductosEditar()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        vaciarCamposEdicion()
                     End If
                 Else
                     editarProducto()
                     verProductosEditar()
                     MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
-                    TNombre.Text = ""
-                    TextBox9.Text = ""
-                    TDescripcion.Text = ""
-                    ComboBox4.DataSource = Nothing
-                    TStockEdit.Text = ""
-                    TextBox10.Text = ""
-                    TPrecioEdit.Text = ""
-                    ComboBox5.DataSource = Nothing
-                    Panel4.Enabled = False
+                    vaciarCamposEdicion()
                 End If
 
             Else
@@ -638,7 +642,7 @@
         End If
     End Sub
 
-    'METODOS DE CONSULTAR PRODUCTOS
+    'METODOS DE CONSULTAR PRODUCTOS--------------------------------------------------------------------------------------------------------------
     'Elementos del Formulario editar
     Public Sub verProductosConsultar()
         Try
@@ -834,7 +838,7 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         AgregarStock.ShowDialog()
-        seleccionarProductoEditar(id)
+        'seleccionarProductoEditar(id)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -870,6 +874,7 @@
         Button2.Visible = True
         Button9.Visible = False
 
+        TStockEdit.Enabled = False
         DataGridView2.AllowUserToAddRows = False
         verProductosEditar()
         comboboxCategorias()
