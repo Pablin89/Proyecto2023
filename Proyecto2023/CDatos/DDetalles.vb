@@ -88,7 +88,9 @@ Public Class DDetalles
         Try
             conectar()
             Dim comando = New SqlCommand("select
+                                            detalle.id_venta_detalle As ' ',
 	                                        Productos.nombre As 'Producto',
+                                            Productos.codigo As 'Codigo',
 	                                        '$'+str(detalle.precio) As 'Precio',
 	                                        detalle.cantidad As 'Cantidad',
 	                                        '$'+str(detalle.cantidad*detalle.precio) As 'Subtotal'
