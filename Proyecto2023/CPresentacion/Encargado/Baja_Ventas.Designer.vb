@@ -22,16 +22,15 @@ Partial Class Baja_Ventas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Baja_Ventas))
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoDePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Detalle = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -42,16 +41,23 @@ Partial Class Baja_Ventas
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Empleado = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoDePago = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Detalle = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ComboBox1
         '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"Todos las ventas", "Cliente especifico", "Empleado específico", "Ventas con tarjeta", "Ventas con Mercado Pago", "Ventas en efectivo"})
         Me.ComboBox1.Location = New System.Drawing.Point(43, 146)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(217, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(217, 24)
         Me.ComboBox1.TabIndex = 27
         '
         'Label3
@@ -62,59 +68,47 @@ Partial Class Baja_Ventas
         Me.Label3.Location = New System.Drawing.Point(40, 106)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(220, 16)
+        Me.Label3.Size = New System.Drawing.Size(219, 16)
         Me.Label3.TabIndex = 26
         Me.Label3.Text = "Seleccionar filtro de búsqueda"
         '
         'DataGridView1
         '
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Empleado, Me.Fecha, Me.Cliente, Me.Monto, Me.TipoDePago, Me.Detalle})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Location = New System.Drawing.Point(1, 272)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DataGridView1.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridView1.Size = New System.Drawing.Size(878, 209)
         Me.DataGridView1.TabIndex = 25
-        '
-        'Empleado
-        '
-        Me.Empleado.HeaderText = "Empleado"
-        Me.Empleado.Name = "Empleado"
-        Me.Empleado.ReadOnly = True
-        Me.Empleado.Width = 150
-        '
-        'Fecha
-        '
-        Me.Fecha.HeaderText = "Fecha"
-        Me.Fecha.Name = "Fecha"
-        Me.Fecha.ReadOnly = True
-        '
-        'Cliente
-        '
-        Me.Cliente.HeaderText = "Cliente"
-        Me.Cliente.Name = "Cliente"
-        Me.Cliente.ReadOnly = True
-        Me.Cliente.Width = 200
-        '
-        'Monto
-        '
-        Me.Monto.HeaderText = "Monto de Venta"
-        Me.Monto.Name = "Monto"
-        Me.Monto.ReadOnly = True
-        '
-        'TipoDePago
-        '
-        Me.TipoDePago.HeaderText = "Tipo de Pago"
-        Me.TipoDePago.Name = "TipoDePago"
-        Me.TipoDePago.ReadOnly = True
-        Me.TipoDePago.Width = 150
-        '
-        'Detalle
-        '
-        Me.Detalle.HeaderText = "Ver detalle"
-        Me.Detalle.Name = "Detalle"
-        Me.Detalle.ReadOnly = True
-        Me.Detalle.Width = 130
         '
         'DateTimePicker2
         '
@@ -151,7 +145,7 @@ Partial Class Baja_Ventas
         Me.Label5.Location = New System.Drawing.Point(401, 154)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(96, 16)
+        Me.Label5.Size = New System.Drawing.Size(95, 16)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Fecha Hasta"
         '
@@ -163,7 +157,7 @@ Partial Class Baja_Ventas
         Me.Label4.Location = New System.Drawing.Point(396, 106)
         Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(101, 16)
+        Me.Label4.Size = New System.Drawing.Size(100, 16)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Fecha Desde"
         '
@@ -175,7 +169,7 @@ Partial Class Baja_Ventas
         Me.Label2.Location = New System.Drawing.Point(40, 223)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 16)
+        Me.Label2.Size = New System.Drawing.Size(182, 16)
         Me.Label2.TabIndex = 18
         Me.Label2.Text = "Ingrese el DNI del cliente"
         '
@@ -215,7 +209,7 @@ Partial Class Baja_Ventas
         Me.Label6.Location = New System.Drawing.Point(228, 200)
         Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(218, 16)
+        Me.Label6.Size = New System.Drawing.Size(217, 16)
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Ingrese Usuario del empleado"
         '
@@ -233,6 +227,46 @@ Partial Class Baja_Ventas
         Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Empleado
+        '
+        Me.Empleado.HeaderText = "Empleado"
+        Me.Empleado.Name = "Empleado"
+        Me.Empleado.ReadOnly = True
+        Me.Empleado.Width = 150
+        '
+        'Fecha
+        '
+        Me.Fecha.HeaderText = "Fecha"
+        Me.Fecha.Name = "Fecha"
+        Me.Fecha.ReadOnly = True
+        '
+        'Cliente
+        '
+        Me.Cliente.HeaderText = "Cliente"
+        Me.Cliente.Name = "Cliente"
+        Me.Cliente.ReadOnly = True
+        Me.Cliente.Width = 200
+        '
+        'Monto
+        '
+        Me.Monto.HeaderText = "Total"
+        Me.Monto.Name = "Monto"
+        Me.Monto.ReadOnly = True
+        '
+        'TipoDePago
+        '
+        Me.TipoDePago.HeaderText = "Tipo de Pago"
+        Me.TipoDePago.Name = "TipoDePago"
+        Me.TipoDePago.ReadOnly = True
+        Me.TipoDePago.Width = 150
+        '
+        'Detalle
+        '
+        Me.Detalle.HeaderText = "Ver detalle"
+        Me.Detalle.Name = "Detalle"
+        Me.Detalle.ReadOnly = True
+        Me.Detalle.Width = 130
         '
         'Baja_Ventas
         '
@@ -277,11 +311,11 @@ Partial Class Baja_Ventas
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Button2 As Button
     Friend WithEvents Empleado As DataGridViewTextBoxColumn
     Friend WithEvents Fecha As DataGridViewTextBoxColumn
     Friend WithEvents Cliente As DataGridViewTextBoxColumn
     Friend WithEvents Monto As DataGridViewTextBoxColumn
     Friend WithEvents TipoDePago As DataGridViewTextBoxColumn
     Friend WithEvents Detalle As DataGridViewButtonColumn
-    Friend WithEvents Button2 As Button
 End Class
