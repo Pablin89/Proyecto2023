@@ -73,5 +73,31 @@ Public Class NEmpleados
         End If
     End Function
 
+    'Buscar empleado por Dni
+    Public Function buscarEmpleadoDni(dni As Integer) As DataTable
+
+        Try
+            Dim dempleado As New DEmpleados
+            Dim dt As DataTable = dempleado.buscarEmpleadoDni(dni)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Buscar empleado por apellido
+    Public Function buscarEmpleadoApellido(apellido As String) As DataTable
+
+        Try
+            Dim dempleado As New DEmpleados
+            Dim dt As DataTable = dempleado.buscarEmpleadoApellido(apellido)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 
 End Class

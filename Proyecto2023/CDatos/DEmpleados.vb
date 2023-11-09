@@ -275,6 +275,67 @@ Public Class DEmpleados
         Return resultado
     End Function
 
+    'Buscar empleado por Dni
+    Public Function buscarEmpleadoDni(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_empleado As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                dni As DNI ,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                telefono As Telefono
+                          from empleados where dni like '" & dni & "%' and id_estado_empleado = 1")
+            comando.Connection = conexion
 
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Buscar empleado por apellido
+
+    Public Function buscarEmpleadoApellido(apellido As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                id_empleado As id,
+                                apellido As Apellido,
+                                nombre As Nombre,
+                                dni As DNI ,
+                                fecha_nacimiento As Nacimiento,
+                                correo As Mail,
+                                direccion As Dirección,
+                                telefono As Telefono
+                          from empleados where apellido like '" & apellido & "%' and id_estado_empleado = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
 
 End Class

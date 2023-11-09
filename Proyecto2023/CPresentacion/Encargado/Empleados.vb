@@ -71,6 +71,8 @@ Public Class Empleados
         DataGridView1.Columns(5).Visible = False
         DataGridView1.Columns(6).Visible = False
         DataGridView1.Columns(7).Visible = False
+        BRCambios.Visible = True
+        BCambios.Visible = False
     End Sub
 
 
@@ -364,16 +366,23 @@ Public Class Empleados
                 MsgBox("Completa El Campo Apellido", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoApellidoEdit(apellido)
             End If
         ElseIf (ChBDni.Checked And Not ChBApellido.Checked) Then
             If (dni = "") Then
                 MsgBox("Completa El Campo DNI", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoDniEdit(dni)
             End If
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        cargarConsultar()
+        cargarEditar()
     End Sub
 
     'Restricciones de editar empleado
@@ -441,6 +450,29 @@ Public Class Empleados
             MsgBox(ex.Message)
         End Try
 
+    End Sub
+
+    'busqueda diámica con dni editar
+    Public Sub buscarEmpleadoDniEdit(dni As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoDni(dni)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'busqueda diámica con apellido editar
+    Public Sub buscarEmpleadoApellidoEdit(apellido As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoApellido(apellido)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     'Activar los campos para editar el empleado seleccionado
@@ -625,12 +657,14 @@ Public Class Empleados
                 MsgBox("Completa El Campo Apellido", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoApellido(apellido)
             End If
         ElseIf (CheckBox2.Checked And Not CheckBox1.Checked) Then
             If (dni = "") Then
                 MsgBox("Completa El Campo DNI", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoDni(dni)
             End If
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
@@ -711,6 +745,29 @@ Public Class Empleados
 
     End Sub
 
+    'busqueda diámica con dni consultar
+    Public Sub buscarEmpleadoDni(dni As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoDni(dni)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'busqueda diámica con apellido consultar
+    Public Sub buscarEmpleadoApellido(apellido As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoApellido(apellido)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
         Dim ask As MsgBoxResult
@@ -751,5 +808,7 @@ Public Class Empleados
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles BLimpiarFiltros.Click
         cargarConsultar()
+        cargarEditar()
     End Sub
+
 End Class

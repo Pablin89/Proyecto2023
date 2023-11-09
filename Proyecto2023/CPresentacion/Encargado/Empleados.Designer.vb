@@ -51,6 +51,7 @@ Partial Class Empleados
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.EditarEmpleados = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
@@ -402,6 +403,7 @@ Partial Class Empleados
         '
         Me.EditarEmpleados.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.EditarEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EditarEmpleados.Controls.Add(Me.Button4)
         Me.EditarEmpleados.Controls.Add(Me.Label11)
         Me.EditarEmpleados.Controls.Add(Me.LTitulo)
         Me.EditarEmpleados.Controls.Add(Me.TextBox2)
@@ -416,6 +418,21 @@ Partial Class Empleados
         Me.EditarEmpleados.Size = New System.Drawing.Size(958, 547)
         Me.EditarEmpleados.TabIndex = 1
         Me.EditarEmpleados.Text = "Editar Empleados"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(541, 99)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(195, 55)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Reiniciar Todo"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'Label11
         '
@@ -662,7 +679,7 @@ Partial Class Empleados
         Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
         Me.BBuscar.Image = CType(resources.GetObject("BBuscar.Image"), System.Drawing.Image)
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(564, 58)
+        Me.BBuscar.Location = New System.Drawing.Point(541, 40)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(195, 55)
         Me.BBuscar.TabIndex = 4
@@ -1037,4 +1054,5 @@ Partial Class Empleados
     Friend WithEvents BLimpiarFiltros As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents Button4 As Button
 End Class
