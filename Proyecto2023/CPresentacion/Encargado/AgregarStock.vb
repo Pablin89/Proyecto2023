@@ -27,6 +27,7 @@
             cantidad = Val(TextBox1.Text)
             GestionProductos.TStockEdit.Text = Val(GestionProductos.TStockEdit.Text) + cantidad
             MsgBox("Stock agregado", MsgBoxStyle.Information, "Agregado")
+            TextBox1.Text = ""
             Me.Close()
         End If
     End Sub

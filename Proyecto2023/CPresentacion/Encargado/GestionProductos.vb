@@ -608,8 +608,9 @@
                     Else
                         editarProducto()
                         verProductosEditar()
-                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        verProductosConsultar()
                         vaciarCamposEdicion()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
                     End If
                     'Probar si modificamos el campo nombre
                 ElseIf (nombreProdEdit <> TNombre.Text) Then
@@ -619,14 +620,18 @@
                     Else
                         editarProducto()
                         verProductosEditar()
-                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        verProductosConsultar()
                         vaciarCamposEdicion()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+
                     End If
                 Else
                     editarProducto()
                     verProductosEditar()
-                    MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                    verProductosConsultar()
                     vaciarCamposEdicion()
+                    MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+
                 End If
 
             Else
