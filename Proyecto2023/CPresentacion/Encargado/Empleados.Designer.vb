@@ -103,8 +103,6 @@ Partial Class Empleados
         Me.LFechaNacimiento = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
-        Me.CbxEstadoAdd = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GestionarEmpleados.SuspendLayout()
         Me.ConsultarEmpleados.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -697,7 +695,7 @@ Partial Class Empleados
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(221, 49)
         Me.Button9.TabIndex = 33
-        Me.Button9.Text = "Volver para cambiar el nombre del Empleado"
+        Me.Button9.Text = "Volver para cambiar el DNI del Empleado"
         Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button9.UseVisualStyleBackColor = True
@@ -747,8 +745,6 @@ Partial Class Empleados
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.CbxEstadoAdd)
-        Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Controls.Add(Me.CbxSexoAdd)
         Me.Panel6.Controls.Add(Me.DTFechaIngreso)
         Me.Panel6.Controls.Add(Me.Label10)
@@ -928,23 +924,6 @@ Partial Class Empleados
         Me.LApellido.TabIndex = 0
         Me.LApellido.Text = "Apellido"
         '
-        'CbxEstadoAdd
-        '
-        Me.CbxEstadoAdd.FormattingEnabled = True
-        Me.CbxEstadoAdd.Location = New System.Drawing.Point(545, 252)
-        Me.CbxEstadoAdd.Name = "CbxEstadoAdd"
-        Me.CbxEstadoAdd.Size = New System.Drawing.Size(226, 24)
-        Me.CbxEstadoAdd.TabIndex = 35
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(481, 255)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(56, 16)
-        Me.Label13.TabIndex = 34
-        Me.Label13.Text = "Estado"
-        '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1058,6 +1037,4 @@ Partial Class Empleados
     Friend WithEvents BLimpiarFiltros As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents CbxEstadoAdd As ComboBox
-    Friend WithEvents Label13 As Label
 End Class
