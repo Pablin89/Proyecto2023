@@ -121,6 +121,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDatos\DProductos.vb" />
+    <Compile Include="CDatos\DSexos.vb" />
     <Compile Include="CDatos\DTiposPagos.vb" />
     <Compile Include="CDatos\DUsuarios.vb" />
     <Compile Include="CDatos\DVentas.vb" />
@@ -180,6 +181,7 @@
     <Compile Include="CNegocio\NEmpleados.vb" />
     <Compile Include="CNegocio\NEstados.vb" />
     <Compile Include="CNegocio\NProductos.vb" />
+    <Compile Include="CNegocio\NSexos.vb" />
     <Compile Include="CNegocio\NTiposPagos.vb" />
     <Compile Include="CNegocio\NUsuarios.vb" />
     <Compile Include="CNegocio\NVentas.vb" />

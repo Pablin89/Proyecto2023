@@ -90,13 +90,17 @@ Public Class Empleados
         cargarConsultar()
         cargarEditar()
         cargarAgregar()
+
+        'comboboxs en agregar 
+        comboboxEstadosAdd()
+        comboboxSexosAdd()
     End Sub
 
 
 
 
 
-    'Seccion Agregar empleado
+    'Seccion Agregar empleado -------------------------------------------------------------------------------------------------------------------------------------
     'restricciones(Busqueda)
     Private Sub TextBox11_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox11.KeyPress
 
@@ -216,6 +220,34 @@ Public Class Empleados
         End If
     End Function
 
+    'Cargar en el combobox los sexos del empleado
+    Public Sub comboboxSexosAdd()
+        Try
+            Dim dc As New NSexos
+            Dim dt As DataTable = dc.verSexos()
+            CbxSexoAdd.DataSource = dt
+            CbxSexoAdd.DisplayMember = "descripcion"
+            CbxSexoAdd.ValueMember = "id_sexo"
+            CbxSexoAdd.SelectedValue = -1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Cargar en el combobox los estados del empleado
+    Public Sub comboboxEstadosAdd()
+        Try
+            Dim dc As New NEstados
+            Dim dt As DataTable = dc.verEstadoEmpleados()
+            CbxEstadoAdd.DataSource = dt
+            CbxEstadoAdd.DisplayMember = "descripcion"
+            CbxEstadoAdd.ValueMember = "id_estado_empleado"
+            CbxEstadoAdd.SelectedValue = -1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim ask As MsgBoxResult
 
@@ -224,7 +256,9 @@ Public Class Empleados
             (TextBox7.Text <> "") And
             (TextBox8.Text <> "") And
             (TextBox9.Text <> "") And
-            (TextBox10.Text <> "")
+            (TextBox10.Text <> "") And
+            (CbxSexoAdd.Text <> "") And
+            (CbxEstadoAdd.Text <> "")
             ) Then
 
             If (EmailAddressCheck(TextBox10.Text)) Then
@@ -238,6 +272,8 @@ Public Class Empleados
                     TextBox8.Text = ""
                     TextBox9.Text = ""
                     TextBox10.Text = ""
+                    CbxEstadoAdd.Text = ""
+                    CbxSexoAdd.Text = ""
                 Else
                     MsgBox("No se agregó el Empleado", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -257,7 +293,7 @@ Public Class Empleados
         End If
     End Sub
 
-    'Area Editar Empleados
+    'Area Editar Empleados ------------------------------------------------------------------------------------------------------------------------------------------------------
     'Filtros de Busqueda
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
 
@@ -427,7 +463,7 @@ Public Class Empleados
         End If
     End Sub
 
-    'SECCION CONSULTAR EMPLEADOS
+    'SECCION CONSULTAR EMPLEADOS ---------------------------------------------------------------------------------------------------------------------------------
     'Restricciones
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
 
@@ -548,7 +584,7 @@ Public Class Empleados
         TextBox7.Clear()
         TextBox9.Clear()
         TextBox10.Clear()
-        ComboBox2.SelectedIndex = -1
+        CbxSexoAdd.SelectedIndex = -1
 
     End Sub
 

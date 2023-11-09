@@ -3,7 +3,7 @@
     Dim nombreProdEdit As String
     Dim codigoProdEdit As Integer
 
-    'METODOS DE CONSULTAR PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------
+    'METODOS DE AGREGAR PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
         Call entradaDecimal(TextBox6, e)
