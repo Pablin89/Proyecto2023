@@ -269,13 +269,22 @@ Public Class Realizar_Venta
                     nuevaVenta()
                     agregarDetalles()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
-                    VentaRealizada.ShowDialog()
+                    imprimirFactura()
+                    'VentaRealizada.ShowDialog()
                     listarTiposPagoCbx()
                     vaciarCarrito()
                     reinicarVenta()
                 End If
             End If
         End If
+    End Sub
+
+    Public Sub imprimirFactura()
+        Dim miForm As New VentaRealizada
+        Dim dfactura As New ReporteFactura
+        dfactura.reporteFactura(idVenta)
+        miForm.NombreReporte = "Proyecto2023.Venta.rdlc"
+        miForm.Show()
     End Sub
 
     'Metodos dinámicos para la venta----------------------------------------------------------------

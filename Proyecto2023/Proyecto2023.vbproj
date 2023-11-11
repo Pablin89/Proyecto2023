@@ -162,6 +162,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\ReporteFactura.vb" />
     <Compile Include="CDatos\Sexos.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
@@ -196,6 +197,14 @@
     </Compile>
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DataSetFactura.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DataSetFactura.vb">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Cajero\DetalleVenta.Designer.vb">
       <DependentUpon>DetalleVenta.vb</DependentUpon>
@@ -492,6 +501,17 @@
     </EntityDeploy>
     <None Include="CDatos\Proyecto2023.edmx.diagram">
       <DependentUpon>Proyecto2023.edmx</DependentUpon>
+    </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xsc">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFactura.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xss">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
