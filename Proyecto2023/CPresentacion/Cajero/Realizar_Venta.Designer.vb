@@ -183,7 +183,7 @@ Partial Class Realizar_Venta
         Me.Label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label2.Location = New System.Drawing.Point(583, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(70, 16)
+        Me.Label2.Size = New System.Drawing.Size(69, 16)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Cantidad"
         '
@@ -194,7 +194,7 @@ Partial Class Realizar_Venta
         Me.Label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label4.Location = New System.Drawing.Point(21, 83)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(23, 16)
+        Me.Label4.Size = New System.Drawing.Size(22, 16)
         Me.Label4.TabIndex = 7
         Me.Label4.Text = "ID"
         Me.Label4.Visible = False
@@ -223,20 +223,21 @@ Partial Class Realizar_Venta
         '
         'ComboBox1
         '
+        Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(182, 552)
+        Me.ComboBox1.Location = New System.Drawing.Point(208, 552)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(210, 21)
+        Me.ComboBox1.Size = New System.Drawing.Size(210, 24)
         Me.ComboBox1.TabIndex = 11
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label7.Location = New System.Drawing.Point(9, 553)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(167, 15)
+        Me.Label7.Size = New System.Drawing.Size(182, 16)
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Seleccionar tipo de pago"
         '
@@ -340,7 +341,7 @@ Partial Class Realizar_Venta
         Me.Label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label6.Location = New System.Drawing.Point(199, 14)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(149, 16)
+        Me.Label6.Size = New System.Drawing.Size(148, 16)
         Me.Label6.TabIndex = 35
         Me.Label6.Text = "Código del producto"
         '
@@ -351,7 +352,7 @@ Partial Class Realizar_Venta
         Me.Label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label8.Location = New System.Drawing.Point(283, 86)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 16)
+        Me.Label8.Size = New System.Drawing.Size(64, 16)
         Me.Label8.TabIndex = 39
         Me.Label8.Text = "Precio $"
         '
@@ -370,7 +371,7 @@ Partial Class Realizar_Venta
         Me.Label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.Label9.Location = New System.Drawing.Point(194, 51)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(154, 16)
+        Me.Label9.Size = New System.Drawing.Size(153, 16)
         Me.Label9.TabIndex = 37
         Me.Label9.Text = "Nombre del producto"
         '
