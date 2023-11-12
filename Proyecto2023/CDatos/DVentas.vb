@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Net
 
 Public Class DVentas
     Inherits Conexion
@@ -292,4 +293,221 @@ Public Class DVentas
         End Try
     End Function
 
+    'METODOS DE VENTAS PARA ENCARGADO --------------------------------------------------------------------------------------------------------
+    'Listar las ventas de los empleados
+    Public Function listarTodasLasVentas() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        Empleados.apellido + ': ' +Convert(varchar(50),Empleados.dni) As 'Empleado',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        Estados_ventas.descripcion As 'Estado'
+                                        from ventas
+                                        inner join Estados_ventas on (ventas.id_estado_venta=Estados_ventas.id_estado_venta)
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        inner join Usuarios on (ventas.id_usuario = Usuarios.Id_usuario)
+                                        inner join Empleados on (Usuarios.id_empleado = Empleados.id_empleado)
+                                        ")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Ventas por cliente especifico dni
+    Public Function buscarPorCliente(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        Empleados.apellido + ': ' +Convert(varchar(50),Empleados.dni) As 'Empleado',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        Estados_ventas.descripcion As 'Estado'
+                                        from ventas
+                                        inner join Estados_ventas on (ventas.id_estado_venta=Estados_ventas.id_estado_venta)
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        inner join Usuarios on (ventas.id_usuario = Usuarios.Id_usuario)
+                                        inner join Empleados on (Usuarios.id_empleado = Empleados.id_empleado)
+                                        where clientes.dni like '" & dni & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    'Ventas por empleado especifico dni
+    Public Function buscarPorEmpleado(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        Empleados.apellido + ': ' +Convert(varchar(50),Empleados.dni) As 'Empleado',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        Estados_ventas.descripcion As 'Estado'
+                                        from ventas
+                                        inner join Estados_ventas on (ventas.id_estado_venta=Estados_ventas.id_estado_venta)
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        inner join Usuarios on (ventas.id_usuario = Usuarios.Id_usuario)
+                                        inner join Empleados on (Usuarios.id_empleado = Empleados.id_empleado)
+                                        where Empleados.dni like '" & dni & "%'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Ventas por tipo de pago
+    Public Function buscarPorTipoPago(id_pago As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        Empleados.apellido + ': ' +Convert(varchar(50),Empleados.dni) As 'Empleado',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        Estados_ventas.descripcion As 'Estado'
+                                        from ventas
+                                        inner join Estados_ventas on (ventas.id_estado_venta=Estados_ventas.id_estado_venta)
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        inner join Usuarios on (ventas.id_usuario = Usuarios.Id_usuario)
+                                        inner join Empleados on (Usuarios.id_empleado = Empleados.id_empleado)
+                                        where tipos_pagos.id_tipo_pago = " & id_pago & "")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Ventas por fecha
+    Public Function buscarPorFecha(desde As Date, hasta As Date) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        ventas.id_venta As 'ID',
+	                                        Empleados.apellido + ': ' +Convert(varchar(50),Empleados.dni) As 'Empleado',
+	                                        fecha_compra As 'Fecha de Compra',
+	                                        clientes.apellido + ': ' +Convert(varchar(50),clientes.dni) As 'Cliente',
+	                                        tipos_pagos.descripcion As 'Tipo de Pago',
+	                                        Estados_ventas.descripcion As 'Estado'
+                                        from ventas
+                                        inner join Estados_ventas on (ventas.id_estado_venta=Estados_ventas.id_estado_venta)
+                                        inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
+                                        inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
+                                        inner join Usuarios on (ventas.id_usuario = Usuarios.Id_usuario)
+                                        inner join Empleados on (Usuarios.id_empleado = Empleados.id_empleado)
+                                        where fecha_compra between '" & desde & "' and '" & hasta & "'
+                                        order by fecha_compra desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Dar de baja una venta
+    Public Function desactivarVenta(id As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update ventas set id_estado_venta = 0 where id_venta = " & id & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    'Dar de alta una venta
+    Public Function activarVenta(id As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update ventas set id_estado_venta = 1 where id_venta = " & id & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
 End Class
