@@ -34,7 +34,7 @@ Public Class DEmpleados
         fecha_nacimiento = fecha_nacimientoe
         id_sexo = id_sexoe
         id_estado_empleado = 1
-        fecha_ingreso = fecha_ingresoe
+
     End Sub
 
     Public Sub New()
@@ -127,14 +127,7 @@ Public Class DEmpleados
         End Set
     End Property
 
-    Property CFechaIngreso As String
-        Get
-            Return fecha_ingreso
-        End Get
-        Set(value As String)
-            fecha_ingreso = value
-        End Set
-    End Property
+
 
     'METODOS DE GESTION DE EMPLEADOS PARA ENCARGADO -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
     Public Function insertarEmpleado(dempleado As DEmpleados) As Boolean
