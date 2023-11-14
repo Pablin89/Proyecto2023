@@ -37,10 +37,10 @@ Public Class NVentas
     End Function
 
     'Lista ventas por DNI de cliente
-    Public Function ventasPorDni(dni) As DataTable
+    Public Function ventasPorDni(id_usuario, dni) As DataTable
         Try
             Dim dventa As New DVentas
-            Dim dt As DataTable = dventa.ventasPorDni(dni)
+            Dim dt As DataTable = dventa.ventasPorDni(id_usuario, dni)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -49,10 +49,10 @@ Public Class NVentas
     End Function
 
     'Lista ventas según el tipo de pago
-    Public Function ventasPorTipoDePago(id) As DataTable
+    Public Function ventasPorTipoDePago(id_usuario, id) As DataTable
         Try
             Dim dventa As New DVentas
-            Dim dt As DataTable = dventa.ventasPorTipoDePago(id)
+            Dim dt As DataTable = dventa.ventasPorTipoDePago(id_usuario, id)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -61,10 +61,10 @@ Public Class NVentas
     End Function
 
     'Listar ventas por rango de fecha
-    Public Function ventasPorFecha(desde, hasta) As DataTable
+    Public Function ventasPorFecha(id_usuario, desde, hasta) As DataTable
         Try
             Dim dventa As New DVentas
-            Dim dt As DataTable = dventa.ventasPorFecha(desde, hasta)
+            Dim dt As DataTable = dventa.ventasPorFecha(id_usuario, desde, hasta)
             Return dt
         Catch ex As Exception
             MsgBox(ex.Message)

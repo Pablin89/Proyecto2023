@@ -150,7 +150,7 @@ Public Class DVentas
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
-                                        where  ventas.id_usuario =" & id & "")
+                                        where ventas.id_estado_venta = 1 and  ventas.id_usuario =" & id & "")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -169,7 +169,7 @@ Public Class DVentas
     End Function
 
     'Listar ventas por DNI del cliente
-    Public Function ventasPorDni(dni As Integer) As DataTable
+    Public Function ventasPorDni(id_usuario As Integer, dni As Integer) As DataTable
         Try
             conectar()
             Dim comando = New SqlCommand("select 
@@ -181,7 +181,7 @@ Public Class DVentas
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
-                                        where  Clientes.dni like '%" & dni & "%'")
+                                        where ventas.id_estado_venta = 1 and ventas.id_usuario =" & id_usuario & " and Clientes.dni like '%" & dni & "%'")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -199,7 +199,7 @@ Public Class DVentas
         End Try
     End Function
 
-    Public Function ventasPorTipoDePago(id_tipo_pago As Integer) As DataTable
+    Public Function ventasPorTipoDePago(id_usuario As Integer, id_tipo_pago As Integer) As DataTable
         Try
             conectar()
             Dim comando = New SqlCommand("select 
@@ -211,7 +211,7 @@ Public Class DVentas
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
-                                        where  tipos_pagos.id_tipo_pago = " & id_tipo_pago & "")
+                                        where ventas.id_estado_venta = 1 and ventas.id_usuario =" & id_usuario & " and tipos_pagos.id_tipo_pago = " & id_tipo_pago & "")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
@@ -230,7 +230,7 @@ Public Class DVentas
     End Function
 
     'Listar ventas por rango de fecha
-    Public Function ventasPorFecha(desde As Date, hasta As Date) As DataTable
+    Public Function ventasPorFecha(id_usuario As Integer, desde As Date, hasta As Date) As DataTable
         Try
             conectar()
             Dim comando = New SqlCommand("select 
@@ -242,7 +242,7 @@ Public Class DVentas
                                         from ventas 
                                         inner join Clientes on (ventas.id_cliente=clientes.id_cliente)
                                         inner join tipos_pagos on (ventas.id_tipo_pago=tipos_pagos.id_tipo_pago)
-                                        where fecha_compra between '" & desde & "' and '" & hasta & "'")
+                                        where ventas.id_estado_venta = 1 and ventas.id_usuario =" & id_usuario & " and fecha_compra between '" & desde & "' and '" & hasta & "'")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then
