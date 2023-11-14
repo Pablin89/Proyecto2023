@@ -143,15 +143,10 @@
                         agregarProducto()
                         verProductosConsultar()
                         verProductosEditar()
+
                         MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
-                        TextBox5.Text = ""
-                        TextBox6.Text = ""
-                        ComboBox1.Text = ""
-                        TextBox7.Text = ""
-                        TextBox13.Text = ""
-                        TextBox12.Text = ""
-                        TDescripcion2.Text = ""
-                        ComboBox2.Text = ""
+
+                        restablecerTodo()
                     End If
 
                 End If
@@ -168,6 +163,45 @@
 
         End If
 
+    End Sub
+
+    Public Sub restablecerTodo()
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'CBCateg
+        ChBCategoria.Checked = False
+        ChCodigo.Checked = False
+        ChNombreProducto.Checked = False
+        TCodigo.Enabled = False
+        TNombreProd.Enabled = False
+
+        ComboBox3.Enabled = False
+        CBCateg.Enabled = False
+
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'ComboBox3
+        CheckBox1.Checked = False
+        ChProducto.Checked = False
+        ChBCategoria.Checked = False
+        TextBox8.Enabled = False
+        TextBox4.Enabled = False
+
+        Panel4.Enabled = False
+
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        Button9.Visible = False
+
+        TStockEdit.Enabled = False
+        DataGridView2.AllowUserToAddRows = False
+        verProductosEditar()
+        comboboxCategorias()
+        comboboxCategoriasEditarBuscar()
+
+        verProductosConsultar()
+        comboboxCategoriasConsultarBuscar()
     End Sub
 
     'Busqueda de agregar producto
@@ -234,6 +268,7 @@
         Dim stock As Integer = Val(TextBox7.Text)
         Dim stock_minimo As Integer = Val(TextBox13.Text)
         Dim precio As Double = Val(TextBox6.Text)
+
         Dim id_estado_producto As Integer
         If (ComboBox2.Text = "Activo") Then
             id_estado_producto = 1
@@ -611,6 +646,7 @@
                         verProductosConsultar()
                         vaciarCamposEdicion()
                         MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        restablecerTodo()
                     End If
                     'Probar si modificamos el campo nombre
                 ElseIf (nombreProdEdit <> TNombre.Text) Then
