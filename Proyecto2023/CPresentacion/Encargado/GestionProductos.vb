@@ -147,6 +147,7 @@
                         MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
 
                         restablecerTodo()
+                        reiniciarAgregar()
                     End If
 
                 End If
