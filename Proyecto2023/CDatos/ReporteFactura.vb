@@ -19,7 +19,7 @@ Public Class ReporteFactura
 
             adaptador = New SqlDataAdapter("SELECT detalle.id_venta_detalle, detalle.cantidad, detalle.precio, 
                                                    clientes.nombre, clientes.apellido, clientes.dni, clientes.telefono, 
-                                                   Productos.nombre, Productos.codigo, Productos.precio, ventas.id_venta, ventas.fecha_compra, ventas.total 
+                                                   Productos.nombre As NombreProd, Productos.codigo, Productos.precio, ventas.id_venta, ventas.fecha_compra, ventas.total 
                                                 FROM detalle 
                                                 INNER JOIN ventas   ON  ventas.id_venta = detalle.id_venta
                                                 INNER JOIN clientes  ON ventas.id_cliente = clientes.id_cliente 

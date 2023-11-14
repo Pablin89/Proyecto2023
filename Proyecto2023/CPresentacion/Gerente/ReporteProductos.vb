@@ -1,7 +1,9 @@
 ﻿Public Class ReporteProductos
     Private Sub ReporteGeneral_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
+        Me.CategoriasMasVendidasTableAdapter.Connection.ConnectionString = "server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true"
+        Me.CategoriasMenosVendidasTableAdapter.Connection.ConnectionString = "server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true"
+        Me.productosMasVendidosTableAdapter.Connection.ConnectionString = "server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true"
+        Me.productosMenosVendidosTableAdapter.Connection.ConnectionString = "server = .\SQLEXPRESS; database = Proyecto2023; integrated security = true"
         'TODO: esta línea de código carga datos en la tabla 'Proyecto2023DataSet.CategoriasMasVendidas' Puede moverla o quitarla según sea necesario.
         Me.CategoriasMasVendidasTableAdapter.Fill(Me.Proyecto2023DataSet.CategoriasMasVendidas)
         'TODO: esta línea de código carga datos en la tabla 'Proyecto2023DataSet.CategoriasMenosVendidas' Puede moverla o quitarla según sea necesario.

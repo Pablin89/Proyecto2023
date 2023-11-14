@@ -4,7 +4,6 @@
     <ReportItems>
       <Line Name="Line1">
         <Top>0.14111cm</Top>
-        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>18.26537cm</Width>
         <Style>
@@ -16,7 +15,6 @@
       </Line>
       <Line Name="Line2">
         <Top>6.54403cm</Top>
-        <Left>0cm</Left>
         <Height>0cm</Height>
         <Width>18.26537cm</Width>
         <ZIndex>1</ZIndex>
@@ -650,7 +648,7 @@
         <Top>3.71754cm</Top>
         <Left>0.3937cm</Left>
         <Height>1.2cm</Height>
-        <Width>16.60533cm</Width>
+        <Width>16.60532cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
           <Border>
@@ -883,21 +881,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descripcion">
+                    <Textbox Name="NombreProd">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descripcion.Value</Value>
+                              <Value>=Fields!NombreProd.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descripcion</rd:DefaultName>
+                      <rd:DefaultName>NombreProd</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -1275,7 +1273,6 @@
           <Source>Embedded</Source>
           <Value>FradelSpies</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0cm</Left>
           <Height>3.393cm</Height>
           <Width>3.37854cm</Width>
           <Style>
@@ -1520,10 +1517,6 @@
           <DataField>descripcion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="codigo">
           <DataField>codigo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
@@ -1531,6 +1524,10 @@
         <Field Name="precio">
           <DataField>precio</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="NombreProd">
+          <DataField>NombreProd</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

@@ -1454,11 +1454,11 @@ Partial Public Class DataSetFactura
         
         Private columndescripcion As Global.System.Data.DataColumn
         
-        Private columnnombre As Global.System.Data.DataColumn
-        
         Private columncodigo As Global.System.Data.DataColumn
         
         Private columnprecio As Global.System.Data.DataColumn
+        
+        Private columnNombreProd As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -1537,14 +1537,6 @@ Partial Public Class DataSetFactura
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property nombreColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnnombre
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property codigoColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columncodigo
@@ -1556,6 +1548,14 @@ Partial Public Class DataSetFactura
         Public ReadOnly Property precioColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnprecio
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property NombreProdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNombreProd
             End Get
         End Property
         
@@ -1596,9 +1596,9 @@ Partial Public Class DataSetFactura
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddDetalleFacturaRow(ByVal id_venta As Integer, ByVal cantidad As Integer, ByVal id_venta_detalle As Integer, ByVal descripcion As String, ByVal nombre As String, ByVal codigo As Integer, ByVal precio As Decimal) As DetalleFacturaRow
+        Public Overloads Function AddDetalleFacturaRow(ByVal id_venta As Integer, ByVal cantidad As Integer, ByVal id_venta_detalle As Integer, ByVal descripcion As String, ByVal codigo As Integer, ByVal precio As Decimal, ByVal NombreProd As String) As DetalleFacturaRow
             Dim rowDetalleFacturaRow As DetalleFacturaRow = CType(Me.NewRow,DetalleFacturaRow)
-            Dim columnValuesArray() As Object = New Object() {id_venta, cantidad, id_venta_detalle, Nothing, descripcion, nombre, codigo, precio}
+            Dim columnValuesArray() As Object = New Object() {id_venta, cantidad, id_venta_detalle, Nothing, descripcion, codigo, precio, NombreProd}
             rowDetalleFacturaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowDetalleFacturaRow)
             Return rowDetalleFacturaRow
@@ -1632,9 +1632,9 @@ Partial Public Class DataSetFactura
             Me.columnid_venta_detalle = MyBase.Columns("id_venta_detalle")
             Me.columnid_producto = MyBase.Columns("id_producto")
             Me.columndescripcion = MyBase.Columns("descripcion")
-            Me.columnnombre = MyBase.Columns("nombre")
             Me.columncodigo = MyBase.Columns("codigo")
             Me.columnprecio = MyBase.Columns("precio")
+            Me.columnNombreProd = MyBase.Columns("NombreProd")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1650,12 +1650,12 @@ Partial Public Class DataSetFactura
             MyBase.Columns.Add(Me.columnid_producto)
             Me.columndescripcion = New Global.System.Data.DataColumn("descripcion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columndescripcion)
-            Me.columnnombre = New Global.System.Data.DataColumn("nombre", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnnombre)
             Me.columncodigo = New Global.System.Data.DataColumn("codigo", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncodigo)
             Me.columnprecio = New Global.System.Data.DataColumn("precio", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnprecio)
+            Me.columnNombreProd = New Global.System.Data.DataColumn("NombreProd", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNombreProd)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_venta, Me.columnid_venta_detalle, Me.columnid_producto}, true))
             Me.columnid_venta.AllowDBNull = false
             Me.columnid_venta_detalle.AllowDBNull = false
@@ -1665,7 +1665,7 @@ Partial Public Class DataSetFactura
             Me.columnid_producto.AllowDBNull = false
             Me.columnid_producto.ReadOnly = true
             Me.columndescripcion.MaxLength = 200
-            Me.columnnombre.MaxLength = 80
+            Me.columnNombreProd.MaxLength = 80
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2788,21 +2788,6 @@ Partial Public Class DataSetFactura
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property nombre() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableDetalleFactura.nombreColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'nombre' de la tabla 'DetalleFactura' es DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableDetalleFactura.nombreColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property codigo() As Integer
             Get
                 Try 
@@ -2833,6 +2818,21 @@ Partial Public Class DataSetFactura
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property NombreProd() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableDetalleFactura.NombreProdColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("El valor de la columna 'NombreProd' de la tabla 'DetalleFactura' es DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableDetalleFactura.NombreProdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IscantidadNull() As Boolean
             Return Me.IsNull(Me.tableDetalleFactura.cantidadColumn)
         End Function
@@ -2857,18 +2857,6 @@ Partial Public Class DataSetFactura
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsnombreNull() As Boolean
-            Return Me.IsNull(Me.tableDetalleFactura.nombreColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetnombreNull()
-            Me(Me.tableDetalleFactura.nombreColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IscodigoNull() As Boolean
             Return Me.IsNull(Me.tableDetalleFactura.codigoColumn)
         End Function
@@ -2889,6 +2877,18 @@ Partial Public Class DataSetFactura
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetprecioNull()
             Me(Me.tableDetalleFactura.precioColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsNombreProdNull() As Boolean
+            Return Me.IsNull(Me.tableDetalleFactura.NombreProdColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetNombreProdNull()
+            Me(Me.tableDetalleFactura.NombreProdColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -4950,9 +4950,9 @@ Namespace DataSetFacturaTableAdapters
             tableMapping.ColumnMappings.Add("id_venta_detalle", "id_venta_detalle")
             tableMapping.ColumnMappings.Add("id_producto", "id_producto")
             tableMapping.ColumnMappings.Add("descripcion", "descripcion")
-            tableMapping.ColumnMappings.Add("nombre", "nombre")
             tableMapping.ColumnMappings.Add("codigo", "codigo")
             tableMapping.ColumnMappings.Add("precio", "precio")
+            tableMapping.ColumnMappings.Add("NombreProd", "NombreProd")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -4970,9 +4970,9 @@ Namespace DataSetFacturaTableAdapters
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        detalle.id_venta, detalle.cantidad, detalle.id_venta_detalle, Produ"& _ 
-                "ctos.id_producto, Productos.descripcion, Productos.nombre, Productos.codigo, Pro"& _ 
-                "ductos.precio"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            detalle INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Prod"& _ 
-                "uctos ON detalle.id_producto = Productos.id_producto"
+                "ctos.id_producto, Productos.descripcion, Productos.nombre As NombreProd, Product"& _ 
+                "os.codigo, Productos.precio"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            detalle INNER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          Productos ON detalle.id_producto = Productos.id_producto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
