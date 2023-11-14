@@ -12,7 +12,7 @@ Public Class DEmpleados
     Private fecha_nacimiento As Date
     Private id_sexo As Integer
     Private id_estado_empleado As Integer
-    Private fecha_ingreso As Date
+
 
     Private comando As SqlCommand
     Private dr As SqlDataReader
@@ -24,8 +24,7 @@ Public Class DEmpleados
                    telefonoe As String,
                    correoe As String,
                    fecha_nacimientoe As Date,
-                   id_sexoe As Integer,
-                   fecha_ingresoe As Date)
+                   id_sexoe As Integer)
         dni = dnie
         apellido = apellidoe
         nombre = nombree

@@ -11,7 +11,7 @@ Public Class NEmpleados
                                        telefono As String,
                                        correo As String,
                                        fecha_nacimiento As Date,
-                                       id_sexo As Integer,
+                                       id_sexo As Integer
                                        ) As Boolean
 
         Dim dempleado As New DEmpleados(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo)
