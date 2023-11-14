@@ -144,7 +144,7 @@ Public Class DEmpleados
 
             Dim query As String = "Insert into Empleados (dni,apellido,nombre,direccion,telefono,correo,fecha_nacimiento,id_sexo,id_estado_empleado,fecha_ingreso) 
                                    values 
-                                  (" & dempleado.CDni & ",'" & dempleado.CApellido & "','" & dempleado.CNombre & "','" & dempleado.CDireccion & "','" & dempleado.CTelefono & "','" & dempleado.CCorreo & "','" & dempleado.CNacimiento & "'," & dempleado.CIdSexo & "," & dempleado.CIdEstadoEmpleado & ",'" & dempleado.CFechaIngreso & "')"
+                                  (" & dempleado.CDni & ",'" & dempleado.CApellido & "','" & dempleado.CNombre & "','" & dempleado.CDireccion & "','" & dempleado.CTelefono & "','" & dempleado.CCorreo & "','" & dempleado.CNacimiento & "'," & dempleado.CIdSexo & "," & dempleado.CIdEstadoEmpleado & ", getDate())"
 
             comando = New SqlCommand(query, conexion)
 

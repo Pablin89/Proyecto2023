@@ -260,10 +260,9 @@ Public Class Empleados
         Dim correo As String = TextBox10.Text
         Dim fecha_nacimiento As String = DTFechaNacimiento.Value
         Dim id_sexo As Integer = Val(CbxSexoAdd.SelectedValue.ToString)
-        Dim fecha_ingreso As String = DTFechaIngreso.Value
         Try
             Dim cempleado As New NEmpleados()
-            cempleado.insertarEmpleado(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo, fecha_ingreso)
+            cempleado.insertarEmpleado(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

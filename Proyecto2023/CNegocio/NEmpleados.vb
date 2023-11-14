@@ -12,9 +12,9 @@ Public Class NEmpleados
                                        correo As String,
                                        fecha_nacimiento As Date,
                                        id_sexo As Integer,
-                                       fecha_ingreso As Date) As Boolean
+                                       ) As Boolean
 
-        Dim dempleado As New DEmpleados(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo, fecha_ingreso)
+        Dim dempleado As New DEmpleados(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo)
         If (dempleado.insertarEmpleado(dempleado)) Then
             Return True
         Else
