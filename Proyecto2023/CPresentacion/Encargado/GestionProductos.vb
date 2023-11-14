@@ -872,6 +872,9 @@
                 buscarProductoCodigoC(codigo)
             End If
 
+        ElseIf CheckBox2.Checked Then
+            buscarProductosPocoStock()
+
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
@@ -934,6 +937,7 @@
             TNombreProd.Enabled = False
             CBCateg.Enabled = False
             CBCateg.SelectedValue = -1
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -946,6 +950,7 @@
             TCodigo.Enabled = False
             CBCateg.Enabled = False
             CBCateg.SelectedValue = -1
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -958,6 +963,7 @@
             TCodigo.Enabled = False
             TNombreProd.Enabled = False
             CBCateg.Enabled = True
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -1014,8 +1020,17 @@
         ComboBox2.SelectedIndex = -1
 
 
+    End Sub
 
 
+    Public Sub buscarProductosPocoStock()
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.verProductosPocoStock()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -1027,8 +1042,18 @@
 
     End Sub
 
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If (CheckBox2.Checked) Then
+            TCodigo.Clear()
+            TNombreProd.Clear()
+            ChCodigo.Checked = False
+            ChCategoria.Checked = False
+            ChNombreProducto.Checked = False
+            TNombreProd.Enabled = False
+            TCodigo.Enabled = False
+            CBCateg.Enabled = False
+            CBCateg.SelectedValue = -1
+        End If
 
-
-
-
+    End Sub
 End Class

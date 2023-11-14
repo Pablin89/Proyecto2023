@@ -293,6 +293,18 @@
     <Compile Include="CPresentacion\Encargado\GestionProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Gerente General\EmpleadosNuevos.Designer.vb">
+      <DependentUpon>EmpleadosNuevos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\EmpleadosNuevos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\ModificarUsuario.Designer.vb">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\ModificarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Gerente General\Permisos.Designer.vb">
       <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
@@ -309,12 +321,6 @@
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente General\Restauracion.Designer.vb">
-      <DependentUpon>Restauracion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente General\Restauracion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Gerente\Gerente_Principal.Designer.vb">
@@ -440,6 +446,12 @@
     <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\EmpleadosNuevos.resx">
+      <DependentUpon>EmpleadosNuevos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\Permisos.resx">
       <DependentUpon>Permisos.vb</DependentUpon>
     </EmbeddedResource>
@@ -457,9 +469,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteEmpleados.resx">
       <DependentUpon>ReporteEmpleados.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente General\Restauracion.resx">
-      <DependentUpon>Restauracion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente\Gerente_Principal.resx">
       <DependentUpon>Gerente_Principal.vb</DependentUpon>

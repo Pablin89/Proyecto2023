@@ -36,5 +36,24 @@
         Misdatos.ShowDialog()
     End Sub
 
+    Private Sub Cajero_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If hayPocoStock() Then
+            MsgBox("Atencion! existen productos con poco stock, para ver los productos ir a la sección de productos del menú principal.", vbOKOnly + vbInformation, "Poco stock")
+        Else
+
+        End If
+    End Sub
+
+    Public Function hayPocoStock() As Boolean
+        Dim np As New NProductos()
+        If np.hayPocoStock() Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
+
 
 End Class

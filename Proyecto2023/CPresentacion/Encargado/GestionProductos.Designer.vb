@@ -112,6 +112,7 @@ Partial Class GestionProductos
         Me.LCategoria2 = New System.Windows.Forms.Label()
         Me.LPrecio2 = New System.Windows.Forms.Label()
         Me.LNombre2 = New System.Windows.Forms.Label()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.GestionarProductos.SuspendLayout()
         Me.ConsultarProductos.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -144,6 +145,7 @@ Partial Class GestionProductos
         'ConsultarProductos
         '
         Me.ConsultarProductos.BackColor = System.Drawing.Color.CornflowerBlue
+        Me.ConsultarProductos.Controls.Add(Me.CheckBox2)
         Me.ConsultarProductos.Controls.Add(Me.Button8)
         Me.ConsultarProductos.Controls.Add(Me.Label2)
         Me.ConsultarProductos.Controls.Add(Me.CBCateg)
@@ -166,9 +168,9 @@ Partial Class GestionProductos
         '
         Me.Button8.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(239, 182)
+        Me.Button8.Location = New System.Drawing.Point(549, 128)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(167, 37)
+        Me.Button8.Size = New System.Drawing.Size(177, 36)
         Me.Button8.TabIndex = 15
         Me.Button8.Text = "Listar Todos"
         Me.Button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -178,16 +180,17 @@ Partial Class GestionProductos
         'Label2
         '
         Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(3, 231)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(290, 16)
+        Me.Label2.Size = New System.Drawing.Size(265, 15)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "Click sobre el producto para ver detalles"
         '
         'CBCateg
         '
         Me.CBCateg.FormattingEnabled = True
-        Me.CBCateg.Location = New System.Drawing.Point(374, 143)
+        Me.CBCateg.Location = New System.Drawing.Point(279, 144)
         Me.CBCateg.Name = "CBCateg"
         Me.CBCateg.Size = New System.Drawing.Size(225, 24)
         Me.CBCateg.TabIndex = 13
@@ -196,7 +199,7 @@ Partial Class GestionProductos
         '
         Me.Button1.Image = Global.Proyecto2023.My.Resources.Resources.search_good_icon_icons_com_51027__1_
         Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.Location = New System.Drawing.Point(422, 182)
+        Me.Button1.Location = New System.Drawing.Point(550, 56)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(177, 37)
         Me.Button1.TabIndex = 12
@@ -207,7 +210,7 @@ Partial Class GestionProductos
         '
         'TCodigo
         '
-        Me.TCodigo.Location = New System.Drawing.Point(374, 55)
+        Me.TCodigo.Location = New System.Drawing.Point(279, 56)
         Me.TCodigo.Name = "TCodigo"
         Me.TCodigo.Size = New System.Drawing.Size(225, 22)
         Me.TCodigo.TabIndex = 10
@@ -215,7 +218,7 @@ Partial Class GestionProductos
         'ChCodigo
         '
         Me.ChCodigo.AutoSize = True
-        Me.ChCodigo.Location = New System.Drawing.Point(194, 57)
+        Me.ChCodigo.Location = New System.Drawing.Point(99, 58)
         Me.ChCodigo.Name = "ChCodigo"
         Me.ChCodigo.Size = New System.Drawing.Size(169, 20)
         Me.ChCodigo.TabIndex = 9
@@ -225,7 +228,7 @@ Partial Class GestionProductos
         'LTitulo
         '
         Me.LTitulo.AutoSize = True
-        Me.LTitulo.Location = New System.Drawing.Point(263, 17)
+        Me.LTitulo.Location = New System.Drawing.Point(293, 22)
         Me.LTitulo.Name = "LTitulo"
         Me.LTitulo.Size = New System.Drawing.Size(240, 16)
         Me.LTitulo.TabIndex = 8
@@ -234,7 +237,7 @@ Partial Class GestionProductos
         'ChCategoria
         '
         Me.ChCategoria.AutoSize = True
-        Me.ChCategoria.Location = New System.Drawing.Point(194, 143)
+        Me.ChCategoria.Location = New System.Drawing.Point(99, 144)
         Me.ChCategoria.Name = "ChCategoria"
         Me.ChCategoria.Size = New System.Drawing.Size(99, 20)
         Me.ChCategoria.TabIndex = 3
@@ -243,7 +246,7 @@ Partial Class GestionProductos
         '
         'TNombreProd
         '
-        Me.TNombreProd.Location = New System.Drawing.Point(374, 99)
+        Me.TNombreProd.Location = New System.Drawing.Point(279, 100)
         Me.TNombreProd.Name = "TNombreProd"
         Me.TNombreProd.Size = New System.Drawing.Size(225, 22)
         Me.TNombreProd.TabIndex = 2
@@ -251,7 +254,7 @@ Partial Class GestionProductos
         'ChNombreProducto
         '
         Me.ChNombreProducto.AutoSize = True
-        Me.ChNombreProducto.Location = New System.Drawing.Point(194, 101)
+        Me.ChNombreProducto.Location = New System.Drawing.Point(99, 102)
         Me.ChNombreProducto.Name = "ChNombreProducto"
         Me.ChNombreProducto.Size = New System.Drawing.Size(174, 20)
         Me.ChNombreProducto.TabIndex = 1
@@ -1071,6 +1074,16 @@ Partial Class GestionProductos
         Me.LNombre2.TabIndex = 0
         Me.LNombre2.Text = "Nombre del producto"
         '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(99, 189)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(233, 20)
+        Me.CheckBox2.TabIndex = 16
+        Me.CheckBox2.Text = "Ver productos con poco stock"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'GestionProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1194,4 +1207,5 @@ Partial Class GestionProductos
     Friend WithEvents LRprecio As Label
     Friend WithEvents Button9 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

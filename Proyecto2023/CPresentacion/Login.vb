@@ -36,7 +36,7 @@ Public Class Login
             datos = U.extraerDatos(TUsuario.Text)
 
             MsgBox("Usuario correcto", MsgBoxStyle.Information, "correcto")
-            If (perfil = 4) Then
+            If (perfil = 3) Then
 
                 Me.Hide()
                 cargarMisDatos()
@@ -55,7 +55,7 @@ Public Class Login
                 cargarMisDatos()
 
                 Gerente_Principal.Show()
-            ElseIf (perfil = 3) Then
+            ElseIf (perfil = 4) Then
 
                 Me.Hide()
                 cargarMisDatos()

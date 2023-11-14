@@ -26,6 +26,33 @@
         End If
     End Function
 
+
+    'Verifica si hay productos con poco stock
+    Public Function hayPocoStock() As Boolean
+        Dim dproductos As New DProductos()
+        If (dproductos.hayPocoStock()) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
+    'Ver productos con poco stock
+    Public Function verProductosPocoStock() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosPocoStock()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
     Public Function verProductosEditar() As DataTable
         Try
             Dim dproducto As New DProductos

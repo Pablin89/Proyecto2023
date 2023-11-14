@@ -23,21 +23,31 @@ Partial Class ReporteFechas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim ReportDataSource2 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
-        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.Proyecto2023DataSet = New Proyecto2023.Proyecto2023DataSet()
+        Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
         Me.VentasFechasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Proyecto2023DataSet = New Proyecto2023.Proyecto2023DataSet()
+        Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.VentasFechasTableAdapter = New Proyecto2023.Proyecto2023DataSetTableAdapters.VentasFechasTableAdapter()
-        CType(Me.Proyecto2023DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VentasFechasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Proyecto2023DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'VentasFechasBindingSource
+        '
+        Me.VentasFechasBindingSource.DataMember = "VentasFechas"
+        Me.VentasFechasBindingSource.DataSource = Me.Proyecto2023DataSet
+        '
+        'Proyecto2023DataSet
+        '
+        Me.Proyecto2023DataSet.DataSetName = "Proyecto2023DataSet"
+        Me.Proyecto2023DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'ReportViewer1
         '
         Me.ReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        ReportDataSource2.Name = "Fechas"
-        ReportDataSource2.Value = Me.VentasFechasBindingSource
-        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource2)
+        ReportDataSource1.Name = "Fechas"
+        ReportDataSource1.Value = Me.VentasFechasBindingSource
+        Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "Proyecto2023.ReporteFechas.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
@@ -55,18 +65,8 @@ Partial Class ReporteFechas
         Me.ReportViewer1.ShowRefreshButton = False
         Me.ReportViewer1.ShowStopButton = False
         Me.ReportViewer1.ShowZoomControl = False
-        Me.ReportViewer1.Size = New System.Drawing.Size(800, 450)
+        Me.ReportViewer1.Size = New System.Drawing.Size(800, 690)
         Me.ReportViewer1.TabIndex = 0
-        '
-        'Proyecto2023DataSet
-        '
-        Me.Proyecto2023DataSet.DataSetName = "Proyecto2023DataSet"
-        Me.Proyecto2023DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VentasFechasBindingSource
-        '
-        Me.VentasFechasBindingSource.DataMember = "VentasFechas"
-        Me.VentasFechasBindingSource.DataSource = Me.Proyecto2023DataSet
         '
         'VentasFechasTableAdapter
         '
@@ -76,7 +76,7 @@ Partial Class ReporteFechas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(800, 690)
         Me.Controls.Add(Me.ReportViewer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -84,8 +84,8 @@ Partial Class ReporteFechas
         Me.Name = "ReporteFechas"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ReporteFechas"
-        CType(Me.Proyecto2023DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VentasFechasBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Proyecto2023DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

@@ -58,6 +58,28 @@ Public Class DUsuarios
     End Property
 
 
+    Public Function agregarUsuario(nombre As String, contra As String, perfil As Integer, empleado As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "Insert into usuarios (id_usuario, nombre_usuario, contraseña, id_perfil, id_empleado) 
+                                   values  (((select top 1 id_usuario from usuarios order by id_usuario desc) + 1),'" & nombre & "','" & contra & "'," & perfil & "," & empleado & ")"
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+
 
     Public Function existeUsuario(us As String, con As String) As Boolean
         Dim resultado As Boolean = False
@@ -84,6 +106,34 @@ Public Class DUsuarios
         End Try
         Return resultado
     End Function
+
+
+
+    'Verifica si existe el usuario antes de agregarlo
+    Public Function existeElUsuario(us As String) As Boolean
+        Dim resultado As Boolean = False
+        Try
+            conectar()
+
+            Dim comando = New SqlCommand("select * from usuarios
+                                            where nombre_usuario = '" & us & "'")
+
+            comando.Connection = conexion
+
+            dr = comando.ExecuteReader
+
+            If (dr.HasRows) Then
+                resultado = True
+            End If
+            dr.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Return resultado
+    End Function
+
 
     Public Function extraerPerfil(us As String) As Integer
         Dim resultado As Integer = 0
@@ -152,5 +202,69 @@ Public Class DUsuarios
         End Try
     End Function
 
+
+
+    Public Function seleccionarUsuarioConsultar(id As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                        em.id_empleado As id,
+                                        em.apellido As Apellido,
+                                        em.nombre As Nombre,
+                                        em.dni As DNI ,
+                                        em.fecha_nacimiento As Nacimiento,
+                                        em.correo As Mail,
+                                        em.direccion As Dirección,
+                                        em.telefono As Telefono,
+                                        us.nombre_usuario AS Usuario,
+                                        pf.descripcion As Perfil
+                                        from empleados em inner join usuarios us 
+                                        on (em.id_empleado = us.id_empleado)
+                                        inner join perfiles pf
+                                        on (us.id_perfil = pf.id_perfil)
+                                        where em.id_empleado =" & id & "")
+
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+    'verifica si hay empleados sin usuario asignados
+    Public Function hayEmpleadosSinUsuarios() As Boolean
+        Dim resultado As Boolean = False
+        Try
+            conectar()
+
+            Dim comando = New SqlCommand("select * from empleados where id_empleado not in (select id_empleado from usuarios)")
+
+            comando.Connection = conexion
+
+            dr = comando.ExecuteReader
+
+            If (dr.Read) Then
+                resultado = True
+            End If
+            dr.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+        Return resultado
+    End Function
 
 End Class
