@@ -130,7 +130,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -163,7 +165,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox16</rd:DefaultName>
@@ -199,7 +203,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>id_venta</rd:DefaultName>
@@ -225,11 +231,13 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!fecha_compra.Value</Value>
+                              <Value>=FORMAT(Fields!fecha_compra.Value, "dd/MM/yyyy")</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>fecha_compra</rd:DefaultName>
@@ -316,7 +324,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox20</rd:DefaultName>
@@ -349,7 +359,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
@@ -382,7 +394,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox24</rd:DefaultName>
@@ -415,7 +429,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox26</rd:DefaultName>
@@ -448,7 +464,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -484,7 +502,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nombre</rd:DefaultName>
@@ -514,7 +534,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>apellido</rd:DefaultName>
@@ -544,7 +566,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>dni</rd:DefaultName>
@@ -574,7 +598,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>telefono</rd:DefaultName>
@@ -604,7 +630,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>direccion</rd:DefaultName>
@@ -727,7 +755,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox51</rd:DefaultName>
@@ -760,7 +790,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox64</rd:DefaultName>
@@ -793,7 +825,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox53</rd:DefaultName>
@@ -826,7 +860,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox62</rd:DefaultName>
@@ -892,7 +928,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>NombreProd</rd:DefaultName>
@@ -922,7 +960,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>codigo</rd:DefaultName>
@@ -952,7 +992,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cantidad</rd:DefaultName>
@@ -982,7 +1024,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>precio</rd:DefaultName>
@@ -1060,7 +1104,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox66</rd:DefaultName>
@@ -1096,7 +1142,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>total</rd:DefaultName>
@@ -1170,7 +1218,9 @@
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox83</rd:DefaultName>
@@ -1206,7 +1256,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>descripcion1</rd:DefaultName>
@@ -1262,10 +1314,10 @@
       </Border>
     </Style>
   </Body>
-  <Width>7.89942in</Width>
+  <Width>7.22234in</Width>
   <Page>
     <PageHeader>
-      <Height>3.55175cm</Height>
+      <Height>3.86925cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1426,43 +1478,9 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>3.06875cm</Height>
+      <Height>4.18938cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Textbox Name="Textbox10">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>GRACIAS POR ELEGIRNOS!!!</Value>
-                  <Style>
-                    <FontSize>11pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style />
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox10</rd:DefaultName>
-          <Top>1.34069cm</Top>
-          <Left>0.3937cm</Left>
-          <Height>0.82848cm</Height>
-          <Width>8.90186cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-      </ReportItems>
       <Style>
         <Border>
           <Style>Solid</Style>
@@ -1886,6 +1904,21 @@ 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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="qr_code_icon_156731">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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
+FLRHUo1L6i2NCWJ8qKsJgZz0uDmAJI08dtrZ1T+Cn8AfaZIcsRXVWiE3I17qAR4ohMA6EDMM94WghSTQdZWQp55bGjG0J3t9Q6Dwy2+9Hv8/EiXeI0WnCtfj6g3DMTgm7ZqJcYVgtDcA6DOTnlsac5rA80pDnJJ/kCh/wE2A0ZHhodsg7xGKcl7xxUZlCSq4MUAAVz/T9x70vC8UN9P+gbe8xZHKAqILV27eIYCmCyEXmE30zEJAhHL3oaNYZy5evTVGgE7nh/jizMzMo4/8j8R1jarjRYazbddMQhPo+RiNY4AZWyBooc18Usi3GUfrKfj0MT3JAmYYdX7mk1ahkX1OGpkd9zAdC3wBTyoqnoBz5kufixNaZSNplQ31dbU15AnWp0+tuIt8pZ1fGj7NWK6vtIYRAGZn+Yt85tP59hQZLRZj1SUWIMLA1yB3u+XwzTyAHyh7Dx9ramo6d/k6BvS6vNwcGHpMf/uM03c0Br4nQAA/spT7itWsiruZu5CJ1Bnp8MOP3d2cTW1T/5QGgz//8iuwI4sMxc37S4gSBmchKTEhPg5++72+RNCjP+DPv/5mTxTMj90toTKif/7Fy/Uy6TpcYbO8TfYfHsPuTnaI4rG76MG+6FeHRb+cLPb1539wvei9n2neBwAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMC0xMC0yOVQxMToxNTo0NSswMDowMNHwzocAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjAtMTAtMjlUMTE6MTU6NDUrMDA6MDCgrXY7AAAAIHRFWHRzb2Z0d2FyZQBodHRwczovL2ltYWdlbWFnaWNrLm9yZ7zPHZ0AAAAYdEVYdFRodW1iOjpEb2N1bWVudDo6UGFnZXMAMaf/uy8AAAAYdEVYdFRodW1iOjpJbWFnZTo6SGVpZ2h0ADE4MLdIITgAAAAXdEVYdFRodW1iOjpJbWFnZTo6V2lkdGgAMTgwJLlxZQAAABl0RVh0VGh1
+bWI6Ok1pbWV0eXBlAGltYWdlL3BuZz+yVk4AAAAXdEVYdFRodW1iOjpNVGltZQAxNjAzOTcwMTQ1swyzmgAAABJ0RVh0VGh1bWI6OlNpemUAMzA1M0JCqXomLQAAAEN0RVh0VGh1bWI6OlVSSQBmaWxlOi8vLi91cGxvYWRzLzU2L1dvR0o0WDgvMjYwOC9xcl9jb2RlX2ljb25fMTU2NzMxLnBuZ5t2hJwAAAAASUVORK5CYII=</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="barra_code">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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
+QLOyiXPUANLzXOv8VDuGYKClDlRnCH4EcKETvPVZtrZ+vPPveflluv10AE0cP996QWbthSer7px7DCBvMqyZZFgn/L/0OrRrJVMRwJ0HepwBOFepl15pufzZuXanHRnVNjMteTSA0p0wTp4Rgiu+ibhWd21476UNIJ8IJR5H+H9823HpOznbQCAEsPhEjr4XoBZAeeKpNbnHihdftmbRmT2GlUmzFQYwapLpMr1RiggAASwxgJryu0/rWXvFiy/TekrTfPXeRBz/t2qq8Z4B1NrmUwKrdTtuzQmQzmp00mnsEcCqR4BwF9mq2qu/9m43Vz6FV5oYi3W13m1YmgjkiLb5/Lh7U4/FdcN6wdBGjiFQg1eHIYDTl1bzYAioqNkmw1s4rt4x+M4RwNKTukdHbXe2nq2mcfT5nFlnpqXl5AUBKOOB+BKOQ0EAiqIgAEVBAAhAURAAAlAUBLDAAJ43/jiafd6Tud6b9d6yvdF1Z7+MVesesc+XeKPure/zymv0EtfyRB0IQFE8Aiw0gPfv3z+mvbhC99N8ttjYSSO+sbWmfKDMnnVbKBQH88zuS2ndPfWG33sj0mb3OZ83YKTePfs3i6Gr9iXtlr1in2vbG+nN2Vp3dLnSd7ml52LavTqvI8TqcgN4Lo+taZxbM8r0poCe7Xvfmz56dnv5e+3iiZ19xdRR6/YGGrUmwtiy3AoDKA0vzm8YK5dbsX8llW4O+ezGM8v16pg9jlIdIVaXG8DDw8NjPnS1ZQCtPts9A5hZd8QAettrGUB6vLNBvHfd1j63Ajutd8tyKwygVEcrsPcut9UAeue5FNilfWkZwEwdWw0g3ZcQq8sN4HnDCAABTBsAArg8AYRYfZEGsJUArmUAqfOvIoCRwE7X3bLcagIYCey9yzGAExjAtQhgK8YjAATAABDAxQ0AAdyHAazMASAABIAAEAACQAAIgAEgAASAABgAAkAACEAOAAEgAASAABAAAkAADAABIAAEwAAQ
+AAJAAHIACAABIAAEgAAQAAJgAAgAASAABoAAEAACkANAAAgAASAABIAAEAADQAAIAAEwAASAABCAHAACQAAIAAEgAASAABgAAkAACIABIAAEgADkABAAAkAACAABIAAEwAAQAAJAAAwAASAABCAHgAAQAAJAAAgAASAABoAAEAACYAAIAAHIATAABIAAEAADQAAIQA6AASAABIAAGAACQAByAAwAASAABIAAEAACkANAAAgAATAABIAAEIAcAAJAAAgAASAABIAAGAACQAAIgAEgAASAAOQAEAACQAAIAAEgAATAABAAAkAADAABIAAEIAeAABAAAkAACAABIAAGgAAQAAJgAAgAASAAOQAEgAAQAAJAAAgAATAABIAAEAADQAAIAAHIASAABIAAEAACQAAIgAEgAASAABgAAkAACEAOAAEgAASAABAAAkAADAABIAAEwAAQAAJAAHIACAABIAAEgAAQAAJgAAgAASAABoAAEIAcAANAAAgAATAABIAA5AAYAAJAAAiAASAABCAHwAAQAAJAAAwAASAAOQAEgAAQAANAAAgAAcgBIAAEgAAQAAJAAAiAASAABIAAGAACQAAIQA4AASAABIAAEAACQAAMAAEgAATAABAAAkAAcgAIAAEgAASAABAAAmAACAABIAAGgAAQAAKQA0AACAABIAAEgAAQAANAAAgAATAABIAAEIAcAAJAAAgAASAABIAAGAACQAAIgAEgAASAAOQAEAACQAAIAAEgAATAABAAAkAADAABIAAEIAeAABAAAkAACAABIAAGgAAQAAJgAAgAAcgByAEgAASAABgAAkAAcgAMAAEgAATAABAAApADYAAIAAEgAAaAABCAHAADQAAIAAEgAASAAOQAEAACQAAIAAEgAATAABAAAkAADAABIAAEIAeAABAAAkAACAABIAAGgAAQAAJgAAgAASAAOQAEgAAQAAJAAAgAATAABIAAEAADQAAIAAHIASAABIAAEAAC
+QAAIgAEgAASAABgAAkAACEAOAAEgAASAABAAAkAADAABIAAEwAAQAAJAAHIACAABIAAEgAAQAAJgAAgAASAABoAAEAACkANAAAgAASAABIAAEAADQAAIAAEwAASAABCAHAACQAAIgAHcgwEgAATAABAAAkAADEAOAAEgADkABIAAEMCZCOC53IQBhGC8FwJgAAzgGgYQYnW5ATw8PDyG4IvqGUC6bK6eAcysO2IAve2VDCBfd+sjwN51a/tcCuxSvb1HgNJyqx8BYh09tN+z3FYD6J3nUmCX9qVlADN1bDWAdJshVpcaQNSbN2/+m+rz589/Pe/Dn6nCZ/lyJa1et6TV+7Kn3lva5z37N6rV+7J6n691nvdcz6PHMRL4wwaQm8Dohono8pqN1c0bJ6Lb1ExMc02iE8tJIGIARMQAiIgBEBEDICIGQEQMgIgYABExACJiAETEAIiIARARAyAiBkBEDICIGAARMQAiYgBExACIiAEQEQMgIgZARAyAiBgAETEAIjpA/wdzxhQFzNaLUwAAAABJRU5ErkJggg==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
