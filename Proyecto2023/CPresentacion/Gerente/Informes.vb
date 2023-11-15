@@ -211,8 +211,8 @@ Public Class Informes
     End Sub
 
     Public Sub ventasPorFechas()
-        Dim desde As Date = DateTimeDesde.Value.ToString("yyyy-MM-dd")
-        Dim hasta As Date = DateTimeHasta.Value.ToString("yyyy-MM-dd")
+        Dim desde As String = DateTimeDesde.Value.ToString("yyyy-MM-dd")
+        Dim hasta As String = DateTimeHasta.Value.ToString("yyyy-MM-dd")
 
         Try
             Dim nv As New NVentas

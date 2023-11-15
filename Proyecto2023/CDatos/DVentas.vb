@@ -169,7 +169,7 @@ Public Class DVentas
     End Function
 
 
-    Public Function ventasPorFechasGerente(desde As Date, hasta As Date) As DataTable
+    Public Function ventasPorFechasGerente(desde, hasta) As DataTable
         Try
             conectar()
             Dim comando = New SqlCommand("select 
@@ -181,7 +181,7 @@ Public Class DVentas
                                         from ventas v
                                         inner join Clientes c on (v.id_cliente=c.id_cliente)
                                         inner join tipos_pagos tp on (v.id_tipo_pago=tp.id_tipo_pago)
-                                        where v.id_estado_venta = 1 and  v.fecha_compra  BETWEEN '" & desde & "' And '" & hasta & "'")
+                                        where v.id_estado_venta = 1 and   (convert(varchar(10),v.fecha_compra,120)  BETWEEN '" & desde & "' And '" & hasta & "')")
             comando.Connection = conexion
 
             If (comando.ExecuteNonQuery) Then

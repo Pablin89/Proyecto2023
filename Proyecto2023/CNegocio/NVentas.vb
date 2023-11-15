@@ -37,7 +37,7 @@ Public Class NVentas
     End Function
 
     'Lista las ventas por fechas
-    Public Function ventasPorFechasGerente(desde As Date, hasta As Date) As DataTable
+    Public Function ventasPorFechasGerente(desde, hasta) As DataTable
         Try
             Dim dventa As New DVentas
             Dim dt As DataTable = dventa.ventasPorFechasGerente(desde, hasta)
