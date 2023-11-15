@@ -1,4 +1,6 @@
-﻿Public Class Gerente_Principal
+﻿Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
+Public Class Gerente_Principal
     Private Sub Productos_Click(sender As Object, e As EventArgs) Handles Productos.Click
         Informes.LTitulo.Text = "Informes de Productos"
         Informes.ComboBox1.Items.Add("Productos más vendidos")

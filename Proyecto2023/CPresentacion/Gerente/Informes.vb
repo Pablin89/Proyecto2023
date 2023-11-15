@@ -61,6 +61,8 @@ Public Class Informes
         DateTimeHasta.Visible = False
         ComboBox1.Items.Clear()
         ComboBox1.Text = ""
+        LFiltroSeleccionado.Text = "Filtro"
+        DataGridView1.DataSource = Nothing
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
