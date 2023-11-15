@@ -32,8 +32,8 @@ Partial Class Gerente_Principal
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
         Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Cajeros = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BajaClientes = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesClientes = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformesFechas = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -127,7 +127,7 @@ Partial Class Gerente_Principal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.BajaClientes, Me.ToolStripMenuItem1})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Cajeros, Me.InformesClientes, Me.InformesFechas})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -157,23 +157,23 @@ Partial Class Gerente_Principal
         Me.Cajeros.Size = New System.Drawing.Size(191, 52)
         Me.Cajeros.Text = "Informes de Empleados"
         '
-        'BajaClientes
+        'InformesClientes
         '
-        Me.BajaClientes.Image = CType(resources.GetObject("BajaClientes.Image"), System.Drawing.Image)
-        Me.BajaClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BajaClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.BajaClientes.Name = "BajaClientes"
-        Me.BajaClientes.Size = New System.Drawing.Size(207, 52)
-        Me.BajaClientes.Text = "Informes de clientes"
-        Me.BajaClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.InformesClientes.Image = CType(resources.GetObject("InformesClientes.Image"), System.Drawing.Image)
+        Me.InformesClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.InformesClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.InformesClientes.Name = "InformesClientes"
+        Me.InformesClientes.Size = New System.Drawing.Size(207, 52)
+        Me.InformesClientes.Text = "Informes de clientes"
+        Me.InformesClientes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ToolStripMenuItem1
+        'InformesFechas
         '
-        Me.ToolStripMenuItem1.Image = CType(resources.GetObject("ToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.ToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(207, 52)
-        Me.ToolStripMenuItem1.Text = "Informes en General"
+        Me.InformesFechas.Image = CType(resources.GetObject("InformesFechas.Image"), System.Drawing.Image)
+        Me.InformesFechas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.InformesFechas.Name = "InformesFechas"
+        Me.InformesFechas.Size = New System.Drawing.Size(207, 52)
+        Me.InformesFechas.Text = "Informes por fechas"
         '
         'PictureBox1
         '
@@ -216,8 +216,8 @@ Partial Class Gerente_Principal
     Friend WithEvents MenuEncargado As MenuStrip
     Friend WithEvents Productos As ToolStripMenuItem
     Friend WithEvents Cajeros As ToolStripMenuItem
-    Friend WithEvents BajaClientes As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents InformesClientes As ToolStripMenuItem
+    Friend WithEvents InformesFechas As ToolStripMenuItem
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Button2 As Button
 End Class

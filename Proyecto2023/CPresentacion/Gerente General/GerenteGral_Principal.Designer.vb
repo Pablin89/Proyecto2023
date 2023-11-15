@@ -25,9 +25,9 @@ Partial Class GerenteGral_Principal
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GerenteGral_Principal))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MenuEncargado = New System.Windows.Forms.MenuStrip()
-        Me.Productos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.UsuariosNuevos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarUs = New System.Windows.Forms.ToolStripMenuItem()
         Me.Backup = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Informes = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -56,7 +56,7 @@ Partial Class GerenteGral_Principal
         Me.MenuEncargado.BackColor = System.Drawing.Color.LightSteelBlue
         Me.MenuEncargado.Dock = System.Windows.Forms.DockStyle.Left
         Me.MenuEncargado.Font = New System.Drawing.Font("Franklin Gothic Medium", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Productos, Me.Backup, Me.Informes})
+        Me.MenuEncargado.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.UsuariosNuevos, Me.ModificarUs, Me.Backup})
         Me.MenuEncargado.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow
         Me.MenuEncargado.Location = New System.Drawing.Point(0, 184)
         Me.MenuEncargado.Name = "MenuEncargado"
@@ -64,17 +64,26 @@ Partial Class GerenteGral_Principal
         Me.MenuEncargado.Size = New System.Drawing.Size(209, 436)
         Me.MenuEncargado.TabIndex = 2
         '
-        'Productos
+        'UsuariosNuevos
         '
-        Me.Productos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Productos.Image = Global.Proyecto2023.My.Resources.Resources.business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_
-        Me.Productos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Productos.ImageTransparentColor = System.Drawing.Color.White
-        Me.Productos.Margin = New System.Windows.Forms.Padding(8)
-        Me.Productos.Name = "Productos"
-        Me.Productos.Size = New System.Drawing.Size(186, 89)
-        Me.Productos.Text = "Permisos de Usuarios"
-        Me.Productos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.UsuariosNuevos.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
+        Me.UsuariosNuevos.Image = Global.Proyecto2023.My.Resources.Resources.business_man_user_support_supportfortheuser_aquestion_theclient_2330__2_
+        Me.UsuariosNuevos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.UsuariosNuevos.ImageTransparentColor = System.Drawing.Color.White
+        Me.UsuariosNuevos.Margin = New System.Windows.Forms.Padding(8)
+        Me.UsuariosNuevos.Name = "UsuariosNuevos"
+        Me.UsuariosNuevos.Size = New System.Drawing.Size(186, 89)
+        Me.UsuariosNuevos.Text = "Empleados nuevos"
+        Me.UsuariosNuevos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ModificarUs
+        '
+        Me.ModificarUs.Image = CType(resources.GetObject("ModificarUs.Image"), System.Drawing.Image)
+        Me.ModificarUs.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ModificarUs.Name = "ModificarUs"
+        Me.ModificarUs.Size = New System.Drawing.Size(202, 89)
+        Me.ModificarUs.Text = "Modificar Usuarios"
+        Me.ModificarUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'Backup
         '
@@ -86,17 +95,6 @@ Partial Class GerenteGral_Principal
         Me.Backup.Size = New System.Drawing.Size(186, 73)
         Me.Backup.Text = "Backup de Base de Datos"
         Me.Backup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        '
-        'Informes
-        '
-        Me.Informes.AccessibleRole = System.Windows.Forms.AccessibleRole.ButtonMenu
-        Me.Informes.Image = Global.Proyecto2023.My.Resources.Resources.backup_and_restore_15493
-        Me.Informes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.Informes.Margin = New System.Windows.Forms.Padding(8)
-        Me.Informes.Name = "Informes"
-        Me.Informes.Size = New System.Drawing.Size(186, 73)
-        Me.Informes.Text = "Restaurar Base de Datos"
-        Me.Informes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'PictureBox1
         '
@@ -197,9 +195,9 @@ Partial Class GerenteGral_Principal
     Friend WithEvents Panel3 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents MenuEncargado As MenuStrip
-    Friend WithEvents Productos As ToolStripMenuItem
+    Friend WithEvents UsuariosNuevos As ToolStripMenuItem
     Friend WithEvents Backup As ToolStripMenuItem
-    Friend WithEvents Informes As ToolStripMenuItem
     Friend WithEvents BCerrarSesion As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents ModificarUs As ToolStripMenuItem
 End Class

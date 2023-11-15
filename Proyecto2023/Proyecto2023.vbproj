@@ -72,7 +72,9 @@
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -81,6 +83,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
@@ -121,6 +124,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CDatos\DProductos.vb" />
+    <Compile Include="CDatos\DSexos.vb" />
     <Compile Include="CDatos\DTiposPagos.vb" />
     <Compile Include="CDatos\DUsuarios.vb" />
     <Compile Include="CDatos\DVentas.vb" />
@@ -161,6 +165,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
+    <Compile Include="CDatos\ReporteFactura.vb" />
     <Compile Include="CDatos\Sexos.vb">
       <DependentUpon>Proyecto2023.tt</DependentUpon>
     </Compile>
@@ -180,6 +185,7 @@
     <Compile Include="CNegocio\NEmpleados.vb" />
     <Compile Include="CNegocio\NEstados.vb" />
     <Compile Include="CNegocio\NProductos.vb" />
+    <Compile Include="CNegocio\NSexos.vb" />
     <Compile Include="CNegocio\NTiposPagos.vb" />
     <Compile Include="CNegocio\NUsuarios.vb" />
     <Compile Include="CNegocio\NVentas.vb" />
@@ -194,6 +200,14 @@
     </Compile>
     <Compile Include="CPresentacion\Cajero\CajeroPrincipal.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DataSetFactura.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Cajero\DataSetFactura.vb">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Cajero\DetalleVenta.Designer.vb">
       <DependentUpon>DetalleVenta.vb</DependentUpon>
@@ -279,6 +293,18 @@
     <Compile Include="CPresentacion\Encargado\GestionProductos.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CPresentacion\Gerente General\EmpleadosNuevos.Designer.vb">
+      <DependentUpon>EmpleadosNuevos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\EmpleadosNuevos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\ModificarUsuario.Designer.vb">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente General\ModificarUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CPresentacion\Gerente General\Permisos.Designer.vb">
       <DependentUpon>Permisos.vb</DependentUpon>
     </Compile>
@@ -297,46 +323,16 @@
     <Compile Include="CPresentacion\Gerente General\GerenteGral_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Gerente General\Restauracion.Designer.vb">
-      <DependentUpon>Restauracion.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente General\Restauracion.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="CPresentacion\Gerente\Gerente_Principal.Designer.vb">
       <DependentUpon>Gerente_Principal.vb</DependentUpon>
     </Compile>
     <Compile Include="CPresentacion\Gerente\Gerente_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Cajeros.Designer.vb">
-      <DependentUpon>Informes_Cajeros.vb</DependentUpon>
+    <Compile Include="CPresentacion\Gerente\Informes.Designer.vb">
+      <DependentUpon>Informes.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Cajeros.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Clientes.Designer.vb">
-      <DependentUpon>Informes_Clientes.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Clientes.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_General.Designer.vb">
-      <DependentUpon>Informes_General.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_General.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Productos.Designer.vb">
-      <DependentUpon>Informes_Productos.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\Informes_Productos.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\ReporteCajeros.Designer.vb">
-      <DependentUpon>ReporteCajeros.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CPresentacion\Gerente\ReporteCajeros.vb">
+    <Compile Include="CPresentacion\Gerente\Informes.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Gerente\ReporteClientes.Designer.vb">
@@ -345,10 +341,22 @@
     <Compile Include="CPresentacion\Gerente\ReporteClientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CPresentacion\Gerente\ReporteGeneral.Designer.vb">
-      <DependentUpon>ReporteGeneral.vb</DependentUpon>
+    <Compile Include="CPresentacion\Gerente\ReporteEmpleados.Designer.vb">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
     </Compile>
-    <Compile Include="CPresentacion\Gerente\ReporteGeneral.vb">
+    <Compile Include="CPresentacion\Gerente\ReporteEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteFechas.Designer.vb">
+      <DependentUpon>ReporteFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteProductos.Designer.vb">
+      <DependentUpon>ReporteProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CPresentacion\Gerente\ReporteProductos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CPresentacion\Login.Designer.vb">
@@ -378,6 +386,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Proyecto2023DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Proyecto2023DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Proyecto2023DataSet.vb">
+      <DependentUpon>Proyecto2023DataSet.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +446,12 @@
     <EmbeddedResource Include="CPresentacion\Encargado\GestionProductos.resx">
       <DependentUpon>GestionProductos.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\EmpleadosNuevos.resx">
+      <DependentUpon>EmpleadosNuevos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente General\ModificarUsuario.resx">
+      <DependentUpon>ModificarUsuario.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente General\Permisos.resx">
       <DependentUpon>Permisos.vb</DependentUpon>
     </EmbeddedResource>
@@ -439,37 +461,28 @@
     <EmbeddedResource Include="CPresentacion\Gerente General\GerenteGral_Principal.resx">
       <DependentUpon>GerenteGral_Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\ReportClientes.rdlc" />
-    <EmbeddedResource Include="CPresentacion\Gerente\ReporteCajeros.rdlc" />
-    <EmbeddedResource Include="CPresentacion\Gerente\ReporteCajeros.resx">
-      <DependentUpon>ReporteCajeros.vb</DependentUpon>
-    </EmbeddedResource>
+    <EmbeddedResource Include="CPresentacion\Gerente\Empleados.rdlc" />
+    <EmbeddedResource Include="CPresentacion\Gerente\Productos.rdlc" />
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteClientes.rdlc" />
     <EmbeddedResource Include="CPresentacion\Gerente\ReporteClientes.resx">
       <DependentUpon>ReporteClientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\ReporteGeneral.rdlc" />
-    <EmbeddedResource Include="CPresentacion\Gerente General\Restauracion.resx">
-      <DependentUpon>Restauracion.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteEmpleados.resx">
+      <DependentUpon>ReporteEmpleados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPresentacion\Gerente\Gerente_Principal.resx">
       <DependentUpon>Gerente_Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\Informes_Cajeros.resx">
-      <DependentUpon>Informes_Cajeros.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Gerente\Informes.resx">
+      <DependentUpon>Informes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\Informes_Clientes.resx">
-      <DependentUpon>Informes_Clientes.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteFechas.rdlc" />
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteFechas.resx">
+      <DependentUpon>ReporteFechas.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\Informes_General.resx">
-      <DependentUpon>Informes_General.vb</DependentUpon>
+    <EmbeddedResource Include="CPresentacion\Gerente\ReporteProductos.resx">
+      <DependentUpon>ReporteProductos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\Informes_Productos.resx">
-      <DependentUpon>Informes_Productos.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\ReporteGeneral.resx">
-      <DependentUpon>ReporteGeneral.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CPresentacion\Gerente\ReporteProductos.rdlc" />
     <EmbeddedResource Include="CPresentacion\Login.resx">
       <DependentUpon>Login.vb</DependentUpon>
     </EmbeddedResource>
@@ -491,6 +504,17 @@
     <None Include="CDatos\Proyecto2023.edmx.diagram">
       <DependentUpon>Proyecto2023.edmx</DependentUpon>
     </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xsc">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFactura.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="CPresentacion\Cajero\DataSetFactura.xss">
+      <DependentUpon>DataSetFactura.xsd</DependentUpon>
+    </None>
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -505,6 +529,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Proyecto2023DataSet.xsc">
+      <DependentUpon>Proyecto2023DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Proyecto2023DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Proyecto2023DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Proyecto2023DataSet.xss">
+      <DependentUpon>Proyecto2023DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Resources\login_90841.png" />
   </ItemGroup>
   <ItemGroup>
@@ -611,20 +646,6 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Proyecto2023.edmx</DependentUpon>
       <LastGenOutput>Proyecto2023.vb</LastGenOutput>
-    </Content>
-    <Content Include="SqlServerTypes\Loader.cs" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\ic_cancel_128_28318.png" />
     <None Include="Resources\cancel_77947.png" />

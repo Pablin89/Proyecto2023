@@ -3,7 +3,7 @@
     Dim nombreProdEdit As String
     Dim codigoProdEdit As Integer
 
-    'Metodos para agregar producto
+    'METODOS DE AGREGAR PRODUCTOS ------------------------------------------------------------------------------------------------------------------------------------------------------
     Private Sub TextBox6_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox6.KeyPress
 
         Call entradaDecimal(TextBox6, e)
@@ -143,15 +143,11 @@
                         agregarProducto()
                         verProductosConsultar()
                         verProductosEditar()
+
                         MsgBox("Nuevo producto agregado", MsgBoxStyle.OkOnly, "Producto insertado")
-                        TextBox5.Text = ""
-                        TextBox6.Text = ""
-                        ComboBox1.Text = ""
-                        TextBox7.Text = ""
-                        TextBox13.Text = ""
-                        TextBox12.Text = ""
-                        TDescripcion2.Text = ""
-                        ComboBox2.Text = ""
+
+                        restablecerTodo()
+                        reiniciarAgregar()
                     End If
 
                 End If
@@ -168,6 +164,45 @@
 
         End If
 
+    End Sub
+
+    Public Sub restablecerTodo()
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'CBCateg
+        ChBCategoria.Checked = False
+        ChCodigo.Checked = False
+        ChNombreProducto.Checked = False
+        TCodigo.Enabled = False
+        TNombreProd.Enabled = False
+
+        ComboBox3.Enabled = False
+        CBCateg.Enabled = False
+
+        TCodigo.Clear()
+        TNombreProd.Clear()
+        'ComboBox3
+        CheckBox1.Checked = False
+        ChProducto.Checked = False
+        ChBCategoria.Checked = False
+        TextBox8.Enabled = False
+        TextBox4.Enabled = False
+
+        Panel4.Enabled = False
+
+        Panel6.Visible = False
+        Button3.Visible = False
+        Button2.Visible = True
+        Button9.Visible = False
+
+        TStockEdit.Enabled = False
+        DataGridView2.AllowUserToAddRows = False
+        verProductosEditar()
+        comboboxCategorias()
+        comboboxCategoriasEditarBuscar()
+
+        verProductosConsultar()
+        comboboxCategoriasConsultarBuscar()
     End Sub
 
     'Busqueda de agregar producto
@@ -234,6 +269,7 @@
         Dim stock As Integer = Val(TextBox7.Text)
         Dim stock_minimo As Integer = Val(TextBox13.Text)
         Dim precio As Double = Val(TextBox6.Text)
+
         Dim id_estado_producto As Integer
         If (ComboBox2.Text = "Activo") Then
             id_estado_producto = 1
@@ -249,7 +285,7 @@
         End Try
     End Sub
 
-    'Metodos Formulario Editar producto
+    'METODOS DE EDITAR PRODUCTOS ---------------------------------------------------------------------------------------------------------------
 
     'Configurar busqueda en editar
 
@@ -565,17 +601,21 @@
         ask = MsgBox("Seguro desea Cancelar edición?", MsgBoxStyle.YesNo, "Cancelar Edición")
 
         If ask = MsgBoxResult.Yes Then
-            TNombre.Text = ""
-            TextBox9.Text = ""
-            TDescripcion.Text = ""
-            ComboBox4.DataSource = Nothing
-            TStockEdit.Text = ""
-            TextBox10.Text = ""
-            TPrecioEdit.Text = ""
-            ComboBox5.DataSource = Nothing
-            Panel4.Enabled = False
+            vaciarCamposEdicion()
         End If
 
+    End Sub
+
+    Public Sub vaciarCamposEdicion()
+        TNombre.Text = ""
+        TextBox9.Text = ""
+        TDescripcion.Text = ""
+        ComboBox4.DataSource = Nothing
+        TStockEdit.Text = ""
+        TextBox10.Text = ""
+        TPrecioEdit.Text = ""
+        ComboBox5.DataSource = Nothing
+        Panel4.Enabled = False
     End Sub
 
     'Button para editar
@@ -602,6 +642,12 @@
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
 
                     Else
+                        editarProducto()
+                        verProductosEditar()
+                        verProductosConsultar()
+                        vaciarCamposEdicion()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+                        restablecerTodo()
                     End If
                     'Probar si modificamos el campo nombre
                 ElseIf (nombreProdEdit <> TNombre.Text) Then
@@ -609,20 +655,20 @@
                     If (existeNombreProductoAdd(TNombre.Text) = True) Then
                         MsgBox("El código del producto ya existe", MsgBoxStyle.Critical, "Error")
                     Else
+                        editarProducto()
+                        verProductosEditar()
+                        verProductosConsultar()
+                        vaciarCamposEdicion()
+                        MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
+
                     End If
                 Else
                     editarProducto()
                     verProductosEditar()
+                    verProductosConsultar()
+                    vaciarCamposEdicion()
                     MsgBox("Producto Editado", MsgBoxStyle.OkOnly, "Producto Editado")
-                    TNombre.Text = ""
-                    TextBox9.Text = ""
-                    TDescripcion.Text = ""
-                    ComboBox4.DataSource = Nothing
-                    TStockEdit.Text = ""
-                    TextBox10.Text = ""
-                    TPrecioEdit.Text = ""
-                    ComboBox5.DataSource = Nothing
-                    Panel4.Enabled = False
+
                 End If
 
             Else
@@ -638,7 +684,7 @@
         End If
     End Sub
 
-    'METODOS DE CONSULTAR PRODUCTOS
+    'METODOS DE CONSULTAR PRODUCTOS--------------------------------------------------------------------------------------------------------------
     'Elementos del Formulario editar
     Public Sub verProductosConsultar()
         Try
@@ -827,6 +873,9 @@
                 buscarProductoCodigoC(codigo)
             End If
 
+        ElseIf CheckBox2.Checked Then
+            buscarProductosPocoStock()
+
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
@@ -834,7 +883,7 @@
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         AgregarStock.ShowDialog()
-        seleccionarProductoEditar(id)
+        'seleccionarProductoEditar(id)
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -870,6 +919,7 @@
         Button2.Visible = True
         Button9.Visible = False
 
+        TStockEdit.Enabled = False
         DataGridView2.AllowUserToAddRows = False
         verProductosEditar()
         comboboxCategorias()
@@ -888,6 +938,7 @@
             TNombreProd.Enabled = False
             CBCateg.Enabled = False
             CBCateg.SelectedValue = -1
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -900,6 +951,7 @@
             TCodigo.Enabled = False
             CBCateg.Enabled = False
             CBCateg.SelectedValue = -1
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -912,6 +964,7 @@
             TCodigo.Enabled = False
             TNombreProd.Enabled = False
             CBCateg.Enabled = True
+            CheckBox2.Checked = False
         End If
     End Sub
 
@@ -968,8 +1021,17 @@
         ComboBox2.SelectedIndex = -1
 
 
+    End Sub
 
 
+    Public Sub buscarProductosPocoStock()
+        Try
+            Dim dp As New NProductos
+            Dim dt As DataTable = dp.verProductosPocoStock()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
@@ -981,8 +1043,18 @@
 
     End Sub
 
+    Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
+        If (CheckBox2.Checked) Then
+            TCodigo.Clear()
+            TNombreProd.Clear()
+            ChCodigo.Checked = False
+            ChCategoria.Checked = False
+            ChNombreProducto.Checked = False
+            TNombreProd.Enabled = False
+            TCodigo.Enabled = False
+            CBCateg.Enabled = False
+            CBCateg.SelectedValue = -1
+        End If
 
-
-
-
+    End Sub
 End Class

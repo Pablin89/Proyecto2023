@@ -99,7 +99,7 @@ Public Class Baja_Cliente
         Dim i As Integer
         i = DataGridView1.CurrentRow.Index
         If (Me.DataGridView1.Item(8, i).Value.ToString = "Activo") Then
-            ask = MsgBox("Desea dar de baja este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
+            ask = MsgBox("Desea dar de baja este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Baja")
             If (MsgBoxResult.Yes = ask) Then
                 'La variable item me permite recoger el id del cliente para hacer la edición
                 id = Me.DataGridView1.Item(0, i).Value
@@ -107,7 +107,7 @@ Public Class Baja_Cliente
                 MsgBox("El cliente se dio de baja correctamente", MsgBoxStyle.Information, "Ok")
             End If
         Else
-            ask = MsgBox("Desea dar de Alta este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
+            ask = MsgBox("Desea dar de Alta este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Alta")
             If (MsgBoxResult.Yes = ask) Then
                 'La variable item me permite recoger el id del cliente para hacer la edición
                 id = Me.DataGridView1.Item(0, i).Value

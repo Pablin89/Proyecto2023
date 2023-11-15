@@ -71,6 +71,8 @@ Public Class Empleados
         DataGridView1.Columns(5).Visible = False
         DataGridView1.Columns(6).Visible = False
         DataGridView1.Columns(7).Visible = False
+        BRCambios.Visible = True
+        BCambios.Visible = False
     End Sub
 
 
@@ -90,13 +92,19 @@ Public Class Empleados
         cargarConsultar()
         cargarEditar()
         cargarAgregar()
+
+        DataGridView2.AllowUserToAddRows = False
+        DataGridView1.AllowUserToAddRows = False
+
+        'comboboxs en agregar 
+        comboboxSexosAdd()
     End Sub
 
 
 
 
 
-    'Seccion Agregar empleado
+    'Seccion Agregar empleado -------------------------------------------------------------------------------------------------------------------------------------
     'restricciones(Busqueda)
     Private Sub TextBox11_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox11.KeyPress
 
@@ -126,7 +134,7 @@ Public Class Empleados
         If (TextBox11.Text = "") Then
             MsgBox("Introduzca un DNI para la búsqueda", MsgBoxStyle.Exclamation, "Atención")
         Else
-            If (TextBox11.Text = "11111111") Then
+            If (existeEmpleadoAdd(Val(TextBox11.Text))) Then
                 MsgBox("El empleado el DNI " + TextBox11.Text + " ya existe en el sistema.", MsgBoxStyle.Information, "Buscar")
             Else
                 MsgBox("Este DNI no existe en el sistema, puede agregar el empleado.", MsgBoxStyle.Information, "Buscar")
@@ -216,6 +224,50 @@ Public Class Empleados
         End If
     End Function
 
+    'Cargar en el combobox los sexos del empleado
+    Public Sub comboboxSexosAdd()
+        Try
+            Dim dc As New NSexos
+            Dim dt As DataTable = dc.verSexos()
+            CbxSexoAdd.DataSource = dt
+            CbxSexoAdd.DisplayMember = "descripcion"
+            CbxSexoAdd.ValueMember = "id_sexo"
+            CbxSexoAdd.SelectedValue = -1
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Verificar si el Dni del empleado existe en agregar
+    Public Function existeEmpleadoAdd(dni)
+        Try
+            Dim cte As New NEmpleados()
+            Return cte.existeEmpleado(dni)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+    'Metodo Para insertar un nuevo empleado
+    Private Sub agregarEmpleado()
+
+        Dim dni As Integer = Val(TextBox7.Text)
+        Dim apellido As String = TextBox5.Text
+        Dim nombre As String = TextBox6.Text
+        Dim direccion As String = TextBox8.Text
+        Dim telefono As String = TextBox9.Text
+        Dim correo As String = TextBox10.Text
+        Dim fecha_nacimiento As String = DTFechaNacimiento.Value
+        Dim id_sexo As Integer = Val(CbxSexoAdd.SelectedValue.ToString)
+        Try
+            Dim cempleado As New NEmpleados()
+            cempleado.insertarEmpleado(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, id_sexo)
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim ask As MsgBoxResult
 
@@ -224,13 +276,17 @@ Public Class Empleados
             (TextBox7.Text <> "") And
             (TextBox8.Text <> "") And
             (TextBox9.Text <> "") And
-            (TextBox10.Text <> "")
+            (TextBox10.Text <> "") And
+            (CbxSexoAdd.Text <> "")
             ) Then
 
             If (EmailAddressCheck(TextBox10.Text)) Then
                 ask = MsgBox("Seguro desea Agregar Empleado?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
+                    agregarEmpleado()
+                    verEmpleados()
+                    verEmpleadosEditar()
                     MsgBox("Empleado Agregado", MsgBoxStyle.OkOnly, "Agregado")
                     TextBox5.Text = ""
                     TextBox6.Text = ""
@@ -238,6 +294,7 @@ Public Class Empleados
                     TextBox8.Text = ""
                     TextBox9.Text = ""
                     TextBox10.Text = ""
+                    CbxSexoAdd.Text = ""
                 Else
                     MsgBox("No se agregó el Empleado", MsgBoxStyle.OkOnly, "No Agregado")
 
@@ -257,7 +314,7 @@ Public Class Empleados
         End If
     End Sub
 
-    'Area Editar Empleados
+    'Area Editar Empleados ------------------------------------------------------------------------------------------------------------------------------------------------------
     'Filtros de Busqueda
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
 
@@ -308,16 +365,23 @@ Public Class Empleados
                 MsgBox("Completa El Campo Apellido", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoApellidoEdit(apellido)
             End If
         ElseIf (ChBDni.Checked And Not ChBApellido.Checked) Then
             If (dni = "") Then
                 MsgBox("Completa El Campo DNI", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoDniEdit(dni)
             End If
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
         End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        cargarConsultar()
+        cargarEditar()
     End Sub
 
     'Restricciones de editar empleado
@@ -376,13 +440,71 @@ Public Class Empleados
 
     End Sub
 
+    Public Sub verEmpleadosEditar()
+        Try
+            Dim ne As New NEmpleados
+            Dim dt As DataTable = ne.verEmpleados()
+            DataGridView1.DataSource = dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
+    End Sub
+
+    'busqueda diámica con dni editar
+    Public Sub buscarEmpleadoDniEdit(dni As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoDni(dni)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'busqueda diámica con apellido editar
+    Public Sub buscarEmpleadoApellidoEdit(apellido As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoApellido(apellido)
+            DataGridView1.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    'Activar los campos para editar el empleado seleccionado
+    Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
+        Dim ask As MsgBoxResult
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
+        ask = MsgBox("Desea Seleccionar este Empleado? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Seleccionar")
+        If (MsgBoxResult.Yes = ask) Then
+            'La variable item me permite recoger el id del cliente para hacer la edición
+            item = Me.DataGridView1.Item(0, i).Value
+            TApellidos.Text = Me.DataGridView1.Item(1, i).Value.ToString()
+            TNombres.Text = Me.DataGridView1.Item(2, i).Value.ToString()
+            DTFechaNac.Value = Me.DataGridView1.Item(4, i).Value
+            TTelefono.Text = Me.DataGridView1.Item(7, i).Value.ToString()
+            TDireccion.Text = Me.DataGridView1.Item(6, i).Value.ToString()
+            TDni.Text = Me.DataGridView1.Item(3, i).Value.ToString()
+            TCorreo.Text = Me.DataGridView1.Item(5, i).Value.ToString()
+        End If
+
+    End Sub
+
+
+    'Boton para editar empleado
     Private Sub BCambios_Click(sender As Object, e As EventArgs) Handles BCambios.Click
         BRCambios.Visible = False
-
+        Dim i As Integer
+        i = DataGridView1.CurrentRow.Index
 
         Dim ask As MsgBoxResult
 
         If ((TNombres.Text <> "") And
+            (TApellidos.Text <> "") And
             (TDireccion.Text <> "") And
             (TDni.Text <> "") And
             (TCorreo.Text <> "") And
@@ -393,23 +515,60 @@ Public Class Empleados
                 ask = MsgBox("Seguro desea Editar Empleado?", MsgBoxStyle.YesNo, "Confirmar")
 
                 If ask = MsgBoxResult.Yes Then
-                    MsgBox("Empleado Editado", MsgBoxStyle.OkOnly, "Agregado")
-                    TNombres.Text = ""
-                    TDireccion.Text = ""
-                    TDni.Text = ""
-                    TCorreo.Text = ""
-                    TTelefono.Text = ""
-                    BRCambios.Visible = True
-                    BCambios.Visible = False
-                    TApellidos.Enabled = False
-                    TNombres.Enabled = False
-                    TDireccion.Enabled = False
-                    TDni.Enabled = False
-                    TCorreo.Enabled = False
-                    TTelefono.Enabled = False
-                    DTFechaNac.Enabled = False
+                    'Si se ingresó un DNI distinto verifica que no exista
+                    If (TDni.Text <> Me.DataGridView1.Item(3, i).Value.ToString()) Then
+
+                        'Si no existe otro dni igual al ingresado edita
+                        If (existeEmpleadoAdd(Val(TDni.Text)) = False) Then
+                            editarEmpleado()
+                            verEmpleados()
+                            verEmpleadosEditar()
+
+                            MsgBox("Empleado Editado", MsgBoxStyle.OkOnly, "Editado")
+                            TNombres.Text = ""
+                            TApellidos.Text = ""
+                            TDireccion.Text = ""
+                            TDni.Text = ""
+                            TCorreo.Text = ""
+                            TTelefono.Text = ""
+                            BRCambios.Visible = True
+                            BCambios.Visible = False
+                            TApellidos.Enabled = False
+                            TNombres.Enabled = False
+                            TDireccion.Enabled = False
+                            TDni.Enabled = False
+                            TCorreo.Enabled = False
+                            TTelefono.Enabled = False
+                            DTFechaNac.Enabled = False
+                        Else
+                            MsgBox("Ya existe un Empleado con el dni: " + TextBox1.Text, MsgBoxStyle.Critical, "Error")
+                        End If
+                    Else
+                        'Si no se ingresó un DNI distinto no verifica y edita sin problemas
+                        editarEmpleado()
+                        verEmpleados()
+                        verEmpleadosEditar()
+                        MsgBox("Empleado Editado", MsgBoxStyle.OkOnly, "Editado")
+                        TNombres.Text = ""
+                        TApellidos.Text = ""
+                        TDireccion.Text = ""
+                        TDni.Text = ""
+                        TCorreo.Text = ""
+                        TTelefono.Text = ""
+                        BRCambios.Visible = True
+                        BCambios.Visible = False
+                        TApellidos.Enabled = False
+                        TNombres.Enabled = False
+                        TDireccion.Enabled = False
+                        TDni.Enabled = False
+                        TCorreo.Enabled = False
+                        TTelefono.Enabled = False
+                        DTFechaNac.Enabled = False
+
+                    End If
+
                 Else
-                    MsgBox("No se Editó el Empleado", MsgBoxStyle.OkOnly, "No Agregado")
+                    MsgBox("No se Editó el Empleado", MsgBoxStyle.OkOnly, "No Editado")
 
                 End If
 
@@ -427,7 +586,26 @@ Public Class Empleados
         End If
     End Sub
 
-    'SECCION CONSULTAR EMPLEADOS
+    'Metodo que edita un empleado
+    Public Sub editarEmpleado()
+        Dim nombre As String = TNombres.Text
+        Dim apellido As String = TApellidos.Text
+        Dim fecha_nacimiento As String = DTFechaNac.Value
+        Dim dni As String = Val(TDni.Text)
+        Dim direccion As String = TDireccion.Text
+        Dim telefono As String = TTelefono.Text
+        Dim correo As String = TCorreo.Text
+        Try
+            Dim cempleado As New NEmpleados()
+            cempleado.editarEmpleado(dni, apellido, nombre, direccion, telefono, correo, fecha_nacimiento, item)
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+
+
+    'SECCION CONSULTAR EMPLEADOS ---------------------------------------------------------------------------------------------------------------------------------
     'Restricciones
     Private Sub TextBox4_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox4.KeyPress
 
@@ -478,12 +656,14 @@ Public Class Empleados
                 MsgBox("Completa El Campo Apellido", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoApellido(apellido)
             End If
         ElseIf (CheckBox2.Checked And Not CheckBox1.Checked) Then
             If (dni = "") Then
                 MsgBox("Completa El Campo DNI", MsgBoxStyle.Critical, "Error")
             Else
                 MsgBox("Buscar por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+                buscarEmpleadoDni(dni)
             End If
         Else
             MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
@@ -529,13 +709,13 @@ Public Class Empleados
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Dim ask As MsgBoxResult
-        ask = MsgBox("Desea volver a ingresar un nombre para agregar un producto distinto?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirmación")
+        ask = MsgBox("Desea volver a ingresar un nombre para agregar un empleado distinto?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, "Confirmación")
         If (ask = MsgBoxResult.Yes) Then
             reiniciarAgregar()
         End If
     End Sub
 
-    'Reinicio de valores textbox y combobox al elegir modificar el nombre del producto.
+    'Reinicio de valores textbox y combobox al elegir modificar el nombre del empleado.
     Public Sub reiniciarAgregar()
 
         Button9.Visible = False
@@ -548,7 +728,7 @@ Public Class Empleados
         TextBox7.Clear()
         TextBox9.Clear()
         TextBox10.Clear()
-        ComboBox2.SelectedIndex = -1
+        CbxSexoAdd.SelectedIndex = -1
 
     End Sub
 
@@ -564,13 +744,36 @@ Public Class Empleados
 
     End Sub
 
+    'busqueda diámica con dni consultar
+    Public Sub buscarEmpleadoDni(dni As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoDni(dni)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    'busqueda diámica con apellido consultar
+    Public Sub buscarEmpleadoApellido(apellido As String)
+        Try
+            Dim de As New NEmpleados
+            Dim dt As DataTable = de.buscarEmpleadoApellido(apellido)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
         Dim ask As MsgBoxResult
         Dim i As Integer
         i = DataGridView2.CurrentRow.Index
 
-        ask = MsgBox("Ver detalle del producto: '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
+        ask = MsgBox("Ver detalle del Empleado: '" + Me.DataGridView2.Item(2, i).Value.ToString + "' ?", MsgBoxStyle.YesNo, "Ver")
         If (MsgBoxResult.Yes = ask) Then
             item = Me.DataGridView2.Item(0, i).Value
             seleccionarEmpleadoConsultar(item)
@@ -601,38 +804,10 @@ Public Class Empleados
     End Sub
 
 
-    Public Sub verEmpleadosEditar()
-        Try
-            Dim ne As New NEmpleados
-            Dim dt As DataTable = ne.verEmpleados()
-            DataGridView1.DataSource = dt
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
-
-    End Sub
-
-    'Activar los campos para editar el empleado seleccionado
-    Public Sub DataGridView1_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellClick
-        Dim ask As MsgBoxResult
-        Dim i As Integer
-        i = DataGridView1.CurrentRow.Index
-        ask = MsgBox("Desea Seleccionar este cliente? " + Me.DataGridView1.Item(1, i).Value.ToString + " " + Me.DataGridView1.Item(2, i).Value.ToString, vbYesNo + vbInformation, "Agregar Producto")
-        If (MsgBoxResult.Yes = ask) Then
-            'La variable item me permite recoger el id del cliente para hacer la edición
-            item = Me.DataGridView1.Item(0, i).Value
-            TApellidos.Text = Me.DataGridView1.Item(1, i).Value.ToString()
-            TNombres.Text = Me.DataGridView1.Item(2, i).Value.ToString()
-            DTFechaNac.Value = Me.DataGridView1.Item(4, i).Value
-            TTelefono.Text = Me.DataGridView1.Item(7, i).Value.ToString()
-            TDireccion.Text = Me.DataGridView1.Item(6, i).Value.ToString()
-            TDni.Text = Me.DataGridView1.Item(3, i).Value.ToString()
-            TCorreo.Text = Me.DataGridView1.Item(5, i).Value.ToString()
-        End If
-
-    End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles BLimpiarFiltros.Click
         cargarConsultar()
+        cargarEditar()
     End Sub
+
 End Class

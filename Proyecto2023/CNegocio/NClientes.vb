@@ -33,6 +33,46 @@ Public Class NClientes
         End Try
     End Function
 
+    Public Function verClientesMasCompras() As DataTable
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.verClientesMasCompras()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function verClientesMenosCompras() As DataTable
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.verClientesMenosCompras()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verUltimosClientes() As DataTable
+        Try
+            Dim dcliente As New DClientes
+            Dim dt As DataTable = dcliente.verUltimosClientes()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+
     Public Function editarCliente(nombre As String, apellido As String, telefono As Long, fecha_nacimiento As Date, correo As String, direccion As String, dni As Long, id_cliente As Integer) As Boolean
         Dim dcliente As New DClientes()
         If (dcliente.editarCliente(nombre, apellido, telefono, fecha_nacimiento, correo, direccion, dni, id_cliente)) Then

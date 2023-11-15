@@ -1,5 +1,5 @@
 ﻿Public Class AgregarStock
-    Dim Prod As New NProductos
+    Dim cantidad As Integer = 0
     Private Sub TextBox1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox1.KeyPress
 
         If (Char.IsNumber(e.KeyChar)) Then
@@ -21,13 +21,13 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim id_producto As Integer = 1
         If (TextBox1.Text = "") Then
             MsgBox("Debe ingresar un stock", MsgBoxStyle.Critical, "Atención")
         Else
-
-            Prod.actualizarStock(id_producto, Convert.ToInt32(TextBox1.Text))
+            cantidad = Val(TextBox1.Text)
+            GestionProductos.TStockEdit.Text = Val(GestionProductos.TStockEdit.Text) + cantidad
             MsgBox("Stock agregado", MsgBoxStyle.Information, "Agregado")
+            TextBox1.Text = ""
             Me.Close()
         End If
     End Sub

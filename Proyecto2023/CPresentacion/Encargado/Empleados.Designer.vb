@@ -25,6 +25,7 @@ Partial Class Empleados
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
         Me.GestionarEmpleados = New System.Windows.Forms.TabControl()
         Me.ConsultarEmpleados = New System.Windows.Forms.TabPage()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.BLimpiarFiltros = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -50,6 +51,8 @@ Partial Class Empleados
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.EditarEmpleados = New System.Windows.Forms.TabPage()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.LTitulo = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -82,9 +85,7 @@ Partial Class Empleados
         Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.DTFechaIngreso = New System.Windows.Forms.DateTimePicker()
-        Me.Label10 = New System.Windows.Forms.Label()
+        Me.CbxSexoAdd = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
@@ -101,8 +102,6 @@ Partial Class Empleados
         Me.LFechaNacimiento = New System.Windows.Forms.Label()
         Me.LNombre = New System.Windows.Forms.Label()
         Me.LApellido = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.GestionarEmpleados.SuspendLayout()
         Me.ConsultarEmpleados.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -147,6 +146,17 @@ Partial Class Empleados
         Me.ConsultarEmpleados.Size = New System.Drawing.Size(958, 547)
         Me.ConsultarEmpleados.TabIndex = 0
         Me.ConsultarEmpleados.Text = "Consultar Empelados"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label12.Location = New System.Drawing.Point(8, 233)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(398, 16)
+        Me.Label12.TabIndex = 18
+        Me.Label12.Text = "Para seleccionar un empleado, hacer doble click sobre el mismo."
         '
         'BLimpiarFiltros
         '
@@ -391,6 +401,7 @@ Partial Class Empleados
         '
         Me.EditarEmpleados.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.EditarEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.EditarEmpleados.Controls.Add(Me.Button4)
         Me.EditarEmpleados.Controls.Add(Me.Label11)
         Me.EditarEmpleados.Controls.Add(Me.LTitulo)
         Me.EditarEmpleados.Controls.Add(Me.TextBox2)
@@ -405,6 +416,32 @@ Partial Class Empleados
         Me.EditarEmpleados.Size = New System.Drawing.Size(958, 547)
         Me.EditarEmpleados.TabIndex = 1
         Me.EditarEmpleados.Text = "Editar Empleados"
+        '
+        'Button4
+        '
+        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Button4.ForeColor = System.Drawing.SystemColors.Control
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button4.Location = New System.Drawing.Point(541, 99)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(195, 55)
+        Me.Button4.TabIndex = 19
+        Me.Button4.Text = "Reiniciar Todo"
+        Me.Button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.Button4.UseVisualStyleBackColor = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label11.Location = New System.Drawing.Point(7, 149)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(398, 16)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Para seleccionar un empleado, hacer doble click sobre el mismo."
         '
         'LTitulo
         '
@@ -640,7 +677,7 @@ Partial Class Empleados
         Me.BBuscar.ForeColor = System.Drawing.SystemColors.Control
         Me.BBuscar.Image = CType(resources.GetObject("BBuscar.Image"), System.Drawing.Image)
         Me.BBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BBuscar.Location = New System.Drawing.Point(564, 58)
+        Me.BBuscar.Location = New System.Drawing.Point(541, 40)
         Me.BBuscar.Name = "BBuscar"
         Me.BBuscar.Size = New System.Drawing.Size(195, 55)
         Me.BBuscar.TabIndex = 4
@@ -673,7 +710,7 @@ Partial Class Empleados
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(221, 49)
         Me.Button9.TabIndex = 33
-        Me.Button9.Text = "Volver para cambiar el nombre del producto"
+        Me.Button9.Text = "Volver para cambiar el DNI del Empleado"
         Me.Button9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
         Me.Button9.UseVisualStyleBackColor = True
@@ -723,9 +760,7 @@ Partial Class Empleados
         'Panel6
         '
         Me.Panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel6.Controls.Add(Me.ComboBox2)
-        Me.Panel6.Controls.Add(Me.DTFechaIngreso)
-        Me.Panel6.Controls.Add(Me.Label10)
+        Me.Panel6.Controls.Add(Me.CbxSexoAdd)
         Me.Panel6.Controls.Add(Me.Label9)
         Me.Panel6.Controls.Add(Me.TextBox7)
         Me.Panel6.Controls.Add(Me.TextBox6)
@@ -747,30 +782,13 @@ Partial Class Empleados
         Me.Panel6.Size = New System.Drawing.Size(799, 310)
         Me.Panel6.TabIndex = 22
         '
-        'ComboBox2
+        'CbxSexoAdd
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"Hombre", "Mujer", "Indefinido"})
-        Me.ComboBox2.Location = New System.Drawing.Point(545, 208)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(226, 24)
-        Me.ComboBox2.TabIndex = 27
-        '
-        'DTFechaIngreso
-        '
-        Me.DTFechaIngreso.Location = New System.Drawing.Point(191, 255)
-        Me.DTFechaIngreso.Name = "DTFechaIngreso"
-        Me.DTFechaIngreso.Size = New System.Drawing.Size(198, 22)
-        Me.DTFechaIngreso.TabIndex = 17
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(39, 260)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(129, 16)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Fecha de Ingreso"
+        Me.CbxSexoAdd.FormattingEnabled = True
+        Me.CbxSexoAdd.Location = New System.Drawing.Point(545, 208)
+        Me.CbxSexoAdd.Name = "CbxSexoAdd"
+        Me.CbxSexoAdd.Size = New System.Drawing.Size(226, 24)
+        Me.CbxSexoAdd.TabIndex = 27
         '
         'Label9
         '
@@ -903,28 +921,6 @@ Partial Class Empleados
         Me.LApellido.TabIndex = 0
         Me.LApellido.Text = "Apellido"
         '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.Label11.Location = New System.Drawing.Point(7, 149)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(398, 16)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Para seleccionar un empleado, hacer doble click sobre el mismo."
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label12.Location = New System.Drawing.Point(8, 233)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(398, 16)
-        Me.Label12.TabIndex = 18
-        Me.Label12.Text = "Para seleccionar un empleado, hacer doble click sobre el mismo."
-        '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1020,10 +1016,8 @@ Partial Class Empleados
     Friend WithEvents LApellido As Label
     Friend WithEvents BRCambios As Button
     Friend WithEvents DTFechaNac As DateTimePicker
-    Friend WithEvents DTFechaIngreso As DateTimePicker
-    Friend WithEvents Label10 As Label
     Friend WithEvents Button9 As Button
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents CbxSexoAdd As ComboBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents TApellidos As TextBox
     Friend WithEvents LApellidos As Label
@@ -1038,4 +1032,5 @@ Partial Class Empleados
     Friend WithEvents BLimpiarFiltros As Button
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
+    Friend WithEvents Button4 As Button
 End Class

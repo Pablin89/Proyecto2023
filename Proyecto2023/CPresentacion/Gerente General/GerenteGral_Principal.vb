@@ -15,13 +15,7 @@
         RBackup.ShowDialog()
     End Sub
 
-    Private Sub Informes_Click(sender As Object, e As EventArgs) Handles Informes.Click
-        Restauracion.ShowDialog()
-    End Sub
 
-    Private Sub Productos_Click(sender As Object, e As EventArgs) Handles Productos.Click
-        Permisos.ShowDialog()
-    End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
 
@@ -31,4 +25,31 @@
 
 
 
+
+
+    Private Sub GerenteGral_Principal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        If hayEmpleadosSinUsuarios() Then
+            MsgBox("Atencion! existen empleados sin usuarios asignados. Para asignar usuarios hacer click en el boton ""Empleados Nuevos""", vbOKOnly + vbInformation, "Empleados sin usuario")
+        Else
+
+        End If
+    End Sub
+
+    Public Function hayEmpleadosSinUsuarios() As Boolean
+        Dim nu As New NUsuarios()
+        If nu.hayEmpleadosSinUsuarios() Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Private Sub ModificarUs_Click(sender As Object, e As EventArgs) Handles ModificarUs.Click
+        ModificarUsuario.ShowDialog()
+    End Sub
+
+    Private Sub UsuariosNuevos_Click(sender As Object, e As EventArgs) Handles UsuariosNuevos.Click
+        EmpleadosNuevos.ShowDialog()
+    End Sub
 End Class

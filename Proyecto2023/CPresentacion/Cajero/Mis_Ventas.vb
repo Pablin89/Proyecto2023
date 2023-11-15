@@ -72,28 +72,28 @@ Public Class Mis_ventas
                 MsgBox("Introduzca un DNI", MsgBoxStyle.Exclamation, "Atencion")
             Else
 
-                ventasPorDni(Val(TDni.Text))
+                ventasPorDni(id, Val(TDni.Text))
                 'MsgBox("Seleccionaste buscar por 'Cliente especifico': " + TDni.Text, MsgBoxStyle.Information, "Buscar")
             End If
         ElseIf (ComboBox1.SelectedIndex.Equals(2)) Then
 
-            ventasPorTipoDePago(1)
+            ventasPorTipoDePago(id, 1)
             'MsgBox("Seleccionaste buscar por 'Efectivo'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(3)) Then
 
-            ventasPorTipoDePago(2)
+            ventasPorTipoDePago(id, 2)
             'MsgBox("Seleccionaste buscar por 'Débito'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(4)) Then
 
-            ventasPorTipoDePago(3)
+            ventasPorTipoDePago(id, 3)
             'MsgBox("Seleccionaste buscar por 'Crédito'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(5)) Then
 
-            ventasPorTipoDePago(4)
+            ventasPorTipoDePago(id, 4)
             'MsgBox("Seleccionaste buscar por 'Mercado Pago'", MsgBoxStyle.Information, "Buscar")
         ElseIf (ComboBox1.SelectedIndex.Equals(6)) Then
 
-            ventasPorFecha(DateTimePicker1.Text, DateTimePicker2.Text)
+            ventasPorFecha(id, DateTimePicker1.Text, DateTimePicker2.Text)
             'MsgBox("Seleccionaste buscar por 'Rango de Fechas'", MsgBoxStyle.Information, "Buscar")
         End If
     End Sub
@@ -116,11 +116,11 @@ Public Class Mis_ventas
     End Sub
 
     'Listar las ventas por DNI del cliente
-    Public Sub ventasPorDni(dni As Integer)
+    Public Sub ventasPorDni(id As Integer, dni As Integer)
         Try
             DataGridView1.Rows.Clear()
             Dim nv As New NVentas
-            Dim dt As DataTable = nv.ventasPorDni(dni)
+            Dim dt As DataTable = nv.ventasPorDni(id, dni)
             'DataGridView1.DataSource = dt
             For j = 0 To (dt.Rows.Count - 1)
                 DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
@@ -132,11 +132,11 @@ Public Class Mis_ventas
     End Sub
 
     'Listar ventas por tipo de Pago
-    Public Sub ventasPorTipoDePago(id_tipo As Integer)
+    Public Sub ventasPorTipoDePago(id As Integer, id_tipo As Integer)
         Try
             DataGridView1.Rows.Clear()
             Dim nv As New NVentas
-            Dim dt As DataTable = nv.ventasPorTipoDePago(id_tipo)
+            Dim dt As DataTable = nv.ventasPorTipoDePago(id, id_tipo)
 
             For j = 0 To (dt.Rows.Count - 1)
                 DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")
@@ -147,11 +147,11 @@ Public Class Mis_ventas
     End Sub
 
     'Listar ventas por rango de fecha
-    Public Sub ventasPorFecha(desde As Date, hasta As Date)
+    Public Sub ventasPorFecha(id As Integer, desde As Date, hasta As Date)
         Try
             DataGridView1.Rows.Clear()
             Dim nv As New NVentas
-            Dim dt As DataTable = nv.ventasPorFecha(desde, hasta)
+            Dim dt As DataTable = nv.ventasPorFecha(id, desde, hasta)
 
             For j = 0 To (dt.Rows.Count - 1)
                 DataGridView1.Rows.Add(dt.Rows(j)(0), Format(dt.Rows(j)(1).Date, "dd-MM-yyyy"), dt.Rows(j)(2).ToString, dt.Rows(j)(3).ToString, dt.Rows(j)(4).ToString, "Detalle")

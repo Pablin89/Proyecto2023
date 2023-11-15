@@ -268,14 +268,23 @@ Public Class Realizar_Venta
                 If (MsgBoxResult.Yes = ask) Then
                     nuevaVenta()
                     agregarDetalles()
+                    imprimirFactura()
                     MsgBox("GRACIAS POR SU COMPRA!!!", MsgBoxStyle.Information, "GRACIAS")
-                    VentaRealizada.ShowDialog()
+                    'VentaRealizada.ShowDialog()
                     listarTiposPagoCbx()
                     vaciarCarrito()
                     reinicarVenta()
                 End If
             End If
         End If
+    End Sub
+
+    Public Sub imprimirFactura()
+        Dim MiForm As New VentaRealizada
+        Dim dfactura As New ReporteFactura
+        dfactura.reporteFactura(idVenta)
+        MiForm.NombreReporte = "Proyecto2023.Venta.rdlc"
+        MiForm.Show()
     End Sub
 
     'Metodos dinámicos para la venta----------------------------------------------------------------
@@ -285,11 +294,11 @@ Public Class Realizar_Venta
         'Se modificará cuando existan inicios de seión id_usuario 
         Dim id_usuario As Integer = idUsuario
         Dim total As Double = Val(LValorTotal.Text)
-        Dim fecha_compra As Date = Today
+        'Dim fecha_compra As Date = Date.Now.ToString("dd/MM/yyyy")
         Dim id_tipo_pago As Integer = Val(ComboBox1.SelectedValue.ToString)
         Try
             Dim cventa As New NVentas()
-            cventa.insertarVenta(id_cliente, id_usuario, total, fecha_compra, id_tipo_pago)
+            cventa.insertarVenta(id_cliente, id_usuario, total, id_tipo_pago)
             ultimoId()
             actualizarStock()
         Catch ex As Exception
