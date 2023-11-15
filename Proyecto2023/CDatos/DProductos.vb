@@ -397,6 +397,124 @@ Public Class DProductos
         Return resultado
     End Function
 
+    Public Function verProductosMasVendidos() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 10
+	             p.codigo As Codigo,
+	             p.nombre As Nombre,
+                c.descripcion As Categoria,
+				sum(d.cantidad) AS Total
+				from Productos p INNER JOIN detalle d on d.id_producto = p.id_producto
+                inner join categorias c on p.id_categoria = c.id_categoria
+				group by  p.codigo,p.nombre, c.descripcion
+				order by Sum(d.cantidad)desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verProductosMenosVendidos() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 10
+	             p.codigo As Codigo,
+	             p.nombre As Nombre,
+                c.descripcion As Categoria,
+				sum(d.cantidad) AS Total
+				from Productos p INNER JOIN detalle d on d.id_producto = p.id_producto
+                inner join categorias c on p.id_categoria = c.id_categoria
+				group by  p.codigo,p.nombre, c.descripcion
+				order by Sum(d.cantidad)asc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verCategoriasMasVendidas() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select c.descripcion as Categoria, sum(d.cantidad) As Cantidad from productos p
+                                    inner join detalle d on p.id_producto = d.id_producto
+                                    inner join categorias c on p.id_categoria = c.id_categoria
+                                    group by c.descripcion
+                                    order by Sum(d.cantidad) desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verCategoriasMenosVendidas() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select c.descripcion as Categoria, sum(d.cantidad) As Cantidad from productos p
+                                    inner join detalle d on p.id_producto = d.id_producto
+                                    inner join categorias c on p.id_categoria = c.id_categoria
+                                    group by c.descripcion
+                                    order by Sum(d.cantidad) asc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+
+
+
+
+
     Public Function verProductosPocoStock() As DataTable
         Try
             conectar()

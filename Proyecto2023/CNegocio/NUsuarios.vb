@@ -58,6 +58,29 @@ Public Class NUsuarios
 
 
 
+    Public Function modificarUsuario(nombre As String, contra As String, perfil As Integer, empleado As Integer) As Boolean
+
+        Dim dusuarios As New DUsuarios
+        If (dusuarios.modificarUsuario(nombre, Convert.ToBase64String(Encoding.Unicode.GetBytes(contra)), perfil, empleado)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
+
+    Public Function modificarUsuarioSinContraseña(nombre As String, perfil As Integer, empleado As Integer) As Boolean
+
+        Dim dusuarios As New DUsuarios
+        If (dusuarios.modificarUsuarioSinContraseña(nombre, perfil, empleado)) Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+
 
     Public Function extraerDatos(usuario As String) As DataTable
         Try
@@ -93,5 +116,61 @@ Public Class NUsuarios
             Return False
         End If
     End Function
+
+
+    'Buscar usuario por Dni
+    Public Function buscarUsuarioDni(dni As Integer) As DataTable
+
+        Try
+            Dim dusuario As New DUsuarios
+            Dim dt As DataTable = dusuario.buscarUsuarioDni(dni)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Buscar usuario por apellido
+    Public Function buscarUsuarioApellido(apellido As String) As DataTable
+
+        Try
+            Dim dusuario As New DUsuarios
+            Dim dt As DataTable = dusuario.buscarUsuarioApellido(apellido)
+            Return dt
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verEmpleadosConMasVentas() As DataTable
+        Try
+            Dim dusuario As New DUsuarios
+            Dim dt As DataTable = dusuario.verEmpleadosConMasVentas()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verEmpleadosConMenosVentas() As DataTable
+        Try
+            Dim dusuario As New DUsuarios
+            Dim dt As DataTable = dusuario.verEmpleadosConMenosVentas()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
 
 End Class

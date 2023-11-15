@@ -2,15 +2,69 @@
     Dim item As Integer
     Private Sub ModificarUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         verEmpleadosConUsuario()
+        reiniciarBusqueda()
         BConfirmarPerfil.Visible = False
         TContraseña.Enabled = False
-        ChBContraseña.Visible = False
+        ChBContraseña.Visible = True
     End Sub
 
-    Private Sub BConfirmarPerfil_Click(sender As Object, e As EventArgs) Handles BConfirmarPerfil.Click
-        MsgBox("Se ha asignado correctamente el perfil al empleado", MsgBoxStyle.Information, "Perfil Asignado")
+
+    Public Sub reiniciarBusqueda()
         BConfirmarPerfil.Visible = False
+        TextBox1.Clear()
+        TextBox1.Enabled = False
+        TextBox3.Enabled = False
+        TextBox3.Clear()
+        TextBox4.Enabled = False
+        TextBox4.Clear()
+        TContraseña.Enabled = False
+        ChBContraseña.Visible = True
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
     End Sub
+
+
+    Private Sub BConfirmarPerfil_Click(sender As Object, e As EventArgs) Handles BConfirmarPerfil.Click
+        modificarUsuario()
+    End Sub
+
+
+    Public Sub modificarUsuario()
+        Dim nusuario As New NUsuarios()
+        If nusuario.existeElUsuario(TNombreUsuario.Text) Then
+            MsgBox("El usuario ya existe", MsgBoxStyle.Information, "Usuario Existente")
+        Else
+            Dim nombreUsuario As String = TNombreUsuario.Text
+            Dim contraseña As String = TContraseña.Text
+            Dim perfil As Integer
+            If ComboBox1.Text = "Encargado" Then
+                perfil = 3
+            ElseIf ComboBox1.Text = "Cajero" Then
+                perfil = 4
+            ElseIf ComboBox1.Text = "Gerente" Then
+                perfil = 2
+            ElseIf ComboBox1.Text = "Gerente General" Then
+                perfil = 1
+            End If
+            Try
+                If TContraseña.Text = "" Then
+                    nusuario.modificarUsuarioSinContraseña(nombreUsuario, perfil, item)
+                Else
+                    nusuario.modificarUsuario(nombreUsuario, contraseña, perfil, item)
+                End If
+
+            Catch ex As Exception
+
+            End Try
+
+            MsgBox("Se ha modificado correctamente el usuario seleccionado", MsgBoxStyle.Information, "Usuario modificado")
+            verEmpleadosConUsuario()
+            reiniciarBusqueda()
+        End If
+
+    End Sub
+
 
     Private Sub DataGridView2_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView2.CellContentClick
 
@@ -124,59 +178,66 @@
         End If
     End Sub
 
-    Private Sub TDni_TextChanged(sender As Object, e As EventArgs) Handles TDni.TextChanged
 
+
+    Private Sub BBuscar_Click(sender As Object, e As EventArgs) Handles BBuscar.Click
+        Dim dni As String = TextBox4.Text
+        Dim apellido As String = TextBox3.Text
+        If (CheckBox2.Checked And CheckBox1.Checked) Then
+            If (dni = "" Or apellido = "") Then
+                MsgBox("Completa los campos seleccionados", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'DNI': " + dni + " 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+            End If
+        ElseIf (Not CheckBox2.Checked And CheckBox1.Checked) Then
+            If (apellido = "") Then
+                MsgBox("Completa El Campo Apellido", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'Apellido': " + apellido, MsgBoxStyle.Information, "Buscar")
+                buscarUsuarioApellido(apellido)
+            End If
+        ElseIf (CheckBox2.Checked And Not CheckBox1.Checked) Then
+            If (dni = "") Then
+                MsgBox("Completa El Campo DNI", MsgBoxStyle.Critical, "Error")
+            Else
+                MsgBox("Buscar por 'DNI': " + dni, MsgBoxStyle.Information, "Buscar")
+                buscarUsuarioDni(dni)
+            End If
+        Else
+            MsgBox("No seleccionaste ninguna opción", MsgBoxStyle.Exclamation, "Advertencia")
+        End If
+        BLimpiarFiltros.Visible = True
     End Sub
 
-    Private Sub TCorreo_TextChanged(sender As Object, e As EventArgs) Handles TCorreo.TextChanged
 
+    'busqueda diámica con dni consultar
+    Public Sub buscarUsuarioDni(dni As String)
+        Try
+            Dim du As New NUsuarios
+            Dim dt As DataTable = du.buscarUsuarioDni(dni)
+            DataGridView2.DataSource = dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub TTelefono_TextChanged(sender As Object, e As EventArgs) Handles TTelefono.TextChanged
+    'busqueda diámica con apellido consultar
+    Public Sub buscarUsuarioApellido(apellido As String)
+        Try
+            Dim du As New NUsuarios
+            Dim dt As DataTable = du.buscarUsuarioApellido(apellido)
+            DataGridView2.DataSource = dt
 
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
-    Private Sub TApeynom_TextChanged(sender As Object, e As EventArgs) Handles TApeynom.TextChanged
-
+    Private Sub BLimpiarFiltros_Click(sender As Object, e As EventArgs) Handles BLimpiarFiltros.Click
+        verEmpleadosConUsuario()
+        reiniciarBusqueda()
     End Sub
 
-    Private Sub TContraseña_TextChanged(sender As Object, e As EventArgs) Handles TContraseña.TextChanged
 
-    End Sub
-
-    Private Sub TNombreUsuario_TextChanged(sender As Object, e As EventArgs) Handles TNombreUsuario.TextChanged
-
-    End Sub
-
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
-
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
-
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
-    End Sub
-
-    Private Sub LContraseña_Click(sender As Object, e As EventArgs) Handles LContraseña.Click
-
-    End Sub
-
-    Private Sub LNombreUsuario_Click(sender As Object, e As EventArgs) Handles LNombreUsuario.Click
-
-    End Sub
-
-    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
-
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
 End Class

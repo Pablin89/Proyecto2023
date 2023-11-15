@@ -51,6 +51,61 @@
         End Try
     End Function
 
+    Public Function verProductosMasVendidos() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosMasVendidos()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+    Public Function verProductosMenosVendidos() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verProductosMenosVendidos()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verCategoriasMenosVendidas() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verCategoriasMenosVendidas()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verCategoriasMasVendidas() As DataTable
+        Try
+            Dim dproducto As New DProductos
+            Dim dt As DataTable = dproducto.verCategoriasMasVendidas()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+
 
 
     Public Function verProductosEditar() As DataTable

@@ -24,6 +24,7 @@ Partial Class ModificarUsuario
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModificarUsuario))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.BLimpiarFiltros = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -51,7 +52,6 @@ Partial Class ModificarUsuario
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.BLimpiarFiltros = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -75,6 +75,19 @@ Partial Class ModificarUsuario
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 157)
         Me.Panel1.TabIndex = 30
+        '
+        'BLimpiarFiltros
+        '
+        Me.BLimpiarFiltros.Image = CType(resources.GetObject("BLimpiarFiltros.Image"), System.Drawing.Image)
+        Me.BLimpiarFiltros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BLimpiarFiltros.Location = New System.Drawing.Point(10, 105)
+        Me.BLimpiarFiltros.Name = "BLimpiarFiltros"
+        Me.BLimpiarFiltros.Size = New System.Drawing.Size(259, 42)
+        Me.BLimpiarFiltros.TabIndex = 23
+        Me.BLimpiarFiltros.Text = "Limpiar Filtros y mostrar todos los resultados"
+        Me.BLimpiarFiltros.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BLimpiarFiltros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
+        Me.BLimpiarFiltros.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -369,19 +382,6 @@ Partial Class ModificarUsuario
         Me.DataGridView2.Name = "DataGridView2"
         Me.DataGridView2.Size = New System.Drawing.Size(415, 381)
         Me.DataGridView2.TabIndex = 0
-        '
-        'BLimpiarFiltros
-        '
-        Me.BLimpiarFiltros.Image = CType(resources.GetObject("BLimpiarFiltros.Image"), System.Drawing.Image)
-        Me.BLimpiarFiltros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BLimpiarFiltros.Location = New System.Drawing.Point(10, 105)
-        Me.BLimpiarFiltros.Name = "BLimpiarFiltros"
-        Me.BLimpiarFiltros.Size = New System.Drawing.Size(259, 42)
-        Me.BLimpiarFiltros.TabIndex = 23
-        Me.BLimpiarFiltros.Text = "Limpiar Filtros y mostrar todos los resultados"
-        Me.BLimpiarFiltros.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BLimpiarFiltros.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage
-        Me.BLimpiarFiltros.UseVisualStyleBackColor = True
         '
         'ModificarUsuario
         '

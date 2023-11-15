@@ -168,6 +168,37 @@ Public Class DVentas
         End Try
     End Function
 
+
+    Public Function ventasPorFechasGerente(desde As Date, hasta As Date) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+	                                        v.id_venta As 'Nro Venta',
+	                                        v.fecha_compra As 'Fecha de Compra',
+	                                        '$'+STR(v.total) As 'Total',
+	                                        tp.descripcion As 'Tipo de Pago',
+	                                        Concat(c.nombre , ' ' , C.apellido) As 'Cliente'
+                                        from ventas v
+                                        inner join Clientes c on (v.id_cliente=c.id_cliente)
+                                        inner join tipos_pagos tp on (v.id_tipo_pago=tp.id_tipo_pago)
+                                        where v.id_estado_venta = 1 and  v.fecha_compra  BETWEEN '" & desde & "' And '" & hasta & "'")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     'Listar ventas por DNI del cliente
     Public Function ventasPorDni(id_usuario As Integer, dni As Integer) As DataTable
         Try

@@ -258,6 +258,33 @@ Public Class DEmpleados
     End Function
 
 
+    'Ver  ultimos empleados añadidos
+    Public Function verUltimosEmpleados() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select Top 5 e.apellido AS Apellido, e.nombre AS Nombre,
+				                    u.nombre_usuario As Usuario, e.fecha_ingreso AS 'Fecha de Ingreso', p.descripcion As Perfil
+                                    from empleados e inner join usuarios u on e.id_empleado = u.id_empleado
+                                    inner join perfiles p on u.id_perfil = p.id_perfil
+                                     order by e.fecha_ingreso desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
 
     Public Function seleccionarEmpleadoConsultar(id As Integer) As DataTable
         Try

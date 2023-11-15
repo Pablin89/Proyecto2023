@@ -81,6 +81,50 @@ Public Class DUsuarios
 
 
 
+    Public Function modificarUsuario(nombre As String, contra As String, perfil As Integer, empleado As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update usuarios set nombre_usuario = '" & nombre & "', id_perfil = " & perfil & ", contraseña ='" & contra & "'
+                                    from usuarios where id_empleado = " & empleado & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+
+    Public Function modificarUsuarioSinContraseña(nombre As String, perfil As Integer, empleado As Integer) As Boolean
+        Try
+            conectar()
+
+            Dim query As String = "update usuarios set nombre_usuario = '" & nombre & "', id_perfil = " & perfil & "
+                                    from usuarios where id_empleado = " & empleado & ""
+
+            comando = New SqlCommand(query, conexion)
+
+            If (comando.ExecuteNonQuery()) Then
+                Return True
+            Else
+                Return False
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        End Try
+    End Function
+
+
     Public Function existeUsuario(us As String, con As String) As Boolean
         Dim resultado As Boolean = False
         Try
@@ -266,5 +310,137 @@ Public Class DUsuarios
         End Try
         Return resultado
     End Function
+
+
+    'Buscar usuario por Dni
+    Public Function buscarUsuarioDni(dni As Integer) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                e.id_empleado As id,
+                                e.apellido As Apellido,
+                                e.nombre As Nombre,
+                                u.nombre_usuario,
+                                e.dni As DNI ,
+                                e.correo As Mail,
+                                e.telefono As Telefono,
+                                p.descripcion As Perfil
+                            from empleados e inner join usuarios u on e.id_empleado = u.id_empleado
+                            inner join perfiles p on u.id_perfil = p.id_perfil
+                            where dni like '" & dni & "%' and id_estado_empleado = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    'Buscar usuario por apellido
+
+    Public Function buscarUsuarioApellido(apellido As String) As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select 
+                                e.id_empleado As id,
+                                e.apellido As Apellido,
+                                e.nombre As Nombre,
+                                u.nombre_usuario,
+                                e.dni As DNI ,
+                                e.correo As Mail,
+                                e.telefono As Telefono,
+                                p.descripcion As Perfil
+                            from empleados e inner join usuarios u on e.id_empleado = u.id_empleado
+                            inner join perfiles p on u.id_perfil = p.id_perfil
+                            where apellido like '" & apellido & "%' and id_estado_empleado = 1")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verEmpleadosConMasVentas() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 5
+	             e.apellido ,
+	             e.nombre,
+				 u.nombre_usuario,
+				 count(v.id_usuario) AS Ventas
+				from empleados e INNER JOIN usuarios u on e.id_empleado = u.id_empleado
+				inner join ventas v on v.id_usuario = u.Id_usuario
+				group by e.apellido, e.nombre, u.nombre_usuario
+				order by count(v.id_usuario)desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verEmpleadosConMenosVentas() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 5
+	             e.apellido ,
+	             e.nombre,
+				 u.nombre_usuario,
+				 count(v.id_usuario) AS Ventas
+				from empleados e INNER JOIN usuarios u on e.id_empleado = u.id_empleado
+				inner join ventas v on v.id_usuario = u.Id_usuario
+				group by e.apellido, e.nombre, u.nombre_usuario
+				order by count(v.id_usuario)asc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
+
 
 End Class

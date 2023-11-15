@@ -180,6 +180,91 @@ Public Class DClientes
         End Try
     End Function
 
+
+
+    Public Function verClientesMasCompras() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 10
+	             c.apellido ,
+	             c.nombre,
+				 c.correo,
+				 count(v.id_cliente) AS Compras
+				from clientes c 
+				inner join ventas v on v.id_cliente = c.id_cliente
+				group by c.apellido, c.nombre, c.correo
+				order by count(v.id_cliente)desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Function verClientesMenosCompras() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand("select top 10
+	             c.apellido ,
+	             c.nombre,
+				 c.correo,
+				 count(v.id_cliente) AS Compras
+				from clientes c 
+				inner join ventas v on v.id_cliente = c.id_cliente
+				group by c.apellido, c.nombre, c.correo
+				order by count(v.id_cliente)asc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+    Public Function verUltimosClientes() As DataTable
+        Try
+            conectar()
+            Dim comando = New SqlCommand(" select top 10 nombre, apellido, dni, correo 
+                                        from clientes order by id_Cliente desc")
+            comando.Connection = conexion
+
+            If (comando.ExecuteNonQuery) Then
+                Dim dt As New DataTable
+                Dim adaptador As New SqlDataAdapter(comando)
+                adaptador.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
     Public Function editarCliente(nombre As String, apellido As String, telefono As Long, fecha_nacimiento As Date, correo As String, direccion As String, dni As Long, id_cliente As Integer) As Boolean
         Try
             conectar()

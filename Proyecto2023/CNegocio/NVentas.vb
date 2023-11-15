@@ -36,6 +36,19 @@ Public Class NVentas
         End Try
     End Function
 
+    'Lista las ventas por fechas
+    Public Function ventasPorFechasGerente(desde As Date, hasta As Date) As DataTable
+        Try
+            Dim dventa As New DVentas
+            Dim dt As DataTable = dventa.ventasPorFechasGerente(desde, hasta)
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     'Lista ventas por DNI de cliente
     Public Function ventasPorDni(id_usuario, dni) As DataTable
         Try

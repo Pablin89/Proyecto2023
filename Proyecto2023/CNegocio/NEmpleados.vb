@@ -80,6 +80,20 @@ Public Class NEmpleados
     End Function
 
 
+    Public Function verUltimosEmpleados() As DataTable
+        Try
+            Dim dempleado As New DEmpleados
+            Dim dt As DataTable = dempleado.verUltimosEmpleados()
+            Return dt
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+
+
 
     Public Function seleccionarEmpleadoConsultar(id As Integer) As DataTable
         Try
