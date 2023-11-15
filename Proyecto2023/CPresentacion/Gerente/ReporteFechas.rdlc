@@ -357,7 +357,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Fecha.Value</Value>
+                                  <Value>=FORMAT(Fields!Fecha.Value, "dd/MM/yyyy")</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
