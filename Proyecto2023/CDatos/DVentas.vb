@@ -23,11 +23,11 @@ Public Class DVentas
 
     End Sub
 
-    Public Sub New(id_cte As Integer, id_us As Integer, tot As Double, fech As Date, id_tipo As Integer)
+    Public Sub New(id_cte As Integer, id_us As Integer, tot As Double, id_tipo As Integer)
         id_cliente = id_cte
         id_usuario = id_us
         total = tot
-        fecha_compra = fech
+        'fecha_compra = fech
         id_estado_venta = 1
         id_tipo_pago = id_tipo
 
@@ -100,7 +100,7 @@ Public Class DVentas
         Try
             conectar()
 
-            Dim query As String = "Insert into ventas (id_cliente,id_usuario,total,fecha_compra,id_estado_venta,id_tipo_pago) values (" & dventa.CIdCliente & "," & dventa.CIdUsuario & "," & dventa.CTotatl & ",'" & dventa.CFechaCompra & "'," & dventa.CIdEstadoVenta & "," & dventa.id_tipo_pago & ")"
+            Dim query As String = "Insert into ventas (id_cliente,id_usuario,total,fecha_compra,id_estado_venta,id_tipo_pago) values (" & dventa.CIdCliente & "," & dventa.CIdUsuario & "," & dventa.CTotatl & ",getDate()," & dventa.CIdEstadoVenta & "," & dventa.id_tipo_pago & ")"
 
             comando = New SqlCommand(query, conexion)
 

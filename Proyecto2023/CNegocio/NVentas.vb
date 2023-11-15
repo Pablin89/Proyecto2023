@@ -2,8 +2,8 @@
 Imports System.Security.Cryptography
 
 Public Class NVentas
-    Public Function insertarVenta(id_cliente As Integer, id_usuario As Integer, total As Double, fecha_compra As Date, id_tipo_pago As Integer) As Boolean
-        Dim dventa As New DVentas(id_cliente, id_usuario, total, fecha_compra, id_tipo_pago)
+    Public Function insertarVenta(id_cliente As Integer, id_usuario As Integer, total As Double, id_tipo_pago As Integer) As Boolean
+        Dim dventa As New DVentas(id_cliente, id_usuario, total, id_tipo_pago)
         If (dventa.insertarVenta(dventa)) Then
             Return True
         Else
